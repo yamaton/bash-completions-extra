@@ -1,0 +1,46 @@
+# Auto-generated with h2o
+
+_repo2docker()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" contents relative"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        contents) _repo2docker_contents
+            return
+            ;;
+
+        relative) _repo2docker_relative
+            return
+            ;;
+
+    esac
+
+    local word_list=" contents relative -h --help --help-all --version --config --json-logs --image-name --ref --debug --no-build --build --build-memory-limit --no-run --run --publish -p --publish-all -P --no-clean --clean --push --no-push --volume -v --user-id --user-name --env -e --editable -E --target-repo-dir --appendix --label --build-arg --subdir --cache-from --engine --Application.log_datefmt --Application.log_format --Application.log_level --Application.logging_config --Application.show_config --Application.show_config_json --Repo2Docker.all_ports --Repo2Docker.appendix --Repo2Docker.base_image --Repo2Docker.build_memory_limit --Repo2Docker.buildpacks --Repo2Docker.cache_from --Repo2Docker.cleanup_checkout --Repo2Docker.content_providers --Repo2Docker.default_buildpack --Repo2Docker.dry_run --Repo2Docker.engine --Repo2Docker.environment --Repo2Docker.extra_build_args --Repo2Docker.extra_build_kwargs --Repo2Docker.extra_run_kwargs --Repo2Docker.git_workdir --Repo2Docker.json_logs --Repo2Docker.labels --Repo2Docker.log_datefmt --Repo2Docker.log_format --Repo2Docker.log_level --Repo2Docker.logging_config --Repo2Docker.output_image_spec --Repo2Docker.platform --Repo2Docker.ports --Repo2Docker.push --Repo2Docker.ref --Repo2Docker.repo --Repo2Docker.run --Repo2Docker.run_cmd --Repo2Docker.show_config --Repo2Docker.show_config_json --Repo2Docker.subdir --Repo2Docker.swh_token --Repo2Docker.target_repo_dir --Repo2Docker.user_id --Repo2Docker.user_name --Repo2Docker.volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_repo2docker_contents()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_repo2docker_relative()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _repo2docker repo2docker

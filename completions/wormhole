@@ -1,0 +1,99 @@
+# Auto-generated with h2o
+
+_wormhole()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" help receive send ssh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        help) _wormhole_help
+            return
+            ;;
+
+        receive) _wormhole_receive
+            return
+            ;;
+
+        send) _wormhole_send
+            return
+            ;;
+
+        ssh) _wormhole_ssh
+            return
+            ;;
+
+    esac
+
+    local word_list=" help receive send ssh --appid --relay-url --transit-helper --dump-timing --version --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wormhole_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wormhole_receive()
+{
+    local word_list="  -0 -c --code-length -v --verify --hide-progress --listen --no-listen --tor --launch-tor --tor-control-port -t --only-text --accept-file -o --output-file --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wormhole_send()
+{
+    local word_list="  -0 -c --code-length -v --verify --hide-progress --listen --no-listen --tor --launch-tor --tor-control-port --code --text --ignore-unsendable-files --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wormhole_ssh()
+{
+    local cmd i subcommands
+    local subcommands=" accept invite"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        accept) _wormhole_ssh_accept
+            return
+            ;;
+
+        invite) _wormhole_ssh_invite
+            return
+            ;;
+
+    esac
+
+    local word_list=" accept invite --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wormhole_ssh_accept()
+{
+    local word_list="  -F --key-file -y --yes --tor --launch-tor --tor-control-port --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wormhole_ssh_invite()
+{
+    local word_list="  -c --code-length -u --user --tor --launch-tor --tor-control-port --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _wormhole wormhole

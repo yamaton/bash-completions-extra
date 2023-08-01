@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_shfmt()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --version -l --list -w --write -d --diff -s --simplify -mn --minify -ln --language-dialect -p --posix --filename -i --indent -bn --binary-next-line -ci --case-indent -sr --space-redirects -kp --keep-padding -fn --func-next-line -f --find --tojson"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _shfmt shfmt

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_traceroute()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -4 -6 -d --debug -F --dont-fragment -f --first -g --gateway -I --icmp -T --tcp -i --interface -m --max-hops -N --sim-queries -n -p --port -t --tos -l --flowlabel -w --wait -q --queries -r -s --source -z --sendwait -e --extensions -A --as-path-lookups -M --module -O --options --sport --fwmark -U --udp -UL -D --dccp -P --protocol --mtu --back -V --version --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _traceroute traceroute

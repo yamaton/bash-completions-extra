@@ -1,0 +1,166 @@
+# Auto-generated with h2o
+
+_precommit()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" autoupdate clean gc init-templatedir install install-hooks migrate-config run sample-config try-repo uninstall validate-config validate-manifest help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        autoupdate) _precommit_autoupdate
+            return
+            ;;
+
+        clean) _precommit_clean
+            return
+            ;;
+
+        gc) _precommit_gc
+            return
+            ;;
+
+        init-templatedir) _precommit_inittemplatedir
+            return
+            ;;
+
+        install) _precommit_install
+            return
+            ;;
+
+        install-hooks) _precommit_installhooks
+            return
+            ;;
+
+        migrate-config) _precommit_migrateconfig
+            return
+            ;;
+
+        run) _precommit_run
+            return
+            ;;
+
+        sample-config) _precommit_sampleconfig
+            return
+            ;;
+
+        try-repo) _precommit_tryrepo
+            return
+            ;;
+
+        uninstall) _precommit_uninstall
+            return
+            ;;
+
+        validate-config) _precommit_validateconfig
+            return
+            ;;
+
+        validate-manifest) _precommit_validatemanifest
+            return
+            ;;
+
+        help) _precommit_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" autoupdate clean gc init-templatedir install install-hooks migrate-config run sample-config try-repo uninstall validate-config validate-manifest help -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_autoupdate()
+{
+    local word_list="  -h --help --color -c --config --bleeding-edge --freeze --repo -j --jobs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_clean()
+{
+    local word_list="  -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_gc()
+{
+    local word_list="  -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_inittemplatedir()
+{
+    local word_list="  -h --help --color -c --config --no-allow-missing-config -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_install()
+{
+    local word_list="  -h --help --color -c --config -f --overwrite --install-hooks -t --hook-type --allow-missing-config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_installhooks()
+{
+    local word_list="  -h --help --color -c --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_migrateconfig()
+{
+    local word_list="  -h --help --color -c --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_run()
+{
+    local word_list="  -h --help --color -c --config --verbose -v --all-files -a --files --show-diff-on-failure --hook-stage --remote-branch --local-branch --from-ref --source -s --to-ref --origin -o --pre-rebase-upstream --pre-rebase-branch --commit-msg-filename --prepare-commit-message-source --commit-object-name --remote-name --remote-url --checkout-type --is-squash-merge --rewrite-command"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_sampleconfig()
+{
+    local word_list="  -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_tryrepo()
+{
+    local word_list="  -h --help --color -c --config --ref --rev --verbose -v --all-files -a --files --show-diff-on-failure --hook-stage --remote-branch --local-branch --from-ref --source -s --to-ref --origin -o --pre-rebase-upstream --pre-rebase-branch --commit-msg-filename --prepare-commit-message-source --commit-object-name --remote-name --remote-url --checkout-type --is-squash-merge --rewrite-command"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_uninstall()
+{
+    local word_list="  -h --help --color -c --config -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_validateconfig()
+{
+    local word_list="  -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_validatemanifest()
+{
+    local word_list="  -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_precommit_help()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _precommit pre-commit

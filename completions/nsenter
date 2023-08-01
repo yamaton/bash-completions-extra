@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_nsenter()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -t --target -m --mount -u --uts -i --ipc -n --net -p --pid -C --cgroup -U --user -T --time -S --setuid -G --setgid --preserve-credentials -w --wd -F --no-fork -Z --follow-context -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nsenter nsenter

@@ -1,0 +1,326 @@
+# Auto-generated with h2o
+
+_nix()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build develop flake help profile repl run search shell bundle copy edit eval fmt log path-info registry why-depends daemon describe-stores hash key nar print-dev-env realisation show-config show-derivation store doctor upgrade-nix"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _nix_build
+            return
+            ;;
+
+        develop) _nix_develop
+            return
+            ;;
+
+        flake) _nix_flake
+            return
+            ;;
+
+        help) _nix_help
+            return
+            ;;
+
+        profile) _nix_profile
+            return
+            ;;
+
+        repl) _nix_repl
+            return
+            ;;
+
+        run) _nix_run
+            return
+            ;;
+
+        search) _nix_search
+            return
+            ;;
+
+        shell) _nix_shell
+            return
+            ;;
+
+        bundle) _nix_bundle
+            return
+            ;;
+
+        copy) _nix_copy
+            return
+            ;;
+
+        edit) _nix_edit
+            return
+            ;;
+
+        eval) _nix_eval
+            return
+            ;;
+
+        fmt) _nix_fmt
+            return
+            ;;
+
+        log) _nix_log
+            return
+            ;;
+
+        path-info) _nix_pathinfo
+            return
+            ;;
+
+        registry) _nix_registry
+            return
+            ;;
+
+        why-depends) _nix_whydepends
+            return
+            ;;
+
+        daemon) _nix_daemon
+            return
+            ;;
+
+        describe-stores) _nix_describestores
+            return
+            ;;
+
+        hash) _nix_hash
+            return
+            ;;
+
+        key) _nix_key
+            return
+            ;;
+
+        nar) _nix_nar
+            return
+            ;;
+
+        print-dev-env) _nix_printdevenv
+            return
+            ;;
+
+        realisation) _nix_realisation
+            return
+            ;;
+
+        show-config) _nix_showconfig
+            return
+            ;;
+
+        show-derivation) _nix_showderivation
+            return
+            ;;
+
+        store) _nix_store
+            return
+            ;;
+
+        doctor) _nix_doctor
+            return
+            ;;
+
+        upgrade-nix) _nix_upgradenix
+            return
+            ;;
+
+    esac
+
+    local word_list=" build develop flake help profile repl run search shell bundle copy edit eval fmt log path-info registry why-depends daemon describe-stores hash key nar print-dev-env realisation show-config show-derivation store doctor upgrade-nix --help --offline --option --refresh --version --debug --log-format --print-build-logs -L --quiet --verbose -v --accept-flake-config --access-tokens --allow-dirty --allow-import-from-derivation --allow-new-privileges --allow-symlinked-store --allow-unsafe-native-code-during-evaluation --allowed-impure-host-deps --allowed-uris --allowed-users --auto-optimise-store --bash-prompt --bash-prompt-prefix --bash-prompt-suffix --build-hook --build-poll-interval --build-users-group --builders --builders-use-substitutes --commit-lockfile-summary --compress-build-log --connect-timeout --cores --diff-hook --download-attempts --enforce-determinism --eval-cache --experimental-features --extra-access-tokens --extra-allowed-impure-host-deps --extra-allowed-uris --extra-allowed-users --extra-experimental-features --extra-extra-platforms --extra-hashed-mirrors --extra-ignored-acls --extra-nix-path --extra-platforms --extra-plugin-files --extra-sandbox-paths --extra-secret-key-files --extra-substituters --extra-system-features --extra-trusted-public-keys --extra-trusted-substituters --extra-trusted-users --fallback --filter-syscalls --flake-registry --fsync-metadata --gc-reserved-space --hashed-mirrors --http-connections --http2 --ignore-try --ignored-acls --impersonate-linux-26 --keep-build-log --keep-derivations --keep-env-derivations --keep-failed --keep-going --keep-outputs --log-lines --max-build-log-size --max-free --max-jobs --max-silent-time --min-free --min-free-check-interval --nar-buffer-size --narinfo-cache-negative-ttl --narinfo-cache-positive-ttl --netrc-file --nix-path --no-accept-flake-config --no-allow-dirty --no-allow-import-from-derivation --no-allow-new-privileges --no-allow-symlinked-store --no-allow-unsafe-native-code-during-evaluation --no-auto-optimise-store --no-builders-use-substitutes --no-compress-build-log --no-enforce-determinism --no-eval-cache --no-fallback --no-filter-syscalls --no-fsync-metadata --no-http2 --no-ignore-try --no-impersonate-linux-26 --no-keep-build-log --no-keep-derivations --no-keep-env-derivations --no-keep-failed --no-keep-going --no-keep-outputs --no-preallocate-contents --no-print-missing --no-pure-eval --no-require-sigs --no-restrict-eval --no-run-diff-hook --no-sandbox --no-sandbox-fallback --no-show-trace --no-substitute --no-sync-before-registering --no-trace-function-calls --no-trace-verbose --no-use-case-hack --no-use-registries --no-use-sqlite-wal --no-warn-dirty --plugin-files --post-build-hook --pre-build-hook --preallocate-contents --print-missing --pure-eval --relaxed-sandbox --repeat --require-sigs --restrict-eval --run-diff-hook --sandbox --sandbox-build-dir --sandbox-dev-shm-size --sandbox-fallback --sandbox-paths --secret-key-files --show-trace --stalled-download-timeout --store --substitute --substituters --sync-before-registering --system --system-features --tarball-ttl --timeout --trace-function-calls --trace-verbose --trusted-public-keys --trusted-substituters --trusted-users --use-case-hack --use-registries --use-sqlite-wal --user-agent-suffix --warn-dirty"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_build()
+{
+    local word_list="  --debugger --dry-run --json --no-link --out-link -o --print-out-paths --profile --rebuild --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_develop()
+{
+    local word_list="  --build --check --command -c --configure --debugger --ignore-environment -i --install --installcheck --keep -k --phase --profile --redirect --unpack --unset -u --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_flake()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_profile()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_repl()
+{
+    local word_list="  --debugger --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_run()
+{
+    local word_list="  --debugger --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_search()
+{
+    local word_list="  --debugger --exclude -e --json --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_shell()
+{
+    local word_list="  --command -c --debugger --ignore-environment -i --keep -k --unset -u --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_bundle()
+{
+    local word_list="  --bundler --debugger --out-link -o --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_copy()
+{
+    local word_list="  --debugger --from --no-check-sigs --substitute-on-destination -s --to --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --all --derivation --expr --file -f --no-recursive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_edit()
+{
+    local word_list="  --debugger --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_eval()
+{
+    local word_list="  --apply --debugger --json --raw --read-only --write-to --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_fmt()
+{
+    local word_list="  --debugger --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_log()
+{
+    local word_list="  --debugger --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_pathinfo()
+{
+    local word_list="  --closure-size -S --debugger --human-readable -h --json --sigs --size -s --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --all --derivation --expr --file -f --recursive -r"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_registry()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_whydepends()
+{
+    local word_list="  --all -a --debugger --precise --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_daemon()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_describestores()
+{
+    local word_list="  --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_hash()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_key()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_nar()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_printdevenv()
+{
+    local word_list="  --debugger --json --profile --redirect --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_realisation()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_showconfig()
+{
+    local word_list="  --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_showderivation()
+{
+    local word_list="  --debugger --recursive -r --arg --argstr --eval-store --impure --include -I --override-flake --commit-lock-file --inputs-from --no-registries --no-update-lock-file --no-write-lock-file --override-input --recreate-lock-file --update-input --derivation --expr --file -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_store()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_doctor()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nix_upgradenix()
+{
+    local word_list="  --dry-run --nix-store-paths-url --profile -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nix nix

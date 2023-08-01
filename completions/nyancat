@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_nyancat()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -i --intro -t --telnet -n --no-counter -s --no-title -e --no-clear -f --frames -r --min-rows -R --max-rows -c --min-cols -C --max-cols -W --width -H --height -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nyancat nyancat

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rubybuild()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -k --keep -p --patch -v --verbose -4 --ipv4 -6 --ipv6 --definitions --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rubybuild ruby-build

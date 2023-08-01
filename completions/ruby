@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ruby()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --jit-warnings --jit-debug --jit-wait --jit-save-temps --jit-verbose --jit-max-cache --jit-min-calls"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ruby ruby

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_shasum()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --algorithm -b --binary -c --check --tag -t --text -U --UNIVERSAL -0 --01 --ignore-missing -q --quiet -s --status --strict -w --warn -h --help -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _shasum shasum

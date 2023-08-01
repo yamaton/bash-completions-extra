@@ -1,0 +1,696 @@
+# Auto-generated with h2o
+
+_nmcli()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" general networking radio connection device agent monitor"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        general) _nmcli_general
+            return
+            ;;
+
+        networking) _nmcli_networking
+            return
+            ;;
+
+        radio) _nmcli_radio
+            return
+            ;;
+
+        connection) _nmcli_connection
+            return
+            ;;
+
+        device) _nmcli_device
+            return
+            ;;
+
+        agent) _nmcli_agent
+            return
+            ;;
+
+        monitor) _nmcli_monitor
+            return
+            ;;
+
+    esac
+
+    local word_list=" general networking radio connection device agent monitor -a --ask -c --colors -e --escape -f --fields -g --get-values -h --help -m --mode -o --overview -p --pretty -s --show-secrets -t --terse -v --version -w --wait --complete-args"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_general()
+{
+    local cmd i subcommands
+    local subcommands=" status hostname permissions logging"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        status) _nmcli_general_status
+            return
+            ;;
+
+        hostname) _nmcli_general_hostname
+            return
+            ;;
+
+        permissions) _nmcli_general_permissions
+            return
+            ;;
+
+        logging) _nmcli_general_logging
+            return
+            ;;
+
+    esac
+
+    local word_list=" status hostname permissions logging "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_general_status()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_general_hostname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_general_permissions()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_general_logging()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_networking()
+{
+    local cmd i subcommands
+    local subcommands=" on off connectivity"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        on) _nmcli_networking_on
+            return
+            ;;
+
+        off) _nmcli_networking_off
+            return
+            ;;
+
+        connectivity) _nmcli_networking_connectivity
+            return
+            ;;
+
+    esac
+
+    local word_list=" on off connectivity "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_networking_on()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_networking_off()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_networking_connectivity()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio()
+{
+    local cmd i subcommands
+    local subcommands=" all wifi wwan"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        all) _nmcli_radio_all
+            return
+            ;;
+
+        wifi) _nmcli_radio_wifi
+            return
+            ;;
+
+        wwan) _nmcli_radio_wwan
+            return
+            ;;
+
+    esac
+
+    local word_list=" all wifi wwan "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_all()
+{
+    local cmd i subcommands
+    local subcommands=" on off"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        on) _nmcli_radio_all_on
+            return
+            ;;
+
+        off) _nmcli_radio_all_off
+            return
+            ;;
+
+    esac
+
+    local word_list=" on off "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_all_on()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_all_off()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_wifi()
+{
+    local cmd i subcommands
+    local subcommands=" on off"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        on) _nmcli_radio_wifi_on
+            return
+            ;;
+
+        off) _nmcli_radio_wifi_off
+            return
+            ;;
+
+    esac
+
+    local word_list=" on off "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_wifi_on()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_wifi_off()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_wwan()
+{
+    local cmd i subcommands
+    local subcommands=" on off"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        on) _nmcli_radio_wwan_on
+            return
+            ;;
+
+        off) _nmcli_radio_wwan_off
+            return
+            ;;
+
+    esac
+
+    local word_list=" on off "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_wwan_on()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_radio_wwan_off()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection()
+{
+    local cmd i subcommands
+    local subcommands=" show up down add modify clone edit delete monitor reload load import export"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        show) _nmcli_connection_show
+            return
+            ;;
+
+        up) _nmcli_connection_up
+            return
+            ;;
+
+        down) _nmcli_connection_down
+            return
+            ;;
+
+        add) _nmcli_connection_add
+            return
+            ;;
+
+        modify) _nmcli_connection_modify
+            return
+            ;;
+
+        clone) _nmcli_connection_clone
+            return
+            ;;
+
+        edit) _nmcli_connection_edit
+            return
+            ;;
+
+        delete) _nmcli_connection_delete
+            return
+            ;;
+
+        monitor) _nmcli_connection_monitor
+            return
+            ;;
+
+        reload) _nmcli_connection_reload
+            return
+            ;;
+
+        load) _nmcli_connection_load
+            return
+            ;;
+
+        import) _nmcli_connection_import
+            return
+            ;;
+
+        export) _nmcli_connection_export
+            return
+            ;;
+
+    esac
+
+    local word_list=" show up down add modify clone edit delete monitor reload load import export "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_up()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_down()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_modify()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_clone()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_edit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_delete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_monitor()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_reload()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_load()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_import()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_connection_export()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device()
+{
+    local cmd i subcommands
+    local subcommands=" status show set connect reapply modify disconnect delete monitor wifi lldp"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        status) _nmcli_device_status
+            return
+            ;;
+
+        show) _nmcli_device_show
+            return
+            ;;
+
+        set) _nmcli_device_set
+            return
+            ;;
+
+        connect) _nmcli_device_connect
+            return
+            ;;
+
+        reapply) _nmcli_device_reapply
+            return
+            ;;
+
+        modify) _nmcli_device_modify
+            return
+            ;;
+
+        disconnect) _nmcli_device_disconnect
+            return
+            ;;
+
+        delete) _nmcli_device_delete
+            return
+            ;;
+
+        monitor) _nmcli_device_monitor
+            return
+            ;;
+
+        wifi) _nmcli_device_wifi
+            return
+            ;;
+
+        lldp) _nmcli_device_lldp
+            return
+            ;;
+
+    esac
+
+    local word_list=" status show set connect reapply modify disconnect delete monitor wifi lldp "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_status()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_connect()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_reapply()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_modify()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_disconnect()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_delete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_monitor()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_wifi()
+{
+    local cmd i subcommands
+    local subcommands=" list connect hotspot rescan"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _nmcli_device_wifi_list
+            return
+            ;;
+
+        connect) _nmcli_device_wifi_connect
+            return
+            ;;
+
+        hotspot) _nmcli_device_wifi_hotspot
+            return
+            ;;
+
+        rescan) _nmcli_device_wifi_rescan
+            return
+            ;;
+
+    esac
+
+    local word_list=" list connect hotspot rescan "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_wifi_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_wifi_connect()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_wifi_hotspot()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_wifi_rescan()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_device_lldp()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_agent()
+{
+    local cmd i subcommands
+    local subcommands=" secret polkit all"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        secret) _nmcli_agent_secret
+            return
+            ;;
+
+        polkit) _nmcli_agent_polkit
+            return
+            ;;
+
+        all) _nmcli_agent_all
+            return
+            ;;
+
+    esac
+
+    local word_list=" secret polkit all "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_agent_secret()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_agent_polkit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_agent_all()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nmcli_monitor()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nmcli nmcli

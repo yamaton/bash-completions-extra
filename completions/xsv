@@ -1,0 +1,216 @@
+# Auto-generated with h2o
+
+_xsv()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" cat count fixlengths flatten fmt frequency headers help index input join sample search select slice sort split stats table"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cat) _xsv_cat
+            return
+            ;;
+
+        count) _xsv_count
+            return
+            ;;
+
+        fixlengths) _xsv_fixlengths
+            return
+            ;;
+
+        flatten) _xsv_flatten
+            return
+            ;;
+
+        fmt) _xsv_fmt
+            return
+            ;;
+
+        frequency) _xsv_frequency
+            return
+            ;;
+
+        headers) _xsv_headers
+            return
+            ;;
+
+        help) _xsv_help
+            return
+            ;;
+
+        index) _xsv_index
+            return
+            ;;
+
+        input) _xsv_input
+            return
+            ;;
+
+        join) _xsv_join
+            return
+            ;;
+
+        sample) _xsv_sample
+            return
+            ;;
+
+        search) _xsv_search
+            return
+            ;;
+
+        select) _xsv_select
+            return
+            ;;
+
+        slice) _xsv_slice
+            return
+            ;;
+
+        sort) _xsv_sort
+            return
+            ;;
+
+        split) _xsv_split
+            return
+            ;;
+
+        stats) _xsv_stats
+            return
+            ;;
+
+        table) _xsv_table
+            return
+            ;;
+
+    esac
+
+    local word_list=" cat count fixlengths flatten fmt frequency headers help index input join sample search select slice sort split stats table --list -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_cat()
+{
+    local word_list="  -p --pad -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_count()
+{
+    local word_list="  -h --help -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_fixlengths()
+{
+    local word_list="  -l --length -h --help -o --output -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_flatten()
+{
+    local word_list="  -c --condense -s --separator -h --help -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_fmt()
+{
+    local word_list="  -t --out-delimiter --crlf --ascii --quote --quote-always --escape -h --help -o --output -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_frequency()
+{
+    local word_list="  -s --select -l --limit -a --asc --no-nulls -j --jobs -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_headers()
+{
+    local word_list="  -j --just-names --intersect -h --help -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_help()
+{
+    local word_list="  --list -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_index()
+{
+    local word_list="  -o --output -h --help -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_input()
+{
+    local word_list="  --quote --escape --no-quoting -h --help -o --output -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_join()
+{
+    local word_list="  --no-case --left --right --full --cross --nulls -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_sample()
+{
+    local word_list="  -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_search()
+{
+    local word_list="  -i --ignore-case -s --select -v --invert-match -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_select()
+{
+    local word_list="  -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_slice()
+{
+    local word_list="  -s --start -e --end -l --len -i --index -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_sort()
+{
+    local word_list="  -s --select -N --numeric -R --reverse -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_split()
+{
+    local word_list="  -s --size -j --jobs --filename -h --help -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_stats()
+{
+    local word_list="  -s --select --everything --mode --cardinality --median --nulls -j --jobs -h --help -o --output -n --no-headers -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_xsv_table()
+{
+    local word_list="  -w --width -p --pad -c --condense -h --help -o --output -d --delimiter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _xsv xsv

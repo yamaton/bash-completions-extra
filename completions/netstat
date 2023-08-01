@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_netstat()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --route -r --groups -g --interfaces -i --masquerade -M --statistics -s --verbose -v --wide -W --numeric -n --numeric-hosts --numeric-ports --numeric-users --protocol -A -c --continuous -e --extend -o --timers -p --program -l --listening -a --all -F -C"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _netstat netstat

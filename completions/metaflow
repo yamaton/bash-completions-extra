@@ -1,0 +1,202 @@
+# Auto-generated with h2o
+
+_metaflow()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" configure help status tutorials"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        configure) _metaflow_configure
+            return
+            ;;
+
+        help) _metaflow_help
+            return
+            ;;
+
+        status) _metaflow_status
+            return
+            ;;
+
+        tutorials) _metaflow_tutorials
+            return
+            ;;
+
+    esac
+
+    local word_list=" configure help status tutorials --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure()
+{
+    local cmd i subcommands
+    local subcommands=" aws azure export import kubernetes reset sandbox show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        aws) _metaflow_configure_aws
+            return
+            ;;
+
+        azure) _metaflow_configure_azure
+            return
+            ;;
+
+        export) _metaflow_configure_export
+            return
+            ;;
+
+        import) _metaflow_configure_import
+            return
+            ;;
+
+        kubernetes) _metaflow_configure_kubernetes
+            return
+            ;;
+
+        reset) _metaflow_configure_reset
+            return
+            ;;
+
+        sandbox) _metaflow_configure_sandbox
+            return
+            ;;
+
+        show) _metaflow_configure_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" aws azure export import kubernetes reset sandbox show --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_aws()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_azure()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_export()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_import()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_kubernetes()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_reset()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_sandbox()
+{
+    local word_list="  -p --profile -o --overwrite --no-overwrite --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_configure_show()
+{
+    local word_list="  -p --profile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_help()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_status()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_tutorials()
+{
+    local cmd i subcommands
+    local subcommands=" info list pull"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        info) _metaflow_tutorials_info
+            return
+            ;;
+
+        list) _metaflow_tutorials_list
+            return
+            ;;
+
+        pull) _metaflow_tutorials_pull
+            return
+            ;;
+
+    esac
+
+    local word_list=" info list pull --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_tutorials_info()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_tutorials_list()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_metaflow_tutorials_pull()
+{
+    local word_list="  --episode --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _metaflow metaflow

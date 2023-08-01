@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rlwrap()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --always-readline -A --ansi-colour-aware -b --break-chars -c --complete-filenames -C --command-name -D --history-no-dupes -e --extra-char-after-completion -f --file -g --forget-matching -h --help -H --history-filename -i --case-insensitive -I --pass-sigint-as-sigterm -l --logfile -n --no-warnings -N --no-children -m --multi-line -M --multi-line-ext -o --one-shot -O --only-cook -p --prompt-colour -P --pre-given -q --quote-characters -r --remember -R --renice -s --histsize -S --substitute-prompt -t --set-term-name -U --mirror-arguments -v --version -w --wait-before-prompt -W --polling -z --filter"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rlwrap rlwrap

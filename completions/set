@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_set()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a -b -e -f -h -k -m -n -o -p -t -u -v -x -B -C -E -H -P -T -- -"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _set set

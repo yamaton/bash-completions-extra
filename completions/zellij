@@ -1,0 +1,189 @@
+# Auto-generated with h2o
+
+_zellij()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" action attach convert-config convert-layout convert-theme edit help kill-all-sessions kill-session list-sessions options run setup"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        action) _zellij_action
+            return
+            ;;
+
+        attach) _zellij_attach
+            return
+            ;;
+
+        convert-config) _zellij_convertconfig
+            return
+            ;;
+
+        convert-layout) _zellij_convertlayout
+            return
+            ;;
+
+        convert-theme) _zellij_converttheme
+            return
+            ;;
+
+        edit) _zellij_edit
+            return
+            ;;
+
+        help) _zellij_help
+            return
+            ;;
+
+        kill-all-sessions) _zellij_killallsessions
+            return
+            ;;
+
+        kill-session) _zellij_killsession
+            return
+            ;;
+
+        list-sessions) _zellij_listsessions
+            return
+            ;;
+
+        options) _zellij_options
+            return
+            ;;
+
+        run) _zellij_run
+            return
+            ;;
+
+        setup) _zellij_setup
+            return
+            ;;
+
+    esac
+
+    local word_list=" action attach convert-config convert-layout convert-theme edit help kill-all-sessions kill-session list-sessions options run setup -c --config --config-dir -d --debug --data-dir -h --help -l --layout --max-panes -s --session -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_action()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_attach()
+{
+    local cmd i subcommands
+    local subcommands=" help options"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        help) _zellij_attach_help
+            return
+            ;;
+
+        options) _zellij_attach_options
+            return
+            ;;
+
+    esac
+
+    local word_list=" help options -c --create -h --help --index"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_attach_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_attach_options()
+{
+    local word_list="  --attach-to-session --copy-clipboard --copy-command --copy-on-select --default-layout --default-mode --default-shell --disable-mouse-mode -h --help --layout-dir --mirror-session --mouse-mode --no-pane-frames --on-force-close --pane-frames --scrollback-editor --session-name --simplified-ui --theme --theme-dir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_convertconfig()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_convertlayout()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_converttheme()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_edit()
+{
+    local word_list="  --cwd -d --direction -f --floating -h --help -l --line-number"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_killallsessions()
+{
+    local word_list="  -h --help -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_killsession()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_listsessions()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_options()
+{
+    local word_list="  --attach-to-session --copy-clipboard --copy-command --copy-on-select --default-layout --default-mode --default-shell --disable-mouse-mode -h --help --layout-dir --mirror-session --mouse-mode --no-pane-frames --on-force-close --pane-frames --scrollback-editor --session-name --simplified-ui --theme --theme-dir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_run()
+{
+    local word_list="  -c --close-on-exit --cwd -d --direction -f --floating -h --help -n --name -s --start-suspended"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_zellij_setup()
+{
+    local word_list="  --check --clean --dump-config --dump-layout --generate-auto-start --generate-completion -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _zellij zellij

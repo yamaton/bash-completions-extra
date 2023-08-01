@@ -1,0 +1,146 @@
+# Auto-generated with h2o
+
+_vsce()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" ls package publish unpublish ls-publishers delete-publisher login logout verify-pat show search help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ls) _vsce_ls
+            return
+            ;;
+
+        package) _vsce_package
+            return
+            ;;
+
+        publish) _vsce_publish
+            return
+            ;;
+
+        unpublish) _vsce_unpublish
+            return
+            ;;
+
+        ls-publishers) _vsce_lspublishers
+            return
+            ;;
+
+        delete-publisher) _vsce_deletepublisher
+            return
+            ;;
+
+        login) _vsce_login
+            return
+            ;;
+
+        logout) _vsce_logout
+            return
+            ;;
+
+        verify-pat) _vsce_verifypat
+            return
+            ;;
+
+        show) _vsce_show
+            return
+            ;;
+
+        search) _vsce_search
+            return
+            ;;
+
+        help) _vsce_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" ls package publish unpublish ls-publishers delete-publisher login logout verify-pat show search help -V --version -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_ls()
+{
+    local word_list="  --yarn --no-yarn --packagedDependencies --ignoreFile --dependencies --no-dependencies -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_package()
+{
+    local word_list="  -o --out -t --target -m --message --no-git-tag-version --no-update-package-json --githubBranch --gitlabBranch --no-rewrite-relative-links --baseContentUrl --baseImagesUrl --yarn --no-yarn --ignoreFile --no-gitHubIssueLinking --no-gitLabIssueLinking --dependencies --no-dependencies --pre-release --allow-star-activation --allow-missing-repository -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_publish()
+{
+    local word_list="  -p --pat -t --target -m --message --no-git-tag-version --no-update-package-json -i --packagePath --githubBranch --gitlabBranch --baseContentUrl --baseImagesUrl --yarn --no-yarn --noVerify --ignoreFile --dependencies --no-dependencies --pre-release --allow-star-activation --allow-missing-repository --skip-duplicate -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_unpublish()
+{
+    local word_list="  -p --pat -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_lspublishers()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_deletepublisher()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_login()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_logout()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_verifypat()
+{
+    local word_list="  -p --pat -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_show()
+{
+    local word_list="  --json -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_search()
+{
+    local word_list="  --json --stats -p --pagesize -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_vsce_help()
+{
+    local word_list="  -V --version -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _vsce vsce

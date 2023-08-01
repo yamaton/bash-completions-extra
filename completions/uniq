@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_uniq()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --count -d --repeated -D --all-repeated -f --skip-fields --group -i --ignore-case -s --skip-chars -u --unique -z --zero-terminated -w --check-chars --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _uniq uniq

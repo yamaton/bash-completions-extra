@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_split()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --suffix-length --additional-suffix -b --bytes -C --line-bytes -d --numeric-suffixes -x --hex-suffixes -e --elide-empty-files --filter -l --lines -n --number -t --separator -u --unbuffered --verbose --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _split split

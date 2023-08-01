@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgupgrade()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -b --old-bindir -B --new-bindir -c --check -d --old-datadir -D --new-datadir -j --jobs -k --link -N --no-sync -o --old-options -O --new-options -p --old-port -P --new-port -r --retain -s --socketdir -U --username -v --verbose -V --version --clone -? --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgupgrade pg_upgrade

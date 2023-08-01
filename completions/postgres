@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_postgres()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -B -c -C -d -D -e -F -h -i -k -l -N -p -s -S -V --version --NAME --describe-config -? --help -f -n -O -P -t -T -W --single -d -E -j -r --boot --check"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _postgres postgres

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgdumpall()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -f --file -v --verbose -V --version --lock-wait-timeout -? --help -a --data-only -c --clean -E --encoding -g --globals-only -O --no-owner -r --roles-only -s --schema-only -S --superuser -t --tablespaces-only -x --no-privileges --binary-upgrade --column-inserts --disable-dollar-quoting --disable-triggers --exclude-database --extra-float-digits --if-exists --inserts --load-via-partition-root --no-comments --no-publications --no-role-passwords --no-security-labels --no-subscriptions --no-sync --no-table-access-method --no-tablespaces --no-toast-compression --no-unlogged-table-data --on-conflict-do-nothing --quote-all-identifiers --rows-per-insert --use-set-session-authorization -d --dbname -h --host -l --database -p --port -U --username -w --no-password -W --password --role"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgdumpall pg_dumpall

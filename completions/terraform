@@ -1,0 +1,402 @@
+# Auto-generated with h2o
+
+_terraform()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" init validate plan apply destroy console fmt force-unlock get graph import login logout output providers refresh show state taint test untaint version workspace"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        init) _terraform_init
+            return
+            ;;
+
+        validate) _terraform_validate
+            return
+            ;;
+
+        plan) _terraform_plan
+            return
+            ;;
+
+        apply) _terraform_apply
+            return
+            ;;
+
+        destroy) _terraform_destroy
+            return
+            ;;
+
+        console) _terraform_console
+            return
+            ;;
+
+        fmt) _terraform_fmt
+            return
+            ;;
+
+        force-unlock) _terraform_forceunlock
+            return
+            ;;
+
+        get) _terraform_get
+            return
+            ;;
+
+        graph) _terraform_graph
+            return
+            ;;
+
+        import) _terraform_import
+            return
+            ;;
+
+        login) _terraform_login
+            return
+            ;;
+
+        logout) _terraform_logout
+            return
+            ;;
+
+        output) _terraform_output
+            return
+            ;;
+
+        providers) _terraform_providers
+            return
+            ;;
+
+        refresh) _terraform_refresh
+            return
+            ;;
+
+        show) _terraform_show
+            return
+            ;;
+
+        state) _terraform_state
+            return
+            ;;
+
+        taint) _terraform_taint
+            return
+            ;;
+
+        test) _terraform_test
+            return
+            ;;
+
+        untaint) _terraform_untaint
+            return
+            ;;
+
+        version) _terraform_version
+            return
+            ;;
+
+        workspace) _terraform_workspace
+            return
+            ;;
+
+    esac
+
+    local word_list=" init validate plan apply destroy console fmt force-unlock get graph import login logout output providers refresh show state taint test untaint version workspace -chdir -help -version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_init()
+{
+    local word_list="  -backend -backend-config -force-copy -from-module -get -input -lock -lock-timeout -no-color -plugin-dir -reconfigure -migrate-state -upgrade -lockfile -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_validate()
+{
+    local word_list="  -json -no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_plan()
+{
+    local word_list="  -destroy -refresh-only -refresh -replace -target -var -var-file -compact-warnings -detailed-exitcode -input -lock -lock-timeout -no-color -out -parallelism -state"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_apply()
+{
+    local word_list="  -auto-approve -backup -compact-warnings -destroy -lock -lock-timeout -input -no-color -parallelism -state -state-out"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_destroy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_console()
+{
+    local word_list="  -state -var -var-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_fmt()
+{
+    local word_list="  -list -write -diff -check -no-color -recursive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_forceunlock()
+{
+    local word_list="  -force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_get()
+{
+    local word_list="  -update -no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_graph()
+{
+    local word_list="  -plan -draw-cycles -type -module-depth"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_import()
+{
+    local word_list="  -config -input -lock -lock-timeout -no-color -var -var-file -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_login()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_logout()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_output()
+{
+    local word_list="  -state -no-color -json -raw"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_providers()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_refresh()
+{
+    local word_list="  -compact-warnings -input -lock -lock-timeout -no-color -parallelism -target -var -var-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_show()
+{
+    local word_list="  -no-color -json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state()
+{
+    local cmd i subcommands
+    local subcommands=" list mv pull push replace-provider rm show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _terraform_state_list
+            return
+            ;;
+
+        mv) _terraform_state_mv
+            return
+            ;;
+
+        pull) _terraform_state_pull
+            return
+            ;;
+
+        push) _terraform_state_push
+            return
+            ;;
+
+        replace-provider) _terraform_state_replaceprovider
+            return
+            ;;
+
+        rm) _terraform_state_rm
+            return
+            ;;
+
+        show) _terraform_state_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" list mv pull push replace-provider rm show "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_list()
+{
+    local word_list="  -state -id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_mv()
+{
+    local word_list="  -dry-run -lock -lock-timeout -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_pull()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_push()
+{
+    local word_list="  -force -lock -lock-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_replaceprovider()
+{
+    local word_list="  -auto-approve -lock -lock-timeout -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_rm()
+{
+    local word_list="  -dry-run -backup -lock -lock-timeout -state -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_state_show()
+{
+    local word_list="  -state"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_taint()
+{
+    local word_list="  -allow-missing -lock -lock-timeout -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_test()
+{
+    local word_list="  - - - -compact-warnings -junit-xml -no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_untaint()
+{
+    local word_list="  -allow-missing -lock -lock-timeout -ignore-remote-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_version()
+{
+    local word_list="  -json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_workspace()
+{
+    local cmd i subcommands
+    local subcommands=" delete list new select show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        delete) _terraform_workspace_delete
+            return
+            ;;
+
+        list) _terraform_workspace_list
+            return
+            ;;
+
+        new) _terraform_workspace_new
+            return
+            ;;
+
+        select) _terraform_workspace_select
+            return
+            ;;
+
+        show) _terraform_workspace_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" delete list new select show "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_workspace_delete()
+{
+    local word_list="  -force -lock -lock-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_workspace_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_workspace_new()
+{
+    local word_list="  -lock -lock-timeout -state"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_workspace_select()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_terraform_workspace_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _terraform terraform

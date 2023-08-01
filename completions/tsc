@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_tsc()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --help -h --watch -w --all --version -v --init --project -p --build -b --showConfig --pretty --target -t --module -m --lib --allowJs --checkJs --jsx --declaration -d --declarationMap --emitDeclarationOnly --sourceMap --outFile --outDir --removeComments --noEmit --strict --types --esModuleInterop"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _tsc tsc

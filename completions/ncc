@@ -1,0 +1,76 @@
+# Auto-generated with h2o
+
+_ncc()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build run cache help version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _ncc_build
+            return
+            ;;
+
+        run) _ncc_run
+            return
+            ;;
+
+        cache) _ncc_cache
+            return
+            ;;
+
+        help) _ncc_help
+            return
+            ;;
+
+        version) _ncc_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" build run cache help version "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ncc_build()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ncc_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ncc_cache()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ncc_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ncc_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ncc ncc

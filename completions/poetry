@@ -1,0 +1,544 @@
+# Auto-generated with h2o
+
+_poetry()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" about add build check config export help init install list lock new publish remove run search shell show update version cache debug env self source list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        about) _poetry_about
+            return
+            ;;
+
+        add) _poetry_add
+            return
+            ;;
+
+        build) _poetry_build
+            return
+            ;;
+
+        check) _poetry_check
+            return
+            ;;
+
+        config) _poetry_config
+            return
+            ;;
+
+        export) _poetry_export
+            return
+            ;;
+
+        help) _poetry_help
+            return
+            ;;
+
+        init) _poetry_init
+            return
+            ;;
+
+        install) _poetry_install
+            return
+            ;;
+
+        list) _poetry_list
+            return
+            ;;
+
+        lock) _poetry_lock
+            return
+            ;;
+
+        new) _poetry_new
+            return
+            ;;
+
+        publish) _poetry_publish
+            return
+            ;;
+
+        remove) _poetry_remove
+            return
+            ;;
+
+        run) _poetry_run
+            return
+            ;;
+
+        search) _poetry_search
+            return
+            ;;
+
+        shell) _poetry_shell
+            return
+            ;;
+
+        show) _poetry_show
+            return
+            ;;
+
+        update) _poetry_update
+            return
+            ;;
+
+        version) _poetry_version
+            return
+            ;;
+
+        cache) _poetry_cache
+            return
+            ;;
+
+        debug) _poetry_debug
+            return
+            ;;
+
+        env) _poetry_env
+            return
+            ;;
+
+        self) _poetry_self
+            return
+            ;;
+
+        source) _poetry_source
+            return
+            ;;
+
+        list) _poetry_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" about add build check config export help init install list lock new publish remove run search shell show update version cache debug env self source list -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_about()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_add()
+{
+    local word_list="  -G --group -D --dev -e --editable -E --extras --optional --python --platform --source --allow-prereleases --dry-run --lock -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_build()
+{
+    local word_list="  -f --format -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_check()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_config()
+{
+    local word_list="  --list --unset --local -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_export()
+{
+    local word_list="  -f --format -o --output --without-hashes --without-urls --dev --without --with --only -E --extras --with-credentials -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_help()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_init()
+{
+    local word_list="  --name --description --author --python --dependency --dev-dependency -l --license -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_install()
+{
+    local word_list="  --without --with --only --no-dev --sync --no-root --no-directory --dry-run --remove-untracked -E --extras --all-extras --only-root --compile -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_list()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_lock()
+{
+    local word_list="  --no-update --check -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_new()
+{
+    local word_list="  --name --src --readme -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_publish()
+{
+    local word_list="  -r --repository -u --username -p --password --cert --client-cert --build --dry-run --skip-existing -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_remove()
+{
+    local word_list="  -G --group -D --dev --dry-run --lock -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_run()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_search()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_shell()
+{
+    local word_list="  -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_show()
+{
+    local word_list="  --without --with --only --no-dev -t --tree --why -l --latest -o --outdated -a --all -T --top-level -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_update()
+{
+    local word_list="  --without --with --only --no-dev --dry-run --lock -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_version()
+{
+    local word_list="  -s --short --dry-run -h --help -q --quiet -V --version --ansi --no-ansi -n --no-interaction --no-plugins --no-cache -C --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_cache()
+{
+    local cmd i subcommands
+    local subcommands=" clear list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clear) _poetry_cache_clear
+            return
+            ;;
+
+        list) _poetry_cache_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" clear list "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_cache_clear()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_cache_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_debug()
+{
+    local cmd i subcommands
+    local subcommands=" info resolve"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        info) _poetry_debug_info
+            return
+            ;;
+
+        resolve) _poetry_debug_resolve
+            return
+            ;;
+
+    esac
+
+    local word_list=" info resolve "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_debug_info()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_debug_resolve()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_env()
+{
+    local cmd i subcommands
+    local subcommands=" info list remove use"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        info) _poetry_env_info
+            return
+            ;;
+
+        list) _poetry_env_list
+            return
+            ;;
+
+        remove) _poetry_env_remove
+            return
+            ;;
+
+        use) _poetry_env_use
+            return
+            ;;
+
+    esac
+
+    local word_list=" info list remove use "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_env_info()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_env_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_env_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_env_use()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self()
+{
+    local cmd i subcommands
+    local subcommands=" add install lock remove show update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _poetry_self_add
+            return
+            ;;
+
+        install) _poetry_self_install
+            return
+            ;;
+
+        lock) _poetry_self_lock
+            return
+            ;;
+
+        remove) _poetry_self_remove
+            return
+            ;;
+
+        show) _poetry_self_show
+            return
+            ;;
+
+        update) _poetry_self_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" add install lock remove show update "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_install()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_lock()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_show()
+{
+    local cmd i subcommands
+    local subcommands=" plugins"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        plugins) _poetry_self_show_plugins
+            return
+            ;;
+
+    esac
+
+    local word_list=" plugins "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_show_plugins()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_self_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_source()
+{
+    local cmd i subcommands
+    local subcommands=" add remove show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _poetry_source_add
+            return
+            ;;
+
+        remove) _poetry_source_remove
+            return
+            ;;
+
+        show) _poetry_source_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" add remove show "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_source_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_source_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_source_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_poetry_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _poetry poetry

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_time()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -o --output -a --append -f --format --help -p --portability -v --verbose --quiet -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _time time

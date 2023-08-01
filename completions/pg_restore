@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgrestore()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -d --dbname -f --file -F --format -l --list -v --verbose -V --version -? --help -a --data-only -c --clean -C --create -e --exit-on-error -I --index -j --jobs -L --use-list -n --schema -N --exclude-schema -O --no-owner -P --function -s --schema-only -S --superuser -t --table -T --trigger -x --no-privileges -1 --single-transaction --disable-triggers --enable-row-security --if-exists --no-comments --no-data-for-failed-tables --no-publications --no-security-labels --no-subscriptions --no-table-access-method --no-tablespaces --section --strict-names --use-set-session-authorization -h --host -p --port -U --username -w --no-password -W --password --role"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgrestore pg_restore

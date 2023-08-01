@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_procs()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --and -o --or -d --nand -r --nor -l --list --thread -t --tree -w --watch -W --watch-interval -i --insert --only --sorta --sortd -c --color --theme -p --pager --interval --config --completion --completion-out --no-header -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _procs procs

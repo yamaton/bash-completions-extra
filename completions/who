@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_who()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -b --boot -d --dead -H --heading --ips -l --login --lookup -m -p --process -q --count -r --runlevel -s --short -t --time -T -w --mesg -u --users --message --writable --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _who who

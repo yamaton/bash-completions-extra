@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rebot()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --rpa -R --merge -N --name -D --doc -M --metadata -G --settag -t --test --task -s --suite -i --include -e --exclude --processemptysuite -c --critical -n --noncritical -d --outputdir -o --output -l --log -r --report -x --xunit --xunitskipnoncritical -T --timestampoutputs --splitlog --logtitle --reporttitle --reportbackground -L --loglevel --suitestatlevel --tagstatinclude --tagstatexclude --tagstatcombine --tagdoc --tagstatlink --expandkeywords --removekeywords --flattenkeywords --starttime --endtime --nostatusrc --prerebotmodifier -C --consolecolors -P --pythonpath -A --argumentfile -h -? --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rebot rebot

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_realpath()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -e --canonicalize-existing -m --canonicalize-missing -L --logical -P --physical -q --quiet --relative-to --relative-base -s --strip --no-symlinks -z --zero --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _realpath realpath

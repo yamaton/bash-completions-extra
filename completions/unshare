@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_unshare()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -m --mount -u --uts -i --ipc -n --net -p --pid -U --user -C --cgroup -T --time -f --fork --map-user --map-group -r --map-root-user -c --map-current-user --kill-child --mount-proc --propagation --setgroups --keep-caps -R --root -w --wd -S --setuid -G --setgid --monotonic --boottime -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _unshare unshare

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgrewind()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --restore-target-wal -D --target-pgdata --source-pgdata --source-server -n --dry-run -N --no-sync -P --progress -R --write-recovery-conf --config-file --debug --no-ensure-shutdown -V --version -? --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgrewind pg_rewind

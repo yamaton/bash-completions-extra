@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgresetwal()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --commit-timestamp-ids -e --epoch -f --force -l --next-wal-file -m --multixact-ids -n --dry-run -o --next-oid -O --multixact-offset -u --oldest-transaction-id -V --version -x --next-transaction-id --wal-segsize -? --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgresetwal pg_resetwal

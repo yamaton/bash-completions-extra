@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgcli()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -h --host -p --port -U --username -u --user -W --password -w --no-password --single-connection -v --version -d --dbname --pgclirc -D --dsn --list-dsn --row-limit --less-chatty --prompt --prompt-dsn -l --list --auto-vertical-output --warn --no-warn --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgcli pgcli

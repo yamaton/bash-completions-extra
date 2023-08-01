@@ -1,0 +1,86 @@
+# Auto-generated with h2o
+
+_miniwdl()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" check configure run zip localize eval"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _miniwdl_check
+            return
+            ;;
+
+        configure) _miniwdl_configure
+            return
+            ;;
+
+        run) _miniwdl_run
+            return
+            ;;
+
+        zip) _miniwdl_zip
+            return
+            ;;
+
+        localize) _miniwdl_localize
+            return
+            ;;
+
+        eval) _miniwdl_eval
+            return
+            ;;
+
+    esac
+
+    local word_list=" check configure run zip localize eval -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_miniwdl_check()
+{
+    local word_list="  -h --help --strict --suppress --no-suppress -p --path --no-outside-imports --no-quant-check --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_miniwdl_configure()
+{
+    local word_list="  -h --help --show --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_miniwdl_run()
+{
+    local word_list="  -h --help -i --input --empty --none --task -j --json -d --dir --error-json -o -v --verbose --no-color --log-json --cfg --runtime-defaults --no-cache --env --copy-input-files --copy-input-files-for --as-me -p --path --no-outside-imports --no-quant-check --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_miniwdl_zip()
+{
+    local word_list="  -h --help -o --output -f --force -p --path --no-outside-imports --no-quant-check --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_miniwdl_localize()
+{
+    local word_list="  -h --help --task --file --directory --no-cache --cfg -v --verbose --no-color --log-json -p --path --no-outside-imports --no-quant-check --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_miniwdl_eval()
+{
+    local word_list="  -h --help --wdl-version -v --type -t -p --path --no-outside-imports --no-quant-check --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _miniwdl miniwdl

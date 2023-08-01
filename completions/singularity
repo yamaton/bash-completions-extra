@@ -1,0 +1,1072 @@
+# Auto-generated with h2o
+
+_singularity()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build cache capability completion config delete exec help inspect instance key oci overlay plugin pull push remote run run-help search shell sif sign test verify version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _singularity_build
+            return
+            ;;
+
+        cache) _singularity_cache
+            return
+            ;;
+
+        capability) _singularity_capability
+            return
+            ;;
+
+        completion) _singularity_completion
+            return
+            ;;
+
+        config) _singularity_config
+            return
+            ;;
+
+        delete) _singularity_delete
+            return
+            ;;
+
+        exec) _singularity_exec
+            return
+            ;;
+
+        help) _singularity_help
+            return
+            ;;
+
+        inspect) _singularity_inspect
+            return
+            ;;
+
+        instance) _singularity_instance
+            return
+            ;;
+
+        key) _singularity_key
+            return
+            ;;
+
+        oci) _singularity_oci
+            return
+            ;;
+
+        overlay) _singularity_overlay
+            return
+            ;;
+
+        plugin) _singularity_plugin
+            return
+            ;;
+
+        pull) _singularity_pull
+            return
+            ;;
+
+        push) _singularity_push
+            return
+            ;;
+
+        remote) _singularity_remote
+            return
+            ;;
+
+        run) _singularity_run
+            return
+            ;;
+
+        run-help) _singularity_runhelp
+            return
+            ;;
+
+        search) _singularity_search
+            return
+            ;;
+
+        shell) _singularity_shell
+            return
+            ;;
+
+        sif) _singularity_sif
+            return
+            ;;
+
+        sign) _singularity_sign
+            return
+            ;;
+
+        test) _singularity_test
+            return
+            ;;
+
+        verify) _singularity_verify
+            return
+            ;;
+
+        version) _singularity_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" build cache capability completion config delete exec help inspect instance key oci overlay plugin pull push remote run run-help search shell sif sign test verify version -c --config -d --debug -h --help --nocolor -q --quiet -s --silent -v --verbose --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_build()
+{
+    local word_list="  --arch -B --bind --builder -d --detached --disable-cache --docker-login -e --encrypt -f --fakeroot --fix-perms -F --force -h --help --json --library --no-cleanup --nohttps -T --notest --nv --passphrase --pem-path -r --remote --rocm -s --sandbox --section -u --update"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_cache()
+{
+    local cmd i subcommands
+    local subcommands=" clean list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clean) _singularity_cache_clean
+            return
+            ;;
+
+        list) _singularity_cache_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" clean list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_cache_clean()
+{
+    local word_list="  -D --days -n --dry-run -f --force -h --help -T --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_cache_list()
+{
+    local word_list="  -h --help -T --type -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_capability()
+{
+    local cmd i subcommands
+    local subcommands=" add avail drop list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _singularity_capability_add
+            return
+            ;;
+
+        avail) _singularity_capability_avail
+            return
+            ;;
+
+        drop) _singularity_capability_drop
+            return
+            ;;
+
+        list) _singularity_capability_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" add avail drop list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_capability_add()
+{
+    local word_list="  -g --group -h --help -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_capability_avail()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_capability_drop()
+{
+    local word_list="  -g --group -h --help -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_capability_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_completion()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish powershell zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _singularity_completion_bash
+            return
+            ;;
+
+        fish) _singularity_completion_fish
+            return
+            ;;
+
+        powershell) _singularity_completion_powershell
+            return
+            ;;
+
+        zsh) _singularity_completion_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish powershell zsh -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_completion_bash()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_completion_fish()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_completion_powershell()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_completion_zsh()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_config()
+{
+    local cmd i subcommands
+    local subcommands=" fakeroot global"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        fakeroot) _singularity_config_fakeroot
+            return
+            ;;
+
+        global) _singularity_config_global
+            return
+            ;;
+
+    esac
+
+    local word_list=" fakeroot global -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_config_fakeroot()
+{
+    local word_list="  -a --add -d --disable -e --enable -h --help -r --remove"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_config_global()
+{
+    local word_list="  -d --dry-run -g --get -h --help -r --reset -s --set -u --unset"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_delete()
+{
+    local word_list="  -A --arch -F --force -h --help --library"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_exec()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind -e --cleanenv -c --contain -C --containall --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs -n --net --network --network-args --no-home --no-init --no-mount --no-privs --no-umask --nohttps --nonet --nv -o --overlay --passphrase --pem-path -p --pid --pwd --rocm -S --scratch --security -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_help()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_inspect()
+{
+    local word_list="  --all --app -d --deffile -e --environment -h --help -H --helpfile -j --json -l --labels --list-apps -r --runscript -s --startscript -t --test"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_instance()
+{
+    local cmd i subcommands
+    local subcommands=" list start stop"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _singularity_instance_list
+            return
+            ;;
+
+        start) _singularity_instance_start
+            return
+            ;;
+
+        stop) _singularity_instance_stop
+            return
+            ;;
+
+    esac
+
+    local word_list=" list start stop -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_instance_list()
+{
+    local word_list="  -h --help -j --json -l --logs -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_instance_start()
+{
+    local word_list="  --add-caps --allow-setuid --apply-cgroups -B --bind --boot -e --cleanenv -c --contain -C --containall --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname --keep-privs -n --net --network --network-args --no-home --no-init --no-mount --no-privs --no-umask --nohttps --nv -o --overlay --passphrase --pem-path --pid-file --rocm -S --scratch --security -u --userns --uts -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_instance_stop()
+{
+    local word_list="  -a --all -F --force -h --help -s --signal -t --timeout -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key()
+{
+    local cmd i subcommands
+    local subcommands=" export import list newpair pull push remove search"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        export) _singularity_key_export
+            return
+            ;;
+
+        import) _singularity_key_import
+            return
+            ;;
+
+        list) _singularity_key_list
+            return
+            ;;
+
+        newpair) _singularity_key_newpair
+            return
+            ;;
+
+        pull) _singularity_key_pull
+            return
+            ;;
+
+        push) _singularity_key_push
+            return
+            ;;
+
+        remove) _singularity_key_remove
+            return
+            ;;
+
+        search) _singularity_key_search
+            return
+            ;;
+
+    esac
+
+    local word_list=" export import list newpair pull push remove search -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_export()
+{
+    local word_list="  -a --armor -g --global -h --help -s --secret"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_import()
+{
+    local word_list="  -g --global -h --help --new-password"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_list()
+{
+    local word_list="  -g --global -h --help -s --secret"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_newpair()
+{
+    local word_list="  -b --bit-length -C --comment -E --email -h --help -N --name -P --password -U --push"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_pull()
+{
+    local word_list="  -g --global -h --help -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_push()
+{
+    local word_list="  -g --global -h --help -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_remove()
+{
+    local word_list="  -g --global -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_key_search()
+{
+    local word_list="  -h --help -l --long-list -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci()
+{
+    local cmd i subcommands
+    local subcommands=" attach create delete exec kill mount pause resume run start state umount update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _singularity_oci_attach
+            return
+            ;;
+
+        create) _singularity_oci_create
+            return
+            ;;
+
+        delete) _singularity_oci_delete
+            return
+            ;;
+
+        exec) _singularity_oci_exec
+            return
+            ;;
+
+        kill) _singularity_oci_kill
+            return
+            ;;
+
+        mount) _singularity_oci_mount
+            return
+            ;;
+
+        pause) _singularity_oci_pause
+            return
+            ;;
+
+        resume) _singularity_oci_resume
+            return
+            ;;
+
+        run) _singularity_oci_run
+            return
+            ;;
+
+        start) _singularity_oci_start
+            return
+            ;;
+
+        state) _singularity_oci_state
+            return
+            ;;
+
+        umount) _singularity_oci_umount
+            return
+            ;;
+
+        update) _singularity_oci_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach create delete exec kill mount pause resume run start state umount update -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_attach()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_create()
+{
+    local word_list="  -b --bundle --empty-process -h --help --log-format -l --log-path --pid-file -s --sync-socket"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_delete()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_exec()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_kill()
+{
+    local word_list="  -f --force -h --help -s --signal -t --timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_mount()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_pause()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_resume()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_run()
+{
+    local word_list="  -b --bundle -h --help --log-format -l --log-path --pid-file -s --sync-socket"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_start()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_state()
+{
+    local word_list="  -h --help -s --sync-socket"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_umount()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_oci_update()
+{
+    local word_list="  -f --from-file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_overlay()
+{
+    local cmd i subcommands
+    local subcommands=" create"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _singularity_overlay_create
+            return
+            ;;
+
+    esac
+
+    local word_list=" create -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_overlay_create()
+{
+    local word_list="  --create-dir -h --help -s --size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin()
+{
+    local cmd i subcommands
+    local subcommands=" compile create disable enable inspect install list uninstall"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        compile) _singularity_plugin_compile
+            return
+            ;;
+
+        create) _singularity_plugin_create
+            return
+            ;;
+
+        disable) _singularity_plugin_disable
+            return
+            ;;
+
+        enable) _singularity_plugin_enable
+            return
+            ;;
+
+        inspect) _singularity_plugin_inspect
+            return
+            ;;
+
+        install) _singularity_plugin_install
+            return
+            ;;
+
+        list) _singularity_plugin_list
+            return
+            ;;
+
+        uninstall) _singularity_plugin_uninstall
+            return
+            ;;
+
+    esac
+
+    local word_list=" compile create disable enable inspect install list uninstall -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_compile()
+{
+    local word_list="  --disable-minor-check -h --help -o --out"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_create()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_disable()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_enable()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_inspect()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_install()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_plugin_uninstall()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_pull()
+{
+    local word_list="  --arch --dir --disable-cache --docker-login -F --force -h --help --library --no-cleanup --nohttps"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_push()
+{
+    local word_list="  -U --allow-unsigned -D --description -h --help --library"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote()
+{
+    local cmd i subcommands
+    local subcommands=" add add-keyserver list login logout remove remove-keyserver status use"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _singularity_remote_add
+            return
+            ;;
+
+        add-keyserver) _singularity_remote_addkeyserver
+            return
+            ;;
+
+        list) _singularity_remote_list
+            return
+            ;;
+
+        login) _singularity_remote_login
+            return
+            ;;
+
+        logout) _singularity_remote_logout
+            return
+            ;;
+
+        remove) _singularity_remote_remove
+            return
+            ;;
+
+        remove-keyserver) _singularity_remote_removekeyserver
+            return
+            ;;
+
+        status) _singularity_remote_status
+            return
+            ;;
+
+        use) _singularity_remote_use
+            return
+            ;;
+
+    esac
+
+    local word_list=" add add-keyserver list login logout remove remove-keyserver status use -c --config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_add()
+{
+    local cmd i subcommands
+    local subcommands=" singularity"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        singularity) _singularity_remote_add_singularity
+            return
+            ;;
+
+    esac
+
+    local word_list=" singularity -g --global -h --help --no-login --tokenfile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_add_singularity()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_addkeyserver()
+{
+    local word_list="  -h --help -i --insecure -o --order"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_login()
+{
+    local word_list="  -h --help -i --insecure -p --password --password-stdin --tokenfile -u --username"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_logout()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_remove()
+{
+    local word_list="  -g --global -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_removekeyserver()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_status()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_remote_use()
+{
+    local word_list="  -e --exclusive -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_run()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind -e --cleanenv -c --contain -C --containall --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs -n --net --network --network-args --no-home --no-init --no-mount --no-privs --no-umask --nohttps --nonet --nv -o --overlay --passphrase --pem-path -p --pid --pwd --rocm -S --scratch --security -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_runhelp()
+{
+    local word_list="  --app -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_search()
+{
+    local word_list="  --arch -h --help --library --signed"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_shell()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind -e --cleanenv -c --contain -C --containall --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs -n --net --network --network-args --no-home --no-init --no-mount --no-privs --no-umask --nohttps --nonet --nv -o --overlay --passphrase --pem-path -p --pid --pwd --rocm -S --scratch --security -s --shell --syos -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif()
+{
+    local cmd i subcommands
+    local subcommands=" add del dump header info list new setprim"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _singularity_sif_add
+            return
+            ;;
+
+        del) _singularity_sif_del
+            return
+            ;;
+
+        dump) _singularity_sif_dump
+            return
+            ;;
+
+        header) _singularity_sif_header
+            return
+            ;;
+
+        info) _singularity_sif_info
+            return
+            ;;
+
+        list) _singularity_sif_list
+            return
+            ;;
+
+        new) _singularity_sif_new
+            return
+            ;;
+
+        setprim) _singularity_sif_setprim
+            return
+            ;;
+
+    esac
+
+    local word_list=" add del dump header info list new setprim -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_add()
+{
+    local word_list="  --alignment --datatype --filename --groupid -h --help --link --partarch --partfs --parttype --signentity --signhash"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_del()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_dump()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_header()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_info()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_new()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sif_setprim()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_sign()
+{
+    local word_list="  -g --group-id -h --help -k --keyidx -i --sif-id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_test()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind -e --cleanenv -c --contain -C --containall --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs -n --net --network --network-args --no-home --no-init --no-mount --no-privs --no-umask --nohttps --nonet --nv -o --overlay --passphrase --pem-path -p --pid --pwd --rocm -S --scratch --security -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_verify()
+{
+    local word_list="  -a --all -g --group-id -h --help -j --json --legacy-insecure -l --local -i --sif-id -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_singularity_version()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _singularity singularity

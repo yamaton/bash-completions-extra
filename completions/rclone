@@ -1,0 +1,984 @@
+# Auto-generated with h2o
+
+_rclone()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" about authorize backend bisync cat check checksum cleanup completion config copy copyto copyurl cryptcheck cryptdecode dedupe delete deletefile genautocomplete gendocs hashsum help link listremotes ls lsd lsf lsjson lsl md5sum mkdir mount move moveto ncdu obscure purge rc rcat rcd rmdir rmdirs selfupdate serve settier sha1sum size sync test touch tree version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        about) _rclone_about
+            return
+            ;;
+
+        authorize) _rclone_authorize
+            return
+            ;;
+
+        backend) _rclone_backend
+            return
+            ;;
+
+        bisync) _rclone_bisync
+            return
+            ;;
+
+        cat) _rclone_cat
+            return
+            ;;
+
+        check) _rclone_check
+            return
+            ;;
+
+        checksum) _rclone_checksum
+            return
+            ;;
+
+        cleanup) _rclone_cleanup
+            return
+            ;;
+
+        completion) _rclone_completion
+            return
+            ;;
+
+        config) _rclone_config
+            return
+            ;;
+
+        copy) _rclone_copy
+            return
+            ;;
+
+        copyto) _rclone_copyto
+            return
+            ;;
+
+        copyurl) _rclone_copyurl
+            return
+            ;;
+
+        cryptcheck) _rclone_cryptcheck
+            return
+            ;;
+
+        cryptdecode) _rclone_cryptdecode
+            return
+            ;;
+
+        dedupe) _rclone_dedupe
+            return
+            ;;
+
+        delete) _rclone_delete
+            return
+            ;;
+
+        deletefile) _rclone_deletefile
+            return
+            ;;
+
+        genautocomplete) _rclone_genautocomplete
+            return
+            ;;
+
+        gendocs) _rclone_gendocs
+            return
+            ;;
+
+        hashsum) _rclone_hashsum
+            return
+            ;;
+
+        help) _rclone_help
+            return
+            ;;
+
+        link) _rclone_link
+            return
+            ;;
+
+        listremotes) _rclone_listremotes
+            return
+            ;;
+
+        ls) _rclone_ls
+            return
+            ;;
+
+        lsd) _rclone_lsd
+            return
+            ;;
+
+        lsf) _rclone_lsf
+            return
+            ;;
+
+        lsjson) _rclone_lsjson
+            return
+            ;;
+
+        lsl) _rclone_lsl
+            return
+            ;;
+
+        md5sum) _rclone_md5sum
+            return
+            ;;
+
+        mkdir) _rclone_mkdir
+            return
+            ;;
+
+        mount) _rclone_mount
+            return
+            ;;
+
+        move) _rclone_move
+            return
+            ;;
+
+        moveto) _rclone_moveto
+            return
+            ;;
+
+        ncdu) _rclone_ncdu
+            return
+            ;;
+
+        obscure) _rclone_obscure
+            return
+            ;;
+
+        purge) _rclone_purge
+            return
+            ;;
+
+        rc) _rclone_rc
+            return
+            ;;
+
+        rcat) _rclone_rcat
+            return
+            ;;
+
+        rcd) _rclone_rcd
+            return
+            ;;
+
+        rmdir) _rclone_rmdir
+            return
+            ;;
+
+        rmdirs) _rclone_rmdirs
+            return
+            ;;
+
+        selfupdate) _rclone_selfupdate
+            return
+            ;;
+
+        serve) _rclone_serve
+            return
+            ;;
+
+        settier) _rclone_settier
+            return
+            ;;
+
+        sha1sum) _rclone_sha1sum
+            return
+            ;;
+
+        size) _rclone_size
+            return
+            ;;
+
+        sync) _rclone_sync
+            return
+            ;;
+
+        test) _rclone_test
+            return
+            ;;
+
+        touch) _rclone_touch
+            return
+            ;;
+
+        tree) _rclone_tree
+            return
+            ;;
+
+        version) _rclone_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" about authorize backend bisync cat check checksum cleanup completion config copy copyto copyurl cryptcheck cryptdecode dedupe delete deletefile genautocomplete gendocs hashsum help link listremotes ls lsd lsf lsjson lsl md5sum mkdir mount move moveto ncdu obscure purge rc rcat rcd rmdir rmdirs selfupdate serve settier sha1sum size sync test touch tree version "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_about()
+{
+    local word_list="  --full -h --help --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_authorize()
+{
+    local word_list="  --auth-no-open-browser -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_backend()
+{
+    local word_list="  -h --help --json -o --option"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_bisync()
+{
+    local word_list="  --check-access --check-filename --check-sync --filters-file --force -h --help --localtime --no-cleanup --remove-empty-dirs -1 --resync --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_cat()
+{
+    local word_list="  --count --discard --head -h --help --offset --tail"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_check()
+{
+    local word_list="  -C --checkfile --combined --differ --download --error -h --help --match --missing-on-dst --missing-on-src --one-way"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_checksum()
+{
+    local word_list="  --combined --differ --download --error -h --help --match --missing-on-dst --missing-on-src --one-way"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_cleanup()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_completion()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish powershell zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _rclone_completion_bash
+            return
+            ;;
+
+        fish) _rclone_completion_fish
+            return
+            ;;
+
+        powershell) _rclone_completion_powershell
+            return
+            ;;
+
+        zsh) _rclone_completion_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish powershell zsh -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_completion_bash()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_completion_fish()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_completion_powershell()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_completion_zsh()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config()
+{
+    local cmd i subcommands
+    local subcommands=" create delete disconnect dump file password paths providers reconnect show touch update userinfo"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _rclone_config_create
+            return
+            ;;
+
+        delete) _rclone_config_delete
+            return
+            ;;
+
+        disconnect) _rclone_config_disconnect
+            return
+            ;;
+
+        dump) _rclone_config_dump
+            return
+            ;;
+
+        file) _rclone_config_file
+            return
+            ;;
+
+        password) _rclone_config_password
+            return
+            ;;
+
+        paths) _rclone_config_paths
+            return
+            ;;
+
+        providers) _rclone_config_providers
+            return
+            ;;
+
+        reconnect) _rclone_config_reconnect
+            return
+            ;;
+
+        show) _rclone_config_show
+            return
+            ;;
+
+        touch) _rclone_config_touch
+            return
+            ;;
+
+        update) _rclone_config_update
+            return
+            ;;
+
+        userinfo) _rclone_config_userinfo
+            return
+            ;;
+
+    esac
+
+    local word_list=" create delete disconnect dump file password paths providers reconnect show touch update userinfo -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_create()
+{
+    local word_list="  --all --continue -h --help --no-obscure --non-interactive --obscure --result --state"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_delete()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_disconnect()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_dump()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_file()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_password()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_paths()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_providers()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_reconnect()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_show()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_touch()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_update()
+{
+    local word_list="  --all --continue -h --help --no-obscure --non-interactive --obscure --result --state"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_config_userinfo()
+{
+    local word_list="  -h --help --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_copy()
+{
+    local word_list="  --create-empty-src-dirs -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_copyto()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_copyurl()
+{
+    local word_list="  -a --auto-filename --header-filename -h --help --no-clobber -p --print-filename --stdout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_cryptcheck()
+{
+    local word_list="  --combined --differ --error -h --help --match --missing-on-dst --missing-on-src --one-way"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_cryptdecode()
+{
+    local word_list="  -h --help --reverse"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_dedupe()
+{
+    local word_list="  --by-hash --dedupe-mode -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_delete()
+{
+    local word_list="  -h --help --rmdirs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_deletefile()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_genautocomplete()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _rclone_genautocomplete_bash
+            return
+            ;;
+
+        fish) _rclone_genautocomplete_fish
+            return
+            ;;
+
+        zsh) _rclone_genautocomplete_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish zsh -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_genautocomplete_bash()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_genautocomplete_fish()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_genautocomplete_zsh()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_gendocs()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_hashsum()
+{
+    local word_list="  --base64 -C --checkfile --download -h --help --output-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_help()
+{
+    local cmd i subcommands
+    local subcommands=" backend backends flags"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        backend) _rclone_help_backend
+            return
+            ;;
+
+        backends) _rclone_help_backends
+            return
+            ;;
+
+        flags) _rclone_help_flags
+            return
+            ;;
+
+    esac
+
+    local word_list=" backend backends flags -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_help_backend()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_help_backends()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_help_flags()
+{
+    local word_list="  -h --help --ask-password --auto-confirm --backup-dir --bind --buffer-size --bwlimit --bwlimit-file --ca-cert --cache-dir --check-first --checkers -c --checksum --client-cert --client-key --color --compare-dest --config --contimeout --copy-dest --cpuprofile --cutoff-mode --delete-after --delete-before --delete-during --delete-excluded --disable --disable-http-keep-alives --disable-http2 -n --dry-run --dscp --dump --dump-bodies --dump-headers --error-on-no-transfer --exclude --exclude-from --exclude-if-present --expect-continue-timeout --fast-list --files-from --files-from-raw -f --filter --filter-from --fs-cache-expire-duration --fs-cache-expire-interval --header --header-download --header-upload --human-readable --ignore-case --ignore-case-sync --ignore-checksum --ignore-errors --ignore-existing --ignore-size -I --ignore-times --immutable --include --include-from -i --interactive --kv-lock-time --log-file --log-format --log-level --log-systemd --low-level-retries --max-age --max-backlog --max-delete --max-depth --max-duration --max-size --max-stats-groups --max-transfer --memprofile -M --metadata --metadata-exclude --metadata-exclude-from --metadata-filter --metadata-filter-from --metadata-include --metadata-include-from --metadata-set --min-age --min-size --modify-window --multi-thread-cutoff --multi-thread-streams --no-check-certificate --no-check-dest --no-console --no-gzip-encoding --no-traverse --no-unicode-normalization --no-update-modtime --order-by --password-command -P --progress --progress-terminal-title -q --quiet --rc --rc-addr --rc-allow-origin --rc-baseurl --rc-cert --rc-client-ca --rc-enable-metrics --rc-files --rc-htpasswd --rc-job-expire-duration --rc-job-expire-interval --rc-key --rc-max-header-bytes --rc-min-tls-version --rc-no-auth --rc-pass --rc-realm --rc-salt --rc-serve --rc-server-read-timeout --rc-server-write-timeout --rc-template --rc-user --rc-web-fetch-url --rc-web-gui --rc-web-gui-force-update --rc-web-gui-no-open-browser --rc-web-gui-update --refresh-times --retries --retries-sleep --server-side-across-configs --size-only --stats --stats-file-name-length --stats-log-level --stats-one-line --stats-one-line-date --stats-one-line-date-format --stats-unit --streaming-upload-cutoff --suffix --suffix-keep-extension --syslog --syslog-facility --temp-dir --timeout --tpslimit --tpslimit-burst --track-renames --track-renames-strategy --transfers -u --update --use-cookies --use-json-log --use-mmap --use-server-modtime --user-agent -v --verbose --acd-auth-url --acd-client-id --acd-client-secret --acd-encoding --acd-templink-threshold --acd-token --acd-token-url --acd-upload-wait-per-gb --alias-remote --azureblob-access-tier --azureblob-account --azureblob-archive-tier-delete --azureblob-chunk-size --azureblob-client-certificate-password --azureblob-client-certificate-path --azureblob-client-id --azureblob-client-secret --azureblob-client-send-certificate-chain --azureblob-disable-checksum --azureblob-encoding --azureblob-endpoint --azureblob-env-auth --azureblob-key --azureblob-list-chunk --azureblob-memory-pool-flush-time --azureblob-memory-pool-use-mmap --azureblob-msi-client-id --azureblob-msi-mi-res-id --azureblob-msi-object-id --azureblob-no-check-container --azureblob-no-head-object --azureblob-password --azureblob-public-access --azureblob-sas-url --azureblob-service-principal-file --azureblob-tenant --azureblob-upload-concurrency --azureblob-upload-cutoff --azureblob-use-emulator --azureblob-use-msi --azureblob-username --b2-account --b2-chunk-size --b2-copy-cutoff --b2-disable-checksum --b2-download-auth-duration --b2-download-url --b2-encoding --b2-endpoint --b2-hard-delete --b2-key --b2-memory-pool-flush-time --b2-memory-pool-use-mmap --b2-test-mode --b2-upload-cutoff --b2-version-at --b2-versions --box-access-token --box-auth-url --box-box-config-file --box-box-sub-type --box-client-id --box-client-secret --box-commit-retries --box-encoding --box-list-chunk --box-owned-by --box-root-folder-id --box-token --box-token-url --box-upload-cutoff --cache-chunk-clean-interval --cache-chunk-no-memory --cache-chunk-path --cache-chunk-size --cache-chunk-total-size --cache-db-path --cache-db-purge --cache-db-wait-time --cache-info-age --cache-plex-insecure --cache-plex-password --cache-plex-url --cache-plex-username --cache-read-retries --cache-remote --cache-rps --cache-tmp-upload-path --cache-tmp-wait-time --cache-workers --cache-writes --chunker-chunk-size --chunker-fail-hard --chunker-hash-type --chunker-remote --combine-upstreams --compress-level --compress-mode --compress-ram-cache-limit --compress-remote -L --copy-links --crypt-directory-name-encryption --crypt-filename-encoding --crypt-filename-encryption --crypt-no-data-encryption --crypt-password --crypt-password2 --crypt-remote --crypt-server-side-across-configs --crypt-show-mapping --drive-acknowledge-abuse --drive-allow-import-name-change --drive-auth-owner-only --drive-auth-url --drive-chunk-size --drive-client-id --drive-client-secret --drive-copy-shortcut-content --drive-disable-http2 --drive-encoding --drive-export-formats --drive-formats --drive-impersonate --drive-import-formats --drive-keep-revision-forever --drive-list-chunk --drive-pacer-burst --drive-pacer-min-sleep --drive-resource-key --drive-root-folder-id --drive-scope --drive-server-side-across-configs --drive-service-account-credentials --drive-service-account-file --drive-shared-with-me --drive-size-as-quota --drive-skip-checksum-gphotos --drive-skip-dangling-shortcuts --drive-skip-gdocs --drive-skip-shortcuts --drive-starred-only --drive-stop-on-download-limit --drive-stop-on-upload-limit --drive-team-drive --drive-token --drive-token-url --drive-trashed-only --drive-upload-cutoff --drive-use-created-date --drive-use-shared-date --drive-use-trash --drive-v2-download-min-size --dropbox-auth-url --dropbox-batch-commit-timeout --dropbox-batch-mode --dropbox-batch-size --dropbox-batch-timeout --dropbox-chunk-size --dropbox-client-id --dropbox-client-secret --dropbox-encoding --dropbox-impersonate --dropbox-shared-files --dropbox-shared-folders --dropbox-token --dropbox-token-url --fichier-api-key --fichier-encoding --fichier-file-password --fichier-folder-password --fichier-shared-folder --filefabric-encoding --filefabric-permanent-token --filefabric-root-folder-id --filefabric-token --filefabric-token-expiry --filefabric-url --filefabric-version --ftp-ask-password --ftp-close-timeout --ftp-concurrency --ftp-disable-epsv --ftp-disable-mlsd --ftp-disable-tls13 --ftp-disable-utf8 --ftp-encoding --ftp-explicit-tls --ftp-force-list-hidden --ftp-host --ftp-idle-timeout --ftp-no-check-certificate --ftp-pass --ftp-port --ftp-shut-timeout --ftp-tls --ftp-tls-cache-size --ftp-user --ftp-writing-mdtm --gcs-anonymous --gcs-auth-url --gcs-bucket-acl --gcs-bucket-policy-only --gcs-client-id --gcs-client-secret --gcs-decompress --gcs-encoding --gcs-endpoint --gcs-location --gcs-no-check-bucket --gcs-object-acl --gcs-project-number --gcs-service-account-file --gcs-storage-class --gcs-token --gcs-token-url --gphotos-auth-url --gphotos-client-id --gphotos-client-secret --gphotos-encoding --gphotos-include-archived --gphotos-read-only --gphotos-read-size --gphotos-start-year --gphotos-token --gphotos-token-url --hasher-auto-size --hasher-hashes --hasher-max-age --hasher-remote --hdfs-data-transfer-protection --hdfs-encoding --hdfs-namenode --hdfs-service-principal-name --hdfs-username --hidrive-auth-url --hidrive-chunk-size --hidrive-client-id --hidrive-client-secret --hidrive-disable-fetching-member-count --hidrive-encoding --hidrive-endpoint --hidrive-root-prefix --hidrive-scope-access --hidrive-scope-role --hidrive-token --hidrive-token-url --hidrive-upload-concurrency --hidrive-upload-cutoff --http-headers --http-no-head --http-no-slash --http-url --internetarchive-access-key-id --internetarchive-disable-checksum --internetarchive-encoding --internetarchive-endpoint --internetarchive-front-endpoint --internetarchive-secret-access-key --internetarchive-wait-archive --jottacloud-encoding --jottacloud-hard-delete --jottacloud-md5-memory-limit --jottacloud-no-versions --jottacloud-trashed-only --jottacloud-upload-resume-limit --koofr-encoding --koofr-endpoint --koofr-mountid --koofr-password --koofr-provider --koofr-setmtime --koofr-user -l --links --local-case-insensitive --local-case-sensitive --local-encoding --local-no-check-updated --local-no-preallocate --local-no-set-modtime --local-no-sparse --local-nounc --local-unicode-normalization --local-zero-size-links --mailru-check-hash --mailru-encoding --mailru-pass --mailru-speedup-enable --mailru-speedup-file-patterns --mailru-speedup-max-disk --mailru-speedup-max-memory --mailru-user --mega-debug --mega-encoding --mega-hard-delete --mega-pass --mega-user --netstorage-account --netstorage-host --netstorage-protocol --netstorage-secret -x --one-file-system --onedrive-access-scopes --onedrive-auth-url --onedrive-chunk-size --onedrive-client-id --onedrive-client-secret --onedrive-drive-id --onedrive-drive-type --onedrive-encoding --onedrive-expose-onenote-files --onedrive-link-password --onedrive-link-scope --onedrive-link-type --onedrive-list-chunk --onedrive-no-versions --onedrive-region --onedrive-root-folder-id --onedrive-server-side-across-configs --onedrive-token --onedrive-token-url --oos-chunk-size --oos-compartment --oos-config-file --oos-config-profile --oos-copy-cutoff --oos-copy-timeout --oos-disable-checksum --oos-encoding --oos-endpoint --oos-leave-parts-on-error --oos-namespace --oos-no-check-bucket --oos-provider --oos-region --oos-upload-concurrency --oos-upload-cutoff --opendrive-chunk-size --opendrive-encoding --opendrive-password --opendrive-username --pcloud-auth-url --pcloud-client-id --pcloud-client-secret --pcloud-encoding --pcloud-hostname --pcloud-password --pcloud-root-folder-id --pcloud-token --pcloud-token-url --pcloud-username --premiumizeme-encoding --putio-encoding --qingstor-access-key-id --qingstor-chunk-size --qingstor-connection-retries --qingstor-encoding --qingstor-endpoint --qingstor-env-auth --qingstor-secret-access-key --qingstor-upload-concurrency --qingstor-upload-cutoff --qingstor-zone --s3-access-key-id --s3-acl --s3-bucket-acl --s3-chunk-size --s3-copy-cutoff --s3-decompress --s3-disable-checksum --s3-disable-http2 --s3-download-url --s3-encoding --s3-endpoint --s3-env-auth --s3-force-path-style --s3-leave-parts-on-error --s3-list-chunk --s3-list-url-encode --s3-list-version --s3-location-constraint --s3-max-upload-parts --s3-memory-pool-flush-time --s3-memory-pool-use-mmap --s3-might-gzip --s3-no-check-bucket --s3-no-head --s3-no-head-object --s3-no-system-metadata --s3-profile --s3-provider --s3-region --s3-requester-pays --s3-secret-access-key --s3-server-side-encryption --s3-session-token --s3-shared-credentials-file --s3-sse-customer-algorithm --s3-sse-customer-key --s3-sse-customer-key-base64 --s3-sse-customer-key-md5 --s3-sse-kms-key-id --s3-storage-class --s3-upload-concurrency --s3-upload-cutoff --s3-use-accelerate-endpoint --s3-use-multipart-etag --s3-use-presigned-request --s3-v2-auth --s3-version-at --s3-versions --seafile-2fa --seafile-create-library --seafile-encoding --seafile-library --seafile-library-key --seafile-pass --seafile-url --seafile-user --sftp-ask-password --sftp-chunk-size --sftp-ciphers --sftp-concurrency --sftp-disable-concurrent-reads --sftp-disable-concurrent-writes --sftp-disable-hashcheck --sftp-host --sftp-idle-timeout --sftp-key-exchange --sftp-key-file --sftp-key-file-pass --sftp-key-pem --sftp-key-use-agent --sftp-known-hosts-file --sftp-macs --sftp-md5sum-command --sftp-pass --sftp-path-override --sftp-port --sftp-pubkey-file --sftp-server-command --sftp-set-env --sftp-set-modtime --sftp-sha1sum-command --sftp-shell-type --sftp-skip-links --sftp-subsystem --sftp-use-fstat --sftp-use-insecure-cipher --sftp-user --sharefile-chunk-size --sharefile-encoding --sharefile-endpoint --sharefile-root-folder-id --sharefile-upload-cutoff --sia-api-password --sia-api-url --sia-encoding --sia-user-agent --skip-links --smb-case-insensitive --smb-domain --smb-encoding --smb-hide-special-share --smb-host --smb-idle-timeout --smb-pass --smb-port --smb-user --storj-access-grant --storj-api-key --storj-passphrase --storj-provider --storj-satellite-address --sugarsync-access-key-id --sugarsync-app-id --sugarsync-authorization --sugarsync-authorization-expiry --sugarsync-deleted-id --sugarsync-encoding --sugarsync-hard-delete --sugarsync-private-access-key --sugarsync-refresh-token --sugarsync-root-id --sugarsync-user --swift-application-credential-id --swift-application-credential-name --swift-application-credential-secret --swift-auth --swift-auth-token --swift-auth-version --swift-chunk-size --swift-domain --swift-encoding --swift-endpoint-type --swift-env-auth --swift-key --swift-leave-parts-on-error --swift-no-chunk --swift-no-large-objects --swift-region --swift-storage-policy --swift-storage-url --swift-tenant --swift-tenant-domain --swift-tenant-id --swift-user --swift-user-id --union-action-policy --union-cache-time --union-create-policy --union-min-free-space --union-search-policy --union-upstreams --uptobox-access-token --uptobox-encoding --webdav-bearer-token --webdav-bearer-token-command --webdav-encoding --webdav-headers --webdav-pass --webdav-url --webdav-user --webdav-vendor --yandex-auth-url --yandex-client-id --yandex-client-secret --yandex-encoding --yandex-hard-delete --yandex-token --yandex-token-url --zoho-auth-url --zoho-client-id --zoho-client-secret --zoho-encoding --zoho-region --zoho-token --zoho-token-url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_link()
+{
+    local word_list="  --expire -h --help --unlink"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_listremotes()
+{
+    local word_list="  -h --help --long"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_ls()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_lsd()
+{
+    local word_list="  -1 -1 -1 -h --help -R --recursive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_lsf()
+{
+    local word_list="  --absolute --csv -d --dir-slash --dirs-only --files-only -F --format --hash -h --help -R --recursive -s --separator"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_lsjson()
+{
+    local word_list="  --dirs-only --encrypted --files-only --hash --hash-type -h --help -M --metadata --no-mimetype --no-modtime --original -R --recursive --stat"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_lsl()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_md5sum()
+{
+    local word_list="  --base64 -C --checkfile --download -h --help --output-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_mkdir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_mount()
+{
+    local word_list="  --dir-cache-time --poll-interval --cache-dir --vfs-cache-mode --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-poll-interval --vfs-write-back --vfs-read-chunk-size --vfs-read-chunk-size-limit --no-checksum --no-modtime --no-seek --read-only --vfs-read-wait --vfs-write-wait --transfers --vfs-disk-space-total-size --allow-non-empty --allow-other --allow-root --async-read --attr-timeout --daemon --daemon-timeout --daemon-wait --debug-fuse --default-permissions --devname --dir-cache-time --dir-perms --file-perms --fuse-flag --gid -h --help --max-read-ahead --network-mode --no-checksum --no-modtime --no-seek --noappledouble --noapplexattr -o --option --poll-interval --read-only --uid --umask --vfs-cache-max-age --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait --volname --write-back-cache"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_move()
+{
+    local word_list="  --create-empty-src-dirs --delete-empty-src-dirs -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_moveto()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_ncdu()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_obscure()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_purge()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_rc()
+{
+    local word_list="  -a --arg -h --help --json --loopback --no-output -o --opt --pass --url --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_rcat()
+{
+    local word_list="  -h --help --size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_rcd()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_rmdir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_rmdirs()
+{
+    local word_list="  -h --help --leave-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_selfupdate()
+{
+    local word_list="  --beta --check -h --help --output --package --stable --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve()
+{
+    local cmd i subcommands
+    local subcommands=" dlna docker ftp http restic sftp webdav"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        dlna) _rclone_serve_dlna
+            return
+            ;;
+
+        docker) _rclone_serve_docker
+            return
+            ;;
+
+        ftp) _rclone_serve_ftp
+            return
+            ;;
+
+        http) _rclone_serve_http
+            return
+            ;;
+
+        restic) _rclone_serve_restic
+            return
+            ;;
+
+        sftp) _rclone_serve_sftp
+            return
+            ;;
+
+        webdav) _rclone_serve_webdav
+            return
+            ;;
+
+    esac
+
+    local word_list=" dlna docker ftp http restic sftp webdav -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_dlna()
+{
+    local word_list="  --dir-cache-time --poll-interval --cache-dir --vfs-cache-mode --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-poll-interval --vfs-write-back --vfs-read-chunk-size --vfs-read-chunk-size-limit --no-checksum --no-modtime --no-seek --read-only --vfs-read-wait --vfs-write-wait --transfers --vfs-disk-space-total-size --addr --announce-interval --dir-cache-time --dir-perms --file-perms --gid -h --help --interface --log-trace --name --no-checksum --no-modtime --no-seek --poll-interval --read-only --uid --umask --vfs-cache-max-age --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_docker()
+{
+    local word_list="  --dir-cache-time --poll-interval --cache-dir --vfs-cache-mode --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-poll-interval --vfs-write-back --vfs-read-chunk-size --vfs-read-chunk-size-limit --no-checksum --no-modtime --no-seek --read-only --vfs-read-wait --vfs-write-wait --transfers --vfs-disk-space-total-size --allow-non-empty --allow-other --allow-root --async-read --attr-timeout --base-dir --daemon --daemon-timeout --daemon-wait --debug-fuse --default-permissions --devname --dir-cache-time --dir-perms --file-perms --forget-state --fuse-flag --gid -h --help --max-read-ahead --network-mode --no-checksum --no-modtime --no-seek --no-spec --noappledouble --noapplexattr -o --option --poll-interval --read-only --socket-addr --socket-gid --uid --umask --vfs-cache-max-age --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait --volname --write-back-cache"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_ftp()
+{
+    local word_list="  --dir-cache-time --poll-interval --cache-dir --vfs-cache-mode --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-poll-interval --vfs-write-back --vfs-read-chunk-size --vfs-read-chunk-size-limit --no-checksum --no-modtime --no-seek --read-only --vfs-read-wait --vfs-write-wait --transfers --vfs-disk-space-total-size --addr --auth-proxy --cert --dir-cache-time --dir-perms --file-perms --gid -h --help --key --no-checksum --no-modtime --no-seek --pass --passive-port --poll-interval --public-ip --read-only --uid --umask --user --vfs-cache-max-age --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_http()
+{
+    local word_list="  --addr --baseurl --cert --client-ca --dir-cache-time --dir-perms --file-perms --gid --htpasswd --key --max-header-bytes --min-tls-version --no-checksum --no-modtime --no-seek --pass --poll-interval --read-only --realm --salt --server-read-timeout --server-write-timeout --template --uid --umask --user --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-mode --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_restic()
+{
+    local word_list="  --addr --append-only --baseurl --cache-objects --cert --client-ca -h --help --htpasswd --key --max-header-bytes --min-tls-version --pass --private-repos --realm --salt --server-read-timeout --server-write-timeout --stdio --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_sftp()
+{
+    local word_list="  --dir-cache-time --poll-interval --cache-dir --vfs-cache-mode --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-poll-interval --vfs-write-back --vfs-read-chunk-size --vfs-read-chunk-size-limit --no-checksum --no-modtime --no-seek --read-only --vfs-read-wait --vfs-write-wait --transfers --vfs-disk-space-total-size --addr --auth-proxy --authorized-keys --dir-cache-time --dir-perms --file-perms --gid -h --help --key --no-auth --no-checksum --no-modtime --no-seek --pass --poll-interval --read-only --stdio --uid --umask --user --vfs-cache-max-age --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_serve_webdav()
+{
+    local word_list="  --addr --auth-proxy --baseurl --cert --client-ca --dir-cache-time --dir-perms --disable-dir-list --etag-hash --file-perms --gid --htpasswd --key --max-header-bytes --min-tls-version --no-checksum --no-modtime --no-seek --pass --poll-interval --read-only --realm --salt --server-read-timeout --server-write-timeout --template --uid --umask --user --vfs-cache-max-age --vfs-cache-max-size --vfs-cache-mode --vfs-cache-poll-interval --vfs-case-insensitive --vfs-disk-space-total-size --vfs-fast-fingerprint --vfs-read-ahead --vfs-read-chunk-size --vfs-read-chunk-size-limit --vfs-read-wait --vfs-used-is-size --vfs-write-back --vfs-write-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_settier()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_sha1sum()
+{
+    local word_list="  --base64 -C --checkfile --download -h --help --output-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_size()
+{
+    local word_list="  -h --help --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_sync()
+{
+    local word_list="  --create-empty-src-dirs -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test()
+{
+    local cmd i subcommands
+    local subcommands=" changenotify histogram info makefile makefiles memory"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        changenotify) _rclone_test_changenotify
+            return
+            ;;
+
+        histogram) _rclone_test_histogram
+            return
+            ;;
+
+        info) _rclone_test_info
+            return
+            ;;
+
+        makefile) _rclone_test_makefile
+            return
+            ;;
+
+        makefiles) _rclone_test_makefiles
+            return
+            ;;
+
+        memory) _rclone_test_memory
+            return
+            ;;
+
+    esac
+
+    local word_list=" changenotify histogram info makefile makefiles memory -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test_changenotify()
+{
+    local word_list="  -h --help --poll-interval"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test_histogram()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test_info()
+{
+    local word_list="  --all --check-control --check-length --check-normalization --check-streaming -h --help --upload-wait --write-json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test_makefile()
+{
+    local word_list="  --ascii --chargen -h --help --pattern --seed --sparse --zero"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test_makefiles()
+{
+    local word_list="  --ascii --chargen --files --files-per-directory -h --help --max-depth --max-file-size --max-name-length --min-file-size --min-name-length --pattern --seed --sparse --zero"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_test_memory()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_touch()
+{
+    local word_list="  -h --help --localtime -C --no-create -R --recursive -t --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_tree()
+{
+    local word_list="  -a --all -d --dirs-only --dirsfirst --full-path -h --help --level -D --modtime --noindent --noreport -o --output -p --protections -Q --quote -s --size --sort --sort-ctime -t --sort-modtime -r --sort-reverse -U --unsorted --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rclone_version()
+{
+    local word_list="  --check -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rclone rclone

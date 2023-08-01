@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rmdir()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --ignore-fail-on-non-empty -p --parents -v --verbose --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rmdir rmdir

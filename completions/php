@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_php()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a -c -n -d -e -f -h -i -l -m -r -B -R -F -E -H -S -t -s -v -w -z --ini --rf --rc --re --rz --ri"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _php php

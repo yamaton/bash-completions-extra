@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgreceivewal()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -D --directory -E --endpos --if-not-exists -n --no-loop --no-sync -s --status-interval -S --slot --synchronous -v --verbose -V --version -Z --compress -? --help -d --dbname -h --host -p --port -U --username -w --no-password -W --password --create-slot --drop-slot"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgreceivewal pg_receivewal

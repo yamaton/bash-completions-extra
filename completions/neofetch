@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_neofetch()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --disable --title_fqdn --package_managers --os_arch --speed_type --speed_shorthand --cpu_brand --cpu_cores --cpu_speed --cpu_temp --distro_shorthand --kernel_shorthand --uptime_shorthand --refresh_rate --gpu_brand --gpu_type --de_version --gtk_shorthand --gtk2 --gtk3 --shell_path --shell_version --disk_show --disk_subtitle --disk_percent --ip_host --ip_timeout --song_format --song_shorthand --memory_percent --memory_unit --music_player --underline --underline_char --bold --separator --color_blocks --col_offset --block_height --block_range --bar_char --bar_border --bar_length --bar_colors --cpu_display --memory_display --battery_display --disk_display --backend --source --ascii --caca --chafa --iterm2 --jp2a --kitty --pot --pixterm --sixel --termpix --tycat --w3m --off --ascii_distro --ascii_bold -L --logo --loop --crop_mode --crop_offset --xoffset --yoffset --bg_color --gap --clean --config --config --no_config --print_config --stdout --help --version -v -vv --gen-man"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _neofetch neofetch

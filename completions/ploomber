@@ -1,0 +1,299 @@
+# Auto-generated with h2o
+
+_ploomber()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build cloud examples install interact nb plot report scaffold status task"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _ploomber_build
+            return
+            ;;
+
+        cloud) _ploomber_cloud
+            return
+            ;;
+
+        examples) _ploomber_examples
+            return
+            ;;
+
+        install) _ploomber_install
+            return
+            ;;
+
+        interact) _ploomber_interact
+            return
+            ;;
+
+        nb) _ploomber_nb
+            return
+            ;;
+
+        plot) _ploomber_plot
+            return
+            ;;
+
+        report) _ploomber_report
+            return
+            ;;
+
+        scaffold) _ploomber_scaffold
+            return
+            ;;
+
+        status) _ploomber_status
+            return
+            ;;
+
+        task) _ploomber_task
+            return
+            ;;
+
+    esac
+
+    local word_list=" build cloud examples install interact nb plot report scaffold status task --version --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_build()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud()
+{
+    local cmd i subcommands
+    local subcommands=" abort build data delete-pipeline download get-key get-pipelines list logs nb products set-key status task write-pipeline"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        abort) _ploomber_cloud_abort
+            return
+            ;;
+
+        build) _ploomber_cloud_build
+            return
+            ;;
+
+        data) _ploomber_cloud_data
+            return
+            ;;
+
+        delete-pipeline) _ploomber_cloud_deletepipeline
+            return
+            ;;
+
+        download) _ploomber_cloud_download
+            return
+            ;;
+
+        get-key) _ploomber_cloud_getkey
+            return
+            ;;
+
+        get-pipelines) _ploomber_cloud_getpipelines
+            return
+            ;;
+
+        list) _ploomber_cloud_list
+            return
+            ;;
+
+        logs) _ploomber_cloud_logs
+            return
+            ;;
+
+        nb) _ploomber_cloud_nb
+            return
+            ;;
+
+        products) _ploomber_cloud_products
+            return
+            ;;
+
+        set-key) _ploomber_cloud_setkey
+            return
+            ;;
+
+        status) _ploomber_cloud_status
+            return
+            ;;
+
+        task) _ploomber_cloud_task
+            return
+            ;;
+
+        write-pipeline) _ploomber_cloud_writepipeline
+            return
+            ;;
+
+    esac
+
+    local word_list=" abort build data delete-pipeline download get-key get-pipelines list logs nb products set-key status task write-pipeline --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_abort()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_build()
+{
+    local word_list="  -f --force --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_data()
+{
+    local word_list="  -u --upload -n --name --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_deletepipeline()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_download()
+{
+    local word_list="  -s --summary"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_getkey()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_getpipelines()
+{
+    local word_list="  -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_list()
+{
+    local word_list="  --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_logs()
+{
+    local word_list="  -i --image -t --task"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_nb()
+{
+    local word_list="  --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_products()
+{
+    local word_list="  -d --delete --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_setkey()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_status()
+{
+    local word_list="  -w --watch -s --summary"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_task()
+{
+    local word_list="  -f --force --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_cloud_writepipeline()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_examples()
+{
+    local word_list="  -n --name -f --force -o --output -b --branch --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_install()
+{
+    local word_list="  -l --use-lock -L --no-use-lock -e --create-env -v --use-venv --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_interact()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_nb()
+{
+    local word_list="  -h --help --log -l --log-file -F --entry-point -e --single-click -S --single-click-disable -d --install-hook -I --uninstall-hook -u --inject -i --remove -r --format -f --pair -p --sync -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_plot()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_report()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_scaffold()
+{
+    local word_list="  -c --conda -p --pip -P --package -E --empty -e --entry-point --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_status()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ploomber_task()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ploomber ploomber

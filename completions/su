@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_su()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -m -p --preserve-environment -g --group -G --supp-group -c --command --session-command -f --fast -s --shell -P --pty -h --help -V --version -w --whitelist-environment"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _su su

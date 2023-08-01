@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_touch()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a -c --no-create -d --date -f -h --no-dereference -m -r --reference -t --time --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _touch touch

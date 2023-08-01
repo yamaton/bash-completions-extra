@@ -1,0 +1,1259 @@
+# Auto-generated with h2o
+
+_npm()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" access adduser audit bin bugs cache ci completion config dedupe deprecate diff dist-tag docs doctor edit exec explain explore find-dupes fund get help hook init install install-ci-test install-test link ll logout ls org outdated owner pack ping pkg prefix profile prune publish rebuild repo restart root run-script search set set-script shrinkwrap star stars start stop team test token uninstall unpublish unstar update version view whoami"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        access) _npm_access
+            return
+            ;;
+
+        adduser) _npm_adduser
+            return
+            ;;
+
+        audit) _npm_audit
+            return
+            ;;
+
+        bin) _npm_bin
+            return
+            ;;
+
+        bugs) _npm_bugs
+            return
+            ;;
+
+        cache) _npm_cache
+            return
+            ;;
+
+        ci) _npm_ci
+            return
+            ;;
+
+        completion) _npm_completion
+            return
+            ;;
+
+        config) _npm_config
+            return
+            ;;
+
+        dedupe) _npm_dedupe
+            return
+            ;;
+
+        deprecate) _npm_deprecate
+            return
+            ;;
+
+        diff) _npm_diff
+            return
+            ;;
+
+        dist-tag) _npm_disttag
+            return
+            ;;
+
+        docs) _npm_docs
+            return
+            ;;
+
+        doctor) _npm_doctor
+            return
+            ;;
+
+        edit) _npm_edit
+            return
+            ;;
+
+        exec) _npm_exec
+            return
+            ;;
+
+        explain) _npm_explain
+            return
+            ;;
+
+        explore) _npm_explore
+            return
+            ;;
+
+        find-dupes) _npm_finddupes
+            return
+            ;;
+
+        fund) _npm_fund
+            return
+            ;;
+
+        get) _npm_get
+            return
+            ;;
+
+        help) _npm_help
+            return
+            ;;
+
+        hook) _npm_hook
+            return
+            ;;
+
+        init) _npm_init
+            return
+            ;;
+
+        install) _npm_install
+            return
+            ;;
+
+        install-ci-test) _npm_installcitest
+            return
+            ;;
+
+        install-test) _npm_installtest
+            return
+            ;;
+
+        link) _npm_link
+            return
+            ;;
+
+        ll) _npm_ll
+            return
+            ;;
+
+        logout) _npm_logout
+            return
+            ;;
+
+        ls) _npm_ls
+            return
+            ;;
+
+        org) _npm_org
+            return
+            ;;
+
+        outdated) _npm_outdated
+            return
+            ;;
+
+        owner) _npm_owner
+            return
+            ;;
+
+        pack) _npm_pack
+            return
+            ;;
+
+        ping) _npm_ping
+            return
+            ;;
+
+        pkg) _npm_pkg
+            return
+            ;;
+
+        prefix) _npm_prefix
+            return
+            ;;
+
+        profile) _npm_profile
+            return
+            ;;
+
+        prune) _npm_prune
+            return
+            ;;
+
+        publish) _npm_publish
+            return
+            ;;
+
+        rebuild) _npm_rebuild
+            return
+            ;;
+
+        repo) _npm_repo
+            return
+            ;;
+
+        restart) _npm_restart
+            return
+            ;;
+
+        root) _npm_root
+            return
+            ;;
+
+        run-script) _npm_runscript
+            return
+            ;;
+
+        search) _npm_search
+            return
+            ;;
+
+        set) _npm_set
+            return
+            ;;
+
+        set-script) _npm_setscript
+            return
+            ;;
+
+        shrinkwrap) _npm_shrinkwrap
+            return
+            ;;
+
+        star) _npm_star
+            return
+            ;;
+
+        stars) _npm_stars
+            return
+            ;;
+
+        start) _npm_start
+            return
+            ;;
+
+        stop) _npm_stop
+            return
+            ;;
+
+        team) _npm_team
+            return
+            ;;
+
+        test) _npm_test
+            return
+            ;;
+
+        token) _npm_token
+            return
+            ;;
+
+        uninstall) _npm_uninstall
+            return
+            ;;
+
+        unpublish) _npm_unpublish
+            return
+            ;;
+
+        unstar) _npm_unstar
+            return
+            ;;
+
+        update) _npm_update
+            return
+            ;;
+
+        version) _npm_version
+            return
+            ;;
+
+        view) _npm_view
+            return
+            ;;
+
+        whoami) _npm_whoami
+            return
+            ;;
+
+    esac
+
+    local word_list=" access adduser audit bin bugs cache ci completion config dedupe deprecate diff dist-tag docs doctor edit exec explain explore find-dupes fund get help hook init install install-ci-test install-test link ll logout ls org outdated owner pack ping pkg prefix profile prune publish rebuild repo restart root run-script search set set-script shrinkwrap star stars start stop team test token uninstall unpublish unstar update version view whoami "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access()
+{
+    local cmd i subcommands
+    local subcommands=" public restricted grant revoke 2fa-required 2fa-not-required ls-packages ls-collaborators edit"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        public) _npm_access_public
+            return
+            ;;
+
+        restricted) _npm_access_restricted
+            return
+            ;;
+
+        grant) _npm_access_grant
+            return
+            ;;
+
+        revoke) _npm_access_revoke
+            return
+            ;;
+
+        2fa-required) _npm_access_2farequired
+            return
+            ;;
+
+        2fa-not-required) _npm_access_2fanotrequired
+            return
+            ;;
+
+        ls-packages) _npm_access_lspackages
+            return
+            ;;
+
+        ls-collaborators) _npm_access_lscollaborators
+            return
+            ;;
+
+        edit) _npm_access_edit
+            return
+            ;;
+
+    esac
+
+    local word_list=" public restricted grant revoke 2fa-required 2fa-not-required ls-packages ls-collaborators edit "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_public()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_restricted()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_grant()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_revoke()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_2farequired()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_2fanotrequired()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_lspackages()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_lscollaborators()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_access_edit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_adduser()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_audit()
+{
+    local cmd i subcommands
+    local subcommands=" fix"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        fix) _npm_audit_fix
+            return
+            ;;
+
+    esac
+
+    local word_list=" fix "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_audit_fix()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_bin()
+{
+    local word_list="  --global"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_bugs()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_cache()
+{
+    local cmd i subcommands
+    local subcommands=" add clean ls verify"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _npm_cache_add
+            return
+            ;;
+
+        clean) _npm_cache_clean
+            return
+            ;;
+
+        ls) _npm_cache_ls
+            return
+            ;;
+
+        verify) _npm_cache_verify
+            return
+            ;;
+
+    esac
+
+    local word_list=" add clean ls verify "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_cache_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_cache_clean()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_cache_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_cache_verify()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_ci()
+{
+    local word_list="  --audit --foreground-scripts --ignore-scripts --script-shell"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_completion()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_config()
+{
+    local cmd i subcommands
+    local subcommands=" set get list delete edit"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        set) _npm_config_set
+            return
+            ;;
+
+        get) _npm_config_get
+            return
+            ;;
+
+        list) _npm_config_list
+            return
+            ;;
+
+        delete) _npm_config_delete
+            return
+            ;;
+
+        edit) _npm_config_edit
+            return
+            ;;
+
+    esac
+
+    local word_list=" set get list delete edit "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_config_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_config_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_config_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_config_delete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_config_edit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_dedupe()
+{
+    local word_list="  --global-style --legacy-bundling --strict-peer-deps --package-lock --save --omit --ignore-scripts --audit --bin-links --fund --dry-run --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_deprecate()
+{
+    local word_list="  --registry --otp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_diff()
+{
+    local word_list="  --diff --diff-name-only --diff-unified --diff-ignore-all-space --diff-no-prefix --diff-src-prefix --diff-dst-prefix --diff-text --global --tag --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_disttag()
+{
+    local cmd i subcommands
+    local subcommands=" add rm ls"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _npm_disttag_add
+            return
+            ;;
+
+        rm) _npm_disttag_rm
+            return
+            ;;
+
+        ls) _npm_disttag_ls
+            return
+            ;;
+
+    esac
+
+    local word_list=" add rm ls "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_disttag_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_disttag_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_disttag_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_docs()
+{
+    local word_list="  --browser --registry --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_doctor()
+{
+    local word_list="  --registry"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_edit()
+{
+    local word_list="  --editor"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_exec()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_explain()
+{
+    local word_list="  --json -w --workspace"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_explore()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_finddupes()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_fund()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_hook()
+{
+    local cmd i subcommands
+    local subcommands=" add ls rm update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _npm_hook_add
+            return
+            ;;
+
+        ls) _npm_hook_ls
+            return
+            ;;
+
+        rm) _npm_hook_rm
+            return
+            ;;
+
+        update) _npm_hook_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" add ls rm update "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_hook_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_hook_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_hook_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_hook_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_init()
+{
+    local word_list="  -y --yes --force -w --workspace -ws --workspaces --no-workspaces-update --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_install()
+{
+    local word_list="  --save --save-exact --global --global-style --legacy-bundling --omit --strict-peer-deps --package-lock --foreground-scripts --ignore-scripts --audit --bin-links --fund --dry-run --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_installcitest()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_installtest()
+{
+    local word_list="  --save --save-exact --global --global-style --legacy-bundling --omit --strict-peer-deps --package-lock --foreground-scripts --ignore-scripts --audit --bin-links --fund --dry-run --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_link()
+{
+    local word_list="  --save --save-exact --global --global-style --legacy-bundling --omit --ignore-scripts --audit --bin-links --fund --dry-run --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_ll()
+{
+    local word_list="  -a --all --json -l --long -p --parseable -g --global --depth --omit --link --package-lock-only --unicode -w --workspace -ws --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_logout()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_ls()
+{
+    local word_list="  -a --all --json -l --long -p --parseable -g --global --depth --omit --link --package-lock-only --unicode -w --workspace -ws --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_org()
+{
+    local cmd i subcommands
+    local subcommands=" set rm ls"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        set) _npm_org_set
+            return
+            ;;
+
+        rm) _npm_org_rm
+            return
+            ;;
+
+        ls) _npm_org_ls
+            return
+            ;;
+
+    esac
+
+    local word_list=" set rm ls "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_org_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_org_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_org_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_outdated()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_owner()
+{
+    local cmd i subcommands
+    local subcommands=" add rm ls"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _npm_owner_add
+            return
+            ;;
+
+        rm) _npm_owner_rm
+            return
+            ;;
+
+        ls) _npm_owner_ls
+            return
+            ;;
+
+    esac
+
+    local word_list=" add rm ls "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_owner_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_owner_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_owner_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_pack()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_ping()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_pkg()
+{
+    local cmd i subcommands
+    local subcommands=" set delete get"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        set) _npm_pkg_set
+            return
+            ;;
+
+        delete) _npm_pkg_delete
+            return
+            ;;
+
+        get) _npm_pkg_get
+            return
+            ;;
+
+    esac
+
+    local word_list=" set delete get "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_pkg_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_pkg_delete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_pkg_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_prefix()
+{
+    local word_list="  -g --global"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_profile()
+{
+    local cmd i subcommands
+    local subcommands=" enable-2fa diable-2fa set get"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        enable-2fa) _npm_profile_enable2fa
+            return
+            ;;
+
+        diable-2fa) _npm_profile_diable2fa
+            return
+            ;;
+
+        set) _npm_profile_set
+            return
+            ;;
+
+        get) _npm_profile_get
+            return
+            ;;
+
+    esac
+
+    local word_list=" enable-2fa diable-2fa set get "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_profile_enable2fa()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_profile_diable2fa()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_profile_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_profile_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_prune()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_publish()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_rebuild()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_repo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_restart()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_root()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_runscript()
+{
+    local word_list="  --workspace --workspaces --include-workspace-root --if-present --ignore-scripts --script-shell"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_search()
+{
+    local word_list="  --long --json --color --parseable --searchopts --searchexclude --registry --prefer-online --prefer-offline --offline"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_setscript()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_shrinkwrap()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_star()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_stars()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_start()
+{
+    local word_list="  --ignore-scripts --script-shell"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_stop()
+{
+    local word_list="  --ignore-scripts --script-shell"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_team()
+{
+    local cmd i subcommands
+    local subcommands=" create destroy add rm ls"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _npm_team_create
+            return
+            ;;
+
+        destroy) _npm_team_destroy
+            return
+            ;;
+
+        add) _npm_team_add
+            return
+            ;;
+
+        rm) _npm_team_rm
+            return
+            ;;
+
+        ls) _npm_team_ls
+            return
+            ;;
+
+    esac
+
+    local word_list=" create destroy add rm ls "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_team_create()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_team_destroy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_team_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_team_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_team_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_test()
+{
+    local word_list="  --ignore-scripts --script-shell"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_token()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_uninstall()
+{
+    local word_list="  --save -S --no-save"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_unpublish()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_unstar()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_view()
+{
+    local word_list="  --json --workspace --workspaces --include-workspace-root"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_npm_whoami()
+{
+    local word_list="  --registry"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _npm npm

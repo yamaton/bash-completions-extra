@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rake()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -m --multitask -B --build-all -j --jobs -I --libdir -r --require -f --rakefile -N --no-search --nosearch -G --no-system --nosystem -R --rakelib --rakelibdir -g --system --backtrace -t --trace --suppress-backtrace --rules -n --dry-run -T --tasks -D --describe -W --where -P --prereqs -e --execute -p --execute-print -E --execute-continue -v --verbose -q --quiet -s --silent -X --no-deprecation-warnings --comments -A --all --job-stats -V --version -h -H --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rake rake

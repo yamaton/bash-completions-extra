@@ -1,0 +1,436 @@
+# Auto-generated with h2o
+
+_s3cmd()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" mb rb ls la put get del rm restore sync du info cp modify mv setacl setpolicy delpolicy setcors delcors payer multipart abortmp listmp accesslog sign signurl fixbucket ws-create ws-delete ws-info expire setlifecycle getlifecycle dellifecycle cflist cfinfo cfcreate cfdelete cfmodify cfinvalinfo"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        mb) _s3cmd_mb
+            return
+            ;;
+
+        rb) _s3cmd_rb
+            return
+            ;;
+
+        ls) _s3cmd_ls
+            return
+            ;;
+
+        la) _s3cmd_la
+            return
+            ;;
+
+        put) _s3cmd_put
+            return
+            ;;
+
+        get) _s3cmd_get
+            return
+            ;;
+
+        del) _s3cmd_del
+            return
+            ;;
+
+        rm) _s3cmd_rm
+            return
+            ;;
+
+        restore) _s3cmd_restore
+            return
+            ;;
+
+        sync) _s3cmd_sync
+            return
+            ;;
+
+        du) _s3cmd_du
+            return
+            ;;
+
+        info) _s3cmd_info
+            return
+            ;;
+
+        cp) _s3cmd_cp
+            return
+            ;;
+
+        modify) _s3cmd_modify
+            return
+            ;;
+
+        mv) _s3cmd_mv
+            return
+            ;;
+
+        setacl) _s3cmd_setacl
+            return
+            ;;
+
+        setpolicy) _s3cmd_setpolicy
+            return
+            ;;
+
+        delpolicy) _s3cmd_delpolicy
+            return
+            ;;
+
+        setcors) _s3cmd_setcors
+            return
+            ;;
+
+        delcors) _s3cmd_delcors
+            return
+            ;;
+
+        payer) _s3cmd_payer
+            return
+            ;;
+
+        multipart) _s3cmd_multipart
+            return
+            ;;
+
+        abortmp) _s3cmd_abortmp
+            return
+            ;;
+
+        listmp) _s3cmd_listmp
+            return
+            ;;
+
+        accesslog) _s3cmd_accesslog
+            return
+            ;;
+
+        sign) _s3cmd_sign
+            return
+            ;;
+
+        signurl) _s3cmd_signurl
+            return
+            ;;
+
+        fixbucket) _s3cmd_fixbucket
+            return
+            ;;
+
+        ws-create) _s3cmd_wscreate
+            return
+            ;;
+
+        ws-delete) _s3cmd_wsdelete
+            return
+            ;;
+
+        ws-info) _s3cmd_wsinfo
+            return
+            ;;
+
+        expire) _s3cmd_expire
+            return
+            ;;
+
+        setlifecycle) _s3cmd_setlifecycle
+            return
+            ;;
+
+        getlifecycle) _s3cmd_getlifecycle
+            return
+            ;;
+
+        dellifecycle) _s3cmd_dellifecycle
+            return
+            ;;
+
+        cflist) _s3cmd_cflist
+            return
+            ;;
+
+        cfinfo) _s3cmd_cfinfo
+            return
+            ;;
+
+        cfcreate) _s3cmd_cfcreate
+            return
+            ;;
+
+        cfdelete) _s3cmd_cfdelete
+            return
+            ;;
+
+        cfmodify) _s3cmd_cfmodify
+            return
+            ;;
+
+        cfinvalinfo) _s3cmd_cfinvalinfo
+            return
+            ;;
+
+    esac
+
+    local word_list=" mb rb ls la put get del rm restore sync du info cp modify mv setacl setpolicy delpolicy setcors delcors payer multipart abortmp listmp accesslog sign signurl fixbucket ws-create ws-delete ws-info expire setlifecycle getlifecycle dellifecycle cflist cfinfo cfcreate cfdelete cfmodify cfinvalinfo -h --help --configure -c --config --dump-config --access_key --secret_key --access_token -n --dry-run -s --ssl --no-ssl -e --encrypt --no-encrypt -f --force --continue --continue-put --upload-id --skip-existing -r --recursive --check-md5 --no-check-md5 -P --acl-public --acl-private --acl-revoke -D --restore-days --restore-priority --delete-removed --no-delete-removed --delete-after --delay-updates --max-delete --limit --add-destination --delete-after-fetch -p --preserve --no-preserve --exclude --exclude-from --rexclude --rexclude-from --include --include-from --rinclude --rinclude-from --files-from --region --bucket-location --host --host-bucket --reduced-redundancy --rr --no-reduced-redundancy --no-rr --storage-class --access-logging-target-prefix --no-access-logging --default-mime-type -M --guess-mime-type --no-guess-mime-type --no-mime-magic -m --mime-type --add-header --remove-header --server-side-encryption --server-side-encryption-kms-id --encoding --add-encoding-exts --verbatim --disable-multipart --multipart-chunk-size-mb --list-md5 --list-allow-unordered -H --human-readable-sizes --ws-index --ws-error --expiry-date --expiry-days --expiry-prefix --progress --no-progress --stats --enable --disable --cf-invalidate --cf-invalidate-default-index --cf-no-invalidate-default-index-root --cf-add-cname --cf-remove-cname --cf-comment --cf-default-root-object -v --verbose -d --debug --version -F --follow-symlinks --cache-file -q --quiet --ca-certs --ssl-cert --ssl-key --check-certificate --no-check-certificate --check-hostname --no-check-hostname --signature-v2 --limit-rate --no-connection-pooling --requester-pays -l --long-listing --stop-on-error --content-disposition --content-type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_mb()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_rb()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_ls()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_la()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_put()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_del()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_restore()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_sync()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_du()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_info()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cp()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_modify()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_mv()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_setacl()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_setpolicy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_delpolicy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_setcors()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_delcors()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_payer()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_multipart()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_abortmp()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_listmp()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_accesslog()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_sign()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_signurl()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_fixbucket()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_wscreate()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_wsdelete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_wsinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_expire()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_setlifecycle()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_getlifecycle()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_dellifecycle()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cflist()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cfinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cfcreate()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cfdelete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cfmodify()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_s3cmd_cfinvalinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _s3cmd s3cmd

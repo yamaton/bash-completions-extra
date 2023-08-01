@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_uname()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -s --kernel-name -n --nodename -r --kernel-release -v --kernel-version -m --machine -p --processor -i --hardware-platform -o --operating-system --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _uname uname

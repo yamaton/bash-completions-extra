@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgverifybackup()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -e --exit-on-error -i --ignore -m --manifest-path -n --no-parse-wal -q --quiet -s --skip-checksums -w --wal-directory -V --version -? --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgverifybackup pg_verifybackup

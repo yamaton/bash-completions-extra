@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_shuf()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -e --echo -i --input-range -n --head-count -o --output --random-source -r --repeat -z --zero-terminated --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _shuf shuf

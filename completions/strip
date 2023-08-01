@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_strip()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -I --input-target -O --output-target -F --target -p --preserve-dates -D --enable-deterministic-archives -U --disable-deterministic-archives -R --remove-section --remove-relocations -s --strip-all -g -S -d --strip-debug --strip-dwo --strip-unneeded --only-keep-debug -M --merge-notes -N --strip-symbol --keep-section -K --keep-symbol --keep-section-symbols --keep-file-symbols -w --wildcard -x --discard-all -X --discard-locals -v --verbose -V --version -h --help --info -o"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _strip strip

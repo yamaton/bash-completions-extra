@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_xargs()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -0 --null -a --arg-file -d --delimiter -E -e --eof -I -i --replace -L --max-lines -l -n --max-args -o --open-tty -P --max-procs -p --interactive --process-slot-var -r --no-run-if-empty -s --max-chars --show-limits -t --verbose -x --exit --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _xargs xargs

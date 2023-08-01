@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgrecvlogical()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --create-slot --drop-slot --start -E --endpos -f --file -F --fsync-interval --if-not-exists -I --startpos -n --no-loop -o --option -P --plugin -s --status-interval -S --slot -t --two-phase -v --verbose -V --version -? --help -d --dbname -h --host -p --port -U --username -w --no-password -W --password"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgrecvlogical pg_recvlogical

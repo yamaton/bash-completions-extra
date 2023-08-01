@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pr()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -COLUMN --columns -a --across -c --show-control-chars -d --double-space -D --date-format -e --expand-tabs -F -f --form-feed -h --header -i --output-tabs -J --join-lines -l --length -m --merge -n --number-lines -N --first-line-number -o --indent -r --no-file-warnings -s --separator -S --sep-string -t --omit-header -T --omit-pagination -v --show-nonprinting -w --width -W --page-width --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pr pr

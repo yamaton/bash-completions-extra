@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_scp()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -3 -4 -6 -A -B -C -c -D -F -i -J -l -O -o -P -p -q -R -r -S -s -T -v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _scp scp

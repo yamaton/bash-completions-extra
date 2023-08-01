@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_readelf()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -h --file-header -l --program-headers -S --section-headers -g --section-groups -t --section-details -e --headers -s --syms --dyn-syms -n --notes -r --relocs -u --unwind -d --dynamic -V --version-info -A --arch-specific -c --archive-index -D --use-dynamic -x --hex-dump -p --string-dump -R --relocated-dump -z --decompress -w --debug-dump --dwarf-depth --dwarf-start --ctf --ctf-parent --ctf-symbols --ctf-strings -I --histogram -W --wide -H --help -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _readelf readelf

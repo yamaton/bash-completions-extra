@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_stow()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -d --dir -t --target -S --stow -D --delete -R --restow --ignore --defer --override --adopt -p --compat -n --no --simulate -v --verbose -V --version -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _stow stow

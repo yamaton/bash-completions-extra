@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_sha512sum()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -b --binary -c --check --tag -t --text -z --zero --ignore-missing --quiet --status --strict -w --warn --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _sha512sum sha512sum

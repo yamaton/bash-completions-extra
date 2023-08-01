@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pigz()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -0 -9 -11 --fast --best -A --alias -b --blocksize -c --stdout -C --comment -d --decompress -f --force -F --first -h --help -H --huffman -i --independent -I --iterations -J --maxsplits -k --keep -K --zip -l --list -L --license -m --no-time -M --time -n --no-name -N --name -O --oneblock -p --processes -q --quiet -r --recursive -R --rsyncable -S --suffix -t --test -U --rle -v --verbose -V --version -Y --synchronous -z --zlib --"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pigz pigz

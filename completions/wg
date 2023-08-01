@@ -1,0 +1,116 @@
+# Auto-generated with h2o
+
+_wg()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" show showconf set setconf addconf syncconf genkey genpsk pubkey"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        show) _wg_show
+            return
+            ;;
+
+        showconf) _wg_showconf
+            return
+            ;;
+
+        set) _wg_set
+            return
+            ;;
+
+        setconf) _wg_setconf
+            return
+            ;;
+
+        addconf) _wg_addconf
+            return
+            ;;
+
+        syncconf) _wg_syncconf
+            return
+            ;;
+
+        genkey) _wg_genkey
+            return
+            ;;
+
+        genpsk) _wg_genpsk
+            return
+            ;;
+
+        pubkey) _wg_pubkey
+            return
+            ;;
+
+    esac
+
+    local word_list=" show showconf set setconf addconf syncconf genkey genpsk pubkey "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_showconf()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_set()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_setconf()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_addconf()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_syncconf()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_genkey()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_genpsk()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wg_pubkey()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _wg wg

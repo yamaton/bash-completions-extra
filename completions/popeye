@@ -1,0 +1,99 @@
+# Auto-generated with h2o
+
+_popeye()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" completion version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        completion) _popeye_completion
+            return
+            ;;
+
+        version) _popeye_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" completion version -A --all-namespaces --as --as-group --certificate-authority -c --clear --client-certificate --client-key --cluster --cluster-name --context -f --file --force-exit-zero -h --help --insecure-skip-tls-verify --kubeconfig -l --lint --min-score -n --namespace -o --out --output-file --over-allocs --pushgateway-address --pushgateway-password --pushgateway-user --request-timeout --s3-bucket --s3-endpoint --s3-region --save -s --sections --token --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_popeye_completion()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish powershell zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _popeye_completion_bash
+            return
+            ;;
+
+        fish) _popeye_completion_fish
+            return
+            ;;
+
+        powershell) _popeye_completion_powershell
+            return
+            ;;
+
+        zsh) _popeye_completion_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish powershell zsh -h --help -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_popeye_completion_bash()
+{
+    local word_list="  -h --help --no-descriptions -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_popeye_completion_fish()
+{
+    local word_list="  -h --help --no-descriptions -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_popeye_completion_powershell()
+{
+    local word_list="  -h --help --no-descriptions -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_popeye_completion_zsh()
+{
+    local word_list="  -h --help --no-descriptions -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_popeye_version()
+{
+    local word_list="  -h --help -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _popeye popeye

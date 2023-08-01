@@ -1,0 +1,216 @@
+# Auto-generated with h2o
+
+_pyenv()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" commands exec global help hooks init install latest local prefix rehash root shell shims uninstall version versions whence which"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        commands) _pyenv_commands
+            return
+            ;;
+
+        exec) _pyenv_exec
+            return
+            ;;
+
+        global) _pyenv_global
+            return
+            ;;
+
+        help) _pyenv_help
+            return
+            ;;
+
+        hooks) _pyenv_hooks
+            return
+            ;;
+
+        init) _pyenv_init
+            return
+            ;;
+
+        install) _pyenv_install
+            return
+            ;;
+
+        latest) _pyenv_latest
+            return
+            ;;
+
+        local) _pyenv_local
+            return
+            ;;
+
+        prefix) _pyenv_prefix
+            return
+            ;;
+
+        rehash) _pyenv_rehash
+            return
+            ;;
+
+        root) _pyenv_root
+            return
+            ;;
+
+        shell) _pyenv_shell
+            return
+            ;;
+
+        shims) _pyenv_shims
+            return
+            ;;
+
+        uninstall) _pyenv_uninstall
+            return
+            ;;
+
+        version) _pyenv_version
+            return
+            ;;
+
+        versions) _pyenv_versions
+            return
+            ;;
+
+        whence) _pyenv_whence
+            return
+            ;;
+
+        which) _pyenv_which
+            return
+            ;;
+
+    esac
+
+    local word_list=" commands exec global help hooks init install latest local prefix rehash root shell shims uninstall version versions whence which --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_commands()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_exec()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_global()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_hooks()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_init()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_install()
+{
+    local word_list="  -l --list -f --force -s --skip-existing -k --keep -p --patch -v --verbose --version -g --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_latest()
+{
+    local word_list="  -k --known -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_local()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_prefix()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_rehash()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_root()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_shell()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_shims()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_uninstall()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_versions()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_whence()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pyenv_which()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pyenv pyenv

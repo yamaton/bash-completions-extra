@@ -1,0 +1,295 @@
+# Auto-generated with h2o
+
+_ufw()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" enable disable default logging allow deny reject limit delete insert prepend route reload reset status show version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        enable) _ufw_enable
+            return
+            ;;
+
+        disable) _ufw_disable
+            return
+            ;;
+
+        default) _ufw_default
+            return
+            ;;
+
+        logging) _ufw_logging
+            return
+            ;;
+
+        allow) _ufw_allow
+            return
+            ;;
+
+        deny) _ufw_deny
+            return
+            ;;
+
+        reject) _ufw_reject
+            return
+            ;;
+
+        limit) _ufw_limit
+            return
+            ;;
+
+        delete) _ufw_delete
+            return
+            ;;
+
+        insert) _ufw_insert
+            return
+            ;;
+
+        prepend) _ufw_prepend
+            return
+            ;;
+
+        route) _ufw_route
+            return
+            ;;
+
+        reload) _ufw_reload
+            return
+            ;;
+
+        reset) _ufw_reset
+            return
+            ;;
+
+        status) _ufw_status
+            return
+            ;;
+
+        show) _ufw_show
+            return
+            ;;
+
+        version) _ufw_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" enable disable default logging allow deny reject limit delete insert prepend route reload reset status show version --version -h --help --dry-run"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_enable()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_disable()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_default()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_logging()
+{
+    local cmd i subcommands
+    local subcommands=" on off"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        on) _ufw_logging_on
+            return
+            ;;
+
+        off) _ufw_logging_off
+            return
+            ;;
+
+    esac
+
+    local word_list=" on off "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_logging_on()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_logging_off()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_allow()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_deny()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_reject()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_limit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_delete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_insert()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_prepend()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_route()
+{
+    local cmd i subcommands
+    local subcommands=" delete insert"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        delete) _ufw_route_delete
+            return
+            ;;
+
+        insert) _ufw_route_insert
+            return
+            ;;
+
+    esac
+
+    local word_list=" delete insert "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_route_delete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_route_insert()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_reload()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_reset()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_status()
+{
+    local cmd i subcommands
+    local subcommands=" numbered verbose"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        numbered) _ufw_status_numbered
+            return
+            ;;
+
+        verbose) _ufw_status_verbose
+            return
+            ;;
+
+    esac
+
+    local word_list=" numbered verbose "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_status_numbered()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_status_verbose()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ufw_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ufw ufw

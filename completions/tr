@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_tr()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c -C --complement -d --delete -s --squeeze-repeats -t --truncate-set1 --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _tr tr

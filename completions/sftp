@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_sftp()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -4 -6 -A -B -b -C -c -D -F -f -i -J -l -N -o -P -p -q -R -r -S -s -v -1 -a -f -h -l -n -r -S -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _sftp sftp

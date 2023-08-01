@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_umount()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -A --all-targets -c --no-canonicalize -d --detach-loop --fake -f --force -i --internal-only -n --no-mtab -l --lazy -O --test-opts -R --recursive -r --read-only -t --types -v --verbose -q --quiet -N --namespace -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _umount umount

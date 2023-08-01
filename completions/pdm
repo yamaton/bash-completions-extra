@@ -1,0 +1,246 @@
+# Auto-generated with h2o
+
+_pdm()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" add build cache completion config export fix import info init install list lock publish remove run search show sync update use venv"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _pdm_add
+            return
+            ;;
+
+        build) _pdm_build
+            return
+            ;;
+
+        cache) _pdm_cache
+            return
+            ;;
+
+        completion) _pdm_completion
+            return
+            ;;
+
+        config) _pdm_config
+            return
+            ;;
+
+        export) _pdm_export
+            return
+            ;;
+
+        fix) _pdm_fix
+            return
+            ;;
+
+        import) _pdm_import
+            return
+            ;;
+
+        info) _pdm_info
+            return
+            ;;
+
+        init) _pdm_init
+            return
+            ;;
+
+        install) _pdm_install
+            return
+            ;;
+
+        list) _pdm_list
+            return
+            ;;
+
+        lock) _pdm_lock
+            return
+            ;;
+
+        publish) _pdm_publish
+            return
+            ;;
+
+        remove) _pdm_remove
+            return
+            ;;
+
+        run) _pdm_run
+            return
+            ;;
+
+        search) _pdm_search
+            return
+            ;;
+
+        show) _pdm_show
+            return
+            ;;
+
+        sync) _pdm_sync
+            return
+            ;;
+
+        update) _pdm_update
+            return
+            ;;
+
+        use) _pdm_use
+            return
+            ;;
+
+        venv) _pdm_venv
+            return
+            ;;
+
+    esac
+
+    local word_list=" add build cache completion config export fix import info init install list lock publish remove run search show sync update use venv -h --help -V --version -c --config -v --verbose -I --ignore-python --pep582"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_add()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -L --lockfile --save-compatible --save-wildcard --save-exact --save-minimum --update-reuse --update-eager --update-all --pre --prerelease -u --unconstrained --dry-run --venv -k --skip -d --dev -G --group --no-sync -e --editable --no-editable --no-self --fail-fast -x --no-isolation"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_build()
+{
+    local word_list="  -h --help -v --verbose -p --project --no-isolation -k --skip --no-sdist --no-wheel -d --dest --no-clean --config-setting -C"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_cache()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_completion()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_config()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -l --local -d --delete -e --edit"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_export()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -L --lockfile -f --format --without-hashes -o --output --pyproject --expandvars -G --group --no-default -d --dev --prod --production"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_fix()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --dry-run"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_import()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -d --dev -G --group -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_info()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --venv --python --where --packages --env --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_init()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -k --skip --copier --cookiecutter -n --non-interactive --python --backend --lib"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_install()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --dry-run -L --lockfile -k --skip --venv --no-lock --check --plugins -G --group --no-default -d --dev --prod --production --no-editable --no-self --fail-fast -x --no-isolation"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_list()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --venv --freeze --graph -r --reverse --resolve --fields --sort --csv --json --markdown --include --exclude"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_lock()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -L --lockfile --no-isolation -k --skip --refresh --check --no-cross-platform --static-urls --no-static-urls -G --group --no-default -d --dev --prod --production"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_publish()
+{
+    local word_list="  -h --help -v --verbose -p --project -k --skip -r --repository -u --username -P --password -S --sign -i --identity -c --comment --no-build --no-very-ssl --ca-certs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_remove()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --dry-run -L --lockfile -k --skip --venv -d --dev -G --group --no-sync --no-editable --no-self --fail-fast -x --no-isolation"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_run()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -k --skip --venv -l --list -j --json -s --site-packages"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_search()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_show()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --venv --name --version --summary --license --platform --keywords"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_sync()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project --dry-run -L --lockfile -k --skip --clean --only-keep --venv -r --reinstall -G --group --no-default -d --dev --prod --production --no-editable --no-self --fail-fast -x --no-isolation"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_update()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -L --lockfile --save-compatible --save-wildcard --save-exact --save-minimum --update-reuse --update-eager --update-all --pre --prerelease -u --unconstrained -k --skip --venv -t --top --dry-run --outdated --no-sync -G --group --no-default -d --dev --prod --production --no-editable --no-self --fail-fast -x --no-isolation"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_use()
+{
+    local word_list="  -h --help -v --verbose -g --global -p --project -k --skip -f --first -i --ignore-remembered --venv"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pdm_venv()
+{
+    local word_list="  -h --help -p --project --path --python"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pdm pdm

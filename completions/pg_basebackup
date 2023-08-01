@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgbasebackup()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -D --pgdata -F --format -r --max-rate -R --write-recovery-conf -t --target -T --tablespace-mapping --waldir -X --wal-method -z --gzip -Z --compress -Z --compress -c --checkpoint -C --create-slot -l --label -n --no-clean -N --no-sync -P --progress -S --slot -v --verbose -V --version --manifest-checksums --manifest-force-encode --no-estimate-size --no-manifest --no-slot --no-verify-checksums -? --help -d --dbname -h --host -p --port -s --status-interval -U --username -w --no-password -W --password"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgbasebackup pg_basebackup

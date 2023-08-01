@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgamcheck()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -d --database -D --exclude-database -i --index -I --exclude-index -r --relation -R --exclude-relation -s --schema -S --exclude-schema -t --table -T --exclude-table --no-dependent-indexes --no-dependent-toast --no-strict-names --exclude-toast-pointers --on-error-stop --skip --startblock --endblock -tree --heapallindexed --parent-check --rootdescend -h --host -p --port -U --username -w --no-password -W --password --maintenance-db -e --echo -j --jobs -P --progress -v --verbose -V --version --install-missing -? --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgamcheck pg_amcheck

@@ -1,0 +1,4039 @@
+# Auto-generated with h2o
+
+_podman()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" attach auto-update build commit container cp create diff events exec export generate healthcheck help history image images import info init inspect kill load login logout logs machine manifest mount network pause play pod port ps pull push rename restart rm rmi run save search secret start stats stop system tag top unmount unpause unshare untag version volume wait"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _podman_attach
+            return
+            ;;
+
+        auto-update) _podman_autoupdate
+            return
+            ;;
+
+        build) _podman_build
+            return
+            ;;
+
+        commit) _podman_commit
+            return
+            ;;
+
+        container) _podman_container
+            return
+            ;;
+
+        cp) _podman_cp
+            return
+            ;;
+
+        create) _podman_create
+            return
+            ;;
+
+        diff) _podman_diff
+            return
+            ;;
+
+        events) _podman_events
+            return
+            ;;
+
+        exec) _podman_exec
+            return
+            ;;
+
+        export) _podman_export
+            return
+            ;;
+
+        generate) _podman_generate
+            return
+            ;;
+
+        healthcheck) _podman_healthcheck
+            return
+            ;;
+
+        help) _podman_help
+            return
+            ;;
+
+        history) _podman_history
+            return
+            ;;
+
+        image) _podman_image
+            return
+            ;;
+
+        images) _podman_images
+            return
+            ;;
+
+        import) _podman_import
+            return
+            ;;
+
+        info) _podman_info
+            return
+            ;;
+
+        init) _podman_init
+            return
+            ;;
+
+        inspect) _podman_inspect
+            return
+            ;;
+
+        kill) _podman_kill
+            return
+            ;;
+
+        load) _podman_load
+            return
+            ;;
+
+        login) _podman_login
+            return
+            ;;
+
+        logout) _podman_logout
+            return
+            ;;
+
+        logs) _podman_logs
+            return
+            ;;
+
+        machine) _podman_machine
+            return
+            ;;
+
+        manifest) _podman_manifest
+            return
+            ;;
+
+        mount) _podman_mount
+            return
+            ;;
+
+        network) _podman_network
+            return
+            ;;
+
+        pause) _podman_pause
+            return
+            ;;
+
+        play) _podman_play
+            return
+            ;;
+
+        pod) _podman_pod
+            return
+            ;;
+
+        port) _podman_port
+            return
+            ;;
+
+        ps) _podman_ps
+            return
+            ;;
+
+        pull) _podman_pull
+            return
+            ;;
+
+        push) _podman_push
+            return
+            ;;
+
+        rename) _podman_rename
+            return
+            ;;
+
+        restart) _podman_restart
+            return
+            ;;
+
+        rm) _podman_rm
+            return
+            ;;
+
+        rmi) _podman_rmi
+            return
+            ;;
+
+        run) _podman_run
+            return
+            ;;
+
+        save) _podman_save
+            return
+            ;;
+
+        search) _podman_search
+            return
+            ;;
+
+        secret) _podman_secret
+            return
+            ;;
+
+        start) _podman_start
+            return
+            ;;
+
+        stats) _podman_stats
+            return
+            ;;
+
+        stop) _podman_stop
+            return
+            ;;
+
+        system) _podman_system
+            return
+            ;;
+
+        tag) _podman_tag
+            return
+            ;;
+
+        top) _podman_top
+            return
+            ;;
+
+        unmount) _podman_unmount
+            return
+            ;;
+
+        unpause) _podman_unpause
+            return
+            ;;
+
+        unshare) _podman_unshare
+            return
+            ;;
+
+        untag) _podman_untag
+            return
+            ;;
+
+        version) _podman_version
+            return
+            ;;
+
+        volume) _podman_volume
+            return
+            ;;
+
+        wait) _podman_wait
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach auto-update build commit container cp create diff events exec export generate healthcheck help history image images import info init inspect kill load login logout logs machine manifest mount network pause play pod port ps pull push rename restart rm rmi run save search secret start stats stop system tag top unmount unpause unshare untag version volume wait --cgroup-manager --cni-config-dir --conmon -c --connection --events-backend --help --hooks-dir --identity --log-level --namespace --network-cmd-path -r --remote --root --runroot --runtime --runtime-flag --storage-driver --storage-opt --syslog --tmpdir --url -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_attach()
+{
+    local word_list="  --detach-keys -l --latest --no-stdin --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_autoupdate()
+{
+    local word_list="  --authfile --dry-run --format --rollback"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_build()
+{
+    local word_list="  --add-host --annotation --arch --authfile --build-arg --cache-from --cap-add --cap-drop --cert-dir --cgroup-parent --cni-plugin-path --compress --cpu-period --cpu-quota -c --cpu-shares --cpuset-cpus --cpuset-mems --creds --decryption-key --device -D --disable-compression --disable-content-trust --dns-option --dns-search -f --file --force-rm --format --from --http-proxy --ignorefile --iidfile --ipc --isolation --jobs --label --layers --logfile --manifest -m --memory --memory-swap --network --no-cache --os --pid --platform --pull --pull-always --pull-never -q --quiet --rm --secret --security-opt --shm-size --sign-by --squash --squash-all --ssh --stdin -t --tag --target --timestamp --tls-verify --ulimit --userns --userns-gid-map --userns-gid-map-group --userns-uid-map --userns-uid-map-user --uts --variant -v --volume"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_commit()
+{
+    local word_list="  -a --author -c --change -f --format --iidfile --include-volumes -m --message -p --pause -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container()
+{
+    local cmd i subcommands
+    local subcommands=" attach checkpoint cleanup commit cp create diff exec exists export init inspect kill list logs mount pause port prune ps rename restart restore rm run runlabel start stats stop top unmount unpause wait"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _podman_container_attach
+            return
+            ;;
+
+        checkpoint) _podman_container_checkpoint
+            return
+            ;;
+
+        cleanup) _podman_container_cleanup
+            return
+            ;;
+
+        commit) _podman_container_commit
+            return
+            ;;
+
+        cp) _podman_container_cp
+            return
+            ;;
+
+        create) _podman_container_create
+            return
+            ;;
+
+        diff) _podman_container_diff
+            return
+            ;;
+
+        exec) _podman_container_exec
+            return
+            ;;
+
+        exists) _podman_container_exists
+            return
+            ;;
+
+        export) _podman_container_export
+            return
+            ;;
+
+        init) _podman_container_init
+            return
+            ;;
+
+        inspect) _podman_container_inspect
+            return
+            ;;
+
+        kill) _podman_container_kill
+            return
+            ;;
+
+        list) _podman_container_list
+            return
+            ;;
+
+        logs) _podman_container_logs
+            return
+            ;;
+
+        mount) _podman_container_mount
+            return
+            ;;
+
+        pause) _podman_container_pause
+            return
+            ;;
+
+        port) _podman_container_port
+            return
+            ;;
+
+        prune) _podman_container_prune
+            return
+            ;;
+
+        ps) _podman_container_ps
+            return
+            ;;
+
+        rename) _podman_container_rename
+            return
+            ;;
+
+        restart) _podman_container_restart
+            return
+            ;;
+
+        restore) _podman_container_restore
+            return
+            ;;
+
+        rm) _podman_container_rm
+            return
+            ;;
+
+        run) _podman_container_run
+            return
+            ;;
+
+        runlabel) _podman_container_runlabel
+            return
+            ;;
+
+        start) _podman_container_start
+            return
+            ;;
+
+        stats) _podman_container_stats
+            return
+            ;;
+
+        stop) _podman_container_stop
+            return
+            ;;
+
+        top) _podman_container_top
+            return
+            ;;
+
+        unmount) _podman_container_unmount
+            return
+            ;;
+
+        unpause) _podman_container_unpause
+            return
+            ;;
+
+        wait) _podman_container_wait
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach checkpoint cleanup commit cp create diff exec exists export init inspect kill list logs mount pause port prune ps rename restart restore rm run runlabel start stats stop top unmount unpause wait "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_attach()
+{
+    local word_list="  --detach-keys -l --latest --no-stdin --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_checkpoint()
+{
+    local word_list="  -a --all -c --compress -e --export --ignore-rootfs --ignore-volumes -k --keep -l --latest -R --leave-running -P --pre-checkpoint --tcp-established --with-previous"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_cleanup()
+{
+    local word_list="  -a --all --exec -l --latest --rm --rmi"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_commit()
+{
+    local word_list="  -a --author -c --change -f --format --iidfile --include-volumes -m --message -p --pause -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_cp()
+{
+    local word_list="  -a --archive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_create()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-ctr --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_diff()
+{
+    local word_list="  --format -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_exec()
+{
+    local word_list="  -d --detach --detach-keys -e --env --env-file -i --interactive -l --latest --preserve-fds --privileged -t --tty -u --user -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_exists()
+{
+    local word_list="  --external"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_export()
+{
+    local word_list="  -o --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_init()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_inspect()
+{
+    local word_list="  -f --format -l --latest -s --size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_kill()
+{
+    local word_list="  -a --all --cidfile -l --latest -s --signal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_list()
+{
+    local word_list="  -a --all --external -f --filter --format -n --last -l --latest --no-trunc --noheading --ns -p --pod -q --quiet -s --size --sort --sync -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_logs()
+{
+    local word_list="  -f --follow -l --latest -n --names --since --tail -t --timestamps --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_mount()
+{
+    local word_list="  -a --all --format -l --latest --notruncate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_pause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_port()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_prune()
+{
+    local word_list="  --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_ps()
+{
+    local word_list="  -a --all --external -f --filter --format -n --last -l --latest --no-trunc --noheading --ns -p --pod -q --quiet -s --size --sort --sync -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_rename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_restart()
+{
+    local word_list="  -a --all -l --latest --running -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_restore()
+{
+    local word_list="  -a --all --ignore-rootfs --ignore-static-ip --ignore-static-mac --ignore-volumes -i --import --import-previous -k --keep -l --latest -n --name --pod -p --publish --tcp-established"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_rm()
+{
+    local word_list="  -a --all --cidfile -f --force -i --ignore -l --latest -v --volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_run()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems -d --detach --detach-keys --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --preserve-fds --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rmi --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --sig-proxy --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_runlabel()
+{
+    local word_list="  --authfile --cert-dir --creds --display -n --name -q --quiet --replace --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_start()
+{
+    local word_list="  --all -a --attach --detach-keys -f --filter -i --interactive -l --latest --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_stats()
+{
+    local word_list="  -a --all --format -i --interval -l --latest --no-reset --no-stream"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_stop()
+{
+    local word_list="  -a --all --cidfile -i --ignore -l --latest -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_top()
+{
+    local word_list="  -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_unmount()
+{
+    local word_list="  -a --all -f --force -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_unpause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_container_wait()
+{
+    local word_list="  --condition -i --interval -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_cp()
+{
+    local word_list="  -a --archive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_create()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-ctr --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_diff()
+{
+    local word_list="  --format -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_events()
+{
+    local word_list="  --filter --format --since --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_exec()
+{
+    local word_list="  -d --detach --detach-keys -e --env --env-file -i --interactive -l --latest --preserve-fds --privileged -t --tty -u --user -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_export()
+{
+    local word_list="  -o --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_generate()
+{
+    local cmd i subcommands
+    local subcommands=" kube systemd"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        kube) _podman_generate_kube
+            return
+            ;;
+
+        systemd) _podman_generate_systemd
+            return
+            ;;
+
+    esac
+
+    local word_list=" kube systemd "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_generate_kube()
+{
+    local word_list="  -f --filename -s --service"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_generate_systemd()
+{
+    local word_list="  --container-prefix -f --files --format -n --name --new --no-header --pod-prefix --restart-policy --separator -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_healthcheck()
+{
+    local cmd i subcommands
+    local subcommands=" run"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        run) _podman_healthcheck_run
+            return
+            ;;
+
+    esac
+
+    local word_list=" run "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_healthcheck_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_history()
+{
+    local word_list="  --format -H --human --no-trunc --notruncate -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image()
+{
+    local cmd i subcommands
+    local subcommands=" build diff exists history import inspect list load mount prune pull push rm save scp search sign tag tree trust unmount untag"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _podman_image_build
+            return
+            ;;
+
+        diff) _podman_image_diff
+            return
+            ;;
+
+        exists) _podman_image_exists
+            return
+            ;;
+
+        history) _podman_image_history
+            return
+            ;;
+
+        import) _podman_image_import
+            return
+            ;;
+
+        inspect) _podman_image_inspect
+            return
+            ;;
+
+        list) _podman_image_list
+            return
+            ;;
+
+        load) _podman_image_load
+            return
+            ;;
+
+        mount) _podman_image_mount
+            return
+            ;;
+
+        prune) _podman_image_prune
+            return
+            ;;
+
+        pull) _podman_image_pull
+            return
+            ;;
+
+        push) _podman_image_push
+            return
+            ;;
+
+        rm) _podman_image_rm
+            return
+            ;;
+
+        save) _podman_image_save
+            return
+            ;;
+
+        scp) _podman_image_scp
+            return
+            ;;
+
+        search) _podman_image_search
+            return
+            ;;
+
+        sign) _podman_image_sign
+            return
+            ;;
+
+        tag) _podman_image_tag
+            return
+            ;;
+
+        tree) _podman_image_tree
+            return
+            ;;
+
+        trust) _podman_image_trust
+            return
+            ;;
+
+        unmount) _podman_image_unmount
+            return
+            ;;
+
+        untag) _podman_image_untag
+            return
+            ;;
+
+    esac
+
+    local word_list=" build diff exists history import inspect list load mount prune pull push rm save scp search sign tag tree trust unmount untag "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_build()
+{
+    local word_list="  --add-host --annotation --arch --authfile --build-arg --cache-from --cap-add --cap-drop --cert-dir --cgroup-parent --cni-plugin-path --compress --cpu-period --cpu-quota -c --cpu-shares --cpuset-cpus --cpuset-mems --creds --decryption-key --device -D --disable-compression --disable-content-trust --dns-option --dns-search -f --file --force-rm --format --from --http-proxy --ignorefile --iidfile --ipc --isolation --jobs --label --layers --logfile --manifest -m --memory --memory-swap --network --no-cache --os --pid --platform --pull --pull-always --pull-never -q --quiet --rm --secret --security-opt --shm-size --sign-by --squash --squash-all --ssh --stdin -t --tag --target --timestamp --tls-verify --ulimit --userns --userns-gid-map --userns-gid-map-group --userns-uid-map --userns-uid-map-user --uts --variant -v --volume"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_diff()
+{
+    local word_list="  --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_history()
+{
+    local word_list="  --format -H --human --no-trunc --notruncate -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_import()
+{
+    local word_list="  -c --change -m --message -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_inspect()
+{
+    local word_list="  -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_list()
+{
+    local cmd i subcommands
+    local subcommands=" podman"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        podman) _podman_image_list_podman
+            return
+            ;;
+
+    esac
+
+    local word_list=" podman -a --all --digests -f --filter --format --history --no-trunc -n --noheading -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_list_podman()
+{
+    local word_list="  -a --all --digests -f --filter --format --history --no-trunc -n --noheading -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_load()
+{
+    local word_list="  -i --input -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_mount()
+{
+    local word_list="  -a --all --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_prune()
+{
+    local word_list="  -a --all --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_pull()
+{
+    local word_list="  --all-tags --arch --authfile --cert-dir --creds --disable-content-trust --os --platform -q --quiet --tls-verify --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_push()
+{
+    local word_list="  --authfile --cert-dir --compress --creds --digestfile --disable-content-trust -f --format -q --quiet --remove-signatures --sign-by --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_rm()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_save()
+{
+    local word_list="  --compress --format -m --multi-image-archive -o --output -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_scp()
+{
+    local word_list="  -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_search()
+{
+    local word_list="  --authfile -f --filter --format --limit --list-tags --no-trunc --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_sign()
+{
+    local word_list="  -a --all --cert-dir -d --directory --sign-by"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_tag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_tree()
+{
+    local word_list="  --whatrequires"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_trust()
+{
+    local cmd i subcommands
+    local subcommands=" set show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        set) _podman_image_trust_set
+            return
+            ;;
+
+        show) _podman_image_trust_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" set show "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_trust_set()
+{
+    local word_list="  -f --pubkeysfile -t --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_trust_show()
+{
+    local word_list="  -j --json --raw"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_unmount()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_image_untag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_images()
+{
+    local word_list="  -a --all --digests -f --filter --format --history --no-trunc -n --noheading -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_import()
+{
+    local word_list="  -c --change -m --message -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_info()
+{
+    local word_list="  -D --debug -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_init()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_inspect()
+{
+    local word_list="  -f --format -l --latest -s --size -t --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_kill()
+{
+    local word_list="  -a --all --cidfile -l --latest -s --signal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_load()
+{
+    local word_list="  -i --input -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_login()
+{
+    local word_list="  --authfile --cert-dir --get-login -p --password --password-stdin --tls-verify -u --username -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_logout()
+{
+    local word_list="  -a --all --authfile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_logs()
+{
+    local word_list="  -f --follow -l --latest -n --names --since --tail -t --timestamps --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine()
+{
+    local cmd i subcommands
+    local subcommands=" init list rm ssh start stop"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        init) _podman_machine_init
+            return
+            ;;
+
+        list) _podman_machine_list
+            return
+            ;;
+
+        rm) _podman_machine_rm
+            return
+            ;;
+
+        ssh) _podman_machine_ssh
+            return
+            ;;
+
+        start) _podman_machine_start
+            return
+            ;;
+
+        stop) _podman_machine_stop
+            return
+            ;;
+
+    esac
+
+    local word_list=" init list rm ssh start stop "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine_init()
+{
+    local word_list="  --cpus --disk-size --ignition-path --image-path -m --memory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine_list()
+{
+    local word_list="  --format --noheading"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine_rm()
+{
+    local word_list="  --force --save-ignition --save-image --save-keys"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine_ssh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine_start()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_machine_stop()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest()
+{
+    local cmd i subcommands
+    local subcommands=" add annotate create exists inspect push remove rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _podman_manifest_add
+            return
+            ;;
+
+        annotate) _podman_manifest_annotate
+            return
+            ;;
+
+        create) _podman_manifest_create
+            return
+            ;;
+
+        exists) _podman_manifest_exists
+            return
+            ;;
+
+        inspect) _podman_manifest_inspect
+            return
+            ;;
+
+        push) _podman_manifest_push
+            return
+            ;;
+
+        remove) _podman_manifest_remove
+            return
+            ;;
+
+        rm) _podman_manifest_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" add annotate create exists inspect push remove rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_add()
+{
+    local word_list="  --all --annotation --arch --authfile --cert-dir --creds --features --os --os-version --tls-verify --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_annotate()
+{
+    local word_list="  --annotation --arch --features --os --os-features --os-version --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_create()
+{
+    local word_list="  --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_inspect()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_push()
+{
+    local word_list="  --all --authfile --cert-dir --creds --digestfile -f --format -q --quiet --remove-signatures --rm --sign-by --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_manifest_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_mount()
+{
+    local word_list="  -a --all --format -l --latest --notruncate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network()
+{
+    local cmd i subcommands
+    local subcommands=" connect create disconnect exists inspect ls prune reload rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        connect) _podman_network_connect
+            return
+            ;;
+
+        create) _podman_network_create
+            return
+            ;;
+
+        disconnect) _podman_network_disconnect
+            return
+            ;;
+
+        exists) _podman_network_exists
+            return
+            ;;
+
+        inspect) _podman_network_inspect
+            return
+            ;;
+
+        ls) _podman_network_ls
+            return
+            ;;
+
+        prune) _podman_network_prune
+            return
+            ;;
+
+        reload) _podman_network_reload
+            return
+            ;;
+
+        rm) _podman_network_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" connect create disconnect exists inspect ls prune reload rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_connect()
+{
+    local word_list="  --alias"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_create()
+{
+    local word_list="  --disable-dns -d --driver --gateway --internal --ip-range --ipv6 --label -o --opt --subnet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_disconnect()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_inspect()
+{
+    local word_list="  -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_ls()
+{
+    local word_list="  -f --filter --format --no-trunc --noheading -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_prune()
+{
+    local word_list="  --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_reload()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_network_rm()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_play()
+{
+    local cmd i subcommands
+    local subcommands=" kube"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        kube) _podman_play_kube
+            return
+            ;;
+
+    esac
+
+    local word_list=" kube "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_play_kube()
+{
+    local word_list="  --authfile --build --cert-dir --configmap --creds --down --ip --log-driver --mac-address --network -q --quiet --seccomp-profile-root --start --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod()
+{
+    local cmd i subcommands
+    local subcommands=" create exists inspect kill logs pause prune ps restart rm start stats stop top unpause"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _podman_pod_create
+            return
+            ;;
+
+        exists) _podman_pod_exists
+            return
+            ;;
+
+        inspect) _podman_pod_inspect
+            return
+            ;;
+
+        kill) _podman_pod_kill
+            return
+            ;;
+
+        logs) _podman_pod_logs
+            return
+            ;;
+
+        pause) _podman_pod_pause
+            return
+            ;;
+
+        prune) _podman_pod_prune
+            return
+            ;;
+
+        ps) _podman_pod_ps
+            return
+            ;;
+
+        restart) _podman_pod_restart
+            return
+            ;;
+
+        rm) _podman_pod_rm
+            return
+            ;;
+
+        start) _podman_pod_start
+            return
+            ;;
+
+        stats) _podman_pod_stats
+            return
+            ;;
+
+        stop) _podman_pod_stop
+            return
+            ;;
+
+        top) _podman_pod_top
+            return
+            ;;
+
+        unpause) _podman_pod_unpause
+            return
+            ;;
+
+    esac
+
+    local word_list=" create exists inspect kill logs pause prune ps restart rm start stats stop top unpause "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_create()
+{
+    local word_list="  --add-host --cgroup-parent --dns --dns-opt --dns-search --gidmap -h --hostname --infra --infra-command --infra-conmon-pidfile --infra-image --infra-name --ip -l --label --label-file --mac-address -n --name --network --network-alias --no-hosts --pid --pod-id-file -p --publish --replace --share --subgidname --subuidname --uidmap --userns"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_inspect()
+{
+    local word_list="  -f --format -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_kill()
+{
+    local word_list="  -a --all -l --latest -s --signal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_logs()
+{
+    local word_list="  -c --container -f --follow -l --latest --since --tail -t --timestamps --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_pause()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_prune()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_ps()
+{
+    local word_list="  --ctr-ids --ctr-names --ctr-status -f --filter --format -l --latest --no-trunc --noheading --ns -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_restart()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_rm()
+{
+    local word_list="  -a --all -f --force -i --ignore -l --latest --pod-id-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_start()
+{
+    local word_list="  -a --all -l --latest --pod-id-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_stats()
+{
+    local word_list="  -a --all --format -l --latest --no-reset --no-stream"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_stop()
+{
+    local word_list="  -a --all -i --ignore -l --latest --pod-id-file -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_top()
+{
+    local word_list="  -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pod_unpause()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_port()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_ps()
+{
+    local word_list="  -a --all --external -f --filter --format -n --last -l --latest --no-trunc --noheading --ns -p --pod -q --quiet -s --size --sort --sync -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_pull()
+{
+    local word_list="  --all-tags --arch --authfile --cert-dir --creds --disable-content-trust --os --platform -q --quiet --tls-verify --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_push()
+{
+    local word_list="  --authfile --cert-dir --compress --creds --digestfile --disable-content-trust -f --format -q --quiet --remove-signatures --sign-by --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_rename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_restart()
+{
+    local word_list="  -a --all -l --latest --running -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_rm()
+{
+    local word_list="  -a --all --cidfile -f --force -i --ignore -l --latest -v --volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_rmi()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_run()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems -d --detach --detach-keys --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --preserve-fds --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rmi --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --sig-proxy --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_save()
+{
+    local word_list="  --compress --format -m --multi-image-archive -o --output -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_search()
+{
+    local word_list="  --authfile -f --filter --format --limit --list-tags --no-trunc --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_secret()
+{
+    local cmd i subcommands
+    local subcommands=" create inspect ls rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _podman_secret_create
+            return
+            ;;
+
+        inspect) _podman_secret_inspect
+            return
+            ;;
+
+        ls) _podman_secret_ls
+            return
+            ;;
+
+        rm) _podman_secret_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" create inspect ls rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_secret_create()
+{
+    local word_list="  --driver --driver-opts --env"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_secret_inspect()
+{
+    local word_list="  --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_secret_ls()
+{
+    local word_list="  --format --noheading"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_secret_rm()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_start()
+{
+    local word_list="  --all -a --attach --detach-keys -f --filter -i --interactive -l --latest --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_stats()
+{
+    local word_list="  -a --all --format -i --interval -l --latest --no-reset --no-stream"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_stop()
+{
+    local word_list="  -a --all --cidfile -i --ignore -l --latest -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system()
+{
+    local cmd i subcommands
+    local subcommands=" connection df info migrate prune renumber reset service"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        connection) _podman_system_connection
+            return
+            ;;
+
+        df) _podman_system_df
+            return
+            ;;
+
+        info) _podman_system_info
+            return
+            ;;
+
+        migrate) _podman_system_migrate
+            return
+            ;;
+
+        prune) _podman_system_prune
+            return
+            ;;
+
+        renumber) _podman_system_renumber
+            return
+            ;;
+
+        reset) _podman_system_reset
+            return
+            ;;
+
+        service) _podman_system_service
+            return
+            ;;
+
+    esac
+
+    local word_list=" connection df info migrate prune renumber reset service "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_connection()
+{
+    local cmd i subcommands
+    local subcommands=" add default list remove rename"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _podman_system_connection_add
+            return
+            ;;
+
+        default) _podman_system_connection_default
+            return
+            ;;
+
+        list) _podman_system_connection_list
+            return
+            ;;
+
+        remove) _podman_system_connection_remove
+            return
+            ;;
+
+        rename) _podman_system_connection_rename
+            return
+            ;;
+
+    esac
+
+    local word_list=" add default list remove rename "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_connection_add()
+{
+    local word_list="  -d --default --identity -p --port --socket-path"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_connection_default()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_connection_list()
+{
+    local word_list="  --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_connection_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_connection_rename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_df()
+{
+    local word_list="  --format -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_info()
+{
+    local word_list="  -D --debug -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_migrate()
+{
+    local word_list="  --new-runtime"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_prune()
+{
+    local word_list="  -a --all --filter -f --force --volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_renumber()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_reset()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_system_service()
+{
+    local word_list="  --cors -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_tag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_top()
+{
+    local word_list="  -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unmount()
+{
+    local word_list="  -a --all -f --force -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unpause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare()
+{
+    local cmd i subcommands
+    local subcommands=" podman"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        podman) _podman_unshare_podman
+            return
+            ;;
+
+    esac
+
+    local word_list=" podman --rootless-cni"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman()
+{
+    local cmd i subcommands
+    local subcommands=" attach auto-update build commit container cp create diff events exec export generate healthcheck help history image images import info init inspect kill load login logout logs machine manifest mount network pause play pod port ps pull push rename restart rm rmi run save search secret start stats stop system tag top unmount unpause unshare untag version volume wait"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _podman_unshare_podman_attach
+            return
+            ;;
+
+        auto-update) _podman_unshare_podman_autoupdate
+            return
+            ;;
+
+        build) _podman_unshare_podman_build
+            return
+            ;;
+
+        commit) _podman_unshare_podman_commit
+            return
+            ;;
+
+        container) _podman_unshare_podman_container
+            return
+            ;;
+
+        cp) _podman_unshare_podman_cp
+            return
+            ;;
+
+        create) _podman_unshare_podman_create
+            return
+            ;;
+
+        diff) _podman_unshare_podman_diff
+            return
+            ;;
+
+        events) _podman_unshare_podman_events
+            return
+            ;;
+
+        exec) _podman_unshare_podman_exec
+            return
+            ;;
+
+        export) _podman_unshare_podman_export
+            return
+            ;;
+
+        generate) _podman_unshare_podman_generate
+            return
+            ;;
+
+        healthcheck) _podman_unshare_podman_healthcheck
+            return
+            ;;
+
+        help) _podman_unshare_podman_help
+            return
+            ;;
+
+        history) _podman_unshare_podman_history
+            return
+            ;;
+
+        image) _podman_unshare_podman_image
+            return
+            ;;
+
+        images) _podman_unshare_podman_images
+            return
+            ;;
+
+        import) _podman_unshare_podman_import
+            return
+            ;;
+
+        info) _podman_unshare_podman_info
+            return
+            ;;
+
+        init) _podman_unshare_podman_init
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_inspect
+            return
+            ;;
+
+        kill) _podman_unshare_podman_kill
+            return
+            ;;
+
+        load) _podman_unshare_podman_load
+            return
+            ;;
+
+        login) _podman_unshare_podman_login
+            return
+            ;;
+
+        logout) _podman_unshare_podman_logout
+            return
+            ;;
+
+        logs) _podman_unshare_podman_logs
+            return
+            ;;
+
+        machine) _podman_unshare_podman_machine
+            return
+            ;;
+
+        manifest) _podman_unshare_podman_manifest
+            return
+            ;;
+
+        mount) _podman_unshare_podman_mount
+            return
+            ;;
+
+        network) _podman_unshare_podman_network
+            return
+            ;;
+
+        pause) _podman_unshare_podman_pause
+            return
+            ;;
+
+        play) _podman_unshare_podman_play
+            return
+            ;;
+
+        pod) _podman_unshare_podman_pod
+            return
+            ;;
+
+        port) _podman_unshare_podman_port
+            return
+            ;;
+
+        ps) _podman_unshare_podman_ps
+            return
+            ;;
+
+        pull) _podman_unshare_podman_pull
+            return
+            ;;
+
+        push) _podman_unshare_podman_push
+            return
+            ;;
+
+        rename) _podman_unshare_podman_rename
+            return
+            ;;
+
+        restart) _podman_unshare_podman_restart
+            return
+            ;;
+
+        rm) _podman_unshare_podman_rm
+            return
+            ;;
+
+        rmi) _podman_unshare_podman_rmi
+            return
+            ;;
+
+        run) _podman_unshare_podman_run
+            return
+            ;;
+
+        save) _podman_unshare_podman_save
+            return
+            ;;
+
+        search) _podman_unshare_podman_search
+            return
+            ;;
+
+        secret) _podman_unshare_podman_secret
+            return
+            ;;
+
+        start) _podman_unshare_podman_start
+            return
+            ;;
+
+        stats) _podman_unshare_podman_stats
+            return
+            ;;
+
+        stop) _podman_unshare_podman_stop
+            return
+            ;;
+
+        system) _podman_unshare_podman_system
+            return
+            ;;
+
+        tag) _podman_unshare_podman_tag
+            return
+            ;;
+
+        top) _podman_unshare_podman_top
+            return
+            ;;
+
+        unmount) _podman_unshare_podman_unmount
+            return
+            ;;
+
+        unpause) _podman_unshare_podman_unpause
+            return
+            ;;
+
+        unshare) _podman_unshare_podman_unshare
+            return
+            ;;
+
+        untag) _podman_unshare_podman_untag
+            return
+            ;;
+
+        version) _podman_unshare_podman_version
+            return
+            ;;
+
+        volume) _podman_unshare_podman_volume
+            return
+            ;;
+
+        wait) _podman_unshare_podman_wait
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach auto-update build commit container cp create diff events exec export generate healthcheck help history image images import info init inspect kill load login logout logs machine manifest mount network pause play pod port ps pull push rename restart rm rmi run save search secret start stats stop system tag top unmount unpause unshare untag version volume wait --cgroup-manager --cni-config-dir --conmon -c --connection --events-backend --help --hooks-dir --identity --log-level --namespace --network-cmd-path -r --remote --root --runroot --runtime --runtime-flag --storage-driver --storage-opt --syslog --tmpdir --url -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_attach()
+{
+    local word_list="  --detach-keys -l --latest --no-stdin --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_autoupdate()
+{
+    local word_list="  --authfile --dry-run --format --rollback"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_build()
+{
+    local word_list="  --add-host --annotation --arch --authfile --build-arg --cache-from --cap-add --cap-drop --cert-dir --cgroup-parent --cni-plugin-path --compress --cpu-period --cpu-quota -c --cpu-shares --cpuset-cpus --cpuset-mems --creds --decryption-key --device -D --disable-compression --disable-content-trust --dns-option --dns-search -f --file --force-rm --format --from --http-proxy --ignorefile --iidfile --ipc --isolation --jobs --label --layers --logfile --manifest -m --memory --memory-swap --network --no-cache --os --pid --platform --pull --pull-always --pull-never -q --quiet --rm --secret --security-opt --shm-size --sign-by --squash --squash-all --ssh --stdin -t --tag --target --timestamp --tls-verify --ulimit --userns --userns-gid-map --userns-gid-map-group --userns-uid-map --userns-uid-map-user --uts --variant -v --volume"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_commit()
+{
+    local word_list="  -a --author -c --change -f --format --iidfile --include-volumes -m --message -p --pause -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container()
+{
+    local cmd i subcommands
+    local subcommands=" attach checkpoint cleanup commit cp create diff exec exists export init inspect kill list logs mount pause port prune ps rename restart restore rm run runlabel start stats stop top unmount unpause wait"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _podman_unshare_podman_container_attach
+            return
+            ;;
+
+        checkpoint) _podman_unshare_podman_container_checkpoint
+            return
+            ;;
+
+        cleanup) _podman_unshare_podman_container_cleanup
+            return
+            ;;
+
+        commit) _podman_unshare_podman_container_commit
+            return
+            ;;
+
+        cp) _podman_unshare_podman_container_cp
+            return
+            ;;
+
+        create) _podman_unshare_podman_container_create
+            return
+            ;;
+
+        diff) _podman_unshare_podman_container_diff
+            return
+            ;;
+
+        exec) _podman_unshare_podman_container_exec
+            return
+            ;;
+
+        exists) _podman_unshare_podman_container_exists
+            return
+            ;;
+
+        export) _podman_unshare_podman_container_export
+            return
+            ;;
+
+        init) _podman_unshare_podman_container_init
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_container_inspect
+            return
+            ;;
+
+        kill) _podman_unshare_podman_container_kill
+            return
+            ;;
+
+        list) _podman_unshare_podman_container_list
+            return
+            ;;
+
+        logs) _podman_unshare_podman_container_logs
+            return
+            ;;
+
+        mount) _podman_unshare_podman_container_mount
+            return
+            ;;
+
+        pause) _podman_unshare_podman_container_pause
+            return
+            ;;
+
+        port) _podman_unshare_podman_container_port
+            return
+            ;;
+
+        prune) _podman_unshare_podman_container_prune
+            return
+            ;;
+
+        ps) _podman_unshare_podman_container_ps
+            return
+            ;;
+
+        rename) _podman_unshare_podman_container_rename
+            return
+            ;;
+
+        restart) _podman_unshare_podman_container_restart
+            return
+            ;;
+
+        restore) _podman_unshare_podman_container_restore
+            return
+            ;;
+
+        rm) _podman_unshare_podman_container_rm
+            return
+            ;;
+
+        run) _podman_unshare_podman_container_run
+            return
+            ;;
+
+        runlabel) _podman_unshare_podman_container_runlabel
+            return
+            ;;
+
+        start) _podman_unshare_podman_container_start
+            return
+            ;;
+
+        stats) _podman_unshare_podman_container_stats
+            return
+            ;;
+
+        stop) _podman_unshare_podman_container_stop
+            return
+            ;;
+
+        top) _podman_unshare_podman_container_top
+            return
+            ;;
+
+        unmount) _podman_unshare_podman_container_unmount
+            return
+            ;;
+
+        unpause) _podman_unshare_podman_container_unpause
+            return
+            ;;
+
+        wait) _podman_unshare_podman_container_wait
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach checkpoint cleanup commit cp create diff exec exists export init inspect kill list logs mount pause port prune ps rename restart restore rm run runlabel start stats stop top unmount unpause wait "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_attach()
+{
+    local word_list="  --detach-keys -l --latest --no-stdin --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_checkpoint()
+{
+    local word_list="  -a --all -c --compress -e --export --ignore-rootfs --ignore-volumes -k --keep -l --latest -R --leave-running -P --pre-checkpoint --tcp-established --with-previous"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_cleanup()
+{
+    local word_list="  -a --all --exec -l --latest --rm --rmi"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_commit()
+{
+    local word_list="  -a --author -c --change -f --format --iidfile --include-volumes -m --message -p --pause -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_cp()
+{
+    local word_list="  -a --archive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_create()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-ctr --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_diff()
+{
+    local word_list="  --format -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_exec()
+{
+    local word_list="  -d --detach --detach-keys -e --env --env-file -i --interactive -l --latest --preserve-fds --privileged -t --tty -u --user -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_exists()
+{
+    local word_list="  --external"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_export()
+{
+    local word_list="  -o --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_init()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_inspect()
+{
+    local word_list="  -f --format -l --latest -s --size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_kill()
+{
+    local word_list="  -a --all --cidfile -l --latest -s --signal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_list()
+{
+    local word_list="  -a --all --external -f --filter --format -n --last -l --latest --no-trunc --noheading --ns -p --pod -q --quiet -s --size --sort --sync -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_logs()
+{
+    local word_list="  -f --follow -l --latest -n --names --since --tail -t --timestamps --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_mount()
+{
+    local word_list="  -a --all --format -l --latest --notruncate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_pause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_port()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_prune()
+{
+    local word_list="  --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_ps()
+{
+    local word_list="  -a --all --external -f --filter --format -n --last -l --latest --no-trunc --noheading --ns -p --pod -q --quiet -s --size --sort --sync -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_rename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_restart()
+{
+    local word_list="  -a --all -l --latest --running -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_restore()
+{
+    local word_list="  -a --all --ignore-rootfs --ignore-static-ip --ignore-static-mac --ignore-volumes -i --import --import-previous -k --keep -l --latest -n --name --pod -p --publish --tcp-established"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_rm()
+{
+    local word_list="  -a --all --cidfile -f --force -i --ignore -l --latest -v --volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_run()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems -d --detach --detach-keys --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --preserve-fds --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rmi --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --sig-proxy --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_runlabel()
+{
+    local word_list="  --authfile --cert-dir --creds --display -n --name -q --quiet --replace --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_start()
+{
+    local word_list="  --all -a --attach --detach-keys -f --filter -i --interactive -l --latest --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_stats()
+{
+    local word_list="  -a --all --format -i --interval -l --latest --no-reset --no-stream"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_stop()
+{
+    local word_list="  -a --all --cidfile -i --ignore -l --latest -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_top()
+{
+    local word_list="  -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_unmount()
+{
+    local word_list="  -a --all -f --force -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_unpause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_container_wait()
+{
+    local word_list="  --condition -i --interval -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_cp()
+{
+    local word_list="  -a --archive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_create()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-ctr --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_diff()
+{
+    local word_list="  --format -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_events()
+{
+    local word_list="  --filter --format --since --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_exec()
+{
+    local word_list="  -d --detach --detach-keys -e --env --env-file -i --interactive -l --latest --preserve-fds --privileged -t --tty -u --user -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_export()
+{
+    local word_list="  -o --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_generate()
+{
+    local cmd i subcommands
+    local subcommands=" kube systemd"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        kube) _podman_unshare_podman_generate_kube
+            return
+            ;;
+
+        systemd) _podman_unshare_podman_generate_systemd
+            return
+            ;;
+
+    esac
+
+    local word_list=" kube systemd "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_generate_kube()
+{
+    local word_list="  -f --filename -s --service"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_generate_systemd()
+{
+    local word_list="  --container-prefix -f --files --format -n --name --new --no-header --pod-prefix --restart-policy --separator -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_healthcheck()
+{
+    local cmd i subcommands
+    local subcommands=" run"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        run) _podman_unshare_podman_healthcheck_run
+            return
+            ;;
+
+    esac
+
+    local word_list=" run "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_healthcheck_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_history()
+{
+    local word_list="  --format -H --human --no-trunc --notruncate -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image()
+{
+    local cmd i subcommands
+    local subcommands=" build diff exists history import inspect list load mount prune pull push rm save scp search sign tag tree trust unmount untag"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _podman_unshare_podman_image_build
+            return
+            ;;
+
+        diff) _podman_unshare_podman_image_diff
+            return
+            ;;
+
+        exists) _podman_unshare_podman_image_exists
+            return
+            ;;
+
+        history) _podman_unshare_podman_image_history
+            return
+            ;;
+
+        import) _podman_unshare_podman_image_import
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_image_inspect
+            return
+            ;;
+
+        list) _podman_unshare_podman_image_list
+            return
+            ;;
+
+        load) _podman_unshare_podman_image_load
+            return
+            ;;
+
+        mount) _podman_unshare_podman_image_mount
+            return
+            ;;
+
+        prune) _podman_unshare_podman_image_prune
+            return
+            ;;
+
+        pull) _podman_unshare_podman_image_pull
+            return
+            ;;
+
+        push) _podman_unshare_podman_image_push
+            return
+            ;;
+
+        rm) _podman_unshare_podman_image_rm
+            return
+            ;;
+
+        save) _podman_unshare_podman_image_save
+            return
+            ;;
+
+        scp) _podman_unshare_podman_image_scp
+            return
+            ;;
+
+        search) _podman_unshare_podman_image_search
+            return
+            ;;
+
+        sign) _podman_unshare_podman_image_sign
+            return
+            ;;
+
+        tag) _podman_unshare_podman_image_tag
+            return
+            ;;
+
+        tree) _podman_unshare_podman_image_tree
+            return
+            ;;
+
+        trust) _podman_unshare_podman_image_trust
+            return
+            ;;
+
+        unmount) _podman_unshare_podman_image_unmount
+            return
+            ;;
+
+        untag) _podman_unshare_podman_image_untag
+            return
+            ;;
+
+    esac
+
+    local word_list=" build diff exists history import inspect list load mount prune pull push rm save scp search sign tag tree trust unmount untag "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_build()
+{
+    local word_list="  --add-host --annotation --arch --authfile --build-arg --cache-from --cap-add --cap-drop --cert-dir --cgroup-parent --cni-plugin-path --compress --cpu-period --cpu-quota -c --cpu-shares --cpuset-cpus --cpuset-mems --creds --decryption-key --device -D --disable-compression --disable-content-trust --dns-option --dns-search -f --file --force-rm --format --from --http-proxy --ignorefile --iidfile --ipc --isolation --jobs --label --layers --logfile --manifest -m --memory --memory-swap --network --no-cache --os --pid --platform --pull --pull-always --pull-never -q --quiet --rm --secret --security-opt --shm-size --sign-by --squash --squash-all --ssh --stdin -t --tag --target --timestamp --tls-verify --ulimit --userns --userns-gid-map --userns-gid-map-group --userns-uid-map --userns-uid-map-user --uts --variant -v --volume"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_diff()
+{
+    local word_list="  --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_history()
+{
+    local word_list="  --format -H --human --no-trunc --notruncate -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_import()
+{
+    local word_list="  -c --change -m --message -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_inspect()
+{
+    local word_list="  -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_list()
+{
+    local word_list="  -a --all --digests -f --filter --format --history --no-trunc -n --noheading -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_load()
+{
+    local word_list="  -i --input -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_mount()
+{
+    local word_list="  -a --all --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_prune()
+{
+    local word_list="  -a --all --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_pull()
+{
+    local word_list="  --all-tags --arch --authfile --cert-dir --creds --disable-content-trust --os --platform -q --quiet --tls-verify --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_push()
+{
+    local word_list="  --authfile --cert-dir --compress --creds --digestfile --disable-content-trust -f --format -q --quiet --remove-signatures --sign-by --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_rm()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_save()
+{
+    local word_list="  --compress --format -m --multi-image-archive -o --output -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_scp()
+{
+    local word_list="  -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_search()
+{
+    local word_list="  --authfile -f --filter --format --limit --list-tags --no-trunc --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_sign()
+{
+    local word_list="  -a --all --cert-dir -d --directory --sign-by"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_tag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_tree()
+{
+    local word_list="  --whatrequires"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_trust()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_unmount()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_image_untag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_images()
+{
+    local cmd i subcommands
+    local subcommands=" podman"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        podman) _podman_unshare_podman_images_podman
+            return
+            ;;
+
+    esac
+
+    local word_list=" podman -a --all --digests -f --filter --format --history --no-trunc -n --noheading -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_images_podman()
+{
+    local word_list="  -a --all --digests -f --filter --format --history --no-trunc -n --noheading -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_import()
+{
+    local word_list="  -c --change -m --message -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_info()
+{
+    local word_list="  -D --debug -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_init()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_inspect()
+{
+    local word_list="  -f --format -l --latest -s --size -t --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_kill()
+{
+    local word_list="  -a --all --cidfile -l --latest -s --signal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_load()
+{
+    local word_list="  -i --input -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_login()
+{
+    local word_list="  --authfile --cert-dir --get-login -p --password --password-stdin --tls-verify -u --username -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_logout()
+{
+    local word_list="  -a --all --authfile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_logs()
+{
+    local word_list="  -f --follow -l --latest -n --names --since --tail -t --timestamps --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine()
+{
+    local cmd i subcommands
+    local subcommands=" init list rm ssh start stop"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        init) _podman_unshare_podman_machine_init
+            return
+            ;;
+
+        list) _podman_unshare_podman_machine_list
+            return
+            ;;
+
+        rm) _podman_unshare_podman_machine_rm
+            return
+            ;;
+
+        ssh) _podman_unshare_podman_machine_ssh
+            return
+            ;;
+
+        start) _podman_unshare_podman_machine_start
+            return
+            ;;
+
+        stop) _podman_unshare_podman_machine_stop
+            return
+            ;;
+
+    esac
+
+    local word_list=" init list rm ssh start stop "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine_init()
+{
+    local word_list="  --cpus --disk-size --ignition-path --image-path -m --memory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine_list()
+{
+    local word_list="  --format --noheading"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine_rm()
+{
+    local word_list="  --force --save-ignition --save-image --save-keys"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine_ssh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine_start()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_machine_stop()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest()
+{
+    local cmd i subcommands
+    local subcommands=" add annotate create exists inspect push remove rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _podman_unshare_podman_manifest_add
+            return
+            ;;
+
+        annotate) _podman_unshare_podman_manifest_annotate
+            return
+            ;;
+
+        create) _podman_unshare_podman_manifest_create
+            return
+            ;;
+
+        exists) _podman_unshare_podman_manifest_exists
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_manifest_inspect
+            return
+            ;;
+
+        push) _podman_unshare_podman_manifest_push
+            return
+            ;;
+
+        remove) _podman_unshare_podman_manifest_remove
+            return
+            ;;
+
+        rm) _podman_unshare_podman_manifest_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" add annotate create exists inspect push remove rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_add()
+{
+    local word_list="  --all --annotation --arch --authfile --cert-dir --creds --features --os --os-version --tls-verify --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_annotate()
+{
+    local word_list="  --annotation --arch --features --os --os-features --os-version --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_create()
+{
+    local word_list="  --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_inspect()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_push()
+{
+    local word_list="  --all --authfile --cert-dir --creds --digestfile -f --format -q --quiet --remove-signatures --rm --sign-by --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_manifest_rm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_mount()
+{
+    local word_list="  -a --all --format -l --latest --notruncate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network()
+{
+    local cmd i subcommands
+    local subcommands=" connect create disconnect exists inspect ls prune reload rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        connect) _podman_unshare_podman_network_connect
+            return
+            ;;
+
+        create) _podman_unshare_podman_network_create
+            return
+            ;;
+
+        disconnect) _podman_unshare_podman_network_disconnect
+            return
+            ;;
+
+        exists) _podman_unshare_podman_network_exists
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_network_inspect
+            return
+            ;;
+
+        ls) _podman_unshare_podman_network_ls
+            return
+            ;;
+
+        prune) _podman_unshare_podman_network_prune
+            return
+            ;;
+
+        reload) _podman_unshare_podman_network_reload
+            return
+            ;;
+
+        rm) _podman_unshare_podman_network_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" connect create disconnect exists inspect ls prune reload rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_connect()
+{
+    local word_list="  --alias"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_create()
+{
+    local word_list="  --disable-dns -d --driver --gateway --internal --ip-range --ipv6 --label -o --opt --subnet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_disconnect()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_inspect()
+{
+    local word_list="  -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_ls()
+{
+    local word_list="  -f --filter --format --no-trunc --noheading -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_prune()
+{
+    local word_list="  --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_reload()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_network_rm()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_play()
+{
+    local cmd i subcommands
+    local subcommands=" kube"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        kube) _podman_unshare_podman_play_kube
+            return
+            ;;
+
+    esac
+
+    local word_list=" kube "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_play_kube()
+{
+    local word_list="  --authfile --build --cert-dir --configmap --creds --down --ip --log-driver --mac-address --network -q --quiet --seccomp-profile-root --start --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod()
+{
+    local cmd i subcommands
+    local subcommands=" create exists inspect kill logs pause prune ps restart rm start stats stop top unpause"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _podman_unshare_podman_pod_create
+            return
+            ;;
+
+        exists) _podman_unshare_podman_pod_exists
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_pod_inspect
+            return
+            ;;
+
+        kill) _podman_unshare_podman_pod_kill
+            return
+            ;;
+
+        logs) _podman_unshare_podman_pod_logs
+            return
+            ;;
+
+        pause) _podman_unshare_podman_pod_pause
+            return
+            ;;
+
+        prune) _podman_unshare_podman_pod_prune
+            return
+            ;;
+
+        ps) _podman_unshare_podman_pod_ps
+            return
+            ;;
+
+        restart) _podman_unshare_podman_pod_restart
+            return
+            ;;
+
+        rm) _podman_unshare_podman_pod_rm
+            return
+            ;;
+
+        start) _podman_unshare_podman_pod_start
+            return
+            ;;
+
+        stats) _podman_unshare_podman_pod_stats
+            return
+            ;;
+
+        stop) _podman_unshare_podman_pod_stop
+            return
+            ;;
+
+        top) _podman_unshare_podman_pod_top
+            return
+            ;;
+
+        unpause) _podman_unshare_podman_pod_unpause
+            return
+            ;;
+
+    esac
+
+    local word_list=" create exists inspect kill logs pause prune ps restart rm start stats stop top unpause "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_create()
+{
+    local word_list="  --add-host --cgroup-parent --dns --dns-opt --dns-search --gidmap -h --hostname --infra --infra-command --infra-conmon-pidfile --infra-image --infra-name --ip -l --label --label-file --mac-address -n --name --network --network-alias --no-hosts --pid --pod-id-file -p --publish --replace --share --subgidname --subuidname --uidmap --userns"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_inspect()
+{
+    local word_list="  -f --format -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_kill()
+{
+    local word_list="  -a --all -l --latest -s --signal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_logs()
+{
+    local word_list="  -c --container -f --follow -l --latest --since --tail -t --timestamps --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_pause()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_prune()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_ps()
+{
+    local word_list="  --ctr-ids --ctr-names --ctr-status -f --filter --format -l --latest --no-trunc --noheading --ns -q --quiet --sort"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_restart()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_rm()
+{
+    local word_list="  -a --all -f --force -i --ignore -l --latest --pod-id-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_start()
+{
+    local word_list="  -a --all -l --latest --pod-id-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_stats()
+{
+    local word_list="  -a --all --format -l --latest --no-reset --no-stream"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_stop()
+{
+    local word_list="  -a --all -i --ignore -l --latest --pod-id-file -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_top()
+{
+    local word_list="  -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pod_unpause()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_port()
+{
+    local word_list="  -a --all -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_ps()
+{
+    local word_list="  -a --all --external -f --filter --format -n --last -l --latest --no-trunc --noheading --ns -p --pod -q --quiet -s --size --sort --sync -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_pull()
+{
+    local word_list="  --all-tags --arch --authfile --cert-dir --creds --disable-content-trust --os --platform -q --quiet --tls-verify --variant"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_push()
+{
+    local word_list="  --authfile --cert-dir --compress --creds --digestfile --disable-content-trust -f --format -q --quiet --remove-signatures --sign-by --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_rename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_restart()
+{
+    local word_list="  -a --all -l --latest --running -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_rm()
+{
+    local word_list="  -a --all --cidfile -f --force -i --ignore -l --latest -v --volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_rmi()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_run()
+{
+    local word_list="  --add-host --annotation --arch -a --attach --authfile --blkio-weight --blkio-weight-device --cap-add --cap-drop --cgroup-conf --cgroup-parent --cgroupns --cgroups --cidfile --conmon-pidfile --cpu-period --cpu-quota --cpu-rt-period --cpu-rt-runtime --cpu-shares --cpus --cpuset-cpus --cpuset-mems -d --detach --detach-keys --device --device-cgroup-rule --device-read-bps --device-read-iops --device-write-bps --device-write-iops --disable-content-trust --dns --dns-opt --dns-search --entrypoint -e --env --env-file --env-host --expose --gidmap --group-add --health-cmd --health-interval --health-retries --health-start-period --health-timeout -h --hostname --http-proxy --image-volume --init --init-path -i --interactive --ip --ipc --kernel-memory -l --label --label-file --log-driver --log-opt --mac-address -m --memory --memory-reservation --memory-swap --memory-swappiness --mount --name --network --network-alias --no-healthcheck --no-hosts --oom-kill-disable --oom-score-adj --os --personality --pid --pidfile --pids-limit --platform --pod --pod-id-file --preserve-fds --privileged -p --publish -P --publish-all --pull -q --quiet --read-only --read-only-tmpfs --replace --requires --restart --rm --rmi --rootfs --sdnotify --seccomp-policy --secret --security-opt --shm-size --sig-proxy --stop-signal --stop-timeout --subgidname --subuidname --sysctl --systemd --timeout --tls-verify --tmpfs -t --tty --tz --uidmap --ulimit --umask -u --user --userns --uts --variant -v --volume --volumes-from -w --workdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_save()
+{
+    local word_list="  --compress --format -m --multi-image-archive -o --output -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_search()
+{
+    local word_list="  --authfile -f --filter --format --limit --list-tags --no-trunc --tls-verify"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_secret()
+{
+    local cmd i subcommands
+    local subcommands=" create inspect ls rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _podman_unshare_podman_secret_create
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_secret_inspect
+            return
+            ;;
+
+        ls) _podman_unshare_podman_secret_ls
+            return
+            ;;
+
+        rm) _podman_unshare_podman_secret_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" create inspect ls rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_secret_create()
+{
+    local word_list="  --driver --driver-opts --env"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_secret_inspect()
+{
+    local word_list="  --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_secret_ls()
+{
+    local word_list="  --format --noheading"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_secret_rm()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_start()
+{
+    local word_list="  --all -a --attach --detach-keys -f --filter -i --interactive -l --latest --sig-proxy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_stats()
+{
+    local word_list="  -a --all --format -i --interval -l --latest --no-reset --no-stream"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_stop()
+{
+    local word_list="  -a --all --cidfile -i --ignore -l --latest -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system()
+{
+    local cmd i subcommands
+    local subcommands=" connection df info migrate prune renumber reset service"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        connection) _podman_unshare_podman_system_connection
+            return
+            ;;
+
+        df) _podman_unshare_podman_system_df
+            return
+            ;;
+
+        info) _podman_unshare_podman_system_info
+            return
+            ;;
+
+        migrate) _podman_unshare_podman_system_migrate
+            return
+            ;;
+
+        prune) _podman_unshare_podman_system_prune
+            return
+            ;;
+
+        renumber) _podman_unshare_podman_system_renumber
+            return
+            ;;
+
+        reset) _podman_unshare_podman_system_reset
+            return
+            ;;
+
+        service) _podman_unshare_podman_system_service
+            return
+            ;;
+
+    esac
+
+    local word_list=" connection df info migrate prune renumber reset service "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_connection()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_df()
+{
+    local word_list="  --format -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_info()
+{
+    local word_list="  -D --debug -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_migrate()
+{
+    local word_list="  --new-runtime"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_prune()
+{
+    local word_list="  -a --all --filter -f --force --volumes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_renumber()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_reset()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_system_service()
+{
+    local word_list="  --cors -t --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_tag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_top()
+{
+    local word_list="  -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_unmount()
+{
+    local word_list="  -a --all -f --force -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_unpause()
+{
+    local word_list="  -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_unshare()
+{
+    local cmd i subcommands
+    local subcommands=" podman"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        podman) _podman_unshare_podman_unshare_podman
+            return
+            ;;
+
+    esac
+
+    local word_list=" podman --rootless-cni"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_unshare_podman()
+{
+    local word_list="  --cgroup-manager --cni-config-dir --conmon -c --connection --events-backend --help --hooks-dir --identity --log-level --namespace --network-cmd-path -r --remote --root --runroot --runtime --runtime-flag --storage-driver --storage-opt --syslog --tmpdir --url -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_untag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_version()
+{
+    local word_list="  -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume()
+{
+    local cmd i subcommands
+    local subcommands=" create exists export import inspect ls prune rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _podman_unshare_podman_volume_create
+            return
+            ;;
+
+        exists) _podman_unshare_podman_volume_exists
+            return
+            ;;
+
+        export) _podman_unshare_podman_volume_export
+            return
+            ;;
+
+        import) _podman_unshare_podman_volume_import
+            return
+            ;;
+
+        inspect) _podman_unshare_podman_volume_inspect
+            return
+            ;;
+
+        ls) _podman_unshare_podman_volume_ls
+            return
+            ;;
+
+        prune) _podman_unshare_podman_volume_prune
+            return
+            ;;
+
+        rm) _podman_unshare_podman_volume_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" create exists export import inspect ls prune rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_create()
+{
+    local word_list="  --driver -l --label -o --opt"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_export()
+{
+    local word_list="  -o --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_import()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_inspect()
+{
+    local word_list="  -a --all -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_ls()
+{
+    local word_list="  -f --filter --format --noheading -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_prune()
+{
+    local word_list="  --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_volume_rm()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_unshare_podman_wait()
+{
+    local word_list="  --condition -i --interval -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_untag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_version()
+{
+    local word_list="  -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume()
+{
+    local cmd i subcommands
+    local subcommands=" create exists export import inspect ls prune rm"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _podman_volume_create
+            return
+            ;;
+
+        exists) _podman_volume_exists
+            return
+            ;;
+
+        export) _podman_volume_export
+            return
+            ;;
+
+        import) _podman_volume_import
+            return
+            ;;
+
+        inspect) _podman_volume_inspect
+            return
+            ;;
+
+        ls) _podman_volume_ls
+            return
+            ;;
+
+        prune) _podman_volume_prune
+            return
+            ;;
+
+        rm) _podman_volume_rm
+            return
+            ;;
+
+    esac
+
+    local word_list=" create exists export import inspect ls prune rm "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_create()
+{
+    local word_list="  --driver -l --label -o --opt"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_exists()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_export()
+{
+    local word_list="  -o --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_import()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_inspect()
+{
+    local word_list="  -a --all -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_ls()
+{
+    local word_list="  -f --filter --format --noheading -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_prune()
+{
+    local word_list="  --filter -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_volume_rm()
+{
+    local word_list="  -a --all -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_podman_wait()
+{
+    local word_list="  --condition -i --interval -l --latest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _podman podman

@@ -1,0 +1,286 @@
+# Auto-generated with h2o
+
+_restic()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" backup cache cat copy diff dump find forget generate help init key list ls migrate mount prune rebuild-index recover restore self-update snapshots stats tag unlock version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        backup) _restic_backup
+            return
+            ;;
+
+        cache) _restic_cache
+            return
+            ;;
+
+        cat) _restic_cat
+            return
+            ;;
+
+        copy) _restic_copy
+            return
+            ;;
+
+        diff) _restic_diff
+            return
+            ;;
+
+        dump) _restic_dump
+            return
+            ;;
+
+        find) _restic_find
+            return
+            ;;
+
+        forget) _restic_forget
+            return
+            ;;
+
+        generate) _restic_generate
+            return
+            ;;
+
+        help) _restic_help
+            return
+            ;;
+
+        init) _restic_init
+            return
+            ;;
+
+        key) _restic_key
+            return
+            ;;
+
+        list) _restic_list
+            return
+            ;;
+
+        ls) _restic_ls
+            return
+            ;;
+
+        migrate) _restic_migrate
+            return
+            ;;
+
+        mount) _restic_mount
+            return
+            ;;
+
+        prune) _restic_prune
+            return
+            ;;
+
+        rebuild-index) _restic_rebuildindex
+            return
+            ;;
+
+        recover) _restic_recover
+            return
+            ;;
+
+        restore) _restic_restore
+            return
+            ;;
+
+        self-update) _restic_selfupdate
+            return
+            ;;
+
+        snapshots) _restic_snapshots
+            return
+            ;;
+
+        stats) _restic_stats
+            return
+            ;;
+
+        tag) _restic_tag
+            return
+            ;;
+
+        unlock) _restic_unlock
+            return
+            ;;
+
+        version) _restic_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" backup cache cat copy diff dump find forget generate help init key list ls migrate mount prune rebuild-index recover restore self-update snapshots stats tag unlock version --cacert --cache-dir --cleanup-cache --compression -h --help --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_backup()
+{
+    local word_list="  -n --dry-run -e --exclude --exclude-caches --exclude-file --exclude-if-present --exclude-larger-than --files-from --files-from-raw --files-from-verbatim -f --force -h --help -H --host --iexclude --iexclude-file --ignore-ctime --ignore-inode -x --one-file-system --parent --stdin --stdin-filename --tag --time --with-atime --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_cache()
+{
+    local word_list="  --cleanup -h --help --max-age --no-size --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_cat()
+{
+    local word_list="  -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_copy()
+{
+    local word_list="  --from-key-hint --from-password-command --from-password-file --from-repo --from-repository-file -h --help -H --host --path --tag --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_diff()
+{
+    local word_list="  -h --help --metadata --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_dump()
+{
+    local word_list="  -a --archive -h --help -H --host --path --tag --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_find()
+{
+    local word_list="  --blob -h --help -H --host -i --ignore-case -l --long -N --newest -O --oldest --pack --path --show-pack-id -s --snapshot --tag --tree --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_forget()
+{
+    local word_list="  -l --keep-last -H --keep-hourly -d --keep-daily -w --keep-weekly -m --keep-monthly -y --keep-yearly --keep-within --keep-within-hourly --keep-within-daily --keep-within-weekly --keep-within-monthly --keep-within-yearly --keep-tag --host --tag --path -c --compact -g --group-by -n --dry-run --prune --max-unused --max-repack-size --repack-cacheable-only --repack-small --repack-uncompressed -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_generate()
+{
+    local word_list="  --bash-completion --fish-completion -h --help --man --zsh-completion --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_help()
+{
+    local word_list="  -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_init()
+{
+    local word_list="  --copy-chunker-params --from-key-hint --from-password-command --from-password-file --from-repo --from-repository-file -h --help --repository-version --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_key()
+{
+    local word_list="  -h --help --host --new-password-file --user --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_list()
+{
+    local word_list="  -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_ls()
+{
+    local word_list="  -h --help -H --host -l --long --path --recursive --tag --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_migrate()
+{
+    local word_list="  -f --force -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_mount()
+{
+    local word_list="  --time-template --allow-other -h --help -H --host --no-default-permissions --owner-root --path --path-template --tag --time-template --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_prune()
+{
+    local word_list="  -n --dry-run -h --help --max-repack-size --max-unused --repack-cacheable-only --repack-small --repack-uncompressed --unsafe-recover-no-free-space --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_rebuildindex()
+{
+    local word_list="  -h --help --read-all-packs --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_recover()
+{
+    local word_list="  -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_restore()
+{
+    local word_list="  -e --exclude -h --help -H --host -i --include --path --tag -t --target --verify --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_selfupdate()
+{
+    local word_list="  -h --help --output --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_snapshots()
+{
+    local word_list="  -c --compact -g --group-by -h --help -H --host --latest --path --tag --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_stats()
+{
+    local word_list="  -h --help -H --host --mode --path --tag --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_tag()
+{
+    local word_list="  --add -h --help -H --host --path --remove --set --tag --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_unlock()
+{
+    local word_list="  -h --help --remove-all --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_restic_version()
+{
+    local word_list="  -h --help --cacert --cache-dir --cleanup-cache --compression --insecure-tls --json --key-hint --limit-download --limit-upload --no-cache --no-lock -o --option --pack-size --password-command -p --password-file -q --quiet -r --repo --repository-file --tls-client-cert -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _restic restic

@@ -1,0 +1,56 @@
+# Auto-generated with h2o
+
+_nim()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" compile r doc"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        compile) _nim_compile
+            return
+            ;;
+
+        r) _nim_r
+            return
+            ;;
+
+        doc) _nim_doc
+            return
+            ;;
+
+    esac
+
+    local word_list=" compile r doc "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nim_compile()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nim_r()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nim_doc()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nim nim

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_vim()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -- -v -e -E -s -d -y -R -Z -m -M -b -l -C -N -V -D -n -r -r -L -A -H -T --not-a-term --ttyfail -u --noplugin -p -o -O --cmd -c -S -s -w -W -x --startuptime -i --clean -h --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _vim vim

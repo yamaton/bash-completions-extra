@@ -1,0 +1,365 @@
+# Auto-generated with h2o
+
+_meson()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" setup configure dist install introspect init test wrap subprojects rewrite compile devenv env2mfile"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        setup) _meson_setup
+            return
+            ;;
+
+        configure) _meson_configure
+            return
+            ;;
+
+        dist) _meson_dist
+            return
+            ;;
+
+        install) _meson_install
+            return
+            ;;
+
+        introspect) _meson_introspect
+            return
+            ;;
+
+        init) _meson_init
+            return
+            ;;
+
+        test) _meson_test
+            return
+            ;;
+
+        wrap) _meson_wrap
+            return
+            ;;
+
+        subprojects) _meson_subprojects
+            return
+            ;;
+
+        rewrite) _meson_rewrite
+            return
+            ;;
+
+        compile) _meson_compile
+            return
+            ;;
+
+        devenv) _meson_devenv
+            return
+            ;;
+
+        env2mfile) _meson_env2mfile
+            return
+            ;;
+
+    esac
+
+    local word_list=" setup configure dist install introspect init test wrap subprojects rewrite compile devenv env2mfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_setup()
+{
+    local word_list="  -h --help --prefix --bindir --datadir --includedir --infodir --libdir --libexecdir --localedir --localstatedir --mandir --sbindir --sharedstatedir --sysconfdir --auto-features --backend --buildtype --debug --default-library --errorlogs --install-umask --layout --optimization --stdsplit --strip --unity --unity-size --warnlevel --werror --wrap-mode --force-fallback-for --python.install-env --python.platlibdir --python.purelibdir --pkg-config-path --build.pkg-config-path --cmake-prefix-path --build.cmake-prefix-path -D --native-file --cross-file --vsenv -v --version --fatal-meson-warnings --reconfigure --wipe"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_configure()
+{
+    local word_list="  -h --help --prefix --bindir --datadir --includedir --infodir --libdir --libexecdir --localedir --localstatedir --mandir --sbindir --sharedstatedir --sysconfdir --auto-features --backend --buildtype --debug --default-library --errorlogs --install-umask --layout --optimization --stdsplit --strip --unity --unity-size --warnlevel --werror --wrap-mode --force-fallback-for --python.install-env --python.platlibdir --python.purelibdir --pkg-config-path --build.pkg-config-path --cmake-prefix-path --build.cmake-prefix-path -D --clearcache"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_dist()
+{
+    local word_list="  -h --help -C --allow-dirty --formats --include-subprojects --no-tests"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_install()
+{
+    local word_list="  -h --help -C --no-rebuild --only-changed --quiet --destdir --dry-run -n --skip-subprojects --tags --strip"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_introspect()
+{
+    local word_list="  -h --help --ast --benchmarks --buildoptions --buildsystem-files --dependencies --scan-dependencies --installed --install-plan --projectinfo --targets --tests --backend -a --all -i --indent -f --force-object-output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_init()
+{
+    local word_list="  -h --help -C -n --name -e --executable -d --deps -l --language -b --build --builddir -f --force --type --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_test()
+{
+    local word_list="  -h --help --repeat --no-rebuild --gdb --gdb-path --list --wrapper -C --suite --no-suite --no-stdsplit --print-errorlogs --benchmark --logbase --num-processes -v --verbose -q --quiet -t --timeout-multiplier --setup --test-args"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap()
+{
+    local cmd i subcommands
+    local subcommands=" list search install update info status promote"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _meson_wrap_list
+            return
+            ;;
+
+        search) _meson_wrap_search
+            return
+            ;;
+
+        install) _meson_wrap_install
+            return
+            ;;
+
+        update) _meson_wrap_update
+            return
+            ;;
+
+        info) _meson_wrap_info
+            return
+            ;;
+
+        status) _meson_wrap_status
+            return
+            ;;
+
+        promote) _meson_wrap_promote
+            return
+            ;;
+
+    esac
+
+    local word_list=" list search install update info status promote -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_search()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_install()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_update()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_info()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_status()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_wrap_promote()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects()
+{
+    local cmd i subcommands
+    local subcommands=" update checkout download foreach purge packagefiles"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        update) _meson_subprojects_update
+            return
+            ;;
+
+        checkout) _meson_subprojects_checkout
+            return
+            ;;
+
+        download) _meson_subprojects_download
+            return
+            ;;
+
+        foreach) _meson_subprojects_foreach
+            return
+            ;;
+
+        purge) _meson_subprojects_purge
+            return
+            ;;
+
+        packagefiles) _meson_subprojects_packagefiles
+            return
+            ;;
+
+    esac
+
+    local word_list=" update checkout download foreach purge packagefiles -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects_update()
+{
+    local word_list="  -h --help --rebase --reset --sourcedir --types --num-processes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects_checkout()
+{
+    local word_list="  -h --help -b --sourcedir --types --num-processes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects_download()
+{
+    local word_list="  -h --help --sourcedir --types --num-processes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects_foreach()
+{
+    local word_list="  -h --help --sourcedir --types --num-processes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects_purge()
+{
+    local word_list="  -h --help --sourcedir --types --num-processes --include-cache --confirm"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_subprojects_packagefiles()
+{
+    local word_list="  -h --help --sourcedir --types --num-processes --apply --save"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_rewrite()
+{
+    local cmd i subcommands
+    local subcommands=" target kwargs default-options command"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        target) _meson_rewrite_target
+            return
+            ;;
+
+        kwargs) _meson_rewrite_kwargs
+            return
+            ;;
+
+        default-options) _meson_rewrite_defaultoptions
+            return
+            ;;
+
+        command) _meson_rewrite_command
+            return
+            ;;
+
+    esac
+
+    local word_list=" target kwargs default-options command -h --help -s --sourcedir -V --verbose -S --skip-errors"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_rewrite_target()
+{
+    local word_list="  -h --help -s --subdir --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_rewrite_kwargs()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_rewrite_defaultoptions()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_rewrite_command()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_compile()
+{
+    local word_list="  -h --help --clean -C -j --jobs -l --load-average -v --verbose --ninja-args --vs-args --xcode-args"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_devenv()
+{
+    local word_list="  -h --help -C --dump"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_meson_env2mfile()
+{
+    local word_list="  -h --help --debarch --gccsuffix -o --cross --native --system --cpu --cpu-family --endian"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _meson meson

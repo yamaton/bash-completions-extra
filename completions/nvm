@@ -1,0 +1,216 @@
+# Auto-generated with h2o
+
+_nvm()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" install uninstall use exec run current ls ls-remote version version-remote deactivate alias unalias install-latest-npm reinstall-packages unload which cache set-colors"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        install) _nvm_install
+            return
+            ;;
+
+        uninstall) _nvm_uninstall
+            return
+            ;;
+
+        use) _nvm_use
+            return
+            ;;
+
+        exec) _nvm_exec
+            return
+            ;;
+
+        run) _nvm_run
+            return
+            ;;
+
+        current) _nvm_current
+            return
+            ;;
+
+        ls) _nvm_ls
+            return
+            ;;
+
+        ls-remote) _nvm_lsremote
+            return
+            ;;
+
+        version) _nvm_version
+            return
+            ;;
+
+        version-remote) _nvm_versionremote
+            return
+            ;;
+
+        deactivate) _nvm_deactivate
+            return
+            ;;
+
+        alias) _nvm_alias
+            return
+            ;;
+
+        unalias) _nvm_unalias
+            return
+            ;;
+
+        install-latest-npm) _nvm_installlatestnpm
+            return
+            ;;
+
+        reinstall-packages) _nvm_reinstallpackages
+            return
+            ;;
+
+        unload) _nvm_unload
+            return
+            ;;
+
+        which) _nvm_which
+            return
+            ;;
+
+        cache) _nvm_cache
+            return
+            ;;
+
+        set-colors) _nvm_setcolors
+            return
+            ;;
+
+    esac
+
+    local word_list=" install uninstall use exec run current ls ls-remote version version-remote deactivate alias unalias install-latest-npm reinstall-packages unload which cache set-colors --help --no-colors --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_install()
+{
+    local word_list="  -s -b --reinstall-packages-from --lts --lts --skip-default-packages --latest-npm --no-progress --alias --default"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_uninstall()
+{
+    local word_list="  --lts --lts"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_use()
+{
+    local word_list="  --silent --lts --lts"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_exec()
+{
+    local word_list="  --silent --lts --lts"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_current()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_ls()
+{
+    local word_list="  --no-colors --no-alias"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_lsremote()
+{
+    local word_list="  --lts --lts --no-colors"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_versionremote()
+{
+    local word_list="  --lts --lts"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_deactivate()
+{
+    local word_list="  --silent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_alias()
+{
+    local word_list="  --no-colors"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_unalias()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_installlatestnpm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_reinstallpackages()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_unload()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_which()
+{
+    local word_list="  --silent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_cache()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_nvm_setcolors()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nvm nvm

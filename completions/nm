@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_nm()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --debug-syms -A --print-file-name -B -C --demangle --no-demangle --recurse-limit --no-recurse-limit -D --dynamic --defined-only -e -f --format -g --extern-only -j --just-symbols -l --line-numbers -n --numeric-sort -o -p --no-sort -P --portability -r --reverse-sort --plugin -S --print-size -s --print-armap --quiet --size-sort --special-syms --synthetic -t --radix --target -u --undefined-only -U --unicode --with-symbol-versions -X -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nm nm

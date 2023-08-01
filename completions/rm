@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rm()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -f --force -i -I --interactive --one-file-system --no-preserve-root --preserve-root -r -R --recursive -d --dir -v --verbose --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rm rm

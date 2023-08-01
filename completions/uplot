@@ -1,0 +1,116 @@
+# Auto-generated with h2o
+
+_uplot()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" barplot histogram lineplot lineplots scatter density boxplot count colors"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        barplot) _uplot_barplot
+            return
+            ;;
+
+        histogram) _uplot_histogram
+            return
+            ;;
+
+        lineplot) _uplot_lineplot
+            return
+            ;;
+
+        lineplots) _uplot_lineplots
+            return
+            ;;
+
+        scatter) _uplot_scatter
+            return
+            ;;
+
+        density) _uplot_density
+            return
+            ;;
+
+        boxplot) _uplot_boxplot
+            return
+            ;;
+
+        count) _uplot_count
+            return
+            ;;
+
+        colors) _uplot_colors
+            return
+            ;;
+
+    esac
+
+    local word_list=" barplot histogram lineplot lineplots scatter density boxplot count colors --config --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_barplot()
+{
+    local word_list="  --xscale --fmt --symbol -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_histogram()
+{
+    local word_list="  -n --nbins --closed --symbol -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_lineplot()
+{
+    local word_list="  --xlim --ylim --fmt --grid --no-grid --canvas -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_lineplots()
+{
+    local word_list="  --xlim --ylim --fmt --grid --no-grid --canvas -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_scatter()
+{
+    local word_list="  --xlim --ylim --fmt --grid --no-grid --canvas -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_density()
+{
+    local word_list="  --xlim --ylim --fmt --grid --no-grid --canvas -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_boxplot()
+{
+    local word_list="  --xlim -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_count()
+{
+    local word_list="  --xscale --symbol -r --reverse -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uplot_colors()
+{
+    local word_list="  -n --names -O --pass -o --output -d --delimiter -H --headers -T --transpose -t --title --xlabel --ylabel -w --width -h --height -b --border -m --margin --padding -c --color --labels --no-labels -p --progress -C --color-output -M --monochrome --encoding --help --config --debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _uplot uplot

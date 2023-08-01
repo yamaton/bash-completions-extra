@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_pgwaldump()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -b --bkp-details -B --block -e --end -f --follow -F --fork -n --limit -p --path -q --quiet -r --rmgr -R --relation -s --start -t --timeline -V --version -w --fullpage -x --xid -z --stats -? --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgwaldump pg_waldump

@@ -1,0 +1,106 @@
+# Auto-generated with h2o
+
+_tfenv()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" install use uninstall list list-remote version-name init pin"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        install) _tfenv_install
+            return
+            ;;
+
+        use) _tfenv_use
+            return
+            ;;
+
+        uninstall) _tfenv_uninstall
+            return
+            ;;
+
+        list) _tfenv_list
+            return
+            ;;
+
+        list-remote) _tfenv_listremote
+            return
+            ;;
+
+        version-name) _tfenv_versionname
+            return
+            ;;
+
+        init) _tfenv_init
+            return
+            ;;
+
+        pin) _tfenv_pin
+            return
+            ;;
+
+    esac
+
+    local word_list=" install use uninstall list list-remote version-name init pin "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_install()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_use()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_uninstall()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_listremote()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_versionname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_init()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_tfenv_pin()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _tfenv tfenv

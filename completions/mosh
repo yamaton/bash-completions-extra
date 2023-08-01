@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_mosh()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --client --server --ssh --ssh-pty --predict -a -n --family --family --family --family --family --family -4 -6 -p --port --bind-server --no-init --local --experimental-remote-ip"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _mosh mosh

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_sk()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -h --help --version --tac --no-sort -n --nth --with-nth --regex --algo --case -b --bind -m --multi --no-multi --no-mouse -c --cmd -i --interactive --color --no-hscroll --keep-right --skip-to-pattern --no-clear-if-empty --show-cmd-error --layout --height --no-height --min-height --margin -p --prompt --cmd-prompt --ansi --tabstop --inline-info --header --header-lines --history --history-size --cmd-history --cmd-history-size --preview -q --query --cmd-query --expect --read0 --print0 --no-clear --print-query --print-cmd --print-score -1 --select-1 -0 --exit-0 --sync --pre-select-n --pre-select-pat --pre-select-file -I --extended --cycle --filepath-word --border --info --marker"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _sk sk

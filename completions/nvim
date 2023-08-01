@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_nvim()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -- --cmd -c -b -d -e -E -es -Es -h --help -i -m -M -n -o -O -p -r -R -S -s -u -v --version -V --api-info --clean --embed --headless --listen --noplugin --remote --server --startuptime"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nvim nvim

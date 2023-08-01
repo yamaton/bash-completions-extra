@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_zip()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -f -u -d -m -r -j -0 -l -1 -9 -q -v -c -z -@ -o -x -i -F -D -A -J -T -X -y -e -n -h2"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _zip zip

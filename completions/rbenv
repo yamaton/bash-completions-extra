@@ -1,0 +1,136 @@
+# Auto-generated with h2o
+
+_rbenv()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" commands local global shell install uninstall rehash version versions which whence"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        commands) _rbenv_commands
+            return
+            ;;
+
+        local) _rbenv_local
+            return
+            ;;
+
+        global) _rbenv_global
+            return
+            ;;
+
+        shell) _rbenv_shell
+            return
+            ;;
+
+        install) _rbenv_install
+            return
+            ;;
+
+        uninstall) _rbenv_uninstall
+            return
+            ;;
+
+        rehash) _rbenv_rehash
+            return
+            ;;
+
+        version) _rbenv_version
+            return
+            ;;
+
+        versions) _rbenv_versions
+            return
+            ;;
+
+        which) _rbenv_which
+            return
+            ;;
+
+        whence) _rbenv_whence
+            return
+            ;;
+
+    esac
+
+    local word_list=" commands local global shell install uninstall rehash version versions which whence "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_commands()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_local()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_global()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_shell()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_install()
+{
+    local word_list="  -l --list -f --force -s --skip-existing -k --keep -p --patch -v --verbose --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_uninstall()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_rehash()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_versions()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_which()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_rbenv_whence()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rbenv rbenv

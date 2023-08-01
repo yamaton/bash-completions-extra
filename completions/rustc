@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_rustc()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -h --help --cfg -L -l --crate-type --crate-name --edition --emit --print -g -O -o --out-dir --explain --test --target -A --allow -W --warn --force-warn -D --deny -F --forbid --cap-lints -C --codegen -V --version -v --verbose -C -W --help -v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _rustc rustc

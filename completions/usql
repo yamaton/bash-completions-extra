@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_usql()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --command -f --file -w --no-password -X --no-rc -o --out -W --password -1 --single-transaction -v --set --variable -P --pset -F --field-separator -R --record-separator -T --table-attr -A --no-align -H --html -t --tuples-only -x --expanded -z --field-separator-zero -0 --record-separator-zero -J --json -C --csv -G --vertical -q --quiet --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _usql usql

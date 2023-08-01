@@ -1,0 +1,66 @@
+# Auto-generated with h2o
+
+_wgquick()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" up down save strip"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        up) _wgquick_up
+            return
+            ;;
+
+        down) _wgquick_down
+            return
+            ;;
+
+        save) _wgquick_save
+            return
+            ;;
+
+        strip) _wgquick_strip
+            return
+            ;;
+
+    esac
+
+    local word_list=" up down save strip "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wgquick_up()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wgquick_down()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wgquick_save()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_wgquick_strip()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _wgquick wg-quick

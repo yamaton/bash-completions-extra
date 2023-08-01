@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_nano()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -A --smarthome -B --backup -C --backupdir -D --boldtext -E --tabstospaces -F --multibuffer -G --locking -H --historylog -I --ignorercfiles -J --guidestripe -K --rawsequences -L --nonewlines -M --trimblanks -N --noconvert -O --bookstyle -P --positionlog -Q --quotestr -R --restricted -S --softwrap -T --tabsize -U --quickblank -V --version -W --wordbounds -X --wordchars -Y --syntax -Z --zap -a --atblanks -b --breaklonglines -c --constantshow -d --rebinddelete -e --emptyline -f --rcfile -g --showcursor -h --help -i --autoindent -j --jumpyscrolling -k --cutfromcursor -l --linenumbers -m --mouse -n --noread -o --operatingdir -p --preserve -q --indicator -r --fill -s --speller -t --saveonexit -u --unix -v --view -w --nowrap -x --nohelp -y --afterends -% --stateflags -_ --minibar -0 --zero"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nano nano

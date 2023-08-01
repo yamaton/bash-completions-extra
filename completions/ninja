@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ninja()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --version -v --verbose --quiet -C -f -j -k -l -n -d -t -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ninja ninja

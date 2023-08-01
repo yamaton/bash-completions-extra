@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_tac()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -b --before -r --regex -s --separator --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _tac tac

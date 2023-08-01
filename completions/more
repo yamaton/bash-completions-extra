@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_more()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -d --silent -f --logical -l --no-pause -c --print-over -p --clean-print -s --squeeze -u --plain -n --lines -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _more more

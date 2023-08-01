@@ -1,0 +1,116 @@
+# Auto-generated with h2o
+
+_pgctl()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" init start stop restart reload status promote logrotate kill"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        init) _pgctl_init
+            return
+            ;;
+
+        start) _pgctl_start
+            return
+            ;;
+
+        stop) _pgctl_stop
+            return
+            ;;
+
+        restart) _pgctl_restart
+            return
+            ;;
+
+        reload) _pgctl_reload
+            return
+            ;;
+
+        status) _pgctl_status
+            return
+            ;;
+
+        promote) _pgctl_promote
+            return
+            ;;
+
+        logrotate) _pgctl_logrotate
+            return
+            ;;
+
+        kill) _pgctl_kill
+            return
+            ;;
+
+    esac
+
+    local word_list=" init start stop restart reload status promote logrotate kill "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_init()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_start()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_stop()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_restart()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_reload()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_status()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_promote()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_logrotate()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_pgctl_kill()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _pgctl pg_ctl

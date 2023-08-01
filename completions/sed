@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_sed()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -n --quiet --silent --debug -e --expression -f --file --follow-symlinks -i --in-place -l --line-length --posix -E -r --regexp-extended -s --separate --sandbox -u --unbuffered -z --null-data --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _sed sed

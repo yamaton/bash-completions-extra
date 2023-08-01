@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ponythink()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -h --help -v --version -l --list -L --altlist -A --all -B --balloonlist -c --compact -o --ponyonly -W --wrap -b --balloon -f --pony -F --anypony -q --quote"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ponythink ponythink

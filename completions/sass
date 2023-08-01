@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_sass()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --stdin --no-stdin --indented --no-indented -I --load-path -s --style --charset --no-charset --error-css --no-error-css --update --source-map --no-source-map --source-map-urls --embed-sources --no-embed-sources --embed-source-map --no-embed-source-map -q --quiet -q --no-quiet --quiet-deps --no-quiet-deps --verbose --no-verbose --fatal-deprecation --future-deprecation -w --watch --poll --no-poll --stop-on-error --no-stop-on-error -i --interactive -c --color -c --no-color --unicode --no-unicode --trace --no-trace -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _sass sass
