@@ -1,0 +1,146 @@
+# Auto-generated with h2o
+
+_apt()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" list search show install reinstall remove autoremove update upgrade full-upgrade edit-sources satisfy"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _apt_list
+            return
+            ;;
+
+        search) _apt_search
+            return
+            ;;
+
+        show) _apt_show
+            return
+            ;;
+
+        install) _apt_install
+            return
+            ;;
+
+        reinstall) _apt_reinstall
+            return
+            ;;
+
+        remove) _apt_remove
+            return
+            ;;
+
+        autoremove) _apt_autoremove
+            return
+            ;;
+
+        update) _apt_update
+            return
+            ;;
+
+        upgrade) _apt_upgrade
+            return
+            ;;
+
+        full-upgrade) _apt_fullupgrade
+            return
+            ;;
+
+        edit-sources) _apt_editsources
+            return
+            ;;
+
+        satisfy) _apt_satisfy
+            return
+            ;;
+
+    esac
+
+    local word_list=" list search show install reinstall remove autoremove update upgrade full-upgrade edit-sources satisfy -h --help -v --version -c --config-file -o --option -t --target-release"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_list()
+{
+    local word_list="  --installed --upgradable --all-versions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_search()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_show()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_install()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_reinstall()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_autoremove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_upgrade()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_fullupgrade()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_editsources()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apt_satisfy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _apt apt

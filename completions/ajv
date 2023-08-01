@@ -1,0 +1,129 @@
+# Auto-generated with h2o
+
+_ajv()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" validate compile migrate test help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        validate) _ajv_validate
+            return
+            ;;
+
+        compile) _ajv_compile
+            return
+            ;;
+
+        migrate) _ajv_migrate
+            return
+            ;;
+
+        test) _ajv_test
+            return
+            ;;
+
+        help) _ajv_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" validate compile migrate test help --spec -s -d -r -m -c --spec --errors --changes --strict --strict-tuples --strict-types --allow-matching-properties --allow-union-types --validate-formats --data --all-errors --verbose --comment --inline-refs --remove-additional --use-defaults --coerce-types --multiple-of-precision --messages --loop-required --loop-enum --own-properties --code.es5 --code.lines --code.optimize"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_validate()
+{
+    local word_list="  -s -d -r -m -c --spec --errors --changes --strict --strict-tuples --strict-types --allow-matching-properties --allow-union-types --validate-formats --data --all-errors --verbose --comment --inline-refs --remove-additional --use-defaults --coerce-types --multiple-of-precision --messages --loop-required --loop-enum --own-properties --code.es5 --code.lines --code.optimize"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_compile()
+{
+    local word_list="  -s -r -m -c -o --spec --strict --strict-tuples --strict-types --allow-matching-properties --allow-union-types --validate-formats --data --all-errors --verbose --comment --inline-refs --remove-additional --use-defaults --coerce-types --multiple-of-precision --messages --loop-required --loop-enum --own-properties --code.es5 --code.lines --code.optimize"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_migrate()
+{
+    local word_list="  -s -o --spec --indent --validate-schema"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_test()
+{
+    local word_list="  -s -d -r -m -c --valid --invalid --spec --errors --strict --strict-tuples --strict-types --allow-matching-properties --allow-union-types --validate-formats --data --all-errors --verbose --comment --inline-refs --remove-additional --use-defaults --coerce-types --multiple-of-precision --messages --loop-required --loop-enum --own-properties --code.es5 --code.lines --code.optimize"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_help()
+{
+    local cmd i subcommands
+    local subcommands=" validate compile migrate test"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        validate) _ajv_help_validate
+            return
+            ;;
+
+        compile) _ajv_help_compile
+            return
+            ;;
+
+        migrate) _ajv_help_migrate
+            return
+            ;;
+
+        test) _ajv_help_test
+            return
+            ;;
+
+    esac
+
+    local word_list=" validate compile migrate test "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_help_validate()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_help_compile()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_help_migrate()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ajv_help_test()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ajv ajv

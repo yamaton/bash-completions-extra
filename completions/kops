@@ -1,0 +1,771 @@
+# Auto-generated with h2o
+
+_kops()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" completion create delete distrust edit export get help promote replace rolling-update toolbox trust update upgrade validate version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        completion) _kops_completion
+            return
+            ;;
+
+        create) _kops_create
+            return
+            ;;
+
+        delete) _kops_delete
+            return
+            ;;
+
+        distrust) _kops_distrust
+            return
+            ;;
+
+        edit) _kops_edit
+            return
+            ;;
+
+        export) _kops_export
+            return
+            ;;
+
+        get) _kops_get
+            return
+            ;;
+
+        help) _kops_help
+            return
+            ;;
+
+        promote) _kops_promote
+            return
+            ;;
+
+        replace) _kops_replace
+            return
+            ;;
+
+        rolling-update) _kops_rollingupdate
+            return
+            ;;
+
+        toolbox) _kops_toolbox
+            return
+            ;;
+
+        trust) _kops_trust
+            return
+            ;;
+
+        update) _kops_update
+            return
+            ;;
+
+        upgrade) _kops_upgrade
+            return
+            ;;
+
+        validate) _kops_validate
+            return
+            ;;
+
+        version) _kops_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" completion create delete distrust edit export get help promote replace rolling-update toolbox trust update upgrade validate version "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_completion()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish powershell zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _kops_completion_bash
+            return
+            ;;
+
+        fish) _kops_completion_fish
+            return
+            ;;
+
+        powershell) _kops_completion_powershell
+            return
+            ;;
+
+        zsh) _kops_completion_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish powershell zsh -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_completion_bash()
+{
+    local word_list="  -h --help --no-descriptions --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_completion_fish()
+{
+    local word_list="  -h --help --no-descriptions --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_completion_powershell()
+{
+    local word_list="  -h --help --no-descriptions --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_completion_zsh()
+{
+    local word_list="  -h --help --no-descriptions --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create()
+{
+    local cmd i subcommands
+    local subcommands=" cluster instancegroup keypair secret sshpublickey"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_create_cluster
+            return
+            ;;
+
+        instancegroup) _kops_create_instancegroup
+            return
+            ;;
+
+        keypair) _kops_create_keypair
+            return
+            ;;
+
+        secret) _kops_create_secret
+            return
+            ;;
+
+        sshpublickey) _kops_create_sshpublickey
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster instancegroup keypair secret sshpublickey -f --filename -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_cluster()
+{
+    local word_list="  --node-count --yes --yes --admin-access --api-loadbalancer-class --api-loadbalancer-type --api-ssl-certificate --associate-public-ip --authorization --bastion --channel --cloud --cloud-labels --container-runtime --disable-subnet-tags --discovery-store --dns --dns-zone --dry-run --encrypt-etcd-storage --etcd-storage-type --gce-service-account -h --help --image --ipv6 --kubernetes-version --master-count --master-image --master-public-name --master-security-groups --master-size --master-tenancy --master-volume-size --master-zones --network-cidr --network-id --networking --node-count --node-image --node-security-groups --node-size --node-tenancy --node-volume-size --os-dns-servers --os-ext-net --os-ext-subnet --os-kubelet-ignore-az --os-lb-floating-subnet --os-network --os-octavia --os-octavia-provider --out -o --output --project --set --ssh-access --ssh-public-key --subnets --target -t --topology --unset --utility-subnets --vpc -y --yes --zones --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_instancegroup()
+{
+    local word_list="  --role --subnet --dry-run --edit -h --help -o --output --role --subnet --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_keypair()
+{
+    local word_list="  --cert -h --help --key --primary --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_secret()
+{
+    local cmd i subcommands
+    local subcommands=" ciliumpassword dockerconfig encryptionconfig weavepassword"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ciliumpassword) _kops_create_secret_ciliumpassword
+            return
+            ;;
+
+        dockerconfig) _kops_create_secret_dockerconfig
+            return
+            ;;
+
+        encryptionconfig) _kops_create_secret_encryptionconfig
+            return
+            ;;
+
+        weavepassword) _kops_create_secret_weavepassword
+            return
+            ;;
+
+    esac
+
+    local word_list=" ciliumpassword dockerconfig encryptionconfig weavepassword -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_secret_ciliumpassword()
+{
+    local word_list="  --name --state -f --filename --force -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_secret_dockerconfig()
+{
+    local word_list="  --name --state --name --state -f --filename --force -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_secret_encryptionconfig()
+{
+    local word_list="  --name --state --name --state -f --filename --force -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_secret_weavepassword()
+{
+    local word_list="  --name --state --name --state --name --state -f --filename --force -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_create_sshpublickey()
+{
+    local word_list="  -h --help -i --ssh-public-key --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_delete()
+{
+    local cmd i subcommands
+    local subcommands=" cluster instance instancegroup secret sshpublickey"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_delete_cluster
+            return
+            ;;
+
+        instance) _kops_delete_instance
+            return
+            ;;
+
+        instancegroup) _kops_delete_instancegroup
+            return
+            ;;
+
+        secret) _kops_delete_secret
+            return
+            ;;
+
+        sshpublickey) _kops_delete_sshpublickey
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster instance instancegroup secret sshpublickey -f --filename -h --help -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_delete_cluster()
+{
+    local word_list="  --external -h --help --region --unregister -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_delete_instance()
+{
+    local word_list="  --cloudonly --fail-on-drain-error --fail-on-validate-error -h --help --post-drain-delay --surge --validate-count --validation-timeout -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_delete_instancegroup()
+{
+    local word_list="  -h --help -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_delete_secret()
+{
+    local word_list="  -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_delete_sshpublickey()
+{
+    local word_list="  -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_distrust()
+{
+    local cmd i subcommands
+    local subcommands=" keypair"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        keypair) _kops_distrust_keypair
+            return
+            ;;
+
+    esac
+
+    local word_list=" keypair -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_distrust_keypair()
+{
+    local word_list="  -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_edit()
+{
+    local cmd i subcommands
+    local subcommands=" cluster instancegroup"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_edit_cluster
+            return
+            ;;
+
+        instancegroup) _kops_edit_instancegroup
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster instancegroup -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_edit_cluster()
+{
+    local word_list="  -h --help --set --unset --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_edit_instancegroup()
+{
+    local word_list="  -h --help --set --unset --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_export()
+{
+    local cmd i subcommands
+    local subcommands=" kubeconfig"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        kubeconfig) _kops_export_kubeconfig
+            return
+            ;;
+
+    esac
+
+    local word_list=" kubeconfig -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_export_kubeconfig()
+{
+    local word_list="  --admin --all --auth-plugin -h --help --internal --kubeconfig --user --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get()
+{
+    local cmd i subcommands
+    local subcommands=" assets clusters instancegroups instances keypairs secrets sshpublickeys"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        assets) _kops_get_assets
+            return
+            ;;
+
+        clusters) _kops_get_clusters
+            return
+            ;;
+
+        instancegroups) _kops_get_instancegroups
+            return
+            ;;
+
+        instances) _kops_get_instances
+            return
+            ;;
+
+        keypairs) _kops_get_keypairs
+            return
+            ;;
+
+        secrets) _kops_get_secrets
+            return
+            ;;
+
+        sshpublickeys) _kops_get_sshpublickeys
+            return
+            ;;
+
+    esac
+
+    local word_list=" assets clusters instancegroups instances keypairs secrets sshpublickeys -h --help -o --output --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_assets()
+{
+    local word_list="  --copy -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_clusters()
+{
+    local word_list="  --full -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_instancegroups()
+{
+    local word_list="  -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_instances()
+{
+    local word_list="  -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_keypairs()
+{
+    local word_list="  --distrusted -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_secrets()
+{
+    local word_list="  -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_get_sshpublickeys()
+{
+    local word_list="  -h --help --config --name -o --output --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_help()
+{
+    local word_list="  -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_promote()
+{
+    local cmd i subcommands
+    local subcommands=" keypair"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        keypair) _kops_promote_keypair
+            return
+            ;;
+
+    esac
+
+    local word_list=" keypair -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_promote_keypair()
+{
+    local word_list="  --name --state --name --state -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_replace()
+{
+    local word_list="  -f --filename --force -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_rollingupdate()
+{
+    local cmd i subcommands
+    local subcommands=" cluster"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_rollingupdate_cluster
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_rollingupdate_cluster()
+{
+    local word_list="  --fail-on-validate-error --bastion-interval --cloudonly --drain-timeout --fail-on-drain-error --fail-on-validate-error --force -h --help --instance-group --instance-group-roles -i --interactive --master-interval --node-interval --post-drain-delay --validate-count --validation-timeout -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_toolbox()
+{
+    local cmd i subcommands
+    local subcommands=" dump instance-selector template"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        dump) _kops_toolbox_dump
+            return
+            ;;
+
+        instance-selector) _kops_toolbox_instanceselector
+            return
+            ;;
+
+        template) _kops_toolbox_template
+            return
+            ;;
+
+    esac
+
+    local word_list=" dump instance-selector template -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_toolbox_dump()
+{
+    local word_list="  --dir -h --help -o --output --private-key --ssh-user --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_toolbox_instanceselector()
+{
+    local word_list="  --allow-list --base-instance-type --burst-support --cluster-autoscaler --cpu-architecture --deny-list --dry-run --ena-support --flexible --gpu-memory --gpu-memory-max --gpu-memory-min --gpus --gpus-max --gpus-min -h --help --ig-count --max-results --memory --memory-max --memory-min --network-interfaces --network-interfaces-max --network-interfaces-min --node-count-max --node-count-min --node-security-groups --node-volume-size -o --output --placement-group-strategy --subnets --usage-class --vcpus --vcpus-max --vcpus-min --vcpus-to-memory-ratio --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_toolbox_template()
+{
+    local word_list="  --channel --config-value --fail-on-missing --format-yaml -h --help --out --set --set-string --snippets --template --values --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_trust()
+{
+    local cmd i subcommands
+    local subcommands=" keypair"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        keypair) _kops_trust_keypair
+            return
+            ;;
+
+    esac
+
+    local word_list=" keypair -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_trust_keypair()
+{
+    local word_list="  -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_update()
+{
+    local cmd i subcommands
+    local subcommands=" cluster"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_update_cluster
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_update_cluster()
+{
+    local word_list="  --admin --allow-kops-downgrade --create-kube-config -h --help --internal --lifecycle-overrides --out --phase --ssh-public-key --target --user -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_upgrade()
+{
+    local cmd i subcommands
+    local subcommands=" cluster"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_upgrade_cluster
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_upgrade_cluster()
+{
+    local word_list="  --channel -h --help --kubernetes-version -y --yes --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_validate()
+{
+    local cmd i subcommands
+    local subcommands=" cluster"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _kops_validate_cluster
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster -h --help --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_validate_cluster()
+{
+    local word_list="  --count -h --help --kubeconfig -o --output --wait --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kops_version()
+{
+    local word_list="  -h --help --server --short --config --name --state -v --v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _kops kops

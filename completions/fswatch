@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_fswatch()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -0 --print0 -1 --one-event --allow-overflow --batch-marker -a --access -d --directories -e --exclude -E --extended --filter-from --format -f --format-time --fire-idle-event -h --help -i --include -I --insensitive -l --latency -L --follow-links -M --list-monitors -m --monitor --monitor-property -n --numeric -o --one-per-batch -r --recursive -t --timestamp -u --utc-time -x --event-flags --event --event-flag-separator -v --verbose --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _fswatch fswatch

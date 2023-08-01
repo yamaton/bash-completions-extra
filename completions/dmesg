@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_dmesg()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -C --clear -c --read-clear -D --console-off -E --console-on -F --file -f --facility -H --human -k --kernel -L --color -l --level -n --console-level -P --nopager -p --force-prefix -r --raw --noescape -S --syslog -s --buffer-size -u --userspace -w --follow -W --follow-new -x --decode -d --show-delta -e --reltime -T --ctime -t --notime --time-format --since --until -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _dmesg dmesg

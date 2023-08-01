@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ansibleinventory()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --ask-vault-password --ask-vault-pass --export --output --playbook-dir --toml --vars --vault-id --vault-password-file --vault-pass-file --version -e --extra-vars -h --help -i --inventory --inventory-file -v --verbose -y --yaml --graph --host --list"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ansibleinventory ansible-inventory

@@ -1,0 +1,136 @@
+# Auto-generated with h2o
+
+_condax()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" ensure-path export import inject install list remove repair uninject uninstall update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ensure-path) _condax_ensurepath
+            return
+            ;;
+
+        export) _condax_export
+            return
+            ;;
+
+        import) _condax_import
+            return
+            ;;
+
+        inject) _condax_inject
+            return
+            ;;
+
+        install) _condax_install
+            return
+            ;;
+
+        list) _condax_list
+            return
+            ;;
+
+        remove) _condax_remove
+            return
+            ;;
+
+        repair) _condax_repair
+            return
+            ;;
+
+        uninject) _condax_uninject
+            return
+            ;;
+
+        uninstall) _condax_uninstall
+            return
+            ;;
+
+        update) _condax_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" ensure-path export import inject install list remove repair uninject uninstall update --version -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_ensurepath()
+{
+    local word_list="  -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_export()
+{
+    local word_list="  --dir -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_import()
+{
+    local word_list="  -f --force -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_inject()
+{
+    local word_list="  -c --channel -n --name -f --force --include-apps -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_install()
+{
+    local word_list="  -c --channel -f --force --file -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_list()
+{
+    local word_list="  -s --short --include-injected -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_remove()
+{
+    local word_list="  -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_repair()
+{
+    local word_list="  --migrate -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_uninject()
+{
+    local word_list="  -n --name -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_uninstall()
+{
+    local word_list="  -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condax_update()
+{
+    local word_list="  --all --update-specs -h --help -v --verbose -q --quiet --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _condax condax

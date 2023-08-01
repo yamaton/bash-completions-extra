@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ldconfig()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --format -C -f -i --ignore-aux-cache -l -n -N -p --print-cache -r -v --verbose -X -? --help --usage -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ldconfig ldconfig

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_gunzip()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --stdout -f --force -k --keep -l --list -n --no-name -N --name -q --quiet -r --recursive -S --suffix --synchronous -t --test -v --verbose --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _gunzip gunzip

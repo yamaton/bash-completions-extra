@@ -1,0 +1,56 @@
+# Auto-generated with h2o
+
+_croc()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" send relay help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        send) _croc_send
+            return
+            ;;
+
+        relay) _croc_relay
+            return
+            ;;
+
+        help) _croc_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" send relay help --internal-dns --remember --debug --yes --stdout --no-compress --ask --local --ignore-stdin --overwrite --curve --ip --relay --relay6 --out --pass --socks5 --throttleUpload --help -h --version -v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_croc_send()
+{
+    local word_list="  --zip --code -c --hash --text -t --no-local --no-multi --ports --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_croc_relay()
+{
+    local word_list="  --host --ports --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_croc_help()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _croc croc

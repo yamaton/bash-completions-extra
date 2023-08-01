@@ -1,0 +1,1057 @@
+# Auto-generated with h2o
+
+_dotnet()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" add build build-server clean format help list msbuild new nuget pack publish remove restore run sdk sln store test tool vstest workload dev-certs fsi sql-cache user-secrets watch"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _dotnet_add
+            return
+            ;;
+
+        build) _dotnet_build
+            return
+            ;;
+
+        build-server) _dotnet_buildserver
+            return
+            ;;
+
+        clean) _dotnet_clean
+            return
+            ;;
+
+        format) _dotnet_format
+            return
+            ;;
+
+        help) _dotnet_help
+            return
+            ;;
+
+        list) _dotnet_list
+            return
+            ;;
+
+        msbuild) _dotnet_msbuild
+            return
+            ;;
+
+        new) _dotnet_new
+            return
+            ;;
+
+        nuget) _dotnet_nuget
+            return
+            ;;
+
+        pack) _dotnet_pack
+            return
+            ;;
+
+        publish) _dotnet_publish
+            return
+            ;;
+
+        remove) _dotnet_remove
+            return
+            ;;
+
+        restore) _dotnet_restore
+            return
+            ;;
+
+        run) _dotnet_run
+            return
+            ;;
+
+        sdk) _dotnet_sdk
+            return
+            ;;
+
+        sln) _dotnet_sln
+            return
+            ;;
+
+        store) _dotnet_store
+            return
+            ;;
+
+        test) _dotnet_test
+            return
+            ;;
+
+        tool) _dotnet_tool
+            return
+            ;;
+
+        vstest) _dotnet_vstest
+            return
+            ;;
+
+        workload) _dotnet_workload
+            return
+            ;;
+
+        dev-certs) _dotnet_devcerts
+            return
+            ;;
+
+        fsi) _dotnet_fsi
+            return
+            ;;
+
+        sql-cache) _dotnet_sqlcache
+            return
+            ;;
+
+        user-secrets) _dotnet_usersecrets
+            return
+            ;;
+
+        watch) _dotnet_watch
+            return
+            ;;
+
+    esac
+
+    local word_list=" add build build-server clean format help list msbuild new nuget pack publish remove restore run sdk sln store test tool vstest workload dev-certs fsi sql-cache user-secrets watch --additionalprobingpath --additional-deps --depsfile --fx-version --roll-forward --runtimeconfig -d --diagnostics -h --help --info --list-runtimes --list-sdks --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_add()
+{
+    local cmd i subcommands
+    local subcommands=" package reference"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        package) _dotnet_add_package
+            return
+            ;;
+
+        reference) _dotnet_add_reference
+            return
+            ;;
+
+    esac
+
+    local word_list=" package reference -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_add_package()
+{
+    local word_list="  -v --version -f --framework -n --no-restore -s --source --package-directory --interactive --prerelease -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_add_reference()
+{
+    local word_list="  -f --framework --interactive -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_build()
+{
+    local word_list="  --use-current-runtime -f --framework -c --configuration -r --runtime --version-suffix --no-restore --interactive -v --verbosity --debug -o --output --no-incremental --no-dependencies --nologo --sc --self-contained --no-self-contained -a --arch --os -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_buildserver()
+{
+    local cmd i subcommands
+    local subcommands=" shutdown"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        shutdown) _dotnet_buildserver_shutdown
+            return
+            ;;
+
+    esac
+
+    local word_list=" shutdown -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_buildserver_shutdown()
+{
+    local word_list="  --msbuild --vbcscompiler --razor -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_clean()
+{
+    local word_list="  -f --framework -r --runtime -c --configuration --interactive -v --verbosity -o --output --nologo -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_format()
+{
+    local cmd i subcommands
+    local subcommands=" whitespace style analyzers"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        whitespace) _dotnet_format_whitespace
+            return
+            ;;
+
+        style) _dotnet_format_style
+            return
+            ;;
+
+        analyzers) _dotnet_format_analyzers
+            return
+            ;;
+
+    esac
+
+    local word_list=" whitespace style analyzers --diagnostics --severity --no-restore --verify-no-changes --include --exclude --include-generated -v --verbosity --binarylog --report --version -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_format_whitespace()
+{
+    local word_list="  --folder --no-restore --verify-no-changes --include --exclude --include-generated -v --verbosity --binarylog --report -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_format_style()
+{
+    local word_list="  --diagnostics --severity --no-restore --verify-no-changes --include --exclude --include-generated -v --verbosity --binarylog --report -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_format_analyzers()
+{
+    local word_list="  --diagnostics --severity --no-restore --verify-no-changes --include --exclude --include-generated -v --verbosity --binarylog --report -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_help()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_list()
+{
+    local cmd i subcommands
+    local subcommands=" package reference"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        package) _dotnet_list_package
+            return
+            ;;
+
+        reference) _dotnet_list_reference
+            return
+            ;;
+
+    esac
+
+    local word_list=" package reference -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_list_package()
+{
+    local word_list="  -v --verbosity --outdated --deprecated --vulnerable --include-transitive --include-prerelease --highest-patch --highest-minor --config --source --interactive -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_list_reference()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_msbuild()
+{
+    local word_list="  -maxCpuCount -noConsoleLogger -fileLogger -fileLoggerParameters -distributedFileLogger -binaryLogger -warnAsError -warnAsMessage -preprocess -targets -detailedSummary -restore -interactive -isolateProjects -graphBuild -lowPriority -noAutoResponse -noLogo -version -help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_new()
+{
+    local word_list="  -h --help -l --list -n --name -o --output -i --install -u --uninstall --interactive --add-source --nuget-source --type --dry-run --force -lang --language --update-check --update-apply --search --author --package --columns --columns-all --tag --no-update-check"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget()
+{
+    local cmd i subcommands
+    local subcommands=" add delete disable enable list push remove sign trust update verify"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _dotnet_nuget_add
+            return
+            ;;
+
+        delete) _dotnet_nuget_delete
+            return
+            ;;
+
+        disable) _dotnet_nuget_disable
+            return
+            ;;
+
+        enable) _dotnet_nuget_enable
+            return
+            ;;
+
+        list) _dotnet_nuget_list
+            return
+            ;;
+
+        push) _dotnet_nuget_push
+            return
+            ;;
+
+        remove) _dotnet_nuget_remove
+            return
+            ;;
+
+        sign) _dotnet_nuget_sign
+            return
+            ;;
+
+        trust) _dotnet_nuget_trust
+            return
+            ;;
+
+        update) _dotnet_nuget_update
+            return
+            ;;
+
+        verify) _dotnet_nuget_verify
+            return
+            ;;
+
+    esac
+
+    local word_list=" add delete disable enable list push remove sign trust update verify -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_add()
+{
+    local cmd i subcommands
+    local subcommands=" client-cert source"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        client-cert) _dotnet_nuget_add_clientcert
+            return
+            ;;
+
+        source) _dotnet_nuget_add_source
+            return
+            ;;
+
+    esac
+
+    local word_list=" client-cert source -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_add_clientcert()
+{
+    local word_list="  -s --package-source --path --password --store-password-in-clear-text --store-location --store-name --find-by --find-value -f --force --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_add_source()
+{
+    local word_list="  -n --name -u --username -p --password --store-password-in-clear-text --valid-authentication-types --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_delete()
+{
+    local word_list="  -h --help --force-english-output -s --source --non-interactive -k --api-key --no-service-endpoint --interactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_disable()
+{
+    local cmd i subcommands
+    local subcommands=" source"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        source) _dotnet_nuget_disable_source
+            return
+            ;;
+
+    esac
+
+    local word_list=" source -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_disable_source()
+{
+    local word_list="  --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_enable()
+{
+    local cmd i subcommands
+    local subcommands=" source"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        source) _dotnet_nuget_enable_source
+            return
+            ;;
+
+    esac
+
+    local word_list=" source -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_enable_source()
+{
+    local word_list="  --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_list()
+{
+    local cmd i subcommands
+    local subcommands=" client-cert source"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        client-cert) _dotnet_nuget_list_clientcert
+            return
+            ;;
+
+        source) _dotnet_nuget_list_source
+            return
+            ;;
+
+    esac
+
+    local word_list=" client-cert source -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_list_clientcert()
+{
+    local word_list="  --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_list_source()
+{
+    local word_list="  --format --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_push()
+{
+    local word_list="  -h --help --force-english-output -s --source -ss --symbol-source -t --timeout -k --api-key -sk --symbol-api-key -d --disable-buffering -n --no-symbols --no-service-endpoint --interactive --skip-duplicate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_remove()
+{
+    local cmd i subcommands
+    local subcommands=" client-cert source"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        client-cert) _dotnet_nuget_remove_clientcert
+            return
+            ;;
+
+        source) _dotnet_nuget_remove_source
+            return
+            ;;
+
+    esac
+
+    local word_list=" client-cert source -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_remove_clientcert()
+{
+    local word_list="  -s --package-source --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_remove_source()
+{
+    local word_list="  --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_sign()
+{
+    local word_list="  -o --output --certificate-path --certificate-store-name --certificate-store-location --certificate-subject-name --certificate-fingerprint --certificate-password --hash-algorithm --timestamper --timestamp-hash-algorithm --overwrite -v --verbosity -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_trust()
+{
+    local word_list="  --algorithm --allow-untrusted-root --owners -v --verbosity --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_update()
+{
+    local cmd i subcommands
+    local subcommands=" client-cert source"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        client-cert) _dotnet_nuget_update_clientcert
+            return
+            ;;
+
+        source) _dotnet_nuget_update_source
+            return
+            ;;
+
+    esac
+
+    local word_list=" client-cert source -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_update_clientcert()
+{
+    local word_list="  -s --package-source --path --password --store-password-in-clear-text --store-location --store-name --find-by --find-value -f --force --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_update_source()
+{
+    local word_list="  -s --source -u --username -p --password --store-password-in-clear-text --valid-authentication-types --configfile -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_nuget_verify()
+{
+    local word_list="  --all --certificate-fingerprint -v --verbosity -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_pack()
+{
+    local word_list="  -o --output --no-build --include-symbols --include-source -s --serviceable --nologo --interactive --no-restore -v --verbosity --version-suffix -c --configuration --use-current-runtime -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_publish()
+{
+    local word_list="  --use-current-runtime -o --output --manifest --no-build --sc --self-contained --no-self-contained --nologo -f --framework -r --runtime -c --configuration --version-suffix --interactive --no-restore -v --verbosity -a --arch --os -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_remove()
+{
+    local cmd i subcommands
+    local subcommands=" package reference"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        package) _dotnet_remove_package
+            return
+            ;;
+
+        reference) _dotnet_remove_reference
+            return
+            ;;
+
+    esac
+
+    local word_list=" package reference -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_remove_package()
+{
+    local word_list="  --interactive -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_remove_reference()
+{
+    local word_list="  -f --framework -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_restore()
+{
+    local word_list="  -s --source --packages --use-current-runtime --disable-parallel --configfile --no-cache --ignore-failed-sources -f --force -r --runtime --no-dependencies -v --verbosity --interactive --use-lock-file --locked-mode --lock-file-path --force-evaluate -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_run()
+{
+    local word_list="  -c --configuration -f --framework -r --runtime --project -p --property --launch-profile --no-launch-profile --no-build --interactive --no-restore --sc --self-contained --no-self-contained -v --verbosity -a --arch --os -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sdk()
+{
+    local cmd i subcommands
+    local subcommands=" check"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _dotnet_sdk_check
+            return
+            ;;
+
+    esac
+
+    local word_list=" check -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sdk_check()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sln()
+{
+    local cmd i subcommands
+    local subcommands=" add list remove"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _dotnet_sln_add
+            return
+            ;;
+
+        list) _dotnet_sln_list
+            return
+            ;;
+
+        remove) _dotnet_sln_remove
+            return
+            ;;
+
+    esac
+
+    local word_list=" add list remove -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sln_add()
+{
+    local word_list="  --in-root -s --solution-folder -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sln_list()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sln_remove()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_store()
+{
+    local word_list="  -m --manifest --framework-version -o --output -w --working-dir --skip-optimization --skip-symbols -f --framework -r --runtime -v --verbosity --use-current-runtime -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_test()
+{
+    local word_list="  -s --settings -t --list-tests -e --environment --filter -a --test-adapter-path -l --logger -o --output -d --diag --no-build -r --results-directory --collect --blame --blame-crash --blame-crash-dump-type --blame-crash-collect-always --blame-hang --blame-hang-dump-type --blame-hang-timeout --nologo -c --configuration -f --framework --runtime --no-restore --interactive -v --verbosity --arch --os -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool()
+{
+    local cmd i subcommands
+    local subcommands=" install uninstall update list run search restore"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        install) _dotnet_tool_install
+            return
+            ;;
+
+        uninstall) _dotnet_tool_uninstall
+            return
+            ;;
+
+        update) _dotnet_tool_update
+            return
+            ;;
+
+        list) _dotnet_tool_list
+            return
+            ;;
+
+        run) _dotnet_tool_run
+            return
+            ;;
+
+        search) _dotnet_tool_search
+            return
+            ;;
+
+        restore) _dotnet_tool_restore
+            return
+            ;;
+
+    esac
+
+    local word_list=" install uninstall update list run search restore -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_install()
+{
+    local word_list="  -g --global --local --tool-path --version --configfile --tool-manifest --add-source --framework --prerelease --disable-parallel --ignore-failed-sources --no-cache --interactive -v --verbosity -a --arch -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_uninstall()
+{
+    local word_list="  -g --global --local --tool-path --tool-manifest -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_update()
+{
+    local word_list="  -g --global --tool-path --local --configfile --add-source --framework --version --tool-manifest --prerelease --disable-parallel --ignore-failed-sources --no-cache --interactive -v --verbosity -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_list()
+{
+    local word_list="  -g --global --local --tool-path -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_run()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_search()
+{
+    local word_list="  --detail --skip --take --prerelease -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_tool_restore()
+{
+    local word_list="  --configfile --add-source --tool-manifest --disable-parallel --ignore-failed-sources --no-cache --interactive -v --verbosity -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_vstest()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload()
+{
+    local cmd i subcommands
+    local subcommands=" install update list search uninstall repair restore"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        install) _dotnet_workload_install
+            return
+            ;;
+
+        update) _dotnet_workload_update
+            return
+            ;;
+
+        list) _dotnet_workload_list
+            return
+            ;;
+
+        search) _dotnet_workload_search
+            return
+            ;;
+
+        uninstall) _dotnet_workload_uninstall
+            return
+            ;;
+
+        repair) _dotnet_workload_repair
+            return
+            ;;
+
+        restore) _dotnet_workload_restore
+            return
+            ;;
+
+    esac
+
+    local word_list=" install update list search uninstall repair restore -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_install()
+{
+    local word_list="  --configfile -s --source --skip-manifest-update --include-previews --temp-dir --disable-parallel --ignore-failed-sources --no-cache --interactive -v --verbosity -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_update()
+{
+    local word_list="  --configfile -s --source --include-previews --temp-dir --from-previous-sdk --advertising-manifests-only --disable-parallel --ignore-failed-sources --no-cache --interactive -v --verbosity -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_list()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_search()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_uninstall()
+{
+    local word_list="  -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_repair()
+{
+    local word_list="  --configfile -s --source -v --verbosity --disable-parallel --ignore-failed-sources --no-cache --interactive -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_workload_restore()
+{
+    local word_list="  --configfile -s --source --skip-manifest-update --include-previews --temp-dir --disable-parallel --ignore-failed-sources --no-cache --interactive -v --verbosity -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_devcerts()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_fsi()
+{
+    local word_list="  --usesdkrefs -- --optimize --tailcalls --deterministic --crossoptimize --warnaserror --consolecolors --checked --mlcompatibility --version --help --utf8output --fullpaths --simpleresolution --noframework --exec --gui --quiet --readline --quotations-debug --shadowcopyreferences"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_sqlcache()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_usersecrets()
+{
+    local cmd i subcommands
+    local subcommands=" clear init list remove set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clear) _dotnet_usersecrets_clear
+            return
+            ;;
+
+        init) _dotnet_usersecrets_init
+            return
+            ;;
+
+        list) _dotnet_usersecrets_list
+            return
+            ;;
+
+        remove) _dotnet_usersecrets_remove
+            return
+            ;;
+
+        set) _dotnet_usersecrets_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" clear init list remove set -? -h --help --version -v --verbose -p --project -c --configuration --id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_usersecrets_clear()
+{
+    local word_list="  -? -h --help -v --verbose -p --project -c --configuration --id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_usersecrets_init()
+{
+    local word_list="  -? -h --help -v --verbose -p --project -c --configuration --id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_usersecrets_list()
+{
+    local word_list="  -? -h --help --json -v --verbose -p --project -c --configuration --id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_usersecrets_remove()
+{
+    local word_list="  -? -h --help -v --verbose -p --project -c --configuration --id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_usersecrets_set()
+{
+    local word_list="  -? -h --help -v --verbose -p --project -c --configuration --id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dotnet_watch()
+{
+    local word_list="  -q --quiet -v --verbose --no-hot-reload --project --list --version -? -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _dotnet dotnet

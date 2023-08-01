@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_hexdump()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -b --one-byte-octal -c --one-byte-char -C --canonical -d --two-bytes-decimal -o --two-bytes-octal -x --two-bytes-hex -L --color -e --format -f --format-file -n --length -s --skip -v --no-squeezing -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _hexdump hexdump

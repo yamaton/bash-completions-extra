@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_iperf3()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -p --port -f --format -i --interval -F --file -A --affinity -B --bind -V --verbose -J --json --logfile --forceflush --timestamps -d --debug -v --version -h --help -s --server -D --daemon -I --pidfile -1 --one-off --server-bitrate-limit --rsa-private-key-path --authorized-users-path -c --client --sctp -X --xbind --nstreams -u --udp --connect-timeout -b --bitrate --pacing-timer --fq-rate -t --time -n --bytes -k --blockcount -l --length --cport -P --parallel -R --reverse --bidir -w --window -C --congestion -M --set-mss -N --no-delay -4 --version4 -6 --version6 -S --tos --dscp -L --flowlabel -Z --zerocopy -O --omit -T --title --extra-data --get-server-output --udp-counters-64bit --repeating-payload --username --rsa-public-key-path"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _iperf3 iperf3

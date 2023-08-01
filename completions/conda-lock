@@ -1,0 +1,56 @@
+# Auto-generated with h2o
+
+_condalock()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" lock install render"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        lock) _condalock_lock
+            return
+            ;;
+
+        install) _condalock_install
+            return
+            ;;
+
+        render) _condalock_render
+            return
+            ;;
+
+    esac
+
+    local word_list=" lock install render --version --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condalock_lock()
+{
+    local word_list="  --conda --mamba --no-mamba --micromamba --no-micromamba -p --platform -c --channel --dev-dependencies --no-dev-dependencies -f --file -k --kind --filename-template --lockfile --strip-auth -e --extras --category --filter-categories --filter-extras --check-input-hash --log-level --pdb --virtual-package-spec --update --pypi_to_conda_lookup_file --md --metadata --mdy --metadata-yaml --metadata-json --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condalock_install()
+{
+    local word_list="  --conda --mamba --no-mamba --micromamba --no-micromamba --copy -p --prefix -n --name --auth --auth-file --validate-platform --no-validate-platform --log-level --dev --no-dev -E --extras --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condalock_render()
+{
+    local word_list="  --dev-dependencies --no-dev-dependencies -k --kind --filename-template -e --extras --log-level --pdb -p --platform --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _condalock conda-lock

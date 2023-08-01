@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_grex()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -f --file -d --digits -D --non-digits -s --spaces -S --non-spaces -w --words -W --non-words -e --escape --with-surrogates -r --repetitions --min-repetitions --min-substring-length --no-anchors --no-end-anchor --no-start-anchor -x --verbose -c --colorize -i --ignore-case -g --capture-groups -h --help -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _grex grex

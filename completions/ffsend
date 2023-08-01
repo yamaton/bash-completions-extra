@@ -1,0 +1,179 @@
+# Auto-generated with h2o
+
+_ffsend()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" upload download debug delete exists generate help history info parameters password version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        upload) _ffsend_upload
+            return
+            ;;
+
+        download) _ffsend_download
+            return
+            ;;
+
+        debug) _ffsend_debug
+            return
+            ;;
+
+        delete) _ffsend_delete
+            return
+            ;;
+
+        exists) _ffsend_exists
+            return
+            ;;
+
+        generate) _ffsend_generate
+            return
+            ;;
+
+        help) _ffsend_help
+            return
+            ;;
+
+        history) _ffsend_history
+            return
+            ;;
+
+        info) _ffsend_info
+            return
+            ;;
+
+        parameters) _ffsend_parameters
+            return
+            ;;
+
+        password) _ffsend_password
+            return
+            ;;
+
+        version) _ffsend_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" upload download debug delete exists generate help history info parameters password version -f --force -h --help -i --incognito -I --no-interact -q --quiet -V --version -v --verbose -y --yes -A --api --basic-auth -H --history -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_upload()
+{
+    local word_list="  -a --archive -c --copy -C --copy-cmd -D --delete -f --force -P --gen-passphrase --help -i --incognito -I --no-interact -o --open -Q --qrcode -q --quiet -S --shorten -v --verbose -y --yes -A --api --basic-auth -d --download-limit -e --expiry-time -H --history -h --host -n --name -p --password -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_download()
+{
+    local word_list="  -e --extract -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -o --output -p --password -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_debug()
+{
+    local word_list="  -f --force --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_delete()
+{
+    local word_list="  -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -o --owner -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_exists()
+{
+    local word_list="  -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_generate()
+{
+    local cmd i subcommands
+    local subcommands=" completions help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        completions) _ffsend_generate_completions
+            return
+            ;;
+
+        help) _ffsend_generate_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" completions help -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_generate_completions()
+{
+    local word_list="  -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -o --output -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_generate_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_history()
+{
+    local word_list="  -C --clear -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -R --rm -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_info()
+{
+    local word_list="  -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -o --owner -p --password -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_parameters()
+{
+    local word_list="  -f --force -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -d --download-limit -H --history -o --owner -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_password()
+{
+    local word_list="  -f --force -P --gen-passphrase -h --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -o --owner -p --password -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ffsend_version()
+{
+    local word_list="  -f --force --help -i --incognito -I --no-interact -q --quiet -v --verbose -y --yes -A --api --basic-auth -H --history -h --host -t --timeout -T --transfer-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ffsend ffsend

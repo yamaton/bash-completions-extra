@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_emacs()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --batch --chdir --daemon --bg-daemon --fg-daemon --debug-init --display -d --module-assertions --dump-file --no-build-details --no-desktop --no-init-file -q --no-loadup -nl --no-site-file --no-x-resources --no-site-lisp -nsl --no-splash --no-window-system -nw --quick -Q --script --terminal -t --user -u --directory -L --eval --execute --file --find-file --funcall -f --insert --kill --load -l --visit --background-color -bg --basic-display -D --border-color -bd --border-width -bw --color --cursor-color -cr --font -fn --foreground-color -fg --fullheight -fh --fullscreen -fs --fullwidth -fw --maximized -mm --geometry -g --no-bitmap-icon -nbi --iconic --internal-border -ib --line-spacing -lsp --mouse-color -ms --name --no-blinking-cursor -nbc --reverse-video -r -rv --title -T --vertical-scroll-bars -vb --xrm --parent-id --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _emacs emacs

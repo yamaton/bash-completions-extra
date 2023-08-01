@@ -1,0 +1,232 @@
+# Auto-generated with h2o
+
+_ansiblegalaxy()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" collection role"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        collection) _ansiblegalaxy_collection
+            return
+            ;;
+
+        role) _ansiblegalaxy_role
+            return
+            ;;
+
+    esac
+
+    local word_list=" collection role --version -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection()
+{
+    local cmd i subcommands
+    local subcommands=" download init build publish install list verify"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        download) _ansiblegalaxy_collection_download
+            return
+            ;;
+
+        init) _ansiblegalaxy_collection_init
+            return
+            ;;
+
+        build) _ansiblegalaxy_collection_build
+            return
+            ;;
+
+        publish) _ansiblegalaxy_collection_publish
+            return
+            ;;
+
+        install) _ansiblegalaxy_collection_install
+            return
+            ;;
+
+        list) _ansiblegalaxy_collection_list
+            return
+            ;;
+
+        verify) _ansiblegalaxy_collection_verify
+            return
+            ;;
+
+    esac
+
+    local word_list=" download init build publish install list verify -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_download()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose --clear-response-cache --no-cache -n --no-deps -p --download-path -r --requirements-file --pre"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_init()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -f --force --init-path --collection-skeleton"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_build()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -f --force --output-path"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_publish()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose --no-wait --import-timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_install()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -f --force --clear-response-cache --no-cache -i --ignore-errors -n --no-deps --force-with-deps -p --collections-path -r --requirements-file --pre -U --upgrade --keyring --disable-gpg-verify --signature --required-valid-signature-count --ignore-signature-status-code --offline"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_list()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -p --collections-path --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_collection_verify()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -p --collections-path -i --ignore-errors --offline -r --requirements-file --keyring --signature --required-valid-signature-count --ignore-signature-status-code"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role()
+{
+    local cmd i subcommands
+    local subcommands=" init remove delete list search import setup info install"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        init) _ansiblegalaxy_role_init
+            return
+            ;;
+
+        remove) _ansiblegalaxy_role_remove
+            return
+            ;;
+
+        delete) _ansiblegalaxy_role_delete
+            return
+            ;;
+
+        list) _ansiblegalaxy_role_list
+            return
+            ;;
+
+        search) _ansiblegalaxy_role_search
+            return
+            ;;
+
+        import) _ansiblegalaxy_role_import
+            return
+            ;;
+
+        setup) _ansiblegalaxy_role_setup
+            return
+            ;;
+
+        info) _ansiblegalaxy_role_info
+            return
+            ;;
+
+        install) _ansiblegalaxy_role_install
+            return
+            ;;
+
+    esac
+
+    local word_list=" init remove delete list search import setup info install -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_init()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -f --force --offline --init-path --role-skeleton --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_remove()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -p --roles-path"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_delete()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_list()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -p --roles-path"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_search()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose --platforms --galaxy-tags --author"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_import()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose --no-wait --branch --role-name --status"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_setup()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -p --roles-path --remove --list"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_info()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -p --roles-path --offline"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblegalaxy_role_install()
+{
+    local word_list="  -h --help -s --server --token --api-key -c --ignore-certs --timeout -v --verbose -f --force -p --roles-path -i --ignore-errors -n --no-deps --force-with-deps -r --role-file -g --keep-scm-meta"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ansiblegalaxy ansible-galaxy

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ldd()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --help --version -d --data-relocs -r --function-relocs -u --unused -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ldd ldd

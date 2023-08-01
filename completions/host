@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_host()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a -A -c -C -d -l -m -N -p -r -R -s -t -T -U -v -V -w -W -4 -6"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _host host

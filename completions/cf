@@ -1,0 +1,1849 @@
+# Auto-generated with h2o
+
+_cf()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" help version login logout passwd target api auth apps app create-app push scale delete rename cancel-deployment start stop restart stage-package restage restart-app-instance run-task tasks terminate-task packages create-package droplets set-droplet download-droplet events logs env set-env unset-env stacks stack copy-source create-app-manifest get-health-check set-health-check enable-ssh disable-ssh ssh-enabled ssh marketplace services service create-service update-service upgrade-service delete-service rename-service create-service-key service-keys service-key delete-service-key bind-service unbind-service bind-route-service unbind-route-service create-user-provided-service update-user-provided-service share-service unshare-service orgs org create-org delete-org rename-org spaces space create-space delete-space rename-space apply-manifest allow-space-ssh disallow-space-ssh space-ssh-allowed domains create-private-domain delete-private-domain create-shared-domain delete-shared-domain router-groups routes route create-route check-route map-route unmap-route delete-route delete-orphaned-routes update-destination share-route move-route network-policies add-network-policy remove-network-policy buildpacks create-buildpack update-buildpack delete-buildpack create-user delete-user org-users set-org-role unset-org-role space-users set-space-role unset-space-role org-quotas org-quota set-org-quota create-org-quota delete-org-quota update-org-quota share-private-domain unshare-private-domain space-quotas space-quota create-space-quota update-space-quota delete-space-quota set-space-quota unset-space-quota service-brokers create-service-broker update-service-broker delete-service-broker rename-service-broker purge-service-offering purge-service-instance service-access enable-service-access disable-service-access security-group security-groups create-security-group update-security-group delete-security-group bind-security-group unbind-security-group bind-staging-security-group staging-security-groups unbind-staging-security-group bind-running-security-group running-security-groups unbind-running-security-group running-environment-variable-group staging-environment-variable-group set-staging-environment-variable-group set-running-environment-variable-group isolation-segments create-isolation-segment delete-isolation-segment enable-org-isolation disable-org-isolation set-org-default-isolation-segment reset-org-default-isolation-segment set-space-isolation-segment reset-space-isolation-segment feature-flags feature-flag enable-feature-flag disable-feature-flag labels set-label unset-label curl config oauth-token ssh-code add-plugin-repo remove-plugin-repo list-plugin-repos repo-plugins plugins install-plugin uninstall-plugin"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        help) _cf_help
+            return
+            ;;
+
+        version) _cf_version
+            return
+            ;;
+
+        login) _cf_login
+            return
+            ;;
+
+        logout) _cf_logout
+            return
+            ;;
+
+        passwd) _cf_passwd
+            return
+            ;;
+
+        target) _cf_target
+            return
+            ;;
+
+        api) _cf_api
+            return
+            ;;
+
+        auth) _cf_auth
+            return
+            ;;
+
+        apps) _cf_apps
+            return
+            ;;
+
+        app) _cf_app
+            return
+            ;;
+
+        create-app) _cf_createapp
+            return
+            ;;
+
+        push) _cf_push
+            return
+            ;;
+
+        scale) _cf_scale
+            return
+            ;;
+
+        delete) _cf_delete
+            return
+            ;;
+
+        rename) _cf_rename
+            return
+            ;;
+
+        cancel-deployment) _cf_canceldeployment
+            return
+            ;;
+
+        start) _cf_start
+            return
+            ;;
+
+        stop) _cf_stop
+            return
+            ;;
+
+        restart) _cf_restart
+            return
+            ;;
+
+        stage-package) _cf_stagepackage
+            return
+            ;;
+
+        restage) _cf_restage
+            return
+            ;;
+
+        restart-app-instance) _cf_restartappinstance
+            return
+            ;;
+
+        run-task) _cf_runtask
+            return
+            ;;
+
+        tasks) _cf_tasks
+            return
+            ;;
+
+        terminate-task) _cf_terminatetask
+            return
+            ;;
+
+        packages) _cf_packages
+            return
+            ;;
+
+        create-package) _cf_createpackage
+            return
+            ;;
+
+        droplets) _cf_droplets
+            return
+            ;;
+
+        set-droplet) _cf_setdroplet
+            return
+            ;;
+
+        download-droplet) _cf_downloaddroplet
+            return
+            ;;
+
+        events) _cf_events
+            return
+            ;;
+
+        logs) _cf_logs
+            return
+            ;;
+
+        env) _cf_env
+            return
+            ;;
+
+        set-env) _cf_setenv
+            return
+            ;;
+
+        unset-env) _cf_unsetenv
+            return
+            ;;
+
+        stacks) _cf_stacks
+            return
+            ;;
+
+        stack) _cf_stack
+            return
+            ;;
+
+        copy-source) _cf_copysource
+            return
+            ;;
+
+        create-app-manifest) _cf_createappmanifest
+            return
+            ;;
+
+        get-health-check) _cf_gethealthcheck
+            return
+            ;;
+
+        set-health-check) _cf_sethealthcheck
+            return
+            ;;
+
+        enable-ssh) _cf_enablessh
+            return
+            ;;
+
+        disable-ssh) _cf_disablessh
+            return
+            ;;
+
+        ssh-enabled) _cf_sshenabled
+            return
+            ;;
+
+        ssh) _cf_ssh
+            return
+            ;;
+
+        marketplace) _cf_marketplace
+            return
+            ;;
+
+        services) _cf_services
+            return
+            ;;
+
+        service) _cf_service
+            return
+            ;;
+
+        create-service) _cf_createservice
+            return
+            ;;
+
+        update-service) _cf_updateservice
+            return
+            ;;
+
+        upgrade-service) _cf_upgradeservice
+            return
+            ;;
+
+        delete-service) _cf_deleteservice
+            return
+            ;;
+
+        rename-service) _cf_renameservice
+            return
+            ;;
+
+        create-service-key) _cf_createservicekey
+            return
+            ;;
+
+        service-keys) _cf_servicekeys
+            return
+            ;;
+
+        service-key) _cf_servicekey
+            return
+            ;;
+
+        delete-service-key) _cf_deleteservicekey
+            return
+            ;;
+
+        bind-service) _cf_bindservice
+            return
+            ;;
+
+        unbind-service) _cf_unbindservice
+            return
+            ;;
+
+        bind-route-service) _cf_bindrouteservice
+            return
+            ;;
+
+        unbind-route-service) _cf_unbindrouteservice
+            return
+            ;;
+
+        create-user-provided-service) _cf_createuserprovidedservice
+            return
+            ;;
+
+        update-user-provided-service) _cf_updateuserprovidedservice
+            return
+            ;;
+
+        share-service) _cf_shareservice
+            return
+            ;;
+
+        unshare-service) _cf_unshareservice
+            return
+            ;;
+
+        orgs) _cf_orgs
+            return
+            ;;
+
+        org) _cf_org
+            return
+            ;;
+
+        create-org) _cf_createorg
+            return
+            ;;
+
+        delete-org) _cf_deleteorg
+            return
+            ;;
+
+        rename-org) _cf_renameorg
+            return
+            ;;
+
+        spaces) _cf_spaces
+            return
+            ;;
+
+        space) _cf_space
+            return
+            ;;
+
+        create-space) _cf_createspace
+            return
+            ;;
+
+        delete-space) _cf_deletespace
+            return
+            ;;
+
+        rename-space) _cf_renamespace
+            return
+            ;;
+
+        apply-manifest) _cf_applymanifest
+            return
+            ;;
+
+        allow-space-ssh) _cf_allowspacessh
+            return
+            ;;
+
+        disallow-space-ssh) _cf_disallowspacessh
+            return
+            ;;
+
+        space-ssh-allowed) _cf_spacesshallowed
+            return
+            ;;
+
+        domains) _cf_domains
+            return
+            ;;
+
+        create-private-domain) _cf_createprivatedomain
+            return
+            ;;
+
+        delete-private-domain) _cf_deleteprivatedomain
+            return
+            ;;
+
+        create-shared-domain) _cf_createshareddomain
+            return
+            ;;
+
+        delete-shared-domain) _cf_deleteshareddomain
+            return
+            ;;
+
+        router-groups) _cf_routergroups
+            return
+            ;;
+
+        routes) _cf_routes
+            return
+            ;;
+
+        route) _cf_route
+            return
+            ;;
+
+        create-route) _cf_createroute
+            return
+            ;;
+
+        check-route) _cf_checkroute
+            return
+            ;;
+
+        map-route) _cf_maproute
+            return
+            ;;
+
+        unmap-route) _cf_unmaproute
+            return
+            ;;
+
+        delete-route) _cf_deleteroute
+            return
+            ;;
+
+        delete-orphaned-routes) _cf_deleteorphanedroutes
+            return
+            ;;
+
+        update-destination) _cf_updatedestination
+            return
+            ;;
+
+        share-route) _cf_shareroute
+            return
+            ;;
+
+        move-route) _cf_moveroute
+            return
+            ;;
+
+        network-policies) _cf_networkpolicies
+            return
+            ;;
+
+        add-network-policy) _cf_addnetworkpolicy
+            return
+            ;;
+
+        remove-network-policy) _cf_removenetworkpolicy
+            return
+            ;;
+
+        buildpacks) _cf_buildpacks
+            return
+            ;;
+
+        create-buildpack) _cf_createbuildpack
+            return
+            ;;
+
+        update-buildpack) _cf_updatebuildpack
+            return
+            ;;
+
+        delete-buildpack) _cf_deletebuildpack
+            return
+            ;;
+
+        create-user) _cf_createuser
+            return
+            ;;
+
+        delete-user) _cf_deleteuser
+            return
+            ;;
+
+        org-users) _cf_orgusers
+            return
+            ;;
+
+        set-org-role) _cf_setorgrole
+            return
+            ;;
+
+        unset-org-role) _cf_unsetorgrole
+            return
+            ;;
+
+        space-users) _cf_spaceusers
+            return
+            ;;
+
+        set-space-role) _cf_setspacerole
+            return
+            ;;
+
+        unset-space-role) _cf_unsetspacerole
+            return
+            ;;
+
+        org-quotas) _cf_orgquotas
+            return
+            ;;
+
+        org-quota) _cf_orgquota
+            return
+            ;;
+
+        set-org-quota) _cf_setorgquota
+            return
+            ;;
+
+        create-org-quota) _cf_createorgquota
+            return
+            ;;
+
+        delete-org-quota) _cf_deleteorgquota
+            return
+            ;;
+
+        update-org-quota) _cf_updateorgquota
+            return
+            ;;
+
+        share-private-domain) _cf_shareprivatedomain
+            return
+            ;;
+
+        unshare-private-domain) _cf_unshareprivatedomain
+            return
+            ;;
+
+        space-quotas) _cf_spacequotas
+            return
+            ;;
+
+        space-quota) _cf_spacequota
+            return
+            ;;
+
+        create-space-quota) _cf_createspacequota
+            return
+            ;;
+
+        update-space-quota) _cf_updatespacequota
+            return
+            ;;
+
+        delete-space-quota) _cf_deletespacequota
+            return
+            ;;
+
+        set-space-quota) _cf_setspacequota
+            return
+            ;;
+
+        unset-space-quota) _cf_unsetspacequota
+            return
+            ;;
+
+        service-brokers) _cf_servicebrokers
+            return
+            ;;
+
+        create-service-broker) _cf_createservicebroker
+            return
+            ;;
+
+        update-service-broker) _cf_updateservicebroker
+            return
+            ;;
+
+        delete-service-broker) _cf_deleteservicebroker
+            return
+            ;;
+
+        rename-service-broker) _cf_renameservicebroker
+            return
+            ;;
+
+        purge-service-offering) _cf_purgeserviceoffering
+            return
+            ;;
+
+        purge-service-instance) _cf_purgeserviceinstance
+            return
+            ;;
+
+        service-access) _cf_serviceaccess
+            return
+            ;;
+
+        enable-service-access) _cf_enableserviceaccess
+            return
+            ;;
+
+        disable-service-access) _cf_disableserviceaccess
+            return
+            ;;
+
+        security-group) _cf_securitygroup
+            return
+            ;;
+
+        security-groups) _cf_securitygroups
+            return
+            ;;
+
+        create-security-group) _cf_createsecuritygroup
+            return
+            ;;
+
+        update-security-group) _cf_updatesecuritygroup
+            return
+            ;;
+
+        delete-security-group) _cf_deletesecuritygroup
+            return
+            ;;
+
+        bind-security-group) _cf_bindsecuritygroup
+            return
+            ;;
+
+        unbind-security-group) _cf_unbindsecuritygroup
+            return
+            ;;
+
+        bind-staging-security-group) _cf_bindstagingsecuritygroup
+            return
+            ;;
+
+        staging-security-groups) _cf_stagingsecuritygroups
+            return
+            ;;
+
+        unbind-staging-security-group) _cf_unbindstagingsecuritygroup
+            return
+            ;;
+
+        bind-running-security-group) _cf_bindrunningsecuritygroup
+            return
+            ;;
+
+        running-security-groups) _cf_runningsecuritygroups
+            return
+            ;;
+
+        unbind-running-security-group) _cf_unbindrunningsecuritygroup
+            return
+            ;;
+
+        running-environment-variable-group) _cf_runningenvironmentvariablegroup
+            return
+            ;;
+
+        staging-environment-variable-group) _cf_stagingenvironmentvariablegroup
+            return
+            ;;
+
+        set-staging-environment-variable-group) _cf_setstagingenvironmentvariablegroup
+            return
+            ;;
+
+        set-running-environment-variable-group) _cf_setrunningenvironmentvariablegroup
+            return
+            ;;
+
+        isolation-segments) _cf_isolationsegments
+            return
+            ;;
+
+        create-isolation-segment) _cf_createisolationsegment
+            return
+            ;;
+
+        delete-isolation-segment) _cf_deleteisolationsegment
+            return
+            ;;
+
+        enable-org-isolation) _cf_enableorgisolation
+            return
+            ;;
+
+        disable-org-isolation) _cf_disableorgisolation
+            return
+            ;;
+
+        set-org-default-isolation-segment) _cf_setorgdefaultisolationsegment
+            return
+            ;;
+
+        reset-org-default-isolation-segment) _cf_resetorgdefaultisolationsegment
+            return
+            ;;
+
+        set-space-isolation-segment) _cf_setspaceisolationsegment
+            return
+            ;;
+
+        reset-space-isolation-segment) _cf_resetspaceisolationsegment
+            return
+            ;;
+
+        feature-flags) _cf_featureflags
+            return
+            ;;
+
+        feature-flag) _cf_featureflag
+            return
+            ;;
+
+        enable-feature-flag) _cf_enablefeatureflag
+            return
+            ;;
+
+        disable-feature-flag) _cf_disablefeatureflag
+            return
+            ;;
+
+        labels) _cf_labels
+            return
+            ;;
+
+        set-label) _cf_setlabel
+            return
+            ;;
+
+        unset-label) _cf_unsetlabel
+            return
+            ;;
+
+        curl) _cf_curl
+            return
+            ;;
+
+        config) _cf_config
+            return
+            ;;
+
+        oauth-token) _cf_oauthtoken
+            return
+            ;;
+
+        ssh-code) _cf_sshcode
+            return
+            ;;
+
+        add-plugin-repo) _cf_addpluginrepo
+            return
+            ;;
+
+        remove-plugin-repo) _cf_removepluginrepo
+            return
+            ;;
+
+        list-plugin-repos) _cf_listpluginrepos
+            return
+            ;;
+
+        repo-plugins) _cf_repoplugins
+            return
+            ;;
+
+        plugins) _cf_plugins
+            return
+            ;;
+
+        install-plugin) _cf_installplugin
+            return
+            ;;
+
+        uninstall-plugin) _cf_uninstallplugin
+            return
+            ;;
+
+    esac
+
+    local word_list=" help version login logout passwd target api auth apps app create-app push scale delete rename cancel-deployment start stop restart stage-package restage restart-app-instance run-task tasks terminate-task packages create-package droplets set-droplet download-droplet events logs env set-env unset-env stacks stack copy-source create-app-manifest get-health-check set-health-check enable-ssh disable-ssh ssh-enabled ssh marketplace services service create-service update-service upgrade-service delete-service rename-service create-service-key service-keys service-key delete-service-key bind-service unbind-service bind-route-service unbind-route-service create-user-provided-service update-user-provided-service share-service unshare-service orgs org create-org delete-org rename-org spaces space create-space delete-space rename-space apply-manifest allow-space-ssh disallow-space-ssh space-ssh-allowed domains create-private-domain delete-private-domain create-shared-domain delete-shared-domain router-groups routes route create-route check-route map-route unmap-route delete-route delete-orphaned-routes update-destination share-route move-route network-policies add-network-policy remove-network-policy buildpacks create-buildpack update-buildpack delete-buildpack create-user delete-user org-users set-org-role unset-org-role space-users set-space-role unset-space-role org-quotas org-quota set-org-quota create-org-quota delete-org-quota update-org-quota share-private-domain unshare-private-domain space-quotas space-quota create-space-quota update-space-quota delete-space-quota set-space-quota unset-space-quota service-brokers create-service-broker update-service-broker delete-service-broker rename-service-broker purge-service-offering purge-service-instance service-access enable-service-access disable-service-access security-group security-groups create-security-group update-security-group delete-security-group bind-security-group unbind-security-group bind-staging-security-group staging-security-groups unbind-staging-security-group bind-running-security-group running-security-groups unbind-running-security-group running-environment-variable-group staging-environment-variable-group set-staging-environment-variable-group set-running-environment-variable-group isolation-segments create-isolation-segment delete-isolation-segment enable-org-isolation disable-org-isolation set-org-default-isolation-segment reset-org-default-isolation-segment set-space-isolation-segment reset-space-isolation-segment feature-flags feature-flag enable-feature-flag disable-feature-flag labels set-label unset-label curl config oauth-token ssh-code add-plugin-repo remove-plugin-repo list-plugin-repos repo-plugins plugins install-plugin uninstall-plugin --help -h -v"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_help()
+{
+    local word_list="  -a"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_login()
+{
+    local word_list="  -a -o -p -s --skip-ssl-validation --sso --sso-passcode -u --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_logout()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_passwd()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_target()
+{
+    local word_list="  -o -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_api()
+{
+    local word_list="  --skip-ssl-validation --unset"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_auth()
+{
+    local word_list="  --client-credentials --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_apps()
+{
+    local word_list="  --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_app()
+{
+    local word_list="  --guid"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createapp()
+{
+    local word_list="  --app-type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_push()
+{
+    local word_list="  --app-start-timeout -t --buildpack -b --disk -k --docker-image -o --docker-username --droplet --endpoint --health-check-type -u --instances -i --log-rate-limit -l --manifest -f --memory -m --no-manifest --no-route --no-start --no-wait --path -p --random-route --stack -s --start-command -c --strategy --task --var --vars-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_scale()
+{
+    local word_list="  --force -f --instances -i -k -l -m --process"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_delete()
+{
+    local word_list="  -f -r"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_rename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_canceldeployment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_start()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_stop()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_restart()
+{
+    local word_list="  --strategy --no-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_stagepackage()
+{
+    local word_list="  --package-guid"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_restage()
+{
+    local word_list="  --strategy --no-wait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_restartappinstance()
+{
+    local word_list="  --process"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_runtask()
+{
+    local word_list="  --command -c -k -l -m --name --process"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_tasks()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_terminatetask()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_packages()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createpackage()
+{
+    local word_list="  --docker-image -o -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_droplets()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setdroplet()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_downloaddroplet()
+{
+    local word_list="  --droplet --path -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_events()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_logs()
+{
+    local word_list="  --recent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_env()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setenv()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unsetenv()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_stacks()
+{
+    local word_list="  --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_stack()
+{
+    local word_list="  --guid"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_copysource()
+{
+    local word_list="  --strategy --no-wait --no-restart --organization -o --space -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createappmanifest()
+{
+    local word_list="  -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_gethealthcheck()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_sethealthcheck()
+{
+    local word_list="  --endpoint --invocation-timeout --process"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_enablessh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_disablessh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_sshenabled()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_ssh()
+{
+    local word_list="  --app-instance-index -i --command -c --disable-pseudo-tty -T --force-pseudo-tty -L --process --request-pseudo-tty -t --skip-host-validation -k --skip-remote-execution -N"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_marketplace()
+{
+    local word_list="  -e -b --no-plans --show-unavailable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_services()
+{
+    local word_list="  --no-apps"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_service()
+{
+    local word_list="  --guid --params"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createservice()
+{
+    local word_list="  -b -c -t --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updateservice()
+{
+    local word_list="  -c -p -t --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_upgradeservice()
+{
+    local word_list="  --force -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteservice()
+{
+    local word_list="  --force -f --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_renameservice()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createservicekey()
+{
+    local word_list="  -c --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_servicekeys()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_servicekey()
+{
+    local word_list="  --guid"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteservicekey()
+{
+    local word_list="  -f --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_bindservice()
+{
+    local word_list="  --binding-name -c --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unbindservice()
+{
+    local word_list="  --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_bindrouteservice()
+{
+    local word_list="  -c --hostname -n --path --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unbindrouteservice()
+{
+    local word_list="  -f --hostname -n --path --wait -w"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createuserprovidedservice()
+{
+    local word_list="  -l -p -r -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updateuserprovidedservice()
+{
+    local word_list="  -l -p -r -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_shareservice()
+{
+    local word_list="  -s -o"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unshareservice()
+{
+    local word_list="  -s -o -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_orgs()
+{
+    local word_list="  --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_org()
+{
+    local word_list="  --guid"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createorg()
+{
+    local word_list="  --quota -q"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteorg()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_renameorg()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_spaces()
+{
+    local word_list="  --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_space()
+{
+    local word_list="  --guid --security-group-rules"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createspace()
+{
+    local word_list="  -o --quota -q"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deletespace()
+{
+    local word_list="  -f -o"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_renamespace()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_applymanifest()
+{
+    local word_list="  -f --var --vars-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_allowspacessh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_disallowspacessh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_spacesshallowed()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_domains()
+{
+    local word_list="  --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createprivatedomain()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteprivatedomain()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createshareddomain()
+{
+    local word_list="  --router-group --internal"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteshareddomain()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_routergroups()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_routes()
+{
+    local word_list="  --org-level --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_route()
+{
+    local word_list="  --hostname -n --path --port"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createroute()
+{
+    local word_list="  --hostname -n --path --port"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_checkroute()
+{
+    local word_list="  --hostname -n --path --port"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_maproute()
+{
+    local word_list="  --hostname -n --path --port --app-protocol"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unmaproute()
+{
+    local word_list="  --hostname -n --path --port"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteroute()
+{
+    local word_list="  -f --hostname -n --path --port"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteorphanedroutes()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updatedestination()
+{
+    local word_list="  --hostname -n --app-protocol --path"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_shareroute()
+{
+    local word_list="  --hostname -n --path -o -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_moveroute()
+{
+    local word_list="  --hostname -n --path -o -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_networkpolicies()
+{
+    local word_list="  --source"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_addnetworkpolicy()
+{
+    local word_list="  --port --protocol -o -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_removenetworkpolicy()
+{
+    local word_list="  --port --protocol -o -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_buildpacks()
+{
+    local word_list="  --labels"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createbuildpack()
+{
+    local word_list="  --disable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updatebuildpack()
+{
+    local word_list="  --assign-stack --disable --enable --lock --path -p --position -i --rename --stack -s --unlock"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deletebuildpack()
+{
+    local word_list="  --force -f --stack -s"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createuser()
+{
+    local word_list="  --origin --password-prompt"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteuser()
+{
+    local word_list="  -f --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_orgusers()
+{
+    local word_list="  --all-users -a"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setorgrole()
+{
+    local word_list="  --client --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unsetorgrole()
+{
+    local word_list="  --client --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_spaceusers()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setspacerole()
+{
+    local word_list="  --client --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unsetspacerole()
+{
+    local word_list="  --client --origin"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_orgquotas()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_orgquota()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setorgquota()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createorgquota()
+{
+    local word_list="  -a --allow-paid-service-plans -i -m -r --reserved-route-ports -s -l"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteorgquota()
+{
+    local word_list="  --force -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updateorgquota()
+{
+    local word_list="  -a --allow-paid-service-plans --disallow-paid-service-plans -i -m -n -r --reserved-route-ports -s -l"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_shareprivatedomain()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unshareprivatedomain()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_spacequotas()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_spacequota()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createspacequota()
+{
+    local word_list="  -a --allow-paid-service-plans -i -m -r --reserved-route-ports -s -l"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updatespacequota()
+{
+    local word_list="  -a --allow-paid-service-plans --disallow-paid-service-plans -i -m -n -r --reserved-route-ports -s -l"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deletespacequota()
+{
+    local word_list="  --force -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setspacequota()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unsetspacequota()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_servicebrokers()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createservicebroker()
+{
+    local word_list="  --space-scoped"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updateservicebroker()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteservicebroker()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_renameservicebroker()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_purgeserviceoffering()
+{
+    local word_list="  -b -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_purgeserviceinstance()
+{
+    local word_list="  --force -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_serviceaccess()
+{
+    local word_list="  -b -e -o"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_enableserviceaccess()
+{
+    local word_list="  -b -o -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_disableserviceaccess()
+{
+    local word_list="  -b -o -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_securitygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_securitygroups()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createsecuritygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_updatesecuritygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deletesecuritygroup()
+{
+    local word_list="  --force -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_bindsecuritygroup()
+{
+    local word_list="  --lifecycle --space"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unbindsecuritygroup()
+{
+    local word_list="  --lifecycle"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_bindstagingsecuritygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_stagingsecuritygroups()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unbindstagingsecuritygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_bindrunningsecuritygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_runningsecuritygroups()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unbindrunningsecuritygroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_runningenvironmentvariablegroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_stagingenvironmentvariablegroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setstagingenvironmentvariablegroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setrunningenvironmentvariablegroup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_isolationsegments()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_createisolationsegment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_deleteisolationsegment()
+{
+    local word_list="  -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_enableorgisolation()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_disableorgisolation()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setorgdefaultisolationsegment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_resetorgdefaultisolationsegment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setspaceisolationsegment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_resetspaceisolationsegment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_featureflags()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_featureflag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_enablefeatureflag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_disablefeatureflag()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_labels()
+{
+    local word_list="  --stack -s --broker -b --offering -e"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_setlabel()
+{
+    local word_list="  --stack -s --broker -b --offering -e"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_unsetlabel()
+{
+    local word_list="  --stack -s --broker -b --offering -e"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_curl()
+{
+    local cmd i subcommands
+    local subcommands=" request"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        request) _cf_curl_request
+            return
+            ;;
+
+    esac
+
+    local word_list=" request -H -X -d --fail -f -i --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_curl_request()
+{
+    local word_list="  -H -X -d --fail -f -i --output"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_config()
+{
+    local word_list="  --async-timeout --color --locale --trace"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_oauthtoken()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_sshcode()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_addpluginrepo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_removepluginrepo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_listpluginrepos()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_repoplugins()
+{
+    local word_list="  -r"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_plugins()
+{
+    local word_list="  --checksum --outdated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_installplugin()
+{
+    local word_list="  -f -r"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cf_uninstallplugin()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _cf cf

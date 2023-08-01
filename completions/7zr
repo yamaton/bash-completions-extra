@@ -1,0 +1,136 @@
+# Auto-generated with h2o
+
+_7zr()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" a b d e h i l rn t u x"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        a) _7zr_a
+            return
+            ;;
+
+        b) _7zr_b
+            return
+            ;;
+
+        d) _7zr_d
+            return
+            ;;
+
+        e) _7zr_e
+            return
+            ;;
+
+        h) _7zr_h
+            return
+            ;;
+
+        i) _7zr_i
+            return
+            ;;
+
+        l) _7zr_l
+            return
+            ;;
+
+        rn) _7zr_rn
+            return
+            ;;
+
+        t) _7zr_t
+            return
+            ;;
+
+        u) _7zr_u
+            return
+            ;;
+
+        x) _7zr_x
+            return
+            ;;
+
+    esac
+
+    local word_list=" a b d e h i l rn t u x "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_a()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_b()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_d()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_e()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_h()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_i()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_l()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_rn()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_t()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_u()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_7zr_x()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _7zr 7zr

@@ -1,0 +1,381 @@
+# Auto-generated with h2o
+
+_hatch()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build clean config dep env new project publish run shell status version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _hatch_build
+            return
+            ;;
+
+        clean) _hatch_clean
+            return
+            ;;
+
+        config) _hatch_config
+            return
+            ;;
+
+        dep) _hatch_dep
+            return
+            ;;
+
+        env) _hatch_env
+            return
+            ;;
+
+        new) _hatch_new
+            return
+            ;;
+
+        project) _hatch_project
+            return
+            ;;
+
+        publish) _hatch_publish
+            return
+            ;;
+
+        run) _hatch_run
+            return
+            ;;
+
+        shell) _hatch_shell
+            return
+            ;;
+
+        status) _hatch_status
+            return
+            ;;
+
+        version) _hatch_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" build clean config dep env new project publish run shell status version -e --env -p --project --color --no-color --interactive --no-interactive -v --verbose -q --quiet --data-dir --cache-dir --config --version -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_build()
+{
+    local word_list="  -t --target --hooks-only --no-hooks --ext -c --clean --clean-hooks-after -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_clean()
+{
+    local word_list="  -t --target --hooks-only --no-hooks --ext -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config()
+{
+    local cmd i subcommands
+    local subcommands=" explore find restore set show update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        explore) _hatch_config_explore
+            return
+            ;;
+
+        find) _hatch_config_find
+            return
+            ;;
+
+        restore) _hatch_config_restore
+            return
+            ;;
+
+        set) _hatch_config_set
+            return
+            ;;
+
+        show) _hatch_config_show
+            return
+            ;;
+
+        update) _hatch_config_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" explore find restore set show update -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config_explore()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config_find()
+{
+    local word_list="  -c --copy -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config_restore()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config_set()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config_show()
+{
+    local word_list="  -a --all -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_config_update()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_dep()
+{
+    local cmd i subcommands
+    local subcommands=" hash show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        hash) _hatch_dep_hash
+            return
+            ;;
+
+        show) _hatch_dep_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" hash show -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_dep_hash()
+{
+    local word_list="  -p --project-only -e --env-only -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_dep_show()
+{
+    local cmd i subcommands
+    local subcommands=" requirements table"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        requirements) _hatch_dep_show_requirements
+            return
+            ;;
+
+        table) _hatch_dep_show_table
+            return
+            ;;
+
+    esac
+
+    local word_list=" requirements table -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_dep_show_requirements()
+{
+    local word_list="  -p --project-only -e --env-only -f --feature --all -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_dep_show_table()
+{
+    local word_list="  -p --project-only -e --env-only -l --lines --ascii -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env()
+{
+    local cmd i subcommands
+    local subcommands=" create find prune remove run show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _hatch_env_create
+            return
+            ;;
+
+        find) _hatch_env_find
+            return
+            ;;
+
+        prune) _hatch_env_prune
+            return
+            ;;
+
+        remove) _hatch_env_remove
+            return
+            ;;
+
+        run) _hatch_env_run
+            return
+            ;;
+
+        show) _hatch_env_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" create find prune remove run show -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env_create()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env_find()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env_prune()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env_remove()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env_run()
+{
+    local word_list="  -e --env -i --include -x --exclude -f --filter --force-continue --ignore-compat -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_env_show()
+{
+    local word_list="  --ascii --json -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_new()
+{
+    local word_list="  -i --interactive --cli --init -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_project()
+{
+    local cmd i subcommands
+    local subcommands=" metadata"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        metadata) _hatch_project_metadata
+            return
+            ;;
+
+    esac
+
+    local word_list=" metadata -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_project_metadata()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_publish()
+{
+    local word_list="  -r --repo -u --user -a --auth --ca-cert --client-cert --client-key -n --no-prompt --initialize-auth -p --publisher -o --option -y --yes -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_shell()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_status()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hatch_version()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _hatch hatch

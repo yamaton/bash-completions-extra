@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_cp()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --archive --attributes-only --backup -b --copy-contents -d -f --force -i --interactive -H -l --link -L --dereference -n --no-clobber -P --no-dereference -p --preserve --no-preserve --parents -R -r --recursive --reflink --remove-destination --sparse --strip-trailing-slashes -s --symbolic-link -S --suffix -t --target-directory -T --no-target-directory -u --update -v --verbose -x --one-file-system -Z --context --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _cp cp

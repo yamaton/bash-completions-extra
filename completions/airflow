@@ -1,0 +1,1115 @@
+# Auto-generated with h2o
+
+_airflow()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" config connections dags db jobs pools providers roles tasks users variables cheat-sheet dag-processor info kerberos plugins rotate-fernet-key scheduler standalone sync-perm triggerer version webserver"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        config) _airflow_config
+            return
+            ;;
+
+        connections) _airflow_connections
+            return
+            ;;
+
+        dags) _airflow_dags
+            return
+            ;;
+
+        db) _airflow_db
+            return
+            ;;
+
+        jobs) _airflow_jobs
+            return
+            ;;
+
+        pools) _airflow_pools
+            return
+            ;;
+
+        providers) _airflow_providers
+            return
+            ;;
+
+        roles) _airflow_roles
+            return
+            ;;
+
+        tasks) _airflow_tasks
+            return
+            ;;
+
+        users) _airflow_users
+            return
+            ;;
+
+        variables) _airflow_variables
+            return
+            ;;
+
+        cheat-sheet) _airflow_cheatsheet
+            return
+            ;;
+
+        dag-processor) _airflow_dagprocessor
+            return
+            ;;
+
+        info) _airflow_info
+            return
+            ;;
+
+        kerberos) _airflow_kerberos
+            return
+            ;;
+
+        plugins) _airflow_plugins
+            return
+            ;;
+
+        rotate-fernet-key) _airflow_rotatefernetkey
+            return
+            ;;
+
+        scheduler) _airflow_scheduler
+            return
+            ;;
+
+        standalone) _airflow_standalone
+            return
+            ;;
+
+        sync-perm) _airflow_syncperm
+            return
+            ;;
+
+        triggerer) _airflow_triggerer
+            return
+            ;;
+
+        version) _airflow_version
+            return
+            ;;
+
+        webserver) _airflow_webserver
+            return
+            ;;
+
+    esac
+
+    local word_list=" config connections dags db jobs pools providers roles tasks users variables cheat-sheet dag-processor info kerberos plugins rotate-fernet-key scheduler standalone sync-perm triggerer version webserver -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_config()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections()
+{
+    local cmd i subcommands
+    local subcommands=" add delete export get import list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _airflow_connections_add
+            return
+            ;;
+
+        delete) _airflow_connections_delete
+            return
+            ;;
+
+        export) _airflow_connections_export
+            return
+            ;;
+
+        get) _airflow_connections_get
+            return
+            ;;
+
+        import) _airflow_connections_import
+            return
+            ;;
+
+        list) _airflow_connections_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" add delete export get import list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_add()
+{
+    local word_list="  -h --help --conn-description --conn-extra --conn-host --conn-json --conn-login --conn-password --conn-port --conn-schema --conn-type --conn-uri"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_delete()
+{
+    local cmd i subcommands
+    local subcommands=" conn_id"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        conn_id) _airflow_connections_delete_connid
+            return
+            ;;
+
+    esac
+
+    local word_list=" conn_id -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_delete_connid()
+{
+    local word_list="  -h --help --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_export()
+{
+    local word_list="  -h --help --file-format --format --serialization-format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_get()
+{
+    local cmd i subcommands
+    local subcommands=" conn_id"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        conn_id) _airflow_connections_get_connid
+            return
+            ;;
+
+    esac
+
+    local word_list=" conn_id -h --help --color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_get_connid()
+{
+    local word_list="  -h --help --color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_import()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_connections_list()
+{
+    local word_list="  -h --help --conn-id -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags()
+{
+    local cmd i subcommands
+    local subcommands=" backfill delete list list-jobs list-runs next-execution pause report reserialize show state test trigger unpause"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        backfill) _airflow_dags_backfill
+            return
+            ;;
+
+        delete) _airflow_dags_delete
+            return
+            ;;
+
+        list) _airflow_dags_list
+            return
+            ;;
+
+        list-jobs) _airflow_dags_listjobs
+            return
+            ;;
+
+        list-runs) _airflow_dags_listruns
+            return
+            ;;
+
+        next-execution) _airflow_dags_nextexecution
+            return
+            ;;
+
+        pause) _airflow_dags_pause
+            return
+            ;;
+
+        report) _airflow_dags_report
+            return
+            ;;
+
+        reserialize) _airflow_dags_reserialize
+            return
+            ;;
+
+        show) _airflow_dags_show
+            return
+            ;;
+
+        state) _airflow_dags_state
+            return
+            ;;
+
+        test) _airflow_dags_test
+            return
+            ;;
+
+        trigger) _airflow_dags_trigger
+            return
+            ;;
+
+        unpause) _airflow_dags_unpause
+            return
+            ;;
+
+    esac
+
+    local word_list=" backfill delete list list-jobs list-runs next-execution pause report reserialize show state test trigger unpause -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_backfill()
+{
+    local word_list="  -h --help -c --conf --continue-on-failures --delay-on-limit -x --donot-pickle -n --dry-run -e --end-date -i --ignore-dependencies -I --ignore-first-depends-on-past -l --local -m --mark-success --pool --rerun-failed-tasks --reset-dagruns -B --run-backwards -s --start-date -S --subdir -t --task-regex --treat-dag-as-regex -v --verbose -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_delete()
+{
+    local word_list="  -h --help -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_list()
+{
+    local word_list="  -h --help -o --output -S --subdir -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_listjobs()
+{
+    local word_list="  -h --help -d --dag-id --limit --state -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_listruns()
+{
+    local word_list="  -h --help -d --dag-id -e --end-date --no-backfill -s --start-date --state -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_nextexecution()
+{
+    local word_list="  -h --help -n --num-executions -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_pause()
+{
+    local word_list="  -h --help -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_report()
+{
+    local word_list="  -h --help -o --output -S --subdir -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_reserialize()
+{
+    local word_list="  -h --help --clear-only -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_show()
+{
+    local word_list="  -h --help --imgcat -s --save -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_state()
+{
+    local word_list="  -h --help -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_test()
+{
+    local word_list="  -h --help -c --conf --imgcat-dagrun --save-dagrun --show-dagrun -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_trigger()
+{
+    local word_list="  -h --help -c --conf -e --exec-date -r --run-id -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dags_unpause()
+{
+    local word_list="  -h --help -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db()
+{
+    local cmd i subcommands
+    local subcommands=" check clean downgrade init reset shell upgrade"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _airflow_db_check
+            return
+            ;;
+
+        clean) _airflow_db_clean
+            return
+            ;;
+
+        downgrade) _airflow_db_downgrade
+            return
+            ;;
+
+        init) _airflow_db_init
+            return
+            ;;
+
+        reset) _airflow_db_reset
+            return
+            ;;
+
+        shell) _airflow_db_shell
+            return
+            ;;
+
+        upgrade) _airflow_db_upgrade
+            return
+            ;;
+
+    esac
+
+    local word_list=" check clean downgrade init reset shell upgrade -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_check()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_clean()
+{
+    local word_list="  -h --help --clean-before-timestamp --dry-run --skip-archive -t --tables -v --verbose -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_downgrade()
+{
+    local word_list="  -h --help --from-revision --from-version -s --show-sql-only -r --to-revision -n --to-version -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_init()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_reset()
+{
+    local word_list="  -h --help -s --skip-init -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_shell()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_db_upgrade()
+{
+    local word_list="  -h --help --from-revision --from-version -s --show-sql-only -r --to-revision -n --to-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_jobs()
+{
+    local cmd i subcommands
+    local subcommands=" check"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _airflow_jobs_check
+            return
+            ;;
+
+    esac
+
+    local word_list=" check -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_jobs_check()
+{
+    local word_list="  -h --help --allow-multiple --hostname --job-type --limit"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools()
+{
+    local cmd i subcommands
+    local subcommands=" delete export get import list set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        delete) _airflow_pools_delete
+            return
+            ;;
+
+        export) _airflow_pools_export
+            return
+            ;;
+
+        get) _airflow_pools_get
+            return
+            ;;
+
+        import) _airflow_pools_import
+            return
+            ;;
+
+        list) _airflow_pools_list
+            return
+            ;;
+
+        set) _airflow_pools_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" delete export get import list set -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools_delete()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools_export()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools_get()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools_import()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools_list()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_pools_set()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers()
+{
+    local cmd i subcommands
+    local subcommands=" auth get hooks links list logging secrets widgets"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        auth) _airflow_providers_auth
+            return
+            ;;
+
+        get) _airflow_providers_get
+            return
+            ;;
+
+        hooks) _airflow_providers_hooks
+            return
+            ;;
+
+        links) _airflow_providers_links
+            return
+            ;;
+
+        list) _airflow_providers_list
+            return
+            ;;
+
+        logging) _airflow_providers_logging
+            return
+            ;;
+
+        secrets) _airflow_providers_secrets
+            return
+            ;;
+
+        widgets) _airflow_providers_widgets
+            return
+            ;;
+
+    esac
+
+    local word_list=" auth get hooks links list logging secrets widgets -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_auth()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_get()
+{
+    local cmd i subcommands
+    local subcommands=" provider_name"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        provider_name) _airflow_providers_get_providername
+            return
+            ;;
+
+    esac
+
+    local word_list=" provider_name -h --help --color -f --full -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_get_providername()
+{
+    local word_list="  -h --help --color -f --full -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_hooks()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_links()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_list()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_logging()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_secrets()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_providers_widgets()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_roles()
+{
+    local cmd i subcommands
+    local subcommands=" create delete export import list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _airflow_roles_create
+            return
+            ;;
+
+        delete) _airflow_roles_delete
+            return
+            ;;
+
+        export) _airflow_roles_export
+            return
+            ;;
+
+        import) _airflow_roles_import
+            return
+            ;;
+
+        list) _airflow_roles_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" create delete export import list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_roles_create()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_roles_delete()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_roles_export()
+{
+    local word_list="  -h --help -p --pretty -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_roles_import()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_roles_list()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks()
+{
+    local cmd i subcommands
+    local subcommands=" clear failed-deps list render run state test"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clear) _airflow_tasks_clear
+            return
+            ;;
+
+        failed-deps) _airflow_tasks_faileddeps
+            return
+            ;;
+
+        list) _airflow_tasks_list
+            return
+            ;;
+
+        render) _airflow_tasks_render
+            return
+            ;;
+
+        run) _airflow_tasks_run
+            return
+            ;;
+
+        state) _airflow_tasks_state
+            return
+            ;;
+
+        test) _airflow_tasks_test
+            return
+            ;;
+
+    esac
+
+    local word_list=" clear failed-deps list render run state test -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_clear()
+{
+    local word_list="  -h --help -R --dag-regex -d --downstream -e --end-date -X --exclude-parentdag -x --exclude-subdags -f --only-failed -r --only-running -s --start-date -S --subdir -t --task-regex -u --upstream -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_faileddeps()
+{
+    local word_list="  -h --help --map-index -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_list()
+{
+    local word_list="  -h --help -S --subdir -t --tree -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_render()
+{
+    local word_list="  -h --help --map-index -S --subdir -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_run()
+{
+    local word_list="  -h --help --cfg-path -f --force -A --ignore-all-dependencies -i --ignore-dependencies -I --ignore-depends-on-past -N --interactive -l --local --map-index -m --mark-success -p --pickle --pool --ship-dag -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_state()
+{
+    local word_list="  -h --help --map-index -S --subdir -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_tasks_test()
+{
+    local word_list="  -h --help -n --dry-run --env-vars --map-index -m --post-mortem -S --subdir -t --task-params"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users()
+{
+    local cmd i subcommands
+    local subcommands=" add-role create delete export import list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add-role) _airflow_users_addrole
+            return
+            ;;
+
+        create) _airflow_users_create
+            return
+            ;;
+
+        delete) _airflow_users_delete
+            return
+            ;;
+
+        export) _airflow_users_export
+            return
+            ;;
+
+        import) _airflow_users_import
+            return
+            ;;
+
+        list) _airflow_users_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" add-role create delete export import list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users_addrole()
+{
+    local word_list="  -h --help -e --email -r --role -u --username"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users_create()
+{
+    local word_list="  -h --help -e --email -f --firstname -l --lastname -p --password -r --role --use-random-password -u --username"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users_delete()
+{
+    local word_list="  -h --help -e --email -u --username"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users_export()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users_import()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_users_list()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables()
+{
+    local cmd i subcommands
+    local subcommands=" delete export get import list set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        delete) _airflow_variables_delete
+            return
+            ;;
+
+        export) _airflow_variables_export
+            return
+            ;;
+
+        get) _airflow_variables_get
+            return
+            ;;
+
+        import) _airflow_variables_import
+            return
+            ;;
+
+        list) _airflow_variables_list
+            return
+            ;;
+
+        set) _airflow_variables_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" delete export get import list set -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables_delete()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables_export()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables_get()
+{
+    local word_list="  -h --help -d --default -j --json -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables_import()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables_list()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_variables_set()
+{
+    local word_list="  -h --help -j --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_cheatsheet()
+{
+    local word_list="  -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_dagprocessor()
+{
+    local word_list="  -h --help -D --daemon -p --do-pickle -l --log-file -n --num-runs --pid --stderr --stdout -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_info()
+{
+    local word_list="  -h --help --anonymize --file-io -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_kerberos()
+{
+    local word_list="  -h --help -D --daemon -k --keytab -l --log-file --pid --stderr --stdout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_plugins()
+{
+    local word_list="  -h --help -o --output -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_rotatefernetkey()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_scheduler()
+{
+    local word_list="  -h --help -D --daemon -p --do-pickle -l --log-file -n --num-runs --pid -s --skip-serve-logs --stderr --stdout -S --subdir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_standalone()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_syncperm()
+{
+    local word_list="  -h --help --include-dags"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_triggerer()
+{
+    local word_list="  -h --help --capacity -D --daemon -l --log-file --pid --stderr --stdout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_version()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_airflow_webserver()
+{
+    local word_list="  -h --help -A --access-logfile -L --access-logformat -D --daemon -d --debug -E --error-logfile -H --hostname -l --log-file --pid -p --port --ssl-cert --ssl-key --stderr --stdout -t --worker-timeout -k --workerclass -w --workers"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _airflow airflow

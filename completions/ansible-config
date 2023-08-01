@@ -1,0 +1,66 @@
+# Auto-generated with h2o
+
+_ansibleconfig()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" list dump view init"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _ansibleconfig_list
+            return
+            ;;
+
+        dump) _ansibleconfig_dump
+            return
+            ;;
+
+        view) _ansibleconfig_view
+            return
+            ;;
+
+        init) _ansibleconfig_init
+            return
+            ;;
+
+    esac
+
+    local word_list=" list dump view init --version -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibleconfig_list()
+{
+    local word_list="  -h --help -v --verbose -c --config -t --type --format -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibleconfig_dump()
+{
+    local word_list="  -h --help -v --verbose -c --config -t --type --only-changed --changed-only --format -f"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibleconfig_view()
+{
+    local word_list="  -h --help -v --verbose -c --config -t --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibleconfig_init()
+{
+    local word_list="  -h --help -v --verbose -c --config -t --type --format -f --disabled"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ansibleconfig ansible-config

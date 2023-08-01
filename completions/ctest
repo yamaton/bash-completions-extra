@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ctest()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --preset --list-presets -C --build-config --progress -V --verbose -VV --extra-verbose --debug --output-on-failure --stop-on-failure --test-output-size-passed --test-output-size-failed -F -j --parallel -j --parallel -Q --quiet -O --output-log --output-junit -N --show-only -N --show-only -L --label-regex -R --tests-regex -E --exclude-regex -LE --label-exclude -FA --fixture-exclude-any -FS --fixture-exclude-setup -FC --fixture-exclude-cleanup -D --dashboard -D -M --test-model -T --test-action --group -S --script -SP --script-new-process -U --union --rerun-failed --repeat --repeat-until-fail --repeat --repeat --max-width --interactive-debug-mode --interactive-debug-mode --resource-spec-file --no-label-summary --no-subproject-summary --test-dir --build-and-test --build-target --build-nocmake --build-run-dir --build-two-config --build-exe-dir --build-generator --build-generator-platform --build-generator-toolset --build-project --build-makeprogram --build-noclean --build-config-sample --build-options --test-command --test-timeout --test-load --tomorrow-tag --overwrite --extra-submit --force-new-ctest-process --schedule-random --submit-index --timeout --stop-time --http1.0 --no-compress-output --print-labels --no-tests --no-tests --help-full --help-full --help-manual --help-manual --help-manual --help-manual-list --help-manual-list --help-command --help-command --help-command --help-command-list --help-command-list --help-commands --help-commands --help-module --help-module --help-module --help-module-list --help-module-list --help-modules --help-modules --help-policy --help-policy --help-policy --help-policy-list --help-policy-list --help-policies --help-policies --help-property --help-property --help-property --help-property --help-property --help-property --help-property-list --help-property-list --help-properties --help-properties --help-variable --help-variable --help-variable-list --help-variable-list --help-variables --help-variables"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ctest ctest

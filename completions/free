@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_free()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -b --bytes --kilo --mega --giga --tera --peta -k --kibi -m --mebi -g --gibi --tebi --pebi -h --human --si -l --lohi -t --total -s --seconds -c --count -w --wide --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _free free

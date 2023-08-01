@@ -1,0 +1,636 @@
+# Auto-generated with h2o
+
+_fly()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" abort-build active-users archive-pipeline builds check-resource check-resource-type checklist clear-resource-cache clear-task-cache clear-versions completion containers curl delete-target destroy-pipeline destroy-team disable-resource-version edit-target enable-resource-version execute expose-pipeline format-pipeline get-pipeline get-team help hide-pipeline hijack jobs land-worker login logout order-instanced-pipelines order-pipelines pause-job pause-pipeline paused-jobs paused-pipelines pin-resource pipelines prune-worker rename-pipeline rename-team rerun-build resource-versions resources schedule-job set-pipeline set-team status sync targets teams trigger-job unpause-job unpause-pipeline unpin-resource userinfo validate-pipeline volumes watch workers"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        abort-build) _fly_abortbuild
+            return
+            ;;
+
+        active-users) _fly_activeusers
+            return
+            ;;
+
+        archive-pipeline) _fly_archivepipeline
+            return
+            ;;
+
+        builds) _fly_builds
+            return
+            ;;
+
+        check-resource) _fly_checkresource
+            return
+            ;;
+
+        check-resource-type) _fly_checkresourcetype
+            return
+            ;;
+
+        checklist) _fly_checklist
+            return
+            ;;
+
+        clear-resource-cache) _fly_clearresourcecache
+            return
+            ;;
+
+        clear-task-cache) _fly_cleartaskcache
+            return
+            ;;
+
+        clear-versions) _fly_clearversions
+            return
+            ;;
+
+        completion) _fly_completion
+            return
+            ;;
+
+        containers) _fly_containers
+            return
+            ;;
+
+        curl) _fly_curl
+            return
+            ;;
+
+        delete-target) _fly_deletetarget
+            return
+            ;;
+
+        destroy-pipeline) _fly_destroypipeline
+            return
+            ;;
+
+        destroy-team) _fly_destroyteam
+            return
+            ;;
+
+        disable-resource-version) _fly_disableresourceversion
+            return
+            ;;
+
+        edit-target) _fly_edittarget
+            return
+            ;;
+
+        enable-resource-version) _fly_enableresourceversion
+            return
+            ;;
+
+        execute) _fly_execute
+            return
+            ;;
+
+        expose-pipeline) _fly_exposepipeline
+            return
+            ;;
+
+        format-pipeline) _fly_formatpipeline
+            return
+            ;;
+
+        get-pipeline) _fly_getpipeline
+            return
+            ;;
+
+        get-team) _fly_getteam
+            return
+            ;;
+
+        help) _fly_help
+            return
+            ;;
+
+        hide-pipeline) _fly_hidepipeline
+            return
+            ;;
+
+        hijack) _fly_hijack
+            return
+            ;;
+
+        jobs) _fly_jobs
+            return
+            ;;
+
+        land-worker) _fly_landworker
+            return
+            ;;
+
+        login) _fly_login
+            return
+            ;;
+
+        logout) _fly_logout
+            return
+            ;;
+
+        order-instanced-pipelines) _fly_orderinstancedpipelines
+            return
+            ;;
+
+        order-pipelines) _fly_orderpipelines
+            return
+            ;;
+
+        pause-job) _fly_pausejob
+            return
+            ;;
+
+        pause-pipeline) _fly_pausepipeline
+            return
+            ;;
+
+        paused-jobs) _fly_pausedjobs
+            return
+            ;;
+
+        paused-pipelines) _fly_pausedpipelines
+            return
+            ;;
+
+        pin-resource) _fly_pinresource
+            return
+            ;;
+
+        pipelines) _fly_pipelines
+            return
+            ;;
+
+        prune-worker) _fly_pruneworker
+            return
+            ;;
+
+        rename-pipeline) _fly_renamepipeline
+            return
+            ;;
+
+        rename-team) _fly_renameteam
+            return
+            ;;
+
+        rerun-build) _fly_rerunbuild
+            return
+            ;;
+
+        resource-versions) _fly_resourceversions
+            return
+            ;;
+
+        resources) _fly_resources
+            return
+            ;;
+
+        schedule-job) _fly_schedulejob
+            return
+            ;;
+
+        set-pipeline) _fly_setpipeline
+            return
+            ;;
+
+        set-team) _fly_setteam
+            return
+            ;;
+
+        status) _fly_status
+            return
+            ;;
+
+        sync) _fly_sync
+            return
+            ;;
+
+        targets) _fly_targets
+            return
+            ;;
+
+        teams) _fly_teams
+            return
+            ;;
+
+        trigger-job) _fly_triggerjob
+            return
+            ;;
+
+        unpause-job) _fly_unpausejob
+            return
+            ;;
+
+        unpause-pipeline) _fly_unpausepipeline
+            return
+            ;;
+
+        unpin-resource) _fly_unpinresource
+            return
+            ;;
+
+        userinfo) _fly_userinfo
+            return
+            ;;
+
+        validate-pipeline) _fly_validatepipeline
+            return
+            ;;
+
+        volumes) _fly_volumes
+            return
+            ;;
+
+        watch) _fly_watch
+            return
+            ;;
+
+        workers) _fly_workers
+            return
+            ;;
+
+    esac
+
+    local word_list=" abort-build active-users archive-pipeline builds check-resource check-resource-type checklist clear-resource-cache clear-task-cache clear-versions completion containers curl delete-target destroy-pipeline destroy-team disable-resource-version edit-target enable-resource-version execute expose-pipeline format-pipeline get-pipeline get-team help hide-pipeline hijack jobs land-worker login logout order-instanced-pipelines order-pipelines pause-job pause-pipeline paused-jobs paused-pipelines pin-resource pipelines prune-worker rename-pipeline rename-team rerun-build resource-versions resources schedule-job set-pipeline set-team status sync targets teams trigger-job unpause-job unpause-pipeline unpin-resource userinfo validate-pipeline volumes watch workers -t --target -v --version --verbose --print-table-headers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_abortbuild()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job -b --build --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_activeusers()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --since --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_archivepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline -a --all -n --non-interactive --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_builds()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -a --all-teams -c --count --current-team -j --job --json -p --pipeline -n --team --since --until"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_checkresource()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource -f --from -a --async --shallow --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_checkresourcetype()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource-type -f --from -a --async --shallow --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_checklist()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_clearresourcecache()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_cleartaskcache()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job -s --step -c --cache-path -n --non-interactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_clearversions()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --resource --resource-type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_completion()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_containers()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_curl()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --print-and-exit"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_deletetarget()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_destroypipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline -n --non-interactive --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_destroyteam()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -n --team-name --non-interactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_disableresourceversion()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_edittarget()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --target-name -u --concourse-url -n --team-name"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_enableresourceversion()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_execute()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -c --config -p --privileged --include-ignored -i --input -m --input-mapping -j --inputs-from -o --output --image --tag -v --var -y --yaml-var -l --load-vars-from"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_exposepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_formatpipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -c --config -w --write"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_getpipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline -j --json --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_getteam()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -n --team-name -j --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_help()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_hidepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_hijack()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job --handle -c --check -u --url -b --build -s --step --step-type -a --attempt --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_jobs()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline --json --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_landworker()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -w --worker"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_login()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -c --concourse-url -k --insecure -u --username -p --password -n --team-name --ca-cert --client-cert --client-key -b --open-browser"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_logout()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_orderinstancedpipelines()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -g --group -p --pipeline --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_orderpipelines()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -a --alphabetical -p --pipeline --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pausejob()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pausepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline -a --all --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pausedjobs()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline --json --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pausedpipelines()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -a --all --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pinresource()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource -v --version -c --comment"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pipelines()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -a --all --include-archived --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_pruneworker()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -w --worker -a --all-stalled"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_renamepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -o --old-name -n --new-name"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_renameteam()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -o --old-name -n --new-name"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_rerunbuild()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job -b --build -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_resourceversions()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -c --count -r --resource --json --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_resources()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline --json --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_schedulejob()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_setpipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -n --non-interactive --no-color -d --dry-run --check-creds -p --pipeline -c --config -v --var -y --yaml-var -l --load-vars-from --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_setteam()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -n --team-name --non-interactive --local-user -c --config --bitbucket-cloud-user --bitbucket-cloud-team --cf-user --cf-org --cf-space --cf-space-with-any-role --cf-space-with-developer-role --cf-space-with-auditor-role --cf-space-with-manager-role --cf-space-guid --github-user --github-org --github-team --gitlab-user --gitlab-group --ldap-user --ldap-group --microsoft-user --microsoft-group --oauth-user --oauth-group --oidc-user --oidc-group --saml-user --saml-group"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_status()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_sync()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -f --force -c --concourse-url -k --insecure --ca-cert --client-cert --client-key"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_targets()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_teams()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --json -d --details"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_triggerjob()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job -w --watch --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_unpausejob()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_unpausepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -p --pipeline -a --all --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_unpinresource()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -r --resource"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_userinfo()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_validatepipeline()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -c --config -s --strict -o --output --enable-across-step -v --var -y --yaml-var -l --load-vars-from"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_volumes()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -d --details --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_watch()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -j --job -b --build -u --url -t --timestamps --ignore-event-parsing-errors --team"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_fly_workers()
+{
+    local word_list="  -t --target -v --version --verbose --print-table-headers -h --help -d --details --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _fly fly

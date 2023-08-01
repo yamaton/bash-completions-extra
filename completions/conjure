@@ -1,0 +1,36 @@
+# Auto-generated with h2o
+
+_conjure()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" conjure"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        conjure) _conjure_conjure
+            return
+            ;;
+
+    esac
+
+    local word_list=" conjure -monitor -quiet -regard-warnings -seed -verbose -debug -help -list -log -version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_conjure_conjure()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _conjure conjure

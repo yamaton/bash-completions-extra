@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_hurl()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --cacert -E --cert --key --color --compressed --connect-timeout --connect-to -b --cookie -c --cookie-jar --error-format --fail-at-end --file-root -L --location --glob --ignore-asserts -i --include -k --insecure --interactive --json --max-redirs -m --max-time --no-color --no-output --noproxy -o --output --path_as_is -x --proxy --report-html --report-junit --resolve --retry --retry-interval --ssl-no-revoke --test --to-entry -A --user-agent -u --user --variable --variables-file --verbose --very-verbose -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _hurl hurl

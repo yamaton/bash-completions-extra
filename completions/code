@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_code()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -d --diff -a --add -g --goto -n --new-window -r --reuse-window -w --wait --locale -h --help --list-extensions --show-versions --category --install-extension --pre-release --uninstall-extension --enable-proposed-api -v --version --verbose --log -s --status --prof-startup --disable-extensions --disable-extension --sync --inspect-extensions --inspect-brk-extensions --disable-gpu --max-memory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _code code

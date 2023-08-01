@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_date()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -d --date --debug -f --file -I --iso-8601 -R --rfc-email --rfc-3339 -r --reference -s --set -u --utc --universal --help --version -"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _date date

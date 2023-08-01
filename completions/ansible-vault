@@ -1,0 +1,96 @@
+# Auto-generated with h2o
+
+_ansiblevault()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" create decrypt edit view encrypt encrypt_string rekey"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _ansiblevault_create
+            return
+            ;;
+
+        decrypt) _ansiblevault_decrypt
+            return
+            ;;
+
+        edit) _ansiblevault_edit
+            return
+            ;;
+
+        view) _ansiblevault_view
+            return
+            ;;
+
+        encrypt) _ansiblevault_encrypt
+            return
+            ;;
+
+        encrypt_string) _ansiblevault_encryptstring
+            return
+            ;;
+
+        rekey) _ansiblevault_rekey
+            return
+            ;;
+
+    esac
+
+    local word_list=" create decrypt edit view encrypt encrypt_string rekey --version -h --help -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_create()
+{
+    local word_list="  -h --help --encrypt-vault-id --vault-id --ask-vault-password --ask-vault-pass --vault-password-file -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_decrypt()
+{
+    local word_list="  -h --help --output --vault-id --vault-password-file -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_edit()
+{
+    local word_list="  -h --help --encrypt-vault-id --vault-id --ask-vault-password --ask-vault-pass --vault-password-file -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_view()
+{
+    local word_list="  -h --help --vault-id --vault-password-file -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_encrypt()
+{
+    local word_list="  -h --help --vault-id --ask-vault-password --ask-vault-pass --vault-password-file -v --verbose --output --encrypt-vault-id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_encryptstring()
+{
+    local word_list="  -h --help --vault-id --ask-vault-password --ask-vault-pass --vault-password-file -v --verbose --output --encrypt-vault-id -p --prompt --show-input -n --name --stdin-name"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansiblevault_rekey()
+{
+    local word_list="  -h --help --vault-id --ask-vault-password --ask-vault-pass --vault-password-file -v --verbose --encrypt-vault-id --new-vault-password-file --new-vault-id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ansiblevault ansible-vault

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ansibledoc()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --metadata-dump --no-fail-on-errors --playbook-dir --version -F --list_files -M --module-path -e --entry-point -h --help -j --json -l --list -r --roles-path -s --snippet -t --type -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ansibledoc ansible-doc

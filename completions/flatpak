@@ -1,0 +1,456 @@
+# Auto-generated with h2o
+
+_flatpak()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" install update uninstall mask pin list info history config repair create-usb search run override make-current enter ps kill documents document-export document-unexport document-info permissions permission-remove permission-set permission-show permission-reset remotes remote-add remote-modify remote-delete remote-ls remote-info build-init build build-finish build-export build-bundle build-import-bundle build-sign build-update-repo build-commit-from repo"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        install) _flatpak_install
+            return
+            ;;
+
+        update) _flatpak_update
+            return
+            ;;
+
+        uninstall) _flatpak_uninstall
+            return
+            ;;
+
+        mask) _flatpak_mask
+            return
+            ;;
+
+        pin) _flatpak_pin
+            return
+            ;;
+
+        list) _flatpak_list
+            return
+            ;;
+
+        info) _flatpak_info
+            return
+            ;;
+
+        history) _flatpak_history
+            return
+            ;;
+
+        config) _flatpak_config
+            return
+            ;;
+
+        repair) _flatpak_repair
+            return
+            ;;
+
+        create-usb) _flatpak_createusb
+            return
+            ;;
+
+        search) _flatpak_search
+            return
+            ;;
+
+        run) _flatpak_run
+            return
+            ;;
+
+        override) _flatpak_override
+            return
+            ;;
+
+        make-current) _flatpak_makecurrent
+            return
+            ;;
+
+        enter) _flatpak_enter
+            return
+            ;;
+
+        ps) _flatpak_ps
+            return
+            ;;
+
+        kill) _flatpak_kill
+            return
+            ;;
+
+        documents) _flatpak_documents
+            return
+            ;;
+
+        document-export) _flatpak_documentexport
+            return
+            ;;
+
+        document-unexport) _flatpak_documentunexport
+            return
+            ;;
+
+        document-info) _flatpak_documentinfo
+            return
+            ;;
+
+        permissions) _flatpak_permissions
+            return
+            ;;
+
+        permission-remove) _flatpak_permissionremove
+            return
+            ;;
+
+        permission-set) _flatpak_permissionset
+            return
+            ;;
+
+        permission-show) _flatpak_permissionshow
+            return
+            ;;
+
+        permission-reset) _flatpak_permissionreset
+            return
+            ;;
+
+        remotes) _flatpak_remotes
+            return
+            ;;
+
+        remote-add) _flatpak_remoteadd
+            return
+            ;;
+
+        remote-modify) _flatpak_remotemodify
+            return
+            ;;
+
+        remote-delete) _flatpak_remotedelete
+            return
+            ;;
+
+        remote-ls) _flatpak_remotels
+            return
+            ;;
+
+        remote-info) _flatpak_remoteinfo
+            return
+            ;;
+
+        build-init) _flatpak_buildinit
+            return
+            ;;
+
+        build) _flatpak_build
+            return
+            ;;
+
+        build-finish) _flatpak_buildfinish
+            return
+            ;;
+
+        build-export) _flatpak_buildexport
+            return
+            ;;
+
+        build-bundle) _flatpak_buildbundle
+            return
+            ;;
+
+        build-import-bundle) _flatpak_buildimportbundle
+            return
+            ;;
+
+        build-sign) _flatpak_buildsign
+            return
+            ;;
+
+        build-update-repo) _flatpak_buildupdaterepo
+            return
+            ;;
+
+        build-commit-from) _flatpak_buildcommitfrom
+            return
+            ;;
+
+        repo) _flatpak_repo
+            return
+            ;;
+
+    esac
+
+    local word_list=" install update uninstall mask pin list info history config repair create-usb search run override make-current enter ps kill documents document-export document-unexport document-info permissions permission-remove permission-set permission-show permission-reset remotes remote-add remote-modify remote-delete remote-ls remote-info build-init build build-finish build-export build-bundle build-import-bundle build-sign build-update-repo build-commit-from repo -h --help --version --default-arch --supported-arches --gl-drivers --installations --print-updated-env --print-system-only -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_install()
+{
+    local word_list="  -h --help --user --system --installation --arch --no-pull --no-deploy --no-related --no-deps --no-auto-pin --no-static-deltas --runtime --app --bundle --from --gpg-file --subpath -y --assumeyes --reinstall --noninteractive --or-update --sideload-repo -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_update()
+{
+    local word_list="  -h --help --user --system --installation --arch --commit --force-remove --no-pull --no-deploy --no-related --no-deps --no-static-deltas --runtime --app --appstream --subpath -y --assumeyes --noninteractive --sideload-repo -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_uninstall()
+{
+    local word_list="  -h --help --user --system --installation --arch --keep-ref --no-related --force-remove --runtime --app --all --unused --delete-data -y --assumeyes --noninteractive -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_mask()
+{
+    local word_list="  -h --help --user --system --installation --remove -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_pin()
+{
+    local word_list="  -h --help --user --system --installation --remove -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_list()
+{
+    local word_list="  -h --help --user --system --installation -d --show-details --runtime --app --arch -a --all --app-runtime -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_info()
+{
+    local word_list="  -h --help --arch --user --system --installation -r --show-ref -c --show-commit -o --show-origin -s --show-size -m --show-metadata --show-runtime --show-sdk -M --show-permissions --file-access -e --show-extensions -l --show-location -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_history()
+{
+    local word_list="  -h --help --user --system --installation --since --until --reverse -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_config()
+{
+    local word_list="  -h --help --user --system --installation --list --get --set --unset -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_repair()
+{
+    local word_list="  -h --help --user --system --installation --dry-run --reinstall-all -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_createusb()
+{
+    local word_list="  -h --help --user --system --installation --app --arch --destination-repo --runtime --allow-partial -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_search()
+{
+    local word_list="  -h --help --user --system --installation --arch -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_run()
+{
+    local word_list="  -h --help --help-all --user --system --installation --arch --command --cwd --branch -d --devel --runtime --runtime-version --log-session-bus --log-system-bus --log-a11y-bus --no-a11y-bus --a11y-bus --no-session-bus --session-bus --no-documents-portal --file-forwarding --commit --runtime-commit --sandbox -p --die-with-parent --parent-pid --parent-expose-pids --parent-share-pids --instance-id-fd --app-path --usr-path -v --verbose --ostree-verbose --share --unshare --socket --nosocket --device --nodevice --allow --disallow --filesystem --nofilesystem --env --env-fd --unset-env --own-name --talk-name --no-talk-name --system-own-name --system-talk-name --system-no-talk-name --add-policy --remove-policy --persist"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_override()
+{
+    local word_list="  -h --help --help-all --user --system --installation --reset --show -v --verbose --ostree-verbose --share --unshare --socket --nosocket --device --nodevice --allow --disallow --filesystem --nofilesystem --env --env-fd --unset-env --own-name --talk-name --no-talk-name --system-own-name --system-talk-name --system-no-talk-name --add-policy --remove-policy --persist"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_makecurrent()
+{
+    local word_list="  -h --help --user --system --installation --arch -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_enter()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_ps()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_kill()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_documents()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_documentexport()
+{
+    local word_list="  -h --help -u --unique -t --transient -n --noexist -r --allow-read -w --allow-write -d --allow-delete -g --allow-grant-permission --forbid-read --forbid-write --forbid-delete --forbid-grant-permission -a --app -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_documentunexport()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_documentinfo()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_permissions()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_permissionremove()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_permissionset()
+{
+    local word_list="  -h --help --data -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_permissionshow()
+{
+    local word_list="  -h --help -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_permissionreset()
+{
+    local word_list="  -h --help --all -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_remotes()
+{
+    local word_list="  -h --help --user --system --installation -d --show-details --show-disabled -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_remoteadd()
+{
+    local word_list="  -h --help --no-gpg-verify --no-enumerate --no-use-for-deps --prio --subset --title --comment --description --homepage --icon --default-branch --collection-id --gpg-import --filter --disable --authenticator-name --authenticator-option --authenticator-install --no-authenticator-install --no-follow_redirect --user --system --installation --if-not-exists --from -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_remotemodify()
+{
+    local word_list="  -h --help --no-gpg-verify --no-enumerate --no-use-for-deps --prio --title --comment --description --homepage --icon --default-branch --collection-id --gpg-import --no-filter --filter --disable --authenticator-name --authenticator-option --authenticator-install --no-authenticator-install --follow-redirect --no-follow-redirect --user --system --installation --gpg-verify --enumerate --use-for-deps --url --subset --enable --update-metadata -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_remotedelete()
+{
+    local word_list="  -h --help --force --user --system --installation -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_remotels()
+{
+    local word_list="  -h --help --user --system --installation -d --show-details --runtime --app --updates --arch -a --all --app-runtime --cached --sideloaded -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_remoteinfo()
+{
+    local word_list="  -h --help --user --system --installation --arch --commit --runtime --app --log -r --show-ref -c --show-commit -p --show-parent -m --show-metadata --show-runtime --show-sdk --cached --sideloaded -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildinit()
+{
+    local word_list="  -h --help --arch -v --var --base --base-version --base-extension --extension-tag -w --writable-sdk --type --tag --sdk-extension --extension --sdk-dir --update --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_build()
+{
+    local word_list="  -h --help --help-all -r --runtime --readonly --bind-mount --build-dir --sdk-dir --metadata -p --die-with-parent --with-appdir --log-session-bus --log-system-bus -v --verbose --ostree-verbose --share --unshare --socket --nosocket --device --nodevice --allow --disallow --filesystem --nofilesystem --env --env-fd --unset-env --own-name --talk-name --no-talk-name --system-own-name --system-talk-name --system-no-talk-name --add-policy --remove-policy --persist"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildfinish()
+{
+    local word_list="  -h --help --help-all --command --require-version --no-exports --extra-data --extension --remove-extension --extension-priority --sdk --runtime --metadata --no-inherit-permissions -v --verbose --ostree-verbose --share --unshare --socket --nosocket --device --nodevice --allow --disallow --filesystem --nofilesystem --env --env-fd --unset-env --own-name --talk-name --no-talk-name --system-own-name --system-talk-name --system-no-talk-name --add-policy --remove-policy --persist"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildexport()
+{
+    local word_list="  -h --help -s --subject -b --body --arch -r --runtime --update-appstream --no-update-summary --files --metadata --gpg-sign --exclude --include --gpg-homedir --subset --end-of-life --end-of-life-rebase --token-type --timestamp --collection-id --disable-fsync --disable-sandbox --no-summary-index -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildbundle()
+{
+    local word_list="  -h --help --runtime --arch --repo-url --runtime-repo --gpg-keys --gpg-sign --gpg-homedir --from-commit --oci -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildimportbundle()
+{
+    local word_list="  -h --help --ref --oci --gpg-sign --gpg-homedir --update-appstream --no-update-summary --no-summary-index -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildsign()
+{
+    local word_list="  -h --help --arch --runtime --gpg-sign --gpg-homedir -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildupdaterepo()
+{
+    local word_list="  -h --help --redirect-url --title --comment --description --homepage --icon --default-branch --collection-id --deploy-sideload-collection-id --deploy-collection-id --authenticator-name --authenticator-install --no-authenticator-install --authenticator-option --gpg-import --gpg-sign --gpg-homedir --generate-static-deltas --no-update-summary --no-update-appstream --static-delta-jobs --static-delta-ignore-ref --prune --prune-dry-run --prune-depth --no-summary-index -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_buildcommitfrom()
+{
+    local word_list="  -h --help --src-repo --src-ref --untrusted --force --extra-collection-id --subset -s --subject -b --body --update-appstream --no-update-summary --gpg-sign --gpg-homedir --end-of-life --end-of-life-rebase --token-type --timestamp --disable-fsync --no-summary-index -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_flatpak_repo()
+{
+    local word_list="  -h --help --info --branches --metadata --commits --subsets --subset -v --verbose --ostree-verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _flatpak flatpak

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_loadtest()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -n --maxRequests -c --concurrency -t --maxSeconds -d --timeout -T --contentType -C --cookies -H --headers -P --postBody -p --postFile -A --patchBody -a --patchFile --data -m --method -u --putFile -R --requestGenerator -r --recover -s --secureProtocol -k --keepalive -V --version --proxy --rps --agent --index --quiet --debug --insecure --key --cert"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _loadtest loadtest

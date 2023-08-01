@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_du()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -0 --null -a --all --apparent-size -B --block-size -b --bytes -c --total -D --dereference-args -d --max-depth --files0-from -H -h --human-readable --inodes -k -L --dereference -l --count-links -m -P --no-dereference -S --separate-dirs --si -s --summarize -t --threshold --time --time --time-style -X --exclude-from --exclude -x --one-file-system --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _du du

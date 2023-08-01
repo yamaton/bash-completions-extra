@@ -1,0 +1,543 @@
+# Auto-generated with h2o
+
+_hugo()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" completion config convert deploy env gen help import list mod new server version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        completion) _hugo_completion
+            return
+            ;;
+
+        config) _hugo_config
+            return
+            ;;
+
+        convert) _hugo_convert
+            return
+            ;;
+
+        deploy) _hugo_deploy
+            return
+            ;;
+
+        env) _hugo_env
+            return
+            ;;
+
+        gen) _hugo_gen
+            return
+            ;;
+
+        help) _hugo_help
+            return
+            ;;
+
+        import) _hugo_import
+            return
+            ;;
+
+        list) _hugo_list
+            return
+            ;;
+
+        mod) _hugo_mod
+            return
+            ;;
+
+        new) _hugo_new
+            return
+            ;;
+
+        server) _hugo_server
+            return
+            ;;
+
+        version) _hugo_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" completion config convert deploy env gen help import list mod new server version -b --baseURL -D --buildDrafts -E --buildExpired -F --buildFuture --cacheDir --cleanDestinationDir --clock --config --configDir -c --contentDir --debug -d --destination --disableKinds --enableGitInfo -e --environment --forceSyncStatic --gc -h --help --ignoreCache --ignoreVendorPaths -l --layoutDir --log --logFile --minify --noBuildLock --noChmod --noTimes --panicOnWarning --poll --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates --quiet --renderToMemory -s --source --templateMetrics --templateMetricsHints -t --theme --themesDir --trace -v --verbose --verboseLog -w --watch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_completion()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish powershell zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _hugo_completion_bash
+            return
+            ;;
+
+        fish) _hugo_completion_fish
+            return
+            ;;
+
+        powershell) _hugo_completion_powershell
+            return
+            ;;
+
+        zsh) _hugo_completion_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish powershell zsh -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_completion_bash()
+{
+    local word_list="  -h --help --no-descriptions --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_completion_fish()
+{
+    local word_list="  -h --help --no-descriptions --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_completion_powershell()
+{
+    local word_list="  -h --help --no-descriptions --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_completion_zsh()
+{
+    local word_list="  -h --help --no-descriptions --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_config()
+{
+    local cmd i subcommands
+    local subcommands=" mounts"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        mounts) _hugo_config_mounts
+            return
+            ;;
+
+    esac
+
+    local word_list=" mounts --clock -e --environment -h --help --ignoreVendorPaths -s --source --themesDir --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_config_mounts()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_convert()
+{
+    local cmd i subcommands
+    local subcommands=" toJSON toTOML toYAML"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        toJSON) _hugo_convert_toJSON
+            return
+            ;;
+
+        toTOML) _hugo_convert_toTOML
+            return
+            ;;
+
+        toYAML) _hugo_convert_toYAML
+            return
+            ;;
+
+    esac
+
+    local word_list=" toJSON toTOML toYAML --clock -e --environment -h --help --ignoreVendorPaths -o --output -s --source --themesDir --unsafe --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_convert_toJSON()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile -o --output --quiet -s --source --themesDir --unsafe -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_convert_toTOML()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile -o --output --quiet -s --source --themesDir --unsafe -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_convert_toYAML()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile -o --output --quiet -s --source --themesDir --unsafe -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_deploy()
+{
+    local word_list="  --clock --confirm --dryRun -e --environment --force -h --help --ignoreVendorPaths --invalidateCDN --maxDeletes -s --source --target --themesDir --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_env()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_gen()
+{
+    local cmd i subcommands
+    local subcommands=" chromastyles doc man"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        chromastyles) _hugo_gen_chromastyles
+            return
+            ;;
+
+        doc) _hugo_gen_doc
+            return
+            ;;
+
+        man) _hugo_gen_man
+            return
+            ;;
+
+    esac
+
+    local word_list=" chromastyles doc man -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_gen_chromastyles()
+{
+    local word_list="  -h --help --highlightStyle --linesStyle --style --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_gen_doc()
+{
+    local word_list="  --dir -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_gen_man()
+{
+    local word_list="  --dir -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_help()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_import()
+{
+    local cmd i subcommands
+    local subcommands=" jekyll"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        jekyll) _hugo_import_jekyll
+            return
+            ;;
+
+    esac
+
+    local word_list=" jekyll -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_import_jekyll()
+{
+    local word_list="  --force -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_list()
+{
+    local cmd i subcommands
+    local subcommands=" all drafts expired future"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        all) _hugo_list_all
+            return
+            ;;
+
+        drafts) _hugo_list_drafts
+            return
+            ;;
+
+        expired) _hugo_list_expired
+            return
+            ;;
+
+        future) _hugo_list_future
+            return
+            ;;
+
+    esac
+
+    local word_list=" all drafts expired future --clock -e --environment -h --help --ignoreVendorPaths -s --source --themesDir --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_list_all()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_list_drafts()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_list_expired()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_list_future()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod()
+{
+    local cmd i subcommands
+    local subcommands=" clean get graph init npm tidy vendor verify"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clean) _hugo_mod_clean
+            return
+            ;;
+
+        get) _hugo_mod_get
+            return
+            ;;
+
+        graph) _hugo_mod_graph
+            return
+            ;;
+
+        init) _hugo_mod_init
+            return
+            ;;
+
+        npm) _hugo_mod_npm
+            return
+            ;;
+
+        tidy) _hugo_mod_tidy
+            return
+            ;;
+
+        vendor) _hugo_mod_vendor
+            return
+            ;;
+
+        verify) _hugo_mod_verify
+            return
+            ;;
+
+    esac
+
+    local word_list=" clean get graph init npm tidy vendor verify -b --baseURL -D --buildDrafts -E --buildExpired -F --buildFuture --cacheDir --cleanDestinationDir --clock -c --contentDir -d --destination --disableKinds --enableGitInfo -e --environment --forceSyncStatic --gc -h --help --ignoreCache --ignoreVendorPaths -l --layoutDir --minify --noBuildLock --noChmod --noTimes --panicOnWarning --poll --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates -s --source --templateMetrics --templateMetricsHints -t --theme --themesDir --trace --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_clean()
+{
+    local word_list="  --all -h --help --pattern --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_graph()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_init()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_npm()
+{
+    local cmd i subcommands
+    local subcommands=" pack"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        pack) _hugo_mod_npm_pack
+            return
+            ;;
+
+    esac
+
+    local word_list=" pack -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_npm_pack()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_tidy()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_vendor()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_mod_verify()
+{
+    local word_list="  --clean -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_new()
+{
+    local cmd i subcommands
+    local subcommands=" site theme"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        site) _hugo_new_site
+            return
+            ;;
+
+        theme) _hugo_new_theme
+            return
+            ;;
+
+    esac
+
+    local word_list=" site theme -b --baseURL -D --buildDrafts -E --buildExpired -F --buildFuture --cacheDir --cleanDestinationDir --clock -c --contentDir -d --destination --disableKinds --editor --enableGitInfo -e --environment -f --force --forceSyncStatic --gc -h --help --ignoreCache --ignoreVendorPaths -k --kind -l --layoutDir --minify --noBuildLock --noChmod --noTimes --panicOnWarning --poll --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates -s --source --templateMetrics --templateMetricsHints -t --theme --themesDir --trace --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_new_site()
+{
+    local word_list="  --clock -e --environment --force -f --format -h --help --ignoreVendorPaths -s --source --themesDir --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_new_theme()
+{
+    local word_list="  --clock -e --environment -h --help --ignoreVendorPaths -s --source --themesDir --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_server()
+{
+    local word_list="  --appendPort -b --baseURL --bind -D --buildDrafts -E --buildExpired -F --buildFuture --cacheDir --cleanDestinationDir --clock -c --contentDir -d --destination --disableBrowserError --disableFastRender --disableKinds --disableLiveReload --enableGitInfo -e --environment --forceSyncStatic --gc -h --help --ignoreCache --ignoreVendorPaths -l --layoutDir --liveReloadPort --meminterval --memstats --minify --navigateToChanged --noBuildLock --noChmod --noHTTPCache --noTimes --panicOnWarning --poll -p --port --printI18nWarnings --printMemoryUsage --printPathWarnings --printUnusedTemplates --renderStaticToDisk --renderToDisk -s --source --templateMetrics --templateMetricsHints -t --theme --themesDir --trace -w --watch --config --configDir --debug --log --logFile --quiet -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_hugo_version()
+{
+    local word_list="  -h --help --clock --config --configDir --debug -e --environment --ignoreVendorPaths --log --logFile --quiet -s --source --themesDir -v --verbose --verboseLog"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _hugo hugo

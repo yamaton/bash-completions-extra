@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_logrotate()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -d --debug -f --force -m --mail -s --state --skip-state-lock -v --verbose -l --log --version -? --help --usage"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _logrotate logrotate

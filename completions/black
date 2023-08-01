@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_black()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --code -l --line-length -t --target-version --pyi --ipynb --python-cell-magics -S --skip-string-normalization -C --skip-magic-trailing-comma --preview --check --diff --color --no-color --fast --safe --required-version --include --exclude --extend-exclude --force-exclude --stdin-filename -W --workers -q --quiet -v --verbose --version --config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _black black

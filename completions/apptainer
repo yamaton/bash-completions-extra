@@ -1,0 +1,1237 @@
+# Auto-generated with h2o
+
+_apptainer()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build cache capability checkpoint completion config delete exec help inspect instance key oci overlay plugin pull push remote run run-help search shell sif sign test verify version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _apptainer_build
+            return
+            ;;
+
+        cache) _apptainer_cache
+            return
+            ;;
+
+        capability) _apptainer_capability
+            return
+            ;;
+
+        checkpoint) _apptainer_checkpoint
+            return
+            ;;
+
+        completion) _apptainer_completion
+            return
+            ;;
+
+        config) _apptainer_config
+            return
+            ;;
+
+        delete) _apptainer_delete
+            return
+            ;;
+
+        exec) _apptainer_exec
+            return
+            ;;
+
+        help) _apptainer_help
+            return
+            ;;
+
+        inspect) _apptainer_inspect
+            return
+            ;;
+
+        instance) _apptainer_instance
+            return
+            ;;
+
+        key) _apptainer_key
+            return
+            ;;
+
+        oci) _apptainer_oci
+            return
+            ;;
+
+        overlay) _apptainer_overlay
+            return
+            ;;
+
+        plugin) _apptainer_plugin
+            return
+            ;;
+
+        pull) _apptainer_pull
+            return
+            ;;
+
+        push) _apptainer_push
+            return
+            ;;
+
+        remote) _apptainer_remote
+            return
+            ;;
+
+        run) _apptainer_run
+            return
+            ;;
+
+        run-help) _apptainer_runhelp
+            return
+            ;;
+
+        search) _apptainer_search
+            return
+            ;;
+
+        shell) _apptainer_shell
+            return
+            ;;
+
+        sif) _apptainer_sif
+            return
+            ;;
+
+        sign) _apptainer_sign
+            return
+            ;;
+
+        test) _apptainer_test
+            return
+            ;;
+
+        verify) _apptainer_verify
+            return
+            ;;
+
+        version) _apptainer_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" build cache capability checkpoint completion config delete exec help inspect instance key oci overlay plugin pull push remote run run-help search shell sif sign test verify version --build-config -c --config -d --debug -h --help --nocolor -q --quiet -s --silent -v --verbose --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_build()
+{
+    local word_list="  -B --bind --disable-cache --docker-login -e --encrypt -f --fakeroot --fix-perms -F --force -h --help --json --library --mount --no-cleanup --no-https -T --notest --nv --nvccli --passphrase --pem-path --rocm -s --sandbox --section -u --update --userns --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_cache()
+{
+    local cmd i subcommands
+    local subcommands=" clean list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clean) _apptainer_cache_clean
+            return
+            ;;
+
+        list) _apptainer_cache_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" clean list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_cache_clean()
+{
+    local word_list="  -D --days -n --dry-run -f --force -h --help -T --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_cache_list()
+{
+    local word_list="  -h --help -T --type -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_capability()
+{
+    local cmd i subcommands
+    local subcommands=" add avail drop list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _apptainer_capability_add
+            return
+            ;;
+
+        avail) _apptainer_capability_avail
+            return
+            ;;
+
+        drop) _apptainer_capability_drop
+            return
+            ;;
+
+        list) _apptainer_capability_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" add avail drop list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_capability_add()
+{
+    local cmd i subcommands
+    local subcommands=" capabilities"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        capabilities) _apptainer_capability_add_capabilities
+            return
+            ;;
+
+    esac
+
+    local word_list=" capabilities -g --group -h --help -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_capability_add_capabilities()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_capability_avail()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_capability_drop()
+{
+    local word_list="  -g --group -h --help -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_capability_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint()
+{
+    local cmd i subcommands
+    local subcommands=" create delete instance list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _apptainer_checkpoint_create
+            return
+            ;;
+
+        delete) _apptainer_checkpoint_delete
+            return
+            ;;
+
+        instance) _apptainer_checkpoint_instance
+            return
+            ;;
+
+        list) _apptainer_checkpoint_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" create delete instance list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint_create()
+{
+    local cmd i subcommands
+    local subcommands=" apptainer"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        apptainer) _apptainer_checkpoint_create_apptainer
+            return
+            ;;
+
+    esac
+
+    local word_list=" apptainer -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint_create_apptainer()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint_delete()
+{
+    local cmd i subcommands
+    local subcommands=" apptainer"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        apptainer) _apptainer_checkpoint_delete_apptainer
+            return
+            ;;
+
+    esac
+
+    local word_list=" apptainer -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint_delete_apptainer()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint_instance()
+{
+    local word_list="  -h --help -H --home"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_checkpoint_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_completion()
+{
+    local cmd i subcommands
+    local subcommands=" bash fish powershell zsh"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bash) _apptainer_completion_bash
+            return
+            ;;
+
+        fish) _apptainer_completion_fish
+            return
+            ;;
+
+        powershell) _apptainer_completion_powershell
+            return
+            ;;
+
+        zsh) _apptainer_completion_zsh
+            return
+            ;;
+
+    esac
+
+    local word_list=" bash fish powershell zsh -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_completion_bash()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_completion_fish()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_completion_powershell()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_completion_zsh()
+{
+    local word_list="  -h --help --no-descriptions"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_config()
+{
+    local cmd i subcommands
+    local subcommands=" fakeroot global"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        fakeroot) _apptainer_config_fakeroot
+            return
+            ;;
+
+        global) _apptainer_config_global
+            return
+            ;;
+
+    esac
+
+    local word_list=" fakeroot global -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_config_fakeroot()
+{
+    local word_list="  -a --add -d --disable -e --enable -h --help -r --remove"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_config_global()
+{
+    local word_list="  -d --dry-run -g --get -h --help -r --reset -s --set -u --unset"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_delete()
+{
+    local word_list="  -A --arch -F --force -h --help --library --no-https"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_exec()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind --blkio-weight --blkio-weight-device -e --cleanenv --compat -c --contain -C --containall --cpu-shares --cpus --cpuset-cpus --cpuset-mems --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs --memory --memory-reservation --memory-swap --mount -n --net --network --network-args --no-eval --no-home --no-https --no-init --no-mount --no-privs --no-umask --nv --nvccli --oom-kill-disable -o --overlay --passphrase --pem-path -p --pid --pids-limit --pwd --rocm -S --scratch --security --unsquash -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_help()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_inspect()
+{
+    local word_list="  --all --app -d --deffile -e --environment -h --help -H --helpfile -j --json -l --labels --list-apps -r --runscript -s --startscript -t --test"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_instance()
+{
+    local cmd i subcommands
+    local subcommands=" list start stats stop"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _apptainer_instance_list
+            return
+            ;;
+
+        start) _apptainer_instance_start
+            return
+            ;;
+
+        stats) _apptainer_instance_stats
+            return
+            ;;
+
+        stop) _apptainer_instance_stop
+            return
+            ;;
+
+    esac
+
+    local word_list=" list start stats stop -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_instance_list()
+{
+    local word_list="  -h --help -j --json -l --logs -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_instance_start()
+{
+    local word_list="  --add-caps --allow-setuid --apply-cgroups -B --bind --blkio-weight --blkio-weight-device --boot -e --cleanenv --compat -c --contain -C --containall --cpu-shares --cpus --cpuset-cpus --cpuset-mems --disable-cache --dmtcp-launch --dmtcp-restart --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs --memory --memory-reservation --memory-swap --mount -n --net --network --network-args --no-eval --no-home --no-https --no-init --no-mount --no-privs --no-umask --nv --nvccli --oom-kill-disable -o --overlay --passphrase --pem-path --pid-file --pids-limit --rocm -S --scratch --security --unsquash -u --userns --uts -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_instance_stats()
+{
+    local word_list="  -h --help -j --json -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_instance_stop()
+{
+    local word_list="  -a --all -F --force -h --help -s --signal -t --timeout -u --user"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key()
+{
+    local cmd i subcommands
+    local subcommands=" export import list newpair pull push remove search"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        export) _apptainer_key_export
+            return
+            ;;
+
+        import) _apptainer_key_import
+            return
+            ;;
+
+        list) _apptainer_key_list
+            return
+            ;;
+
+        newpair) _apptainer_key_newpair
+            return
+            ;;
+
+        pull) _apptainer_key_pull
+            return
+            ;;
+
+        push) _apptainer_key_push
+            return
+            ;;
+
+        remove) _apptainer_key_remove
+            return
+            ;;
+
+        search) _apptainer_key_search
+            return
+            ;;
+
+    esac
+
+    local word_list=" export import list newpair pull push remove search -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_export()
+{
+    local word_list="  -a --armor -g --global -h --help -d --keysdir -s --secret"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_import()
+{
+    local word_list="  -g --global -h --help -d --keysdir --new-password"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_list()
+{
+    local word_list="  -g --global -h --help -d --keysdir -s --secret"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_newpair()
+{
+    local word_list="  -b --bit-length -C --comment -E --email -h --help -d --keysdir -N --name -P --password -U --push"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_pull()
+{
+    local word_list="  -g --global -h --help -d --keysdir -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_push()
+{
+    local word_list="  -g --global -h --help -d --keysdir -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_remove()
+{
+    local word_list="  -b --both -g --global -h --help -d --keysdir -p --public -s --secret"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_search()
+{
+    local cmd i subcommands
+    local subcommands=" public"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        public) _apptainer_key_search_public
+            return
+            ;;
+
+    esac
+
+    local word_list=" public -h --help -l --long-list -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_key_search_public()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci()
+{
+    local cmd i subcommands
+    local subcommands=" attach create delete exec kill mount pause resume run start state umount update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _apptainer_oci_attach
+            return
+            ;;
+
+        create) _apptainer_oci_create
+            return
+            ;;
+
+        delete) _apptainer_oci_delete
+            return
+            ;;
+
+        exec) _apptainer_oci_exec
+            return
+            ;;
+
+        kill) _apptainer_oci_kill
+            return
+            ;;
+
+        mount) _apptainer_oci_mount
+            return
+            ;;
+
+        pause) _apptainer_oci_pause
+            return
+            ;;
+
+        resume) _apptainer_oci_resume
+            return
+            ;;
+
+        run) _apptainer_oci_run
+            return
+            ;;
+
+        start) _apptainer_oci_start
+            return
+            ;;
+
+        state) _apptainer_oci_state
+            return
+            ;;
+
+        umount) _apptainer_oci_umount
+            return
+            ;;
+
+        update) _apptainer_oci_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach create delete exec kill mount pause resume run start state umount update -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_attach()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_create()
+{
+    local word_list="  -b --bundle --empty-process -h --help --log-format -l --log-path --pid-file -s --sync-socket"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_delete()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_exec()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_kill()
+{
+    local word_list="  -f --force -h --help -s --signal -t --timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_mount()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_pause()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_resume()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_run()
+{
+    local word_list="  -b --bundle -h --help --log-format -l --log-path --pid-file -s --sync-socket"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_start()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_state()
+{
+    local word_list="  -h --help -s --sync-socket"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_umount()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_oci_update()
+{
+    local word_list="  -f --from-file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_overlay()
+{
+    local cmd i subcommands
+    local subcommands=" create"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _apptainer_overlay_create
+            return
+            ;;
+
+    esac
+
+    local word_list=" create -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_overlay_create()
+{
+    local word_list="  --create-dir -f --fakeroot -h --help -s --size -S --sparse"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin()
+{
+    local cmd i subcommands
+    local subcommands=" compile create disable enable inspect install list uninstall"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        compile) _apptainer_plugin_compile
+            return
+            ;;
+
+        create) _apptainer_plugin_create
+            return
+            ;;
+
+        disable) _apptainer_plugin_disable
+            return
+            ;;
+
+        enable) _apptainer_plugin_enable
+            return
+            ;;
+
+        inspect) _apptainer_plugin_inspect
+            return
+            ;;
+
+        install) _apptainer_plugin_install
+            return
+            ;;
+
+        list) _apptainer_plugin_list
+            return
+            ;;
+
+        uninstall) _apptainer_plugin_uninstall
+            return
+            ;;
+
+    esac
+
+    local word_list=" compile create disable enable inspect install list uninstall -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_compile()
+{
+    local word_list="  -h --help -o --out"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_create()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_disable()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_enable()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_inspect()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_install()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_plugin_uninstall()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_pull()
+{
+    local word_list="  --arch --dir --disable-cache --docker-login -F --force -h --help --library --no-cleanup --no-https"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_push()
+{
+    local word_list="  -U --allow-unsigned -D --description -h --help --library --no-https"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote()
+{
+    local cmd i subcommands
+    local subcommands=" add add-keyserver list login logout remove remove-keyserver status use"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _apptainer_remote_add
+            return
+            ;;
+
+        add-keyserver) _apptainer_remote_addkeyserver
+            return
+            ;;
+
+        list) _apptainer_remote_list
+            return
+            ;;
+
+        login) _apptainer_remote_login
+            return
+            ;;
+
+        logout) _apptainer_remote_logout
+            return
+            ;;
+
+        remove) _apptainer_remote_remove
+            return
+            ;;
+
+        remove-keyserver) _apptainer_remote_removekeyserver
+            return
+            ;;
+
+        status) _apptainer_remote_status
+            return
+            ;;
+
+        use) _apptainer_remote_use
+            return
+            ;;
+
+    esac
+
+    local word_list=" add add-keyserver list login logout remove remove-keyserver status use -c --config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_add()
+{
+    local cmd i subcommands
+    local subcommands=" apptainer"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        apptainer) _apptainer_remote_add_apptainer
+            return
+            ;;
+
+    esac
+
+    local word_list=" apptainer -g --global -h --help -i --insecure --no-login --tokenfile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_add_apptainer()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_addkeyserver()
+{
+    local word_list="  -h --help -i --insecure -o --order"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_login()
+{
+    local word_list="  -h --help -i --insecure -p --password --password-stdin --tokenfile -u --username"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_logout()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_remove()
+{
+    local word_list="  -g --global -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_removekeyserver()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_status()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_remote_use()
+{
+    local word_list="  -e --exclusive -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_run()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind --blkio-weight --blkio-weight-device -e --cleanenv --compat -c --contain -C --containall --cpu-shares --cpus --cpuset-cpus --cpuset-mems --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs --memory --memory-reservation --memory-swap --mount -n --net --network --network-args --no-eval --no-home --no-https --no-init --no-mount --no-privs --no-umask --nv --nvccli --oom-kill-disable -o --overlay --passphrase --pem-path -p --pid --pids-limit --pwd --rocm -S --scratch --security --unsquash -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_runhelp()
+{
+    local word_list="  --app -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_search()
+{
+    local word_list="  --arch -h --help --library --signed"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_shell()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind --blkio-weight --blkio-weight-device -e --cleanenv --compat -c --contain -C --containall --cpu-shares --cpus --cpuset-cpus --cpuset-mems --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs --memory --memory-reservation --memory-swap --mount -n --net --network --network-args --no-eval --no-home --no-https --no-init --no-mount --no-privs --no-umask --nv --nvccli --oom-kill-disable -o --overlay --passphrase --pem-path -p --pid --pids-limit --pwd --rocm -S --scratch --security -s --shell --syos --unsquash -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif()
+{
+    local cmd i subcommands
+    local subcommands=" add del dump header info list new setprim"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _apptainer_sif_add
+            return
+            ;;
+
+        del) _apptainer_sif_del
+            return
+            ;;
+
+        dump) _apptainer_sif_dump
+            return
+            ;;
+
+        header) _apptainer_sif_header
+            return
+            ;;
+
+        info) _apptainer_sif_info
+            return
+            ;;
+
+        list) _apptainer_sif_list
+            return
+            ;;
+
+        new) _apptainer_sif_new
+            return
+            ;;
+
+        setprim) _apptainer_sif_setprim
+            return
+            ;;
+
+    esac
+
+    local word_list=" add del dump header info list new setprim -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_add()
+{
+    local word_list="  --alignment --datatype --filename --groupid -h --help --link --partarch --partfs --parttype --signentity --signhash"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_del()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_dump()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_header()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_info()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_new()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sif_setprim()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_sign()
+{
+    local word_list="  -g --group-id -h --help -k --keyidx -i --sif-id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_test()
+{
+    local word_list="  --add-caps --allow-setuid --app --apply-cgroups -B --bind --blkio-weight --blkio-weight-device -e --cleanenv --compat -c --contain -C --containall --cpu-shares --cpus --cpuset-cpus --cpuset-mems --disable-cache --dns --docker-login --drop-caps --env --env-file -f --fakeroot --fusemount -h --help -H --home --hostname -i --ipc --keep-privs --memory --memory-reservation --memory-swap --mount -n --net --network --network-args --no-eval --no-home --no-https --no-init --no-mount --no-privs --no-umask --nv --nvccli --oom-kill-disable -o --overlay --passphrase --pem-path -p --pid --pids-limit --pwd --rocm -S --scratch --security --unsquash -u --userns --uts --vm --vm-cpu --vm-err --vm-ip --vm-ram -W --workdir -w --writable --writable-tmpfs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_verify()
+{
+    local word_list="  -a --all -g --group-id -h --help -j --json --legacy-insecure -l --local -i --sif-id -u --url"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_apptainer_version()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _apptainer apptainer

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_install()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --backup -b -c -C --compare -d --directory -D -g --group -m --mode -o --owner -p --preserve-timestamps -s --strip --strip-program -S --suffix -t --target-directory -T --no-target-directory -v --verbose --preserve-context -Z --context --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _install install

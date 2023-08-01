@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_df()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a --all -B --block-size -h --human-readable -H --si -i --inodes -k -l --local --no-sync --output -P --portability --sync --total -t --type -T --print-type -x --exclude-type -v --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _df df

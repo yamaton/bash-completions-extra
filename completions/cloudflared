@@ -1,0 +1,295 @@
+# Auto-generated with h2o
+
+_cloudflared()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" update version proxy-dns service access tunnel"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        update) _cloudflared_update
+            return
+            ;;
+
+        version) _cloudflared_version
+            return
+            ;;
+
+        proxy-dns) _cloudflared_proxydns
+            return
+            ;;
+
+        service) _cloudflared_service
+            return
+            ;;
+
+        access) _cloudflared_access
+            return
+            ;;
+
+        tunnel) _cloudflared_tunnel
+            return
+            ;;
+
+    esac
+
+    local word_list=" update version proxy-dns service access tunnel --credentials-file --cred-file --region --edge-ip-version --post-quantum --pq --overwrite-dns -f --help -h --version -v -V"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_update()
+{
+    local word_list="  --beta --version --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_version()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_proxydns()
+{
+    local word_list="  --metrics --address --port --upstream --bootstrap --max-upstream-conns --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_service()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_access()
+{
+    local cmd i subcommands
+    local subcommands=" login curl token"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        login) _cloudflared_access_login
+            return
+            ;;
+
+        curl) _cloudflared_access_curl
+            return
+            ;;
+
+        token) _cloudflared_access_token
+            return
+            ;;
+
+    esac
+
+    local word_list=" login curl token --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_access_login()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_access_curl()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_access_token()
+{
+    local word_list="  --app"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel()
+{
+    local cmd i subcommands
+    local subcommands=" create route vnet run list info delete cleanup token help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _cloudflared_tunnel_create
+            return
+            ;;
+
+        route) _cloudflared_tunnel_route
+            return
+            ;;
+
+        vnet) _cloudflared_tunnel_vnet
+            return
+            ;;
+
+        run) _cloudflared_tunnel_run
+            return
+            ;;
+
+        list) _cloudflared_tunnel_list
+            return
+            ;;
+
+        info) _cloudflared_tunnel_info
+            return
+            ;;
+
+        delete) _cloudflared_tunnel_delete
+            return
+            ;;
+
+        cleanup) _cloudflared_tunnel_cleanup
+            return
+            ;;
+
+        token) _cloudflared_tunnel_token
+            return
+            ;;
+
+        help) _cloudflared_tunnel_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" create route vnet run list info delete cleanup token help --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --url --hello-world --proxy-connection-timeout --proxy-expect-continue-timeout --unix-socket --http2-origin --bastion --proxy-address --proxy-port --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --proxy-dns --proxy-dns-port --proxy-dns-address --proxy-dns-upstream --proxy-dns-max-upstream-conns --proxy-dns-bootstrap --credentials-file --cred-file --region --edge-ip-version --hostname --lb-pool --metrics-update-freq --tag --retries --grace-period --compression-quality --name -n --post-quantum --pq --overwrite-dns -f --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_create()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --output -o --credentials-file --cred-file --secret -s --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_route()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_vnet()
+{
+    local cmd i subcommands
+    local subcommands=" add list delete update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _cloudflared_tunnel_vnet_add
+            return
+            ;;
+
+        list) _cloudflared_tunnel_vnet_list
+            return
+            ;;
+
+        delete) _cloudflared_tunnel_vnet_delete
+            return
+            ;;
+
+        update) _cloudflared_tunnel_vnet_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" add list delete update --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_vnet_add()
+{
+    local word_list="  --default -d --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_vnet_list()
+{
+    local word_list="  --id --name --is-default --show-deleted --output -o --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_vnet_delete()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_vnet_update()
+{
+    local word_list="  --name -n --comment -c --default -d --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_run()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --force -f --credentials-file --cred-file --credentials-contents --post-quantum --pq --features -F --token --icmpv4-src --icmpv6-src --url --hello-world --proxy-connection-timeout --proxy-expect-continue-timeout --unix-socket --http2-origin --bastion --proxy-address --proxy-port --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_list()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --output -o --show-deleted -d --name -n --name-prefix --np --exclude-name-prefix --enp --when -w --id -i --show-recently-disconnected --rd --sort-by --invert-sort --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_info()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --output -o --show-recently-disconnected --rd --sort-by --invert-sort --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_delete()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --credentials-file --cred-file --force -f --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_cleanup()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --connector-id -c --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_token()
+{
+    local word_list="  --config --origincert --autoupdate-freq --no-autoupdate --metrics --pidfile --loglevel --transport-loglevel --proto-loglevel --logfile --log-directory --trace-output --credentials-file --cred-file --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cloudflared_tunnel_help()
+{
+    local word_list="  --help -h"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _cloudflared cloudflared

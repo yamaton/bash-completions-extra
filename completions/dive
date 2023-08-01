@@ -1,0 +1,56 @@
+# Auto-generated with h2o
+
+_dive()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build help version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _dive_build
+            return
+            ;;
+
+        help) _dive_help
+            return
+            ;;
+
+        version) _dive_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" build help version --ci --ci-config --config -h --help --highestUserWastedPercent --highestWastedBytes -j --json --lowestEfficiency --source -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dive_build()
+{
+    local word_list="  --add-host --build-arg --cache-from --cgroup-parent --compress --cpu-period --cpu-quota -c --cpu-shares --cpuset-cpus --cpuset-mems --disable-content-trust -f --file --force-rm --iidfile --isolation --label -m --memory --memory-swap --network --no-cache --pull -q --quiet --rm --security-opt --shm-size -t --tag --target --ulimit"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dive_help()
+{
+    local word_list="  -h --help --config --source -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dive_version()
+{
+    local word_list="  -h --help --config --source -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _dive dive

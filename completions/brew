@@ -1,0 +1,426 @@
+# Auto-generated with h2o
+
+_brew()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" install uninstall list search analytics autoremove cask cleanup commands completions config deps desc doctor fetch formulae gist-logs homepage info leaves link log migrate missing options outdated pin pin readall reinstall shellenv tap-info tap unlink unpin untap update-reset update upgrade uses"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        install) _brew_install
+            return
+            ;;
+
+        uninstall) _brew_uninstall
+            return
+            ;;
+
+        list) _brew_list
+            return
+            ;;
+
+        search) _brew_search
+            return
+            ;;
+
+        analytics) _brew_analytics
+            return
+            ;;
+
+        autoremove) _brew_autoremove
+            return
+            ;;
+
+        cask) _brew_cask
+            return
+            ;;
+
+        cleanup) _brew_cleanup
+            return
+            ;;
+
+        commands) _brew_commands
+            return
+            ;;
+
+        completions) _brew_completions
+            return
+            ;;
+
+        config) _brew_config
+            return
+            ;;
+
+        deps) _brew_deps
+            return
+            ;;
+
+        desc) _brew_desc
+            return
+            ;;
+
+        doctor) _brew_doctor
+            return
+            ;;
+
+        fetch) _brew_fetch
+            return
+            ;;
+
+        formulae) _brew_formulae
+            return
+            ;;
+
+        gist-logs) _brew_gistlogs
+            return
+            ;;
+
+        homepage) _brew_homepage
+            return
+            ;;
+
+        info) _brew_info
+            return
+            ;;
+
+        leaves) _brew_leaves
+            return
+            ;;
+
+        link) _brew_link
+            return
+            ;;
+
+        log) _brew_log
+            return
+            ;;
+
+        migrate) _brew_migrate
+            return
+            ;;
+
+        missing) _brew_missing
+            return
+            ;;
+
+        options) _brew_options
+            return
+            ;;
+
+        outdated) _brew_outdated
+            return
+            ;;
+
+        pin) _brew_pin
+            return
+            ;;
+
+        pin) _brew_pin
+            return
+            ;;
+
+        readall) _brew_readall
+            return
+            ;;
+
+        reinstall) _brew_reinstall
+            return
+            ;;
+
+        shellenv) _brew_shellenv
+            return
+            ;;
+
+        tap-info) _brew_tapinfo
+            return
+            ;;
+
+        tap) _brew_tap
+            return
+            ;;
+
+        unlink) _brew_unlink
+            return
+            ;;
+
+        unpin) _brew_unpin
+            return
+            ;;
+
+        untap) _brew_untap
+            return
+            ;;
+
+        update-reset) _brew_updatereset
+            return
+            ;;
+
+        update) _brew_update
+            return
+            ;;
+
+        upgrade) _brew_upgrade
+            return
+            ;;
+
+        uses) _brew_uses
+            return
+            ;;
+
+    esac
+
+    local word_list=" install uninstall list search analytics autoremove cask cleanup commands completions config deps desc doctor fetch formulae gist-logs homepage info leaves link log migrate missing options outdated pin pin readall reinstall shellenv tap-info tap unlink unpin untap update-reset update upgrade uses --cache --caskroom --cellar --env"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_install()
+{
+    local word_list="  -d --debug -f --force -v --verbose --formula --env --ignore-dependencies --only-dependencies --cc -s --build-from-source --force-bottle --include-test --HEAD --fetch-HEAD --keep-tmp --build-bottle --bottle-arch --display-times -i --interactive -g --git --cask --binaries --no-binaries --require-sha --quarantine --no-quarantine --skip-cask-deps"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_uninstall()
+{
+    local word_list="  -f --force --zap --ignore-dependencies --formula --cask"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_list()
+{
+    local word_list="  --formula --cask --full-name --versions --multiple --pinned -1 -l -r -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_search()
+{
+    local word_list="  --formula --cask --desc --pull-request --open --closed --macports --fink --opensuse --fedora --debian --ubuntu"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_analytics()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_autoremove()
+{
+    local word_list="  -n --dry-run"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_cask()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_cleanup()
+{
+    local word_list="  --prune -n --dry-run -s --prune-prefix"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_commands()
+{
+    local word_list="  -q --quiet --include-aliases"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_completions()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_config()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_deps()
+{
+    local word_list="  -n --1 --union --full-name --include-build --include-optional --include-test --skip-recommended --include-requirements --tree --annotate --installed --all --for-each --formula --cask"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_desc()
+{
+    local word_list="  -s --search -n --name -d --description"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_doctor()
+{
+    local word_list="  --list-checks -D --audit-debug"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_fetch()
+{
+    local word_list="  --HEAD -f --force -v --verbose --retry --deps -s --build-from-source --build-bottle --force-bottle --quarantine --no-quarantine --formula --cask"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_formulae()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_gistlogs()
+{
+    local word_list="  --with-hostname -n --new-issue -p --private"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_homepage()
+{
+    local word_list="  --formula --cask"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_info()
+{
+    local word_list="  --analytics --days --category --github --json --installed --all -v --verbose --formula --cask"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_leaves()
+{
+    local word_list="  -r --installed-on-request -p --installed-as-dependency"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_link()
+{
+    local word_list="  --overwrite -n --dry-run -f --force --HEAD"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_log()
+{
+    local word_list="  -p --patch --stat --oneline -1 -n --max-count"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_migrate()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_missing()
+{
+    local word_list="  --hide"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_options()
+{
+    local word_list="  --compact --installed --all --command"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_outdated()
+{
+    local word_list="  -q --quiet -v --verbose --formula --cask --json --fetch-HEAD --greedy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_pin()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_pin()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_readall()
+{
+    local word_list="  --aliases --syntax"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_reinstall()
+{
+    local word_list="  -d --debug -f --force -v --verbose --formula -s --build-from-source -i --interactive --force-bottle --keep-tmp --display-times -g --git --cask --binaries --no-binaries --require-sha --quarantine --no-quarantine --skip-cask-deps"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_shellenv()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_tapinfo()
+{
+    local word_list="  --installed --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_tap()
+{
+    local word_list="  --full --shallow --force-auto-update --repair --list-pinned"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_unlink()
+{
+    local word_list="  -n --dry-run"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_unpin()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_untap()
+{
+    local word_list="  -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_updatereset()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_update()
+{
+    local word_list="  --merge --preinstall -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_upgrade()
+{
+    local word_list="  -d --debug -f --force -v --verbose -n --dry-run --formula -s --build-from-source -i --interactive --force-bottle --fetch-HEAD --ignore-pinned --keep-tmp --display-times --cask --binaries --no-binaries --require-sha --quarantine --no-quarantine --skip-cask-deps --greedy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_brew_uses()
+{
+    local word_list="  --recursive --installed --include-build --include-test --include-optional --skip-recommended --formula --cask"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _brew brew

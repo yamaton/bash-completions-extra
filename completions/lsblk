@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_lsblk()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -D --discard -E --dedup -I --include -J --json -O --output-all -P --pairs -S --scsi -T --tree -a --all -b --bytes -d --nodeps -e --exclude -f --fs -i --ascii -l --list -M --merge -m --perms -n --noheadings -o --output -p --paths -r --raw -s --inverse -t --topology -w --width -x --sort -z --zoned --sysroot -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _lsblk lsblk

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_gstinspect10()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -h --help --help-all --help-gst -a --print-all -b --print-blacklist --print-plugin-auto-install-info --plugin -t --types --exists --atleast-version -u --uri-handlers --no-colors --sort -C --color --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _gstinspect10 gst-inspect-1.0

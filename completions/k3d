@@ -1,0 +1,384 @@
+# Auto-generated with h2o
+
+_k3d()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" cluster completion config help image kubeconfig node registry version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cluster) _k3d_cluster
+            return
+            ;;
+
+        completion) _k3d_completion
+            return
+            ;;
+
+        config) _k3d_config
+            return
+            ;;
+
+        help) _k3d_help
+            return
+            ;;
+
+        image) _k3d_image
+            return
+            ;;
+
+        kubeconfig) _k3d_kubeconfig
+            return
+            ;;
+
+        node) _k3d_node
+            return
+            ;;
+
+        registry) _k3d_registry
+            return
+            ;;
+
+        version) _k3d_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" cluster completion config help image kubeconfig node registry version -h --help --timestamps --trace --verbose --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster()
+{
+    local cmd i subcommands
+    local subcommands=" create delete edit list start stop"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _k3d_cluster_create
+            return
+            ;;
+
+        delete) _k3d_cluster_delete
+            return
+            ;;
+
+        edit) _k3d_cluster_edit
+            return
+            ;;
+
+        list) _k3d_cluster_list
+            return
+            ;;
+
+        start) _k3d_cluster_start
+            return
+            ;;
+
+        stop) _k3d_cluster_stop
+            return
+            ;;
+
+    esac
+
+    local word_list=" create delete edit list start stop -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster_create()
+{
+    local word_list="  -a --agents --agents-memory --api-port --api-port -c --config --gpus -h --help --host-alias --host-alias --host-pid-mode -i --image --k3s-arg --kubeconfig-switch-context --kubeconfig-update-default --lb-config-override --network --no-image-volume --no-lb --no-rollback --registry-config --registry-use -s --servers --servers-memory --subnet --timeout --token --wait --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster_delete()
+{
+    local word_list="  -a --all -c --config -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster_edit()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster_list()
+{
+    local word_list="  -h --help --no-headers -o --output --token --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster_start()
+{
+    local word_list="  -a --all -h --help --timeout --wait --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_cluster_stop()
+{
+    local word_list="  -a --all -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_completion()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_config()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_help()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_image()
+{
+    local cmd i subcommands
+    local subcommands=" import"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        import) _k3d_image_import
+            return
+            ;;
+
+    esac
+
+    local word_list=" import -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_image_import()
+{
+    local word_list="  -c --cluster -h --help -k --keep-tarball -t --keep-tools -m --mode --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_kubeconfig()
+{
+    local cmd i subcommands
+    local subcommands=" get merge"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        get) _k3d_kubeconfig_get
+            return
+            ;;
+
+        merge) _k3d_kubeconfig_merge
+            return
+            ;;
+
+    esac
+
+    local word_list=" get merge -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_kubeconfig_get()
+{
+    local word_list="  -a --all -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_kubeconfig_merge()
+{
+    local word_list="  -a --all -h --help -d --kubeconfig-merge-default -s --kubeconfig-switch-context -o --output --overwrite -u --update --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node()
+{
+    local cmd i subcommands
+    local subcommands=" create delete edit list start stop"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _k3d_node_create
+            return
+            ;;
+
+        delete) _k3d_node_delete
+            return
+            ;;
+
+        edit) _k3d_node_edit
+            return
+            ;;
+
+        list) _k3d_node_list
+            return
+            ;;
+
+        start) _k3d_node_start
+            return
+            ;;
+
+        stop) _k3d_node_stop
+            return
+            ;;
+
+    esac
+
+    local word_list=" create delete edit list start stop -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node_create()
+{
+    local word_list="  -c --cluster -h --help -i --image --k3s-arg --k3s-node-label --memory -n --network --replicas --role --runtime-label --timeout -t --token --wait --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node_delete()
+{
+    local word_list="  -a --all -h --help -r --registries --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node_edit()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node_list()
+{
+    local word_list="  -h --help --no-headers -o --output --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node_start()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_node_stop()
+{
+    local word_list="  -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_registry()
+{
+    local cmd i subcommands
+    local subcommands=" create delete list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _k3d_registry_create
+            return
+            ;;
+
+        delete) _k3d_registry_delete
+            return
+            ;;
+
+        list) _k3d_registry_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" create delete list -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_registry_create()
+{
+    local word_list="  --default-network -h --help -i --image --no-help -p --port --proxy-password --proxy-remote-url --proxy-username -v --volume --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_registry_delete()
+{
+    local word_list="  -a --all -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_registry_list()
+{
+    local word_list="  -h --help --no-headers -o --output --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_version()
+{
+    local cmd i subcommands
+    local subcommands=" list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _k3d_version_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" list -h --help --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_k3d_version_list()
+{
+    local word_list="  -e --exclude -f --format -h --help -i --include -l --limit -s --sort --timestamps --trace --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _k3d k3d

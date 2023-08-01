@@ -1,0 +1,176 @@
+# Auto-generated with h2o
+
+_cargo()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" build check clean doc new init add run test bench update search publish install uninstall"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        build) _cargo_build
+            return
+            ;;
+
+        check) _cargo_check
+            return
+            ;;
+
+        clean) _cargo_clean
+            return
+            ;;
+
+        doc) _cargo_doc
+            return
+            ;;
+
+        new) _cargo_new
+            return
+            ;;
+
+        init) _cargo_init
+            return
+            ;;
+
+        add) _cargo_add
+            return
+            ;;
+
+        run) _cargo_run
+            return
+            ;;
+
+        test) _cargo_test
+            return
+            ;;
+
+        bench) _cargo_bench
+            return
+            ;;
+
+        update) _cargo_update
+            return
+            ;;
+
+        search) _cargo_search
+            return
+            ;;
+
+        publish) _cargo_publish
+            return
+            ;;
+
+        install) _cargo_install
+            return
+            ;;
+
+        uninstall) _cargo_uninstall
+            return
+            ;;
+
+    esac
+
+    local word_list=" build check clean doc new init add run test bench update search publish install uninstall -V --version --list --explain -v --verbose -q --quiet --color --frozen --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_build()
+{
+    local word_list="  -q --quiet -p --package --workspace --exclude -v --verbose --all --color -j --jobs --frozen --keep-going --lib --locked --bin --offline --bins --config --example -Z --examples --test --tests --bench --benches --all-targets -r --release --profile -F --features --all-features --no-default-features --target --target-dir --out-dir --manifest-path --ignore-rust-version --message-format --build-plan --unit-graph --future-incompat-report --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_check()
+{
+    local word_list="  -q --quiet -p --package --workspace --exclude -v --verbose --all --color -j --jobs --frozen --keep-going --lib --locked --bin --offline --bins --config --example -Z --examples --test --tests --bench --benches --all-targets -r --release --profile -F --features --all-features --no-default-features --target --target-dir --manifest-path --ignore-rust-version --message-format --unit-graph --future-incompat-report --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_clean()
+{
+    local word_list="  -q --quiet -p --package --manifest-path --target -v --verbose --target-dir --color -r --release --frozen --profile --doc --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_doc()
+{
+    local word_list="  -q --quiet --open -p --package -v --verbose --workspace --exclude --all --color --frozen --no-deps --document-private-items --locked -j --jobs --offline --config --keep-going --lib -Z --bin --bins --example --examples -r --release --profile -F --features --all-features --no-default-features --target --target-dir --manifest-path --message-format --ignore-rust-version --unit-graph --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_new()
+{
+    local word_list="  -q --quiet --registry --vcs --bin -v --verbose --lib --color --edition --frozen --name --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_init()
+{
+    local word_list="  -q --quiet --registry --vcs --bin -v --verbose --lib --color --edition --frozen --name --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_add()
+{
+    local word_list="  --no-default-features --default-features -F --features --optional -v --verbose --no-optional --color --rename --frozen --manifest-path --locked -p --package --offline -q --quiet --config --dry-run -Z -h --help --path --git --branch --tag --rev --registry --dev --build --target"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_run()
+{
+    local word_list="  -q --quiet --bin --example -p --package -v --verbose -j --jobs --color --keep-going --frozen -r --release --locked --profile -F --features --offline --all-features --config --no-default-features -Z --target --target-dir --manifest-path --message-format --unit-graph --ignore-rust-version --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_test()
+{
+    local word_list="  -q --quiet --lib --bin --bins -v --verbose --example --color --examples --frozen --test --locked --tests --bench --offline --benches --config --all-targets -Z --doc --no-run --no-fail-fast -p --package --workspace --exclude --all -j --jobs --keep-going -r --release --profile -F --features --all-features --no-default-features --target --target-dir --manifest-path --ignore-rust-version --message-format --unit-graph --future-incompat-report --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_bench()
+{
+    local word_list="  -q --quiet --lib --bin --bins -v --verbose --example --color --examples --frozen --test --locked --tests --bench --offline --benches --config --all-targets -Z --no-run -p --package --workspace --exclude --all -j --jobs --keep-going --profile -F --features --all-features --no-default-features --target --target-dir --manifest-path --ignore-rust-version --message-format --no-fail-fast --unit-graph --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_update()
+{
+    local word_list="  -q --quiet -w --workspace -p --package --aggressive -v --verbose --dry-run --color --precise --frozen --manifest-path --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_search()
+{
+    local word_list="  -q --quiet --index --limit --registry -v --verbose --color --frozen --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_publish()
+{
+    local word_list="  -q --quiet --index --token --no-verify -v --verbose --allow-dirty --color --target --frozen --target-dir --locked -p --package --manifest-path --offline --config -F --features --all-features -Z --no-default-features -j --jobs --keep-going --dry-run --registry -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_install()
+{
+    local word_list="  -q --quiet --version --git --branch -v --verbose --tag --color --rev --frozen --path --list --locked -j --jobs --offline --config --keep-going -f --force -Z --no-track -F --features --all-features --no-default-features --profile --debug --bin --bins --example --examples --target --target-dir --root --index --registry --message-format --timings -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_cargo_uninstall()
+{
+    local word_list="  -q --quiet -p --package --bin --root -v --verbose --color --frozen --locked --offline --config -Z -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _cargo cargo

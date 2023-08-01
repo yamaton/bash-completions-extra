@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_chroot()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --groups --userspec --skip-chdir --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _chroot chroot

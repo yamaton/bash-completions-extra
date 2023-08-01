@@ -1,0 +1,116 @@
+# Auto-generated with h2o
+
+_beet()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" config import list modify move remove stats update write"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        config) _beet_config
+            return
+            ;;
+
+        import) _beet_import
+            return
+            ;;
+
+        list) _beet_list
+            return
+            ;;
+
+        modify) _beet_modify
+            return
+            ;;
+
+        move) _beet_move
+            return
+            ;;
+
+        remove) _beet_remove
+            return
+            ;;
+
+        stats) _beet_stats
+            return
+            ;;
+
+        update) _beet_update
+            return
+            ;;
+
+        write) _beet_write
+            return
+            ;;
+
+    esac
+
+    local word_list=" config import list modify move remove stats update write --format-item --format-album -l --library -d --directory -v --verbose -c --config -p --plugins -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_config()
+{
+    local word_list="  -h --help -p --paths -e --edit -d --defaults -c --clear"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_import()
+{
+    local word_list="  -h --help -c --copy -C --nocopy -m --move -w --write -W --nowrite -a --autotag -A --noautotag -p --resume -P --noresume -q --quiet -l --log -s --singletons -t --timid -L --library -i --incremental -I --noincremental --from-scratch --flat -g --group-albums --pretend -S --search-id --set"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_list()
+{
+    local word_list="  -h --help -a --album -p --path -f --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_modify()
+{
+    local word_list="  -h --help -m --move -M --nomove -w --write -W --nowrite -a --album -f --format -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_move()
+{
+    local word_list="  -h --help -d --dest -c --copy -p --pretend -t --timid -e --export -a --album"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_remove()
+{
+    local word_list="  -h --help -d --delete -f --force -a --album"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_stats()
+{
+    local word_list="  -h --help -e --exact"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_update()
+{
+    local word_list="  -h --help -a --album -f --format -m --move -M --nomove -p --pretend -F --field"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_beet_write()
+{
+    local word_list="  -h --help -p --pretend -f --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _beet beet

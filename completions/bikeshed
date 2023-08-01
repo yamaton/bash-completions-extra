@@ -1,0 +1,146 @@
+# Auto-generated with h2o
+
+_bikeshed()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" spec echidna watch serve update issues-list debug refs source test profile wpt"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        spec) _bikeshed_spec
+            return
+            ;;
+
+        echidna) _bikeshed_echidna
+            return
+            ;;
+
+        watch) _bikeshed_watch
+            return
+            ;;
+
+        serve) _bikeshed_serve
+            return
+            ;;
+
+        update) _bikeshed_update
+            return
+            ;;
+
+        issues-list) _bikeshed_issueslist
+            return
+            ;;
+
+        debug) _bikeshed_debug
+            return
+            ;;
+
+        refs) _bikeshed_refs
+            return
+            ;;
+
+        source) _bikeshed_source
+            return
+            ;;
+
+        test) _bikeshed_test
+            return
+            ;;
+
+        profile) _bikeshed_profile
+            return
+            ;;
+
+        wpt) _bikeshed_wpt
+            return
+            ;;
+
+    esac
+
+    local word_list=" spec echidna watch serve update issues-list debug refs source test profile wpt -h --help --version -q --quiet -s --silent -f --force -d --dry-run -a --ascii-only --print --die-on --allow-nonlocal-files --allow-execute"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_spec()
+{
+    local word_list="  -h --help --debug --gh-token --byos -l --line-numbers"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_echidna()
+{
+    local word_list="  -h --help --gh-token --u --p --decision --editorial --cc --additional-directories --self-contained"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_watch()
+{
+    local word_list="  -h --help --gh-token --gh-token --byos"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_serve()
+{
+    local word_list="  -h --help --port --localhost --gh-token --byos"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_update()
+{
+    local word_list="  -h --help --skip-manifest --anchors --backrefs --biblio --boilerplate --caniuse --mdn --link-defaults --test-suites --languages --wpt"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_issueslist()
+{
+    local word_list="  -h --help -t"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_debug()
+{
+    local word_list="  -h --help --print-exports --print-refs-for --print --print-json --refresh-data --print-metadata"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_refs()
+{
+    local word_list="  -h --help --text --for --status --latest-only"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_source()
+{
+    local word_list="  -h --help --big-text"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_test()
+{
+    local word_list="  -h --help --rebase --manual-only"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_profile()
+{
+    local word_list="  -h --help --root --leaf --svg"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bikeshed_wpt()
+{
+    local word_list="  -h --help --template"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _bikeshed bikeshed

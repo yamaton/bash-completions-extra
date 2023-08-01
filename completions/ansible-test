@@ -1,0 +1,265 @@
+# Auto-generated with h2o
+
+_ansibletest()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" coverage env shell integration network-integration windows-integration sanity units"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        coverage) _ansibletest_coverage
+            return
+            ;;
+
+        env) _ansibletest_env
+            return
+            ;;
+
+        shell) _ansibletest_shell
+            return
+            ;;
+
+        integration) _ansibletest_integration
+            return
+            ;;
+
+        network-integration) _ansibletest_networkintegration
+            return
+            ;;
+
+        windows-integration) _ansibletest_windowsintegration
+            return
+            ;;
+
+        sanity) _ansibletest_sanity
+            return
+            ;;
+
+        units) _ansibletest_units
+            return
+            ;;
+
+    esac
+
+    local word_list=" coverage env shell integration network-integration windows-integration sanity units -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage()
+{
+    local cmd i subcommands
+    local subcommands=" analyze erase combine report html xml"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        analyze) _ansibletest_coverage_analyze
+            return
+            ;;
+
+        erase) _ansibletest_coverage_erase
+            return
+            ;;
+
+        combine) _ansibletest_coverage_combine
+            return
+            ;;
+
+        report) _ansibletest_coverage_report
+            return
+            ;;
+
+        html) _ansibletest_coverage_html
+            return
+            ;;
+
+        xml) _ansibletest_coverage_xml
+            return
+            ;;
+
+    esac
+
+    local word_list=" analyze erase combine report html xml -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze()
+{
+    local cmd i subcommands
+    local subcommands=" targets"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        targets) _ansibletest_coverage_analyze_targets
+            return
+            ;;
+
+    esac
+
+    local word_list=" targets -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze_targets()
+{
+    local cmd i subcommands
+    local subcommands=" generate expand filter combine missing"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        generate) _ansibletest_coverage_analyze_targets_generate
+            return
+            ;;
+
+        expand) _ansibletest_coverage_analyze_targets_expand
+            return
+            ;;
+
+        filter) _ansibletest_coverage_analyze_targets_filter
+            return
+            ;;
+
+        combine) _ansibletest_coverage_analyze_targets_combine
+            return
+            ;;
+
+        missing) _ansibletest_coverage_analyze_targets_missing
+            return
+            ;;
+
+    esac
+
+    local word_list=" generate expand filter combine missing -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze_targets_generate()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --requirements --python --python-interpreter --local --venv --venv-system-site-packages --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze_targets_expand()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --requirements --python --python-interpreter --local --venv --venv-system-site-packages --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze_targets_filter()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --include-target --exclude-target --include-path --exclude-path --requirements --python --python-interpreter --local --venv --venv-system-site-packages --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze_targets_combine()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --requirements --python --python-interpreter --local --venv --venv-system-site-packages --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_analyze_targets_missing()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --only-gaps --only-exists --requirements --python --python-interpreter --local --venv --venv-system-site-packages --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_erase()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --requirements --python --python-interpreter --local --venv --venv-system-site-packages --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_combine()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --group-by --all --stub --export --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_report()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --group-by --all --stub --show-missing --include --omit --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_html()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --group-by --all --stub --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_coverage_xml()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --group-by --all --stub --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_env()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --show --dump --list-files --timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_shell()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --raw --export --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller --target-posix"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_integration()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --include --exclude --require --coverage --coverage-check --base-branch --changed --untracked --ignore-committed --ignore-staged --ignore-unstaged --start-at --start-at-task --tags --skip-tags --diff --allow-destructive --allow-root --allow-disabled --allow-unstable --allow-unstable-changed --allow-unsupported --retry-on-error --continue-on-error --debug-strategy --changed-all-target --changed-all-mode --list-targets --no-temp-workdir --no-temp-unicode --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller --target"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_networkintegration()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --include --exclude --require --coverage --coverage-check --base-branch --changed --untracked --ignore-committed --ignore-staged --ignore-unstaged --start-at --start-at-task --tags --skip-tags --diff --allow-destructive --allow-root --allow-disabled --allow-unstable --allow-unstable-changed --allow-unsupported --retry-on-error --continue-on-error --debug-strategy --changed-all-target --changed-all-mode --list-targets --no-temp-workdir --no-temp-unicode --testcase --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --platform --platform-collection --platform-connection --inventory --controller --target"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_windowsintegration()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --include --exclude --require --coverage --coverage-check --base-branch --changed --untracked --ignore-committed --ignore-staged --ignore-unstaged --start-at --start-at-task --tags --skip-tags --diff --allow-destructive --allow-root --allow-disabled --allow-unstable --allow-unstable-changed --allow-unsupported --retry-on-error --continue-on-error --debug-strategy --changed-all-target --changed-all-mode --list-targets --no-temp-workdir --no-temp-unicode --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --windows --inventory --controller --target"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_sanity()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --include --exclude --require --coverage --coverage-check --base-branch --changed --untracked --ignore-committed --ignore-staged --ignore-unstaged --test --skip-test --allow-disabled --list-tests --enable-optional-errors --lint --junit --failure-ok --prime-venvs --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller --target-python"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ansibletest_units()
+{
+    local word_list="  -h --help -e --explain -v --verbose --color --debug --truncate --no-redact --include --exclude --require --coverage --coverage-check --base-branch --changed --untracked --ignore-committed --ignore-staged --ignore-unstaged --collect-only --num-workers --requirements --docker-network --docker-terminate --prime-containers --python --python-interpreter --local --venv --venv-system-site-packages --docker --docker-privileged --docker-seccomp --docker-memory --controller --target-python"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ansibletest ansible-test

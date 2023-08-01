@@ -1,0 +1,555 @@
+# Auto-generated with h2o
+
+_go()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" bug build clean doc env fix fmt generate get install list mod work run test tool version vet buildconstraint buildmode c cache environment filetype gopath gopath-get goproxy importpath modules module-get module-auth packages private testflag testfunc vcs"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        bug) _go_bug
+            return
+            ;;
+
+        build) _go_build
+            return
+            ;;
+
+        clean) _go_clean
+            return
+            ;;
+
+        doc) _go_doc
+            return
+            ;;
+
+        env) _go_env
+            return
+            ;;
+
+        fix) _go_fix
+            return
+            ;;
+
+        fmt) _go_fmt
+            return
+            ;;
+
+        generate) _go_generate
+            return
+            ;;
+
+        get) _go_get
+            return
+            ;;
+
+        install) _go_install
+            return
+            ;;
+
+        list) _go_list
+            return
+            ;;
+
+        mod) _go_mod
+            return
+            ;;
+
+        work) _go_work
+            return
+            ;;
+
+        run) _go_run
+            return
+            ;;
+
+        test) _go_test
+            return
+            ;;
+
+        tool) _go_tool
+            return
+            ;;
+
+        version) _go_version
+            return
+            ;;
+
+        vet) _go_vet
+            return
+            ;;
+
+        buildconstraint) _go_buildconstraint
+            return
+            ;;
+
+        buildmode) _go_buildmode
+            return
+            ;;
+
+        c) _go_c
+            return
+            ;;
+
+        cache) _go_cache
+            return
+            ;;
+
+        environment) _go_environment
+            return
+            ;;
+
+        filetype) _go_filetype
+            return
+            ;;
+
+        gopath) _go_gopath
+            return
+            ;;
+
+        gopath-get) _go_gopathget
+            return
+            ;;
+
+        goproxy) _go_goproxy
+            return
+            ;;
+
+        importpath) _go_importpath
+            return
+            ;;
+
+        modules) _go_modules
+            return
+            ;;
+
+        module-get) _go_moduleget
+            return
+            ;;
+
+        module-auth) _go_moduleauth
+            return
+            ;;
+
+        packages) _go_packages
+            return
+            ;;
+
+        private) _go_private
+            return
+            ;;
+
+        testflag) _go_testflag
+            return
+            ;;
+
+        testfunc) _go_testfunc
+            return
+            ;;
+
+        vcs) _go_vcs
+            return
+            ;;
+
+    esac
+
+    local word_list=" bug build clean doc env fix fmt generate get install list mod work run test tool version vet buildconstraint buildmode c cache environment filetype gopath gopath-get goproxy importpath modules module-get module-auth packages private testflag testfunc vcs "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_bug()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_build()
+{
+    local word_list="  -a -n -p -race -msan -asan -v -work -x -asmflags -buildmode -buildvcs -compiler -gccgoflags -gcflags -installsuffix -ldflags -linkshared -mod -modcacherw -modfile -overlay -pkgdir -tags -trimpath -toolexec"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_clean()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_doc()
+{
+    local cmd i subcommands
+    local subcommands=" documentation"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        documentation) _go_doc_documentation
+            return
+            ;;
+
+    esac
+
+    local word_list=" documentation -all -c -cmd -short -src -u"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_doc_documentation()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_env()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_fix()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_fmt()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_generate()
+{
+    local word_list="  -run"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_get()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_install()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod()
+{
+    local cmd i subcommands
+    local subcommands=" download edit graph init tidy vendor verify why"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        download) _go_mod_download
+            return
+            ;;
+
+        edit) _go_mod_edit
+            return
+            ;;
+
+        graph) _go_mod_graph
+            return
+            ;;
+
+        init) _go_mod_init
+            return
+            ;;
+
+        tidy) _go_mod_tidy
+            return
+            ;;
+
+        vendor) _go_mod_vendor
+            return
+            ;;
+
+        verify) _go_mod_verify
+            return
+            ;;
+
+        why) _go_mod_why
+            return
+            ;;
+
+    esac
+
+    local word_list=" download edit graph init tidy vendor verify why "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_download()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_edit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_graph()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_init()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_tidy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_vendor()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_verify()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_mod_why()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_work()
+{
+    local cmd i subcommands
+    local subcommands=" edit init sync use"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        edit) _go_work_edit
+            return
+            ;;
+
+        init) _go_work_init
+            return
+            ;;
+
+        sync) _go_work_sync
+            return
+            ;;
+
+        use) _go_work_use
+            return
+            ;;
+
+    esac
+
+    local word_list=" edit init sync use "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_work_edit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_work_init()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_work_sync()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_work_use()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_test()
+{
+    local word_list="  -args -c -exec -i -json -o"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_tool()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_version()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_vet()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_buildconstraint()
+{
+    local word_list="  -"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_buildmode()
+{
+    local word_list="  -buildmode -buildmode -buildmode -buildmode -buildmode -buildmode -buildmode -buildmode"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_c()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_cache()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_environment()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_filetype()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_gopath()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_gopathget()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_goproxy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_importpath()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_modules()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_moduleget()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_moduleauth()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_packages()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_private()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_testflag()
+{
+    local word_list="  -bench -benchtime -count -cover -covermode -coverpkg -cpu -failfast -fuzz -fuzztime -fuzzminimizetime -json -list -parallel -run -short -shuffle -timeout -v -vet -benchmem -blockprofile -blockprofilerate -coverprofile -cpuprofile -memprofile -memprofilerate -mutexprofile -mutexprofilefraction -outputdir -trace"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_testfunc()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_go_vcs()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _go go

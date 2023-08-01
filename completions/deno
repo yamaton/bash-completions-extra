@@ -1,0 +1,266 @@
+# Auto-generated with h2o
+
+_deno()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" run bench bundle cache check compile completions coverage doc eval fmt init info install uninstall lsp lint repl task test types upgrade vendor help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        run) _deno_run
+            return
+            ;;
+
+        bench) _deno_bench
+            return
+            ;;
+
+        bundle) _deno_bundle
+            return
+            ;;
+
+        cache) _deno_cache
+            return
+            ;;
+
+        check) _deno_check
+            return
+            ;;
+
+        compile) _deno_compile
+            return
+            ;;
+
+        completions) _deno_completions
+            return
+            ;;
+
+        coverage) _deno_coverage
+            return
+            ;;
+
+        doc) _deno_doc
+            return
+            ;;
+
+        eval) _deno_eval
+            return
+            ;;
+
+        fmt) _deno_fmt
+            return
+            ;;
+
+        init) _deno_init
+            return
+            ;;
+
+        info) _deno_info
+            return
+            ;;
+
+        install) _deno_install
+            return
+            ;;
+
+        uninstall) _deno_uninstall
+            return
+            ;;
+
+        lsp) _deno_lsp
+            return
+            ;;
+
+        lint) _deno_lint
+            return
+            ;;
+
+        repl) _deno_repl
+            return
+            ;;
+
+        task) _deno_task
+            return
+            ;;
+
+        test) _deno_test
+            return
+            ;;
+
+        types) _deno_types
+            return
+            ;;
+
+        upgrade) _deno_upgrade
+            return
+            ;;
+
+        vendor) _deno_vendor
+            return
+            ;;
+
+        help) _deno_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" run bench bundle cache check compile completions coverage doc eval fmt init info install uninstall lsp lint repl task test types upgrade vendor help --unstable -q --quiet -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_run()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --allow-read --allow-write --allow-net --unsafely-ignore-certificate-errors --allow-env --allow-sys --allow-run --allow-ffi --allow-hrtime -A --allow-all --no-prompt --inspect --inspect-brk --inspect-wait --cached-only --location --v8-flags --seed --check --watch --no-clear-screen --ext -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_bench()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --allow-read --allow-write --allow-net --unsafely-ignore-certificate-errors --allow-env --allow-sys --allow-run --allow-ffi --allow-hrtime -A --allow-all --no-prompt --cached-only --location --v8-flags --seed --check --json --ignore --filter --no-run --watch --no-clear-screen -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_bundle()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --check --watch --no-clear-screen --ext -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_cache()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --check -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_check()
+{
+    local word_list="  --import-map --unstable --no-remote --no-npm -q --quiet --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --all -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_compile()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --allow-read --allow-write --allow-net --unsafely-ignore-certificate-errors --allow-env --allow-sys --allow-run --allow-ffi --allow-hrtime -A --allow-all --no-prompt --cached-only --location --v8-flags --seed --check --include -o --output --target --ext -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_completions()
+{
+    local word_list="  --unstable -q --quiet -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_coverage()
+{
+    local word_list="  --ignore --unstable --include --exclude -q --quiet --lcov --output -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_doc()
+{
+    local word_list="  --import-map --unstable -r --reload --lock -q --quiet --no-lock --no-npm --no-remote --json --private -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_eval()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --inspect --inspect-brk --inspect-wait --cached-only --location --v8-flags --seed --check --ext -p --print -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_fmt()
+{
+    local word_list="  -c --config --unstable --no-config --check -q --quiet --ext --ignore --watch --no-clear-screen --use-tabs --line-width --indent-width --single-quote --prose-wrap --no-semicolons -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_init()
+{
+    local word_list="  --unstable -q --quiet -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_info()
+{
+    local word_list="  -r --reload --unstable --cert --location -q --quiet --no-config --no-remote --no-npm --no-lock --lock -c --config --import-map --node-modules-dir --json -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_install()
+{
+    local word_list="  - - --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --allow-read --allow-write --allow-net --unsafely-ignore-certificate-errors --allow-env --allow-sys --allow-run --allow-ffi --allow-hrtime -A --allow-all --no-prompt --inspect --inspect-brk --inspect-wait --cached-only --location --v8-flags --seed --check -n --name --root -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_uninstall()
+{
+    local word_list="  --root --unstable -q --quiet -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_lsp()
+{
+    local word_list="  --unstable -q --quiet -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_lint()
+{
+    local word_list="  --rules --unstable --rules-tags -q --quiet --rules-include --rules-exclude --no-config -c --config --ignore --json --compact --watch --no-clear-screen -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_repl()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --allow-read --allow-write --allow-net --unsafely-ignore-certificate-errors --allow-env --allow-sys --allow-run --allow-ffi --allow-hrtime -A --allow-all --no-prompt --inspect --inspect-brk --inspect-wait --cached-only --location --v8-flags --seed --check --eval-file --eval -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_task()
+{
+    local word_list="  -c --config --unstable --cwd -q --quiet -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_test()
+{
+    local word_list="  --no-check --unstable --import-map --no-remote -q --quiet --no-npm --node-modules-dir -c --config --no-config -r --reload --lock --lock-write --no-lock --cert --allow-read --allow-write --allow-net --unsafely-ignore-certificate-errors --allow-env --allow-sys --allow-run --allow-ffi --allow-hrtime -A --allow-all --no-prompt --inspect --inspect-brk --inspect-wait --cached-only --location --v8-flags --seed --check --ignore --no-run --trace-ops --doc --fail-fast --allow-none --filter --shuffle --coverage --parallel --watch --no-clear-screen -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_types()
+{
+    local word_list="  --unstable -q --quiet -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_upgrade()
+{
+    local word_list="  --unstable --version --output --dry-run -q --quiet -f --force --canary --cert -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_vendor()
+{
+    local word_list="  --output --unstable -f --force --no-config -q --quiet -c --config --import-map --lock --node-modules-dir -r --reload --cert -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_deno_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _deno deno

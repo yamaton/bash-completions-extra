@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_fairseqpreprocess()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -h --help --no-progress-bar --log-interval --log-format --log-file --aim-repo --aim-run-hash --tensorboard-logdir --wandb-project --azureml-logging --seed --cpu --tpu --bf16 --memory-efficient-bf16 --fp16 --memory-efficient-fp16 --fp16-no-flatten-grads --fp16-init-scale --fp16-scale-window --fp16-scale-tolerance --on-cpu-convert-precision --min-loss-scale --threshold-loss-scale --amp --amp-batch-retries --amp-init-scale --amp-scale-window --user-dir --empty-cache-freq --all-gather-list-size --model-parallel-size --quantization-config-path --profile --reset-logging --suppress-crashes --use-plasma-view --plasma-path --criterion --tokenizer --bpe --optimizer --lr-scheduler --scoring --task --dataset-impl -s --source-lang -t --target-lang --trainpref --validpref --testpref --align-suffix --destdir --thresholdtgt --thresholdsrc --tgtdict --srcdict --nwordstgt --nwordssrc --alignfile --joined-dictionary --only-source --padding-factor --workers --dict-only"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _fairseqpreprocess fairseq-preprocess

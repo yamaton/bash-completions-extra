@@ -1,0 +1,229 @@
+# Auto-generated with h2o
+
+_kb()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" add edit list view grep update delete template import export erase sync help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _kb_add
+            return
+            ;;
+
+        edit) _kb_edit
+            return
+            ;;
+
+        list) _kb_list
+            return
+            ;;
+
+        view) _kb_view
+            return
+            ;;
+
+        grep) _kb_grep
+            return
+            ;;
+
+        update) _kb_update
+            return
+            ;;
+
+        delete) _kb_delete
+            return
+            ;;
+
+        template) _kb_template
+            return
+            ;;
+
+        import) _kb_import
+            return
+            ;;
+
+        export) _kb_export
+            return
+            ;;
+
+        erase) _kb_erase
+            return
+            ;;
+
+        sync) _kb_sync
+            return
+            ;;
+
+        help) _kb_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" add edit list view grep update delete template import export erase sync help -h --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_add()
+{
+    local word_list="  -h --help -t --title -c --category -g --tags -a --author -s --status --template -b --body"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_edit()
+{
+    local word_list="  -h --help -i --id -t --title -c --category -g --tags -a --author -s --status"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_list()
+{
+    local word_list="  -h --help -c --category -g --tags -a --author -s --status -v --verbose -f --full-identifier -n --no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_view()
+{
+    local word_list="  -h --help -i --id -t --title -c --category -e --open-editor -n --no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_grep()
+{
+    local word_list="  -h --help -c --category -g --tags -a --author -s --status -m --show-matches -i --case-insensitive -v --verbose -n --no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_update()
+{
+    local word_list="  -h --help -i --id -t --title -c --category -g --tags -a --author -s --status --template -e --edit-content -b --body"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_delete()
+{
+    local word_list="  -h --help -i --id -t --title -c --category"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template()
+{
+    local cmd i subcommands
+    local subcommands=" add edit list new delete apply"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _kb_template_add
+            return
+            ;;
+
+        edit) _kb_template_edit
+            return
+            ;;
+
+        list) _kb_template_list
+            return
+            ;;
+
+        new) _kb_template_new
+            return
+            ;;
+
+        delete) _kb_template_delete
+            return
+            ;;
+
+        apply) _kb_template_apply
+            return
+            ;;
+
+    esac
+
+    local word_list=" add edit list new delete apply -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template_add()
+{
+    local word_list="  -h --help -t --title"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template_edit()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template_list()
+{
+    local word_list="  -h --help -n --no-color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template_new()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template_delete()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_template_apply()
+{
+    local word_list="  -h --help -t --title -c --category -g --tags -a --author -s --status -m --extended-match"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_import()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_export()
+{
+    local word_list="  -h --help -f --file -d --only-data"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_erase()
+{
+    local word_list="  -h --help --db"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_sync()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_kb_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _kb kb

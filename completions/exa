@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_exa()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -? --help -v --version -1 --oneline -l --long -G --grid -x --across -R --recurse -T --tree -F --classify --colo --colo --icons --no-icons -a --all -d --list-dirs -L --level -r --reverse -s --sort --group-directories-first -D --only-dirs -I --ignore-glob --git-ignore -b --binary -B --bytes -g --group -h --header -H --links -i --inode -m --modified -n --numeric -S --blocks -t --time -u --accessed -U --created --changed --time-style --no-permissions --octal-permissions --no-filesize --no-user --no-time --git -@ --extended"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _exa exa

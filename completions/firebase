@@ -1,0 +1,1089 @@
+# Auto-generated with h2o
+
+_firebase()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" appdistribution:distribute appdistribution:testers:add appdistribution:testers:remove apps:list apps:android:sha:list apps:android:sha:create apps:android:sha:delete auth:export auth:import crashlytics:symbols:upload crashlytics:mappingfile:generateid crashlytics:mappingfile:upload database:get database:instances:create database:instances:list database:profile database:push database:remove database:set database:settings:get database:settings:set database:update deploy emulators:exec emulators:export emulators:start experimental:functions:shell experiments:list experiments:describe experiments:enable experiments:disable ext ext:configure ext:info ext:export ext:install ext:list ext:uninstall ext:update firestore:delete firestore:indexes functions:config:clone functions:config:export functions:config:get functions:config:set functions:config:unset functions:delete functions:log functions:shell functions:list functions:secrets:access functions:secrets:destroy functions:secrets:get functions:secrets:prune functions:secrets:set help hosting:channel:create hosting:channel:delete hosting:channel:deploy hosting:channel:list hosting:channel:open hosting:clone hosting:disable hosting:sites:create hosting:sites:delete hosting:sites:get hosting:sites:list init login login:add login:ci login:list login:use logout open projects:addfirebase projects:create projects:list remoteconfig:get remoteconfig:rollback remoteconfig:versions:list serve setup:emulators:database setup:emulators:firestore setup:emulators:pubsub setup:emulators:storage setup:emulators:ui target target:apply target:clear target:remove use"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        appdistribution:distribute) _firebase_appdistributiondistribute
+            return
+            ;;
+
+        appdistribution:testers:add) _firebase_appdistributiontestersadd
+            return
+            ;;
+
+        appdistribution:testers:remove) _firebase_appdistributiontestersremove
+            return
+            ;;
+
+        apps:list) _firebase_appslist
+            return
+            ;;
+
+        apps:android:sha:list) _firebase_appsandroidshalist
+            return
+            ;;
+
+        apps:android:sha:create) _firebase_appsandroidshacreate
+            return
+            ;;
+
+        apps:android:sha:delete) _firebase_appsandroidshadelete
+            return
+            ;;
+
+        auth:export) _firebase_authexport
+            return
+            ;;
+
+        auth:import) _firebase_authimport
+            return
+            ;;
+
+        crashlytics:symbols:upload) _firebase_crashlyticssymbolsupload
+            return
+            ;;
+
+        crashlytics:mappingfile:generateid) _firebase_crashlyticsmappingfilegenerateid
+            return
+            ;;
+
+        crashlytics:mappingfile:upload) _firebase_crashlyticsmappingfileupload
+            return
+            ;;
+
+        database:get) _firebase_databaseget
+            return
+            ;;
+
+        database:instances:create) _firebase_databaseinstancescreate
+            return
+            ;;
+
+        database:instances:list) _firebase_databaseinstanceslist
+            return
+            ;;
+
+        database:profile) _firebase_databaseprofile
+            return
+            ;;
+
+        database:push) _firebase_databasepush
+            return
+            ;;
+
+        database:remove) _firebase_databaseremove
+            return
+            ;;
+
+        database:set) _firebase_databaseset
+            return
+            ;;
+
+        database:settings:get) _firebase_databasesettingsget
+            return
+            ;;
+
+        database:settings:set) _firebase_databasesettingsset
+            return
+            ;;
+
+        database:update) _firebase_databaseupdate
+            return
+            ;;
+
+        deploy) _firebase_deploy
+            return
+            ;;
+
+        emulators:exec) _firebase_emulatorsexec
+            return
+            ;;
+
+        emulators:export) _firebase_emulatorsexport
+            return
+            ;;
+
+        emulators:start) _firebase_emulatorsstart
+            return
+            ;;
+
+        experimental:functions:shell) _firebase_experimentalfunctionsshell
+            return
+            ;;
+
+        experiments:list) _firebase_experimentslist
+            return
+            ;;
+
+        experiments:describe) _firebase_experimentsdescribe
+            return
+            ;;
+
+        experiments:enable) _firebase_experimentsenable
+            return
+            ;;
+
+        experiments:disable) _firebase_experimentsdisable
+            return
+            ;;
+
+        ext) _firebase_ext
+            return
+            ;;
+
+        ext:configure) _firebase_extconfigure
+            return
+            ;;
+
+        ext:info) _firebase_extinfo
+            return
+            ;;
+
+        ext:export) _firebase_extexport
+            return
+            ;;
+
+        ext:install) _firebase_extinstall
+            return
+            ;;
+
+        ext:list) _firebase_extlist
+            return
+            ;;
+
+        ext:uninstall) _firebase_extuninstall
+            return
+            ;;
+
+        ext:update) _firebase_extupdate
+            return
+            ;;
+
+        firestore:delete) _firebase_firestoredelete
+            return
+            ;;
+
+        firestore:indexes) _firebase_firestoreindexes
+            return
+            ;;
+
+        functions:config:clone) _firebase_functionsconfigclone
+            return
+            ;;
+
+        functions:config:export) _firebase_functionsconfigexport
+            return
+            ;;
+
+        functions:config:get) _firebase_functionsconfigget
+            return
+            ;;
+
+        functions:config:set) _firebase_functionsconfigset
+            return
+            ;;
+
+        functions:config:unset) _firebase_functionsconfigunset
+            return
+            ;;
+
+        functions:delete) _firebase_functionsdelete
+            return
+            ;;
+
+        functions:log) _firebase_functionslog
+            return
+            ;;
+
+        functions:shell) _firebase_functionsshell
+            return
+            ;;
+
+        functions:list) _firebase_functionslist
+            return
+            ;;
+
+        functions:secrets:access) _firebase_functionssecretsaccess
+            return
+            ;;
+
+        functions:secrets:destroy) _firebase_functionssecretsdestroy
+            return
+            ;;
+
+        functions:secrets:get) _firebase_functionssecretsget
+            return
+            ;;
+
+        functions:secrets:prune) _firebase_functionssecretsprune
+            return
+            ;;
+
+        functions:secrets:set) _firebase_functionssecretsset
+            return
+            ;;
+
+        help) _firebase_help
+            return
+            ;;
+
+        hosting:channel:create) _firebase_hostingchannelcreate
+            return
+            ;;
+
+        hosting:channel:delete) _firebase_hostingchanneldelete
+            return
+            ;;
+
+        hosting:channel:deploy) _firebase_hostingchanneldeploy
+            return
+            ;;
+
+        hosting:channel:list) _firebase_hostingchannellist
+            return
+            ;;
+
+        hosting:channel:open) _firebase_hostingchannelopen
+            return
+            ;;
+
+        hosting:clone) _firebase_hostingclone
+            return
+            ;;
+
+        hosting:disable) _firebase_hostingdisable
+            return
+            ;;
+
+        hosting:sites:create) _firebase_hostingsitescreate
+            return
+            ;;
+
+        hosting:sites:delete) _firebase_hostingsitesdelete
+            return
+            ;;
+
+        hosting:sites:get) _firebase_hostingsitesget
+            return
+            ;;
+
+        hosting:sites:list) _firebase_hostingsiteslist
+            return
+            ;;
+
+        init) _firebase_init
+            return
+            ;;
+
+        login) _firebase_login
+            return
+            ;;
+
+        login:add) _firebase_loginadd
+            return
+            ;;
+
+        login:ci) _firebase_loginci
+            return
+            ;;
+
+        login:list) _firebase_loginlist
+            return
+            ;;
+
+        login:use) _firebase_loginuse
+            return
+            ;;
+
+        logout) _firebase_logout
+            return
+            ;;
+
+        open) _firebase_open
+            return
+            ;;
+
+        projects:addfirebase) _firebase_projectsaddfirebase
+            return
+            ;;
+
+        projects:create) _firebase_projectscreate
+            return
+            ;;
+
+        projects:list) _firebase_projectslist
+            return
+            ;;
+
+        remoteconfig:get) _firebase_remoteconfigget
+            return
+            ;;
+
+        remoteconfig:rollback) _firebase_remoteconfigrollback
+            return
+            ;;
+
+        remoteconfig:versions:list) _firebase_remoteconfigversionslist
+            return
+            ;;
+
+        serve) _firebase_serve
+            return
+            ;;
+
+        setup:emulators:database) _firebase_setupemulatorsdatabase
+            return
+            ;;
+
+        setup:emulators:firestore) _firebase_setupemulatorsfirestore
+            return
+            ;;
+
+        setup:emulators:pubsub) _firebase_setupemulatorspubsub
+            return
+            ;;
+
+        setup:emulators:storage) _firebase_setupemulatorsstorage
+            return
+            ;;
+
+        setup:emulators:ui) _firebase_setupemulatorsui
+            return
+            ;;
+
+        target) _firebase_target
+            return
+            ;;
+
+        target:apply) _firebase_targetapply
+            return
+            ;;
+
+        target:clear) _firebase_targetclear
+            return
+            ;;
+
+        target:remove) _firebase_targetremove
+            return
+            ;;
+
+        use) _firebase_use
+            return
+            ;;
+
+    esac
+
+    local word_list=" appdistribution:distribute appdistribution:testers:add appdistribution:testers:remove apps:list apps:android:sha:list apps:android:sha:create apps:android:sha:delete auth:export auth:import crashlytics:symbols:upload crashlytics:mappingfile:generateid crashlytics:mappingfile:upload database:get database:instances:create database:instances:list database:profile database:push database:remove database:set database:settings:get database:settings:set database:update deploy emulators:exec emulators:export emulators:start experimental:functions:shell experiments:list experiments:describe experiments:enable experiments:disable ext ext:configure ext:info ext:export ext:install ext:list ext:uninstall ext:update firestore:delete firestore:indexes functions:config:clone functions:config:export functions:config:get functions:config:set functions:config:unset functions:delete functions:log functions:shell functions:list functions:secrets:access functions:secrets:destroy functions:secrets:get functions:secrets:prune functions:secrets:set help hosting:channel:create hosting:channel:delete hosting:channel:deploy hosting:channel:list hosting:channel:open hosting:clone hosting:disable hosting:sites:create hosting:sites:delete hosting:sites:get hosting:sites:list init login login:add login:ci login:list login:use logout open projects:addfirebase projects:create projects:list remoteconfig:get remoteconfig:rollback remoteconfig:versions:list serve setup:emulators:database setup:emulators:firestore setup:emulators:pubsub setup:emulators:storage setup:emulators:ui target target:apply target:clear target:remove use -V --version -P --project --account -j --json --token --non-interactive -i --interactive --debug -c --config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appdistributiondistribute()
+{
+    local word_list="  --app --release-notes --release-notes-file --testers --testers-file --groups --groups-file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appdistributiontestersadd()
+{
+    local word_list="  --file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appdistributiontestersremove()
+{
+    local word_list="  --file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appsandroidshalist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appsandroidshacreate()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_appsandroidshadelete()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_authexport()
+{
+    local word_list="  --format -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_authimport()
+{
+    local word_list="  --hash-algo --hash-key --salt-separator --rounds --mem-cost --parallelization --block-size --dk-len --hash-input-order -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_crashlyticssymbolsupload()
+{
+    local word_list="  --app --generator --dry-run -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_crashlyticsmappingfilegenerateid()
+{
+    local word_list="  --resource-file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_crashlyticsmappingfileupload()
+{
+    local word_list="  --app --resource-file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseget()
+{
+    local word_list="  -o --output --pretty --shallow --export --order-by --order-by-key --order-by-value --limit-to-first --limit-to-last --start-at --end-at --equal-to --instance -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseinstancescreate()
+{
+    local word_list="  -l --location -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseinstanceslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseprofile()
+{
+    local word_list="  -o --output -d --duration --raw --no-collapse -i --input --instance -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databasepush()
+{
+    local word_list="  -d --data --instance --disable-triggers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseremove()
+{
+    local word_list="  -f --force --instance --disable-triggers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseset()
+{
+    local word_list="  -d --data -f --force --instance --disable-triggers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databasesettingsget()
+{
+    local word_list="  --instance -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databasesettingsset()
+{
+    local word_list="  --instance -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_databaseupdate()
+{
+    local word_list="  -d --data -f --force --instance --disable-triggers -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_deploy()
+{
+    local word_list="  -f --force -p --public -m --message --only --except -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_emulatorsexec()
+{
+    local word_list="  --only --inspect-functions --import --export-on-exit --ui -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_emulatorsexport()
+{
+    local word_list="  -f --force --only -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_emulatorsstart()
+{
+    local word_list="  --only --inspect-functions --import --export-on-exit -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_experimentalfunctionsshell()
+{
+    local word_list="  -p --port -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_experimentslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_experimentsdescribe()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_experimentsenable()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_experimentsdisable()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_ext()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extconfigure()
+{
+    local word_list="  -f --force --local -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extinfo()
+{
+    local word_list="  --markdown -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extexport()
+{
+    local word_list="  -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extinstall()
+{
+    local word_list="  --local -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extlist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extuninstall()
+{
+    local word_list="  --local -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_extupdate()
+{
+    local word_list="  --local -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_firestoredelete()
+{
+    local word_list="  -r --recursive --shallow --all-collections -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_firestoreindexes()
+{
+    local word_list="  --pretty -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsconfigclone()
+{
+    local word_list="  --from --only --except -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsconfigexport()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsconfigget()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsconfigset()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsconfigunset()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsdelete()
+{
+    local word_list="  --region -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionslog()
+{
+    local word_list="  --only -n --lines --open -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionsshell()
+{
+    local word_list="  -p --port --inspect-functions -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionssecretsaccess()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionssecretsdestroy()
+{
+    local word_list="  -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionssecretsget()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionssecretsprune()
+{
+    local word_list="  -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_functionssecretsset()
+{
+    local word_list="  -f --force --data-file -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help()
+{
+    local cmd i subcommands
+    local subcommands=" database:instances:list ext ext:list functions:config:export functions:list hosting:sites:list login:list projects:list setup:emulators:database setup:emulators:firestore setup:emulators:pubsub setup:emulators:storage setup:emulators:ui"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        database:instances:list) _firebase_help_databaseinstanceslist
+            return
+            ;;
+
+        ext) _firebase_help_ext
+            return
+            ;;
+
+        ext:list) _firebase_help_extlist
+            return
+            ;;
+
+        functions:config:export) _firebase_help_functionsconfigexport
+            return
+            ;;
+
+        functions:list) _firebase_help_functionslist
+            return
+            ;;
+
+        hosting:sites:list) _firebase_help_hostingsiteslist
+            return
+            ;;
+
+        login:list) _firebase_help_loginlist
+            return
+            ;;
+
+        projects:list) _firebase_help_projectslist
+            return
+            ;;
+
+        setup:emulators:database) _firebase_help_setupemulatorsdatabase
+            return
+            ;;
+
+        setup:emulators:firestore) _firebase_help_setupemulatorsfirestore
+            return
+            ;;
+
+        setup:emulators:pubsub) _firebase_help_setupemulatorspubsub
+            return
+            ;;
+
+        setup:emulators:storage) _firebase_help_setupemulatorsstorage
+            return
+            ;;
+
+        setup:emulators:ui) _firebase_help_setupemulatorsui
+            return
+            ;;
+
+    esac
+
+    local word_list=" database:instances:list ext ext:list functions:config:export functions:list hosting:sites:list login:list projects:list setup:emulators:database setup:emulators:firestore setup:emulators:pubsub setup:emulators:storage setup:emulators:ui -V --version -P --project --account -j --json --token --non-interactive -i --interactive --debug -c --config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_databaseinstanceslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_ext()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_extlist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_functionsconfigexport()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_functionslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_hostingsiteslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_loginlist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_projectslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_setupemulatorsdatabase()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_setupemulatorsfirestore()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_setupemulatorspubsub()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_setupemulatorsstorage()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_help_setupemulatorsui()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingchannelcreate()
+{
+    local word_list="  -e --expires --site -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingchanneldelete()
+{
+    local word_list="  -f --force --site -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingchanneldeploy()
+{
+    local word_list="  -e --expires --only --open --no-authorized-domains -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingchannellist()
+{
+    local word_list="  --site -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingchannelopen()
+{
+    local word_list="  --site -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingclone()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingdisable()
+{
+    local word_list="  -f --force -s --site -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingsitescreate()
+{
+    local word_list="  --app -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingsitesdelete()
+{
+    local word_list="  -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingsitesget()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_hostingsiteslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_init()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_login()
+{
+    local word_list="  --no-localhost --reauth -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_loginadd()
+{
+    local word_list="  --no-localhost -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_loginci()
+{
+    local word_list="  --no-localhost -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_loginlist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_loginuse()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_logout()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_open()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_projectsaddfirebase()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_projectscreate()
+{
+    local word_list="  -n --display-name -o --organization -f --folder -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_projectslist()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_remoteconfigget()
+{
+    local word_list="  -v --version-number -o --output -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_remoteconfigrollback()
+{
+    local word_list="  -v --version-number -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_remoteconfigversionslist()
+{
+    local word_list="  --limit -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_serve()
+{
+    local word_list="  -p --port -o --host --only --except -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_setupemulatorsdatabase()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_setupemulatorsfirestore()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_setupemulatorspubsub()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_setupemulatorsstorage()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_setupemulatorsui()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_target()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_targetapply()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_targetclear()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_targetremove()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_firebase_use()
+{
+    local word_list="  --add --alias --unalias --clear -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _firebase firebase

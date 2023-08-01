@@ -1,0 +1,554 @@
+# Auto-generated with h2o
+
+_arduinocli()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" board burn-bootloader cache compile completion config core daemon debug lib monitor outdated sketch update upgrade upload version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        board) _arduinocli_board
+            return
+            ;;
+
+        burn-bootloader) _arduinocli_burnbootloader
+            return
+            ;;
+
+        cache) _arduinocli_cache
+            return
+            ;;
+
+        compile) _arduinocli_compile
+            return
+            ;;
+
+        completion) _arduinocli_completion
+            return
+            ;;
+
+        config) _arduinocli_config
+            return
+            ;;
+
+        core) _arduinocli_core
+            return
+            ;;
+
+        daemon) _arduinocli_daemon
+            return
+            ;;
+
+        debug) _arduinocli_debug
+            return
+            ;;
+
+        lib) _arduinocli_lib
+            return
+            ;;
+
+        monitor) _arduinocli_monitor
+            return
+            ;;
+
+        outdated) _arduinocli_outdated
+            return
+            ;;
+
+        sketch) _arduinocli_sketch
+            return
+            ;;
+
+        update) _arduinocli_update
+            return
+            ;;
+
+        upgrade) _arduinocli_upgrade
+            return
+            ;;
+
+        upload) _arduinocli_upload
+            return
+            ;;
+
+        version) _arduinocli_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" board burn-bootloader cache compile completion config core daemon debug lib monitor outdated sketch update upgrade upload version --additional-urls --config-file --format -h --help --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_board()
+{
+    local cmd i subcommands
+    local subcommands=" attach details list listall search"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach) _arduinocli_board_attach
+            return
+            ;;
+
+        details) _arduinocli_board_details
+            return
+            ;;
+
+        list) _arduinocli_board_list
+            return
+            ;;
+
+        listall) _arduinocli_board_listall
+            return
+            ;;
+
+        search) _arduinocli_board_search
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach details list listall search -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_board_attach()
+{
+    local word_list="  --discovery-timeout -b --fqbn -h --help -p --port -l --protocol --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_board_details()
+{
+    local word_list="  -b --fqbn -f --full -h --help --list-programmers --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_board_list()
+{
+    local word_list="  --discovery-timeout -h --help -w --watch --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_board_listall()
+{
+    local word_list="  -h --help -a --show-hidden --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_board_search()
+{
+    local word_list="  -h --help -a --show-hidden --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_burnbootloader()
+{
+    local word_list="  --discovery-timeout -b --fqbn -h --help -p --port -P --programmer -l --protocol -t --verify --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_cache()
+{
+    local cmd i subcommands
+    local subcommands=" clean"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clean) _arduinocli_cache_clean
+            return
+            ;;
+
+    esac
+
+    local word_list=" clean -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_cache_clean()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_compile()
+{
+    local word_list="  --build-cache-path --build-path --build-property --clean --discovery-timeout -e --export-binaries -b --fqbn -h --help --libraries --library --only-compilation-database --optimize-for-debug --output-dir -p --port --preprocess -P --programmer -l --protocol --quiet --show-properties -u --upload -t --verify --vid-pid --warnings --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_completion()
+{
+    local word_list="  -h --help --no-descriptions --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config()
+{
+    local cmd i subcommands
+    local subcommands=" add delete dump init remove set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _arduinocli_config_add
+            return
+            ;;
+
+        delete) _arduinocli_config_delete
+            return
+            ;;
+
+        dump) _arduinocli_config_dump
+            return
+            ;;
+
+        init) _arduinocli_config_init
+            return
+            ;;
+
+        remove) _arduinocli_config_remove
+            return
+            ;;
+
+        set) _arduinocli_config_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" add delete dump init remove set -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config_add()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config_delete()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config_dump()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config_init()
+{
+    local word_list="  --dest-dir --dest-file -h --help --overwrite --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config_remove()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_config_set()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core()
+{
+    local cmd i subcommands
+    local subcommands=" download install list search uninstall upgrade"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        download) _arduinocli_core_download
+            return
+            ;;
+
+        install) _arduinocli_core_install
+            return
+            ;;
+
+        list) _arduinocli_core_list
+            return
+            ;;
+
+        search) _arduinocli_core_search
+            return
+            ;;
+
+        uninstall) _arduinocli_core_uninstall
+            return
+            ;;
+
+        upgrade) _arduinocli_core_upgrade
+            return
+            ;;
+
+    esac
+
+    local word_list=" download install list search uninstall upgrade -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core_download()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core_install()
+{
+    local word_list="  -h --help --run-post-install --skip-post-install --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core_list()
+{
+    local word_list="  --all -h --help --updatable --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core_search()
+{
+    local word_list="  -a --all -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core_uninstall()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_core_upgrade()
+{
+    local word_list="  -h --help --run-post-install --skip-post-install --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_daemon()
+{
+    local word_list="  --daemonize --debug --debug-filter -h --help --ip --port --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_debug()
+{
+    local word_list="  --discovery-timeout -b --fqbn -h --help -I --info --input-dir --interpreter -p --port -P --programmer -l --protocol --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib()
+{
+    local cmd i subcommands
+    local subcommands=" deps download examples install list search uninstall upgrade"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        deps) _arduinocli_lib_deps
+            return
+            ;;
+
+        download) _arduinocli_lib_download
+            return
+            ;;
+
+        examples) _arduinocli_lib_examples
+            return
+            ;;
+
+        install) _arduinocli_lib_install
+            return
+            ;;
+
+        list) _arduinocli_lib_list
+            return
+            ;;
+
+        search) _arduinocli_lib_search
+            return
+            ;;
+
+        uninstall) _arduinocli_lib_uninstall
+            return
+            ;;
+
+        upgrade) _arduinocli_lib_upgrade
+            return
+            ;;
+
+    esac
+
+    local word_list=" deps download examples install list search uninstall upgrade -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_deps()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_download()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_examples()
+{
+    local word_list="  -b --fqbn -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_install()
+{
+    local word_list="  --git-url -h --help --no-deps --zip-path --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_list()
+{
+    local word_list="  --all -b --fqbn -h --help --updatable --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_search()
+{
+    local word_list="  -h --help --names --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_uninstall()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_lib_upgrade()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_monitor()
+{
+    local word_list="  -c --config --describe --discovery-timeout -b --fqbn -h --help -p --port -l --protocol -q --quiet --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_outdated()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_sketch()
+{
+    local cmd i subcommands
+    local subcommands=" archive new"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        archive) _arduinocli_sketch_archive
+            return
+            ;;
+
+        new) _arduinocli_sketch_new
+            return
+            ;;
+
+    esac
+
+    local word_list=" archive new -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_sketch_archive()
+{
+    local word_list="  -h --help --include-build-dir --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_sketch_new()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_update()
+{
+    local word_list="  -h --help --show-outdated --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_upgrade()
+{
+    local word_list="  -h --help --run-post-install --skip-post-install --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_upload()
+{
+    local word_list="  --discovery-timeout -b --fqbn -h --help --input-dir -i --input-file -p --port -P --programmer -l --protocol -t --verify --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_arduinocli_version()
+{
+    local word_list="  -h --help --additional-urls --config-file --format --log-file --log-format --log-level --no-color -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _arduinocli arduino-cli

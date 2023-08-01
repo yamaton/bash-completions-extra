@@ -1,0 +1,406 @@
+# Auto-generated with h2o
+
+_b2()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" authorize-account cancel-all-unfinished-large-files cancel-large-file clear-account copy-file-by-id create-bucket create-key delete-bucket delete-file-version delete-key download-file-by-id download-file-by-name get-account-info get-bucket get-file-info get-download-auth get-download-url-with-auth hide-file list-buckets list-keys list-parts list-unfinished-large-files ls rm make-url make-friendly-url sync update-bucket upload-file update-file-legal-hold update-file-retention replication-setup replication-delete replication-pause replication-unpause replication-status version license"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        authorize-account) _b2_authorizeaccount
+            return
+            ;;
+
+        cancel-all-unfinished-large-files) _b2_cancelallunfinishedlargefiles
+            return
+            ;;
+
+        cancel-large-file) _b2_cancellargefile
+            return
+            ;;
+
+        clear-account) _b2_clearaccount
+            return
+            ;;
+
+        copy-file-by-id) _b2_copyfilebyid
+            return
+            ;;
+
+        create-bucket) _b2_createbucket
+            return
+            ;;
+
+        create-key) _b2_createkey
+            return
+            ;;
+
+        delete-bucket) _b2_deletebucket
+            return
+            ;;
+
+        delete-file-version) _b2_deletefileversion
+            return
+            ;;
+
+        delete-key) _b2_deletekey
+            return
+            ;;
+
+        download-file-by-id) _b2_downloadfilebyid
+            return
+            ;;
+
+        download-file-by-name) _b2_downloadfilebyname
+            return
+            ;;
+
+        get-account-info) _b2_getaccountinfo
+            return
+            ;;
+
+        get-bucket) _b2_getbucket
+            return
+            ;;
+
+        get-file-info) _b2_getfileinfo
+            return
+            ;;
+
+        get-download-auth) _b2_getdownloadauth
+            return
+            ;;
+
+        get-download-url-with-auth) _b2_getdownloadurlwithauth
+            return
+            ;;
+
+        hide-file) _b2_hidefile
+            return
+            ;;
+
+        list-buckets) _b2_listbuckets
+            return
+            ;;
+
+        list-keys) _b2_listkeys
+            return
+            ;;
+
+        list-parts) _b2_listparts
+            return
+            ;;
+
+        list-unfinished-large-files) _b2_listunfinishedlargefiles
+            return
+            ;;
+
+        ls) _b2_ls
+            return
+            ;;
+
+        rm) _b2_rm
+            return
+            ;;
+
+        make-url) _b2_makeurl
+            return
+            ;;
+
+        make-friendly-url) _b2_makefriendlyurl
+            return
+            ;;
+
+        sync) _b2_sync
+            return
+            ;;
+
+        update-bucket) _b2_updatebucket
+            return
+            ;;
+
+        upload-file) _b2_uploadfile
+            return
+            ;;
+
+        update-file-legal-hold) _b2_updatefilelegalhold
+            return
+            ;;
+
+        update-file-retention) _b2_updatefileretention
+            return
+            ;;
+
+        replication-setup) _b2_replicationsetup
+            return
+            ;;
+
+        replication-delete) _b2_replicationdelete
+            return
+            ;;
+
+        replication-pause) _b2_replicationpause
+            return
+            ;;
+
+        replication-unpause) _b2_replicationunpause
+            return
+            ;;
+
+        replication-status) _b2_replicationstatus
+            return
+            ;;
+
+        version) _b2_version
+            return
+            ;;
+
+        license) _b2_license
+            return
+            ;;
+
+    esac
+
+    local word_list=" authorize-account cancel-all-unfinished-large-files cancel-large-file clear-account copy-file-by-id create-bucket create-key delete-bucket delete-file-version delete-key download-file-by-id download-file-by-name get-account-info get-bucket get-file-info get-download-auth get-download-url-with-auth hide-file list-buckets list-keys list-parts list-unfinished-large-files ls rm make-url make-friendly-url sync update-bucket upload-file update-file-legal-hold update-file-retention replication-setup replication-delete replication-pause replication-unpause replication-status version license -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_authorizeaccount()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_cancelallunfinishedlargefiles()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_cancellargefile()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_clearaccount()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_copyfilebyid()
+{
+    local word_list="  -h --help --profile --fetchMetadata --contentType --range --info --noInfo --destinationServerSideEncryption --destinationServerSideEncryptionAlgorithm --sourceServerSideEncryption --sourceServerSideEncryptionAlgorithm --fileRetentionMode --retainUntil --legalHold"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_createbucket()
+{
+    local word_list="  -h --help --profile --bucketInfo --corsRules --lifecycleRules --fileLockEnabled --replication --defaultServerSideEncryption --defaultServerSideEncryptionAlgorithm"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_createkey()
+{
+    local word_list="  -h --help --profile --bucket --namePrefix --duration --allCapabilities"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_deletebucket()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_deletefileversion()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_deletekey()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_downloadfilebyid()
+{
+    local word_list="  -h --help --profile --noProgress --threads --sourceServerSideEncryption --sourceServerSideEncryptionAlgorithm --write-buffer-size --skip-hash-verification --max-download-streams-per-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_downloadfilebyname()
+{
+    local word_list="  -h --help --profile --noProgress --threads --sourceServerSideEncryption --sourceServerSideEncryptionAlgorithm --write-buffer-size --skip-hash-verification --max-download-streams-per-file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_getaccountinfo()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_getbucket()
+{
+    local word_list="  -h --help --profile --showSize"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_getfileinfo()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_getdownloadauth()
+{
+    local word_list="  -h --help --profile --prefix --duration"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_getdownloadurlwithauth()
+{
+    local word_list="  -h --help --profile --duration"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_hidefile()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_listbuckets()
+{
+    local word_list="  -h --help --profile --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_listkeys()
+{
+    local word_list="  -h --help --profile --long"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_listparts()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_listunfinishedlargefiles()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_ls()
+{
+    local word_list="  -h --help --profile --long --json --replication --versions --recursive --withWildCard"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_rm()
+{
+    local word_list="  -h --help --profile --dryRun --threads --noProgress --failFast --versions --recursive --withWildCard"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_makeurl()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_makefriendlyurl()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_sync()
+{
+    local word_list="  -h --help --profile --noProgress --dryRun --allowEmptySource --excludeAllSymlinks --threads --syncThreads --downloadThreads --uploadThreads --compareVersions --compareThreshold --excludeRegex --includeRegex --excludeDirRegex --excludeIfModifiedAfter --destinationServerSideEncryption --destinationServerSideEncryptionAlgorithm --sourceServerSideEncryption --sourceServerSideEncryptionAlgorithm --write-buffer-size --skip-hash-verification --max-download-streams-per-file --incrementalMode --skipNewer --replaceNewer --delete --keepDays"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_updatebucket()
+{
+    local word_list="  -h --help --profile --bucketInfo --corsRules --lifecycleRules --defaultRetentionMode --defaultRetentionPeriod --replication --fileLockEnabled --defaultServerSideEncryption --defaultServerSideEncryptionAlgorithm"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_uploadfile()
+{
+    local word_list="  -h --help --profile --noProgress --quiet --contentType --minPartSize --sha1 --threads --info --destinationServerSideEncryption --destinationServerSideEncryptionAlgorithm --legalHold --fileRetentionMode --retainUntil --incrementalMode"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_updatefilelegalhold()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_updatefileretention()
+{
+    local word_list="  -h --help --profile --retainUntil --bypassGovernance"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_replicationsetup()
+{
+    local word_list="  -h --help --profile --destination-profile --name --priority --file-name-prefix --include-existing-files"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_replicationdelete()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_replicationpause()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_replicationunpause()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_replicationstatus()
+{
+    local word_list="  -h --help --profile --rule --destination-profile --dont-scan-destination --output-format --noProgress --columns"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_version()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_b2_license()
+{
+    local word_list="  -h --help --profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _b2 b2

@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_ionice()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -c --class -n --classdata -p --pid -P --pgid -t --ignore -u --uid -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ionice ionice

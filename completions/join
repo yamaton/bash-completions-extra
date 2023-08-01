@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_join()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  -a -e -i --ignore-case -j -o -t -v -1 -2 --check-order --nocheck-order --header -z --zero-terminated --help --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _join join

@@ -1,0 +1,86 @@
+# Auto-generated with h2o
+
+_condaenv()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" create export list remove update config"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _condaenv_create
+            return
+            ;;
+
+        export) _condaenv_export
+            return
+            ;;
+
+        list) _condaenv_list
+            return
+            ;;
+
+        remove) _condaenv_remove
+            return
+            ;;
+
+        update) _condaenv_update
+            return
+            ;;
+
+        config) _condaenv_config
+            return
+            ;;
+
+    esac
+
+    local word_list=" create export list remove update config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condaenv_create()
+{
+    local word_list="  -h --help -f --file --force -d --dry-run --no-default-packages --experimental-solver -n --name -p --prefix -C --use-index-cache -k --insecure --offline --json -v --verbose -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condaenv_export()
+{
+    local word_list="  -h --help -c --channel --override-channels -f --file --no-builds --ignore-channels --from-history -n --name -p --prefix --json -v --verbose -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condaenv_list()
+{
+    local word_list="  -h --help --json -v --verbose -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condaenv_remove()
+{
+    local word_list="  -h --help --experimental-solver -n --name -p --prefix -d --dry-run --json -q --quiet -v --verbose -y --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condaenv_update()
+{
+    local word_list="  -h --help -f --file --prune --experimental-solver -n --name -p --prefix --json -v --verbose -q --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_condaenv_config()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _condaenv conda-env

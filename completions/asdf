@@ -1,0 +1,259 @@
+# Auto-generated with h2o
+
+_asdf()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" plugin install uninstall current where which local global shell latest list help exec env info reshim shim-versions update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        plugin) _asdf_plugin
+            return
+            ;;
+
+        install) _asdf_install
+            return
+            ;;
+
+        uninstall) _asdf_uninstall
+            return
+            ;;
+
+        current) _asdf_current
+            return
+            ;;
+
+        where) _asdf_where
+            return
+            ;;
+
+        which) _asdf_which
+            return
+            ;;
+
+        local) _asdf_local
+            return
+            ;;
+
+        global) _asdf_global
+            return
+            ;;
+
+        shell) _asdf_shell
+            return
+            ;;
+
+        latest) _asdf_latest
+            return
+            ;;
+
+        list) _asdf_list
+            return
+            ;;
+
+        help) _asdf_help
+            return
+            ;;
+
+        exec) _asdf_exec
+            return
+            ;;
+
+        env) _asdf_env
+            return
+            ;;
+
+        info) _asdf_info
+            return
+            ;;
+
+        reshim) _asdf_reshim
+            return
+            ;;
+
+        shim-versions) _asdf_shimversions
+            return
+            ;;
+
+        update) _asdf_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" plugin install uninstall current where which local global shell latest list help exec env info reshim shim-versions update "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_plugin()
+{
+    local cmd i subcommands
+    local subcommands=" add list remove update"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        add) _asdf_plugin_add
+            return
+            ;;
+
+        list) _asdf_plugin_list
+            return
+            ;;
+
+        remove) _asdf_plugin_remove
+            return
+            ;;
+
+        update) _asdf_plugin_update
+            return
+            ;;
+
+    esac
+
+    local word_list=" add list remove update "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_plugin_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_plugin_list()
+{
+    local word_list="  --urls --refs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_plugin_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_plugin_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_install()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_uninstall()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_current()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_where()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_which()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_local()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_global()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_shell()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_latest()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_list()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_exec()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_env()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_info()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_reshim()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_shimversions()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_asdf_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _asdf asdf

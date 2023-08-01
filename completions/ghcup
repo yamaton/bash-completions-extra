@@ -1,0 +1,617 @@
+# Auto-generated with h2o
+
+_ghcup()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" tui install set unset rm list upgrade compile whereis prefetch gc run debug-info tool-requirements changelog config nuke"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        tui) _ghcup_tui
+            return
+            ;;
+
+        install) _ghcup_install
+            return
+            ;;
+
+        set) _ghcup_set
+            return
+            ;;
+
+        unset) _ghcup_unset
+            return
+            ;;
+
+        rm) _ghcup_rm
+            return
+            ;;
+
+        list) _ghcup_list
+            return
+            ;;
+
+        upgrade) _ghcup_upgrade
+            return
+            ;;
+
+        compile) _ghcup_compile
+            return
+            ;;
+
+        whereis) _ghcup_whereis
+            return
+            ;;
+
+        prefetch) _ghcup_prefetch
+            return
+            ;;
+
+        gc) _ghcup_gc
+            return
+            ;;
+
+        run) _ghcup_run
+            return
+            ;;
+
+        debug-info) _ghcup_debuginfo
+            return
+            ;;
+
+        tool-requirements) _ghcup_toolrequirements
+            return
+            ;;
+
+        changelog) _ghcup_changelog
+            return
+            ;;
+
+        config) _ghcup_config
+            return
+            ;;
+
+        nuke) _ghcup_nuke
+            return
+            ;;
+
+    esac
+
+    local word_list=" tui install set unset rm list upgrade compile whereis prefetch gc run debug-info tool-requirements changelog config nuke -v --verbose -c --cache -n --no-verify --keep --downloader -o --offline --gpg -h --help --version --numeric-version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_tui()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_install()
+{
+    local cmd i subcommands
+    local subcommands=" ghc cabal hls stack"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_install_ghc
+            return
+            ;;
+
+        cabal) _ghcup_install_cabal
+            return
+            ;;
+
+        hls) _ghcup_install_hls
+            return
+            ;;
+
+        stack) _ghcup_install_stack
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc cabal hls stack -p --platform -u --url --set -i --isolate -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_install_ghc()
+{
+    local word_list="  -p --platform -u --url --set -i --isolate -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_install_cabal()
+{
+    local word_list="  -p --platform -u --url --no-set -i --isolate -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_install_hls()
+{
+    local word_list="  -p --platform -u --url --no-set -i --isolate -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_install_stack()
+{
+    local word_list="  -p --platform -u --url --no-set -i --isolate -f --force -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_set()
+{
+    local cmd i subcommands
+    local subcommands=" ghc cabal hls stack"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_set_ghc
+            return
+            ;;
+
+        cabal) _ghcup_set_cabal
+            return
+            ;;
+
+        hls) _ghcup_set_hls
+            return
+            ;;
+
+        stack) _ghcup_set_stack
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc cabal hls stack -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_set_ghc()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_set_cabal()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_set_hls()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_set_stack()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_unset()
+{
+    local cmd i subcommands
+    local subcommands=" ghc cabal hls stack"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_unset_ghc
+            return
+            ;;
+
+        cabal) _ghcup_unset_cabal
+            return
+            ;;
+
+        hls) _ghcup_unset_hls
+            return
+            ;;
+
+        stack) _ghcup_unset_stack
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc cabal hls stack -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_unset_ghc()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_unset_cabal()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_unset_hls()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_unset_stack()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_rm()
+{
+    local cmd i subcommands
+    local subcommands=" ghc cabal hls stack"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_rm_ghc
+            return
+            ;;
+
+        cabal) _ghcup_rm_cabal
+            return
+            ;;
+
+        hls) _ghcup_rm_hls
+            return
+            ;;
+
+        stack) _ghcup_rm_stack
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc cabal hls stack -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_rm_ghc()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_rm_cabal()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_rm_hls()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_rm_stack()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_list()
+{
+    local word_list="  -t --tool -c --show-criteria -r --raw-format -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_upgrade()
+{
+    local word_list="  -i --inplace -t --target -f --force --fail-if-shadowed -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_compile()
+{
+    local cmd i subcommands
+    local subcommands=" ghc hls"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_compile_ghc
+            return
+            ;;
+
+        hls) _ghcup_compile_hls
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc hls -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_compile_ghc()
+{
+    local word_list="  -v --version -g --git-ref -r --repository --remote-source-dist -b --bootstrap-ghc -j --jobs -c --config --patch -p --patchdir -x --cross-target --set -o --overwrite-version -f --flavour --hadrian -i --isolate -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_compile_hls()
+{
+    local word_list="  -v --version -g --git-ref -r --repository --source-dist --remote-source-dist -j --jobs --no-set --cabal-update -o --overwrite-version --git-describe-version -i --isolate --cabal-project --cabal-project-local --patch -p --patchdir --ghc -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis()
+{
+    local cmd i subcommands
+    local subcommands=" ghc cabal hls stack ghcup basedir bindir cachedir logsdir confdir"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_whereis_ghc
+            return
+            ;;
+
+        cabal) _ghcup_whereis_cabal
+            return
+            ;;
+
+        hls) _ghcup_whereis_hls
+            return
+            ;;
+
+        stack) _ghcup_whereis_stack
+            return
+            ;;
+
+        ghcup) _ghcup_whereis_ghcup
+            return
+            ;;
+
+        basedir) _ghcup_whereis_basedir
+            return
+            ;;
+
+        bindir) _ghcup_whereis_bindir
+            return
+            ;;
+
+        cachedir) _ghcup_whereis_cachedir
+            return
+            ;;
+
+        logsdir) _ghcup_whereis_logsdir
+            return
+            ;;
+
+        confdir) _ghcup_whereis_confdir
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc cabal hls stack ghcup basedir bindir cachedir logsdir confdir -d --directory -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_ghc()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_cabal()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_hls()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_stack()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_ghcup()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_basedir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_bindir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_cachedir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_logsdir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_whereis_confdir()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_prefetch()
+{
+    local cmd i subcommands
+    local subcommands=" ghc cabal hls stack metadata"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ghc) _ghcup_prefetch_ghc
+            return
+            ;;
+
+        cabal) _ghcup_prefetch_cabal
+            return
+            ;;
+
+        hls) _ghcup_prefetch_hls
+            return
+            ;;
+
+        stack) _ghcup_prefetch_stack
+            return
+            ;;
+
+        metadata) _ghcup_prefetch_metadata
+            return
+            ;;
+
+    esac
+
+    local word_list=" ghc cabal hls stack metadata -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_prefetch_ghc()
+{
+    local word_list="  -s --source -h --help -d --directory"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_prefetch_cabal()
+{
+    local word_list="  -d --directory -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_prefetch_hls()
+{
+    local word_list="  -d --directory -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_prefetch_stack()
+{
+    local word_list="  -d --directory -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_prefetch_metadata()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_gc()
+{
+    local word_list="  -o --ghc-old -p --profiling-libs -s --share-dir -h --hls-no-ghc -c --cache -t --tmpdirs -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_run()
+{
+    local word_list="  -a --append -i --install -m --mingw-path --ghc --cabal --hls --stack -b --bindir -q --quick -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_debuginfo()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_toolrequirements()
+{
+    local word_list="  -r --raw-format -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_changelog()
+{
+    local word_list="  -o --open -t --tool -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_config()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ghcup_nuke()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ghcup ghcup
