@@ -1,0 +1,176 @@
+# Auto-generated with h2o
+
+_bun()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" run test x repl init create install add remove update link unlink pm build upgrade"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        run) _bun_run
+            return
+            ;;
+
+        test) _bun_test
+            return
+            ;;
+
+        x) _bun_x
+            return
+            ;;
+
+        repl) _bun_repl
+            return
+            ;;
+
+        init) _bun_init
+            return
+            ;;
+
+        create) _bun_create
+            return
+            ;;
+
+        install) _bun_install
+            return
+            ;;
+
+        add) _bun_add
+            return
+            ;;
+
+        remove) _bun_remove
+            return
+            ;;
+
+        update) _bun_update
+            return
+            ;;
+
+        link) _bun_link
+            return
+            ;;
+
+        unlink) _bun_unlink
+            return
+            ;;
+
+        pm) _bun_pm
+            return
+            ;;
+
+        build) _bun_build
+            return
+            ;;
+
+        upgrade) _bun_upgrade
+            return
+            ;;
+
+    esac
+
+    local word_list=" run test x repl init create install add remove update link unlink pm build upgrade "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_run()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_test()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_x()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_repl()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_init()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_create()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_install()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_add()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_remove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_link()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_unlink()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_pm()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_build()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_bun_upgrade()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _bun bun
