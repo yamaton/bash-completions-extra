@@ -78,7 +78,7 @@ _bun()
 
     esac
 
-    local word_list=" run test x repl init create install add remove update link unlink pm build upgrade "
+    local word_list=" run test x repl init create install add remove update link unlink pm build upgrade -h --help -b --bun --cwd -c --config --extension-order --jsx-factory --jsx-fragment --jsx-import-source --jsx-runtime -r --preload --main-fields --no-summary -v --version --revision --tsconfig-override -d --define -e --external -l --loader -u --origin -p --port --smol --minify --minify-syntax --minify-whitespace --minify-identifiers --no-macros --target --inspect --inspect-wait --inspect-brk --hot --watch --no-install -i --install --prefer-offline --prefer-latest --silent --dump-environment-variables --dump-limits"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -120,43 +120,43 @@ _bun_create()
 
 _bun_install()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help -d --dev -D --development --optional --exact"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _bun_add()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help -d --dev -D --development --optional --exact"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _bun_remove()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _bun_update()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _bun_link()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _bun_unlink()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _bun_pm()
 {
-    local word_list="  "
+    local word_list="  -c --config -y --yarn -p --production --no-save --save --dry-run --lockfile --frozen-lockfile -f --force --cache-dir --no-cache --silent --verbose --no-progress --no-summary --no-verify --ignore-scripts -g --global --cwd --backend --link-native-bins --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
