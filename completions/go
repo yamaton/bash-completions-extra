@@ -174,7 +174,7 @@ _go_bug()
 
 _go_build()
 {
-    local word_list="  -a -n -p -race -msan -asan -v -work -x -asmflags -buildmode -buildvcs -compiler -gccgoflags -gcflags -installsuffix -ldflags -linkshared -mod -modcacherw -modfile -overlay -pkgdir -tags -trimpath -toolexec"
+    local word_list="  -C -a -n -p -race -msan -asan -cover -covermode -coverpkg -v -work -x -asmflags -buildmode -buildvcs -compiler -gccgoflags -gcflags -installsuffix -ldflags -linkshared -mod -modcacherw -modfile -overlay -pgo -pkgdir -tags -trimpath -toolexec"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -233,7 +233,7 @@ _go_fmt()
 
 _go_generate()
 {
-    local word_list="  -run"
+    local word_list="  -run -skip"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -421,7 +421,7 @@ _go_run()
 
 _go_test()
 {
-    local word_list="  -args -c -exec -i -json -o"
+    local word_list="  -C -a -n -p -race -msan -asan -cover -covermode -coverpkg -v -work -x -asmflags -buildmode -buildvcs -compiler -gccgoflags -gcflags -installsuffix -ldflags -linkshared -mod -modcacherw -modfile -overlay -pgo -pkgdir -tags -trimpath -toolexec -args -c -exec -json -o"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -535,7 +535,7 @@ _go_private()
 
 _go_testflag()
 {
-    local word_list="  -bench -benchtime -count -cover -covermode -coverpkg -cpu -failfast -fuzz -fuzztime -fuzzminimizetime -json -list -parallel -run -short -shuffle -timeout -v -vet -benchmem -blockprofile -blockprofilerate -coverprofile -cpuprofile -memprofile -memprofilerate -mutexprofile -mutexprofilefraction -outputdir -trace"
+    local word_list="  -bench -benchtime -count -cover -covermode -coverpkg -cpu -failfast -fullpath -fuzz -fuzztime -fuzzminimizetime -json -list -parallel -run -short -shuffle -skip -timeout -v -vet -benchmem -blockprofile -blockprofilerate -coverprofile -cpuprofile -memprofile -memprofilerate -mutexprofile -mutexprofilefraction -outputdir -trace"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
