@@ -1,0 +1,129 @@
+# Auto-generated with h2o
+
+_datasette()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" serve inspect install package plugins publish uninstall"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        serve) _datasette_serve
+            return
+            ;;
+
+        inspect) _datasette_inspect
+            return
+            ;;
+
+        install) _datasette_install
+            return
+            ;;
+
+        package) _datasette_package
+            return
+            ;;
+
+        plugins) _datasette_plugins
+            return
+            ;;
+
+        publish) _datasette_publish
+            return
+            ;;
+
+        uninstall) _datasette_uninstall
+            return
+            ;;
+
+    esac
+
+    local word_list=" serve inspect install package plugins publish uninstall --version --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_serve()
+{
+    local word_list="  -i --immutable -h --host -p --port --uds --reload --cors --inspect-file -m --metadata --template-dir --plugins-dir --static --memory --config --setting --secret --root --get --version-note --help-settings --pdb -o --open --create --crossdb --nolock --ssl-keyfile --ssl-certfile --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_inspect()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_install()
+{
+    local word_list="  -U --upgrade --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_package()
+{
+    local word_list="  -t --tag -m --metadata --extra-options --branch --template-dir --plugins-dir --static --install --spatialite --version-note --secret -p --port --title --license --license_url --source --source_url --about --about_url --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_plugins()
+{
+    local word_list="  --all --plugins-dir --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_publish()
+{
+    local cmd i subcommands
+    local subcommands=" cloudrun heroku"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        cloudrun) _datasette_publish_cloudrun
+            return
+            ;;
+
+        heroku) _datasette_publish_heroku
+            return
+            ;;
+
+    esac
+
+    local word_list=" cloudrun heroku --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_publish_cloudrun()
+{
+    local word_list="  -m --metadata --extra-options --branch --template-dir --plugins-dir --static --install --plugin-secret --version-note --secret --title --license --license_url --source --source_url --about --about_url -n --name --service --spatialite --show-files --memory --cpu --timeout --apt-get-install --max-instances --min-instances --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_publish_heroku()
+{
+    local word_list="  -m --metadata --extra-options --branch --template-dir --plugins-dir --static --install --plugin-secret --version-note --secret --title --license --license_url --source --source_url --about --about_url -n --name --tar --generate-dir --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_datasette_uninstall()
+{
+    local word_list="  -y --yes --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _datasette datasette
