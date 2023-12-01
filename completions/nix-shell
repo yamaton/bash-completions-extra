@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_nixshell()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --command --run --exclude --pure -i --keep --help --version --verbose -v --quiet --log-format --no-build-output -Q --max-jobs -j --cores --max-silent-time --timeout --keep-going -k --keep-failed -K --fallback --readonly-mode --arg --argstr --attr -A --expr -E -I --option --repair"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _nixshell nix-shell
