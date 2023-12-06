@@ -1,0 +1,129 @@
+# Auto-generated with h2o
+
+_streamlit()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" activate cache config docs hello help run version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        activate) _streamlit_activate
+            return
+            ;;
+
+        cache) _streamlit_cache
+            return
+            ;;
+
+        config) _streamlit_config
+            return
+            ;;
+
+        docs) _streamlit_docs
+            return
+            ;;
+
+        hello) _streamlit_hello
+            return
+            ;;
+
+        help) _streamlit_help
+            return
+            ;;
+
+        run) _streamlit_run
+            return
+            ;;
+
+        version) _streamlit_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" activate cache config docs hello help run version --log_level --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_activate()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_cache()
+{
+    local cmd i subcommands
+    local subcommands=" clear"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        clear) _streamlit_cache_clear
+            return
+            ;;
+
+    esac
+
+    local word_list=" clear --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_cache_clear()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_config()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_docs()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_hello()
+{
+    local word_list="  --global.disableWatchdogWarning --global.disableWidgetStateDuplicationWarning --global.showWarningOnDirectExecution --global.developmentMode --global.logLevel --global.unitTest --global.suppressDeprecationWarnings --global.minCachedMessageSize --global.maxCachedMessageAge --global.dataFrameSerialization --logger.level --logger.messageFormat --logger.enableRich --client.caching --client.displayEnabled --client.showErrorDetails --client.toolbarMode --runner.magicEnabled --runner.installTracer --runner.fixMatplotlib --runner.postScriptGC --runner.fastReruns --runner.enforceSerializableSessionState --runner.enumCoercion --server.folderWatchBlacklist --server.fileWatcherType --server.headless --server.runOnSave --server.allowRunOnSave --server.address --server.port --server.scriptHealthCheckEnabled --server.baseUrlPath --server.enableCORS --server.enableXsrfProtection --server.maxUploadSize --server.maxMessageSize --server.enableWebsocketCompression --server.enableStaticServing --browser.serverAddress --browser.gatherUsageStats --browser.serverPort --server.sslCertFile --server.sslKeyFile --ui.hideTopBar --ui.hideSidebarNav --magic.displayRootDocString --magic.displayLastExprIfNoSemicolon --deprecation.showfileUploaderEncoding --deprecation.showImageFormat --deprecation.showPyplotGlobalUse --theme.base --theme.primaryColor --theme.backgroundColor --theme.secondaryBackgroundColor --theme.textColor --theme.font --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_help()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_run()
+{
+    local word_list="  --global.disableWatchdogWarning --global.disableWidgetStateDuplicationWarning --global.showWarningOnDirectExecution --global.developmentMode --global.logLevel --global.unitTest --global.suppressDeprecationWarnings --global.minCachedMessageSize --global.maxCachedMessageAge --global.dataFrameSerialization --logger.level --logger.messageFormat --logger.enableRich --client.caching --client.displayEnabled --client.showErrorDetails --client.toolbarMode --runner.magicEnabled --runner.installTracer --runner.fixMatplotlib --runner.postScriptGC --runner.fastReruns --runner.enforceSerializableSessionState --runner.enumCoercion --server.folderWatchBlacklist --server.fileWatcherType --server.headless --server.runOnSave --server.allowRunOnSave --server.address --server.port --server.scriptHealthCheckEnabled --server.baseUrlPath --server.enableCORS --server.enableXsrfProtection --server.maxUploadSize --server.maxMessageSize --server.enableWebsocketCompression --server.enableStaticServing --browser.serverAddress --browser.gatherUsageStats --browser.serverPort --server.sslCertFile --server.sslKeyFile --ui.hideTopBar --ui.hideSidebarNav --magic.displayRootDocString --magic.displayLastExprIfNoSemicolon --deprecation.showfileUploaderEncoding --deprecation.showImageFormat --deprecation.showPyplotGlobalUse --theme.base --theme.primaryColor --theme.backgroundColor --theme.secondaryBackgroundColor --theme.textColor --theme.font --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_streamlit_version()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _streamlit streamlit
