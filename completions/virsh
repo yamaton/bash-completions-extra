@@ -1,0 +1,2756 @@
+# Auto-generated with h2o
+
+_virsh()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" attach-device attach-disk attach-interface autostart blkdeviotune blkiotune blockcommit blockcopy blockjob blockpull blockresize change-media console cpu-stats create define desc destroy detach-device detach-device-alias detach-disk detach-interface domdisplay domfsfreeze domfsthaw domfsinfo domfstrim domhostname domid domif-setlink domiftune domjobabort domjobinfo domlaunchsecinfo domsetlaunchsecstate domname domrename dompmsuspend dompmwakeup domuuid domxml-from-native domxml-to-native dump dumpxml edit event get-user-sshkeys inject-nmi iothreadinfo iothreadpin iothreadadd iothreadset iothreaddel send-key send-process-signal lxc-enter-namespace managedsave managedsave-remove managedsave-edit managedsave-dumpxml managedsave-define memtune perf metadata migrate migrate-setmaxdowntime migrate-getmaxdowntime migrate-compcache migrate-setspeed migrate-getspeed migrate-postcopy numatune qemu-attach qemu-monitor-command qemu-monitor-event qemu-agent-command guest-agent-timeout reboot reset restore resume save save-image-define save-image-dumpxml save-image-edit schedinfo screenshot set-lifecycle-action set-user-sshkeys set-user-password setmaxmem setmem setvcpus shutdown start suspend ttyconsole undefine update-device update-memory-device vcpucount vcpuinfo vcpupin emulatorpin vncdisplay guestvcpus setvcpu domblkthreshold guestinfo domdirtyrate-calc domblkerror domblkinfo domblklist domblkstat domcontrol domif-getlink domifaddr domiflist domifstat dominfo dommemstat domstate domstats domtime list allocpages capabilities cpu-baseline cpu-compare cpu-models domcapabilities freecell freepages hostname hypervisor-cpu-baseline hypervisor-cpu-compare maxvcpus node-memory-tune nodecpumap nodecpustats nodeinfo nodememstats nodesevinfo nodesuspend sysinfo uri version checkpoint-create checkpoint-create-as checkpoint-delete checkpoint-dumpxml checkpoint-edit checkpoint-info checkpoint-list checkpoint-parent iface-begin iface-bridge iface-commit iface-define iface-destroy iface-dumpxml iface-edit iface-list iface-mac iface-name iface-rollback iface-start iface-unbridge iface-undefine nwfilter-define nwfilter-dumpxml nwfilter-edit nwfilter-list nwfilter-undefine nwfilter-binding-create nwfilter-binding-delete nwfilter-binding-dumpxml nwfilter-binding-list net-autostart net-create net-define net-destroy net-dhcp-leases net-dumpxml net-edit net-event net-info net-list net-name net-start net-undefine net-update net-uuid net-port-list net-port-create net-port-dumpxml net-port-delete nodedev-create nodedev-destroy nodedev-detach nodedev-dumpxml nodedev-list nodedev-reattach nodedev-reset nodedev-event nodedev-define nodedev-undefine nodedev-start nodedev-autostart nodedev-info secret-define secret-dumpxml secret-event secret-get-value secret-list secret-set-value secret-undefine snapshot-create snapshot-create-as snapshot-current snapshot-delete snapshot-dumpxml snapshot-edit snapshot-info snapshot-list snapshot-parent snapshot-revert backup-begin backup-dumpxml find-storage-pool-sources-as find-storage-pool-sources pool-autostart pool-build pool-create-as pool-create pool-define-as pool-define pool-delete pool-destroy pool-dumpxml pool-edit pool-info pool-list pool-name pool-refresh pool-start pool-undefine pool-uuid pool-event pool-capabilities vol-clone vol-create-as vol-create vol-create-from vol-delete vol-download vol-dumpxml vol-info vol-key vol-list vol-name vol-path vol-pool vol-resize vol-upload vol-wipe cd echo exit help pwd quit connect"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        attach-device) _virsh_attachdevice
+            return
+            ;;
+
+        attach-disk) _virsh_attachdisk
+            return
+            ;;
+
+        attach-interface) _virsh_attachinterface
+            return
+            ;;
+
+        autostart) _virsh_autostart
+            return
+            ;;
+
+        blkdeviotune) _virsh_blkdeviotune
+            return
+            ;;
+
+        blkiotune) _virsh_blkiotune
+            return
+            ;;
+
+        blockcommit) _virsh_blockcommit
+            return
+            ;;
+
+        blockcopy) _virsh_blockcopy
+            return
+            ;;
+
+        blockjob) _virsh_blockjob
+            return
+            ;;
+
+        blockpull) _virsh_blockpull
+            return
+            ;;
+
+        blockresize) _virsh_blockresize
+            return
+            ;;
+
+        change-media) _virsh_changemedia
+            return
+            ;;
+
+        console) _virsh_console
+            return
+            ;;
+
+        cpu-stats) _virsh_cpustats
+            return
+            ;;
+
+        create) _virsh_create
+            return
+            ;;
+
+        define) _virsh_define
+            return
+            ;;
+
+        desc) _virsh_desc
+            return
+            ;;
+
+        destroy) _virsh_destroy
+            return
+            ;;
+
+        detach-device) _virsh_detachdevice
+            return
+            ;;
+
+        detach-device-alias) _virsh_detachdevicealias
+            return
+            ;;
+
+        detach-disk) _virsh_detachdisk
+            return
+            ;;
+
+        detach-interface) _virsh_detachinterface
+            return
+            ;;
+
+        domdisplay) _virsh_domdisplay
+            return
+            ;;
+
+        domfsfreeze) _virsh_domfsfreeze
+            return
+            ;;
+
+        domfsthaw) _virsh_domfsthaw
+            return
+            ;;
+
+        domfsinfo) _virsh_domfsinfo
+            return
+            ;;
+
+        domfstrim) _virsh_domfstrim
+            return
+            ;;
+
+        domhostname) _virsh_domhostname
+            return
+            ;;
+
+        domid) _virsh_domid
+            return
+            ;;
+
+        domif-setlink) _virsh_domifsetlink
+            return
+            ;;
+
+        domiftune) _virsh_domiftune
+            return
+            ;;
+
+        domjobabort) _virsh_domjobabort
+            return
+            ;;
+
+        domjobinfo) _virsh_domjobinfo
+            return
+            ;;
+
+        domlaunchsecinfo) _virsh_domlaunchsecinfo
+            return
+            ;;
+
+        domsetlaunchsecstate) _virsh_domsetlaunchsecstate
+            return
+            ;;
+
+        domname) _virsh_domname
+            return
+            ;;
+
+        domrename) _virsh_domrename
+            return
+            ;;
+
+        dompmsuspend) _virsh_dompmsuspend
+            return
+            ;;
+
+        dompmwakeup) _virsh_dompmwakeup
+            return
+            ;;
+
+        domuuid) _virsh_domuuid
+            return
+            ;;
+
+        domxml-from-native) _virsh_domxmlfromnative
+            return
+            ;;
+
+        domxml-to-native) _virsh_domxmltonative
+            return
+            ;;
+
+        dump) _virsh_dump
+            return
+            ;;
+
+        dumpxml) _virsh_dumpxml
+            return
+            ;;
+
+        edit) _virsh_edit
+            return
+            ;;
+
+        event) _virsh_event
+            return
+            ;;
+
+        get-user-sshkeys) _virsh_getusersshkeys
+            return
+            ;;
+
+        inject-nmi) _virsh_injectnmi
+            return
+            ;;
+
+        iothreadinfo) _virsh_iothreadinfo
+            return
+            ;;
+
+        iothreadpin) _virsh_iothreadpin
+            return
+            ;;
+
+        iothreadadd) _virsh_iothreadadd
+            return
+            ;;
+
+        iothreadset) _virsh_iothreadset
+            return
+            ;;
+
+        iothreaddel) _virsh_iothreaddel
+            return
+            ;;
+
+        send-key) _virsh_sendkey
+            return
+            ;;
+
+        send-process-signal) _virsh_sendprocesssignal
+            return
+            ;;
+
+        lxc-enter-namespace) _virsh_lxcenternamespace
+            return
+            ;;
+
+        managedsave) _virsh_managedsave
+            return
+            ;;
+
+        managedsave-remove) _virsh_managedsaveremove
+            return
+            ;;
+
+        managedsave-edit) _virsh_managedsaveedit
+            return
+            ;;
+
+        managedsave-dumpxml) _virsh_managedsavedumpxml
+            return
+            ;;
+
+        managedsave-define) _virsh_managedsavedefine
+            return
+            ;;
+
+        memtune) _virsh_memtune
+            return
+            ;;
+
+        perf) _virsh_perf
+            return
+            ;;
+
+        metadata) _virsh_metadata
+            return
+            ;;
+
+        migrate) _virsh_migrate
+            return
+            ;;
+
+        migrate-setmaxdowntime) _virsh_migratesetmaxdowntime
+            return
+            ;;
+
+        migrate-getmaxdowntime) _virsh_migrategetmaxdowntime
+            return
+            ;;
+
+        migrate-compcache) _virsh_migratecompcache
+            return
+            ;;
+
+        migrate-setspeed) _virsh_migratesetspeed
+            return
+            ;;
+
+        migrate-getspeed) _virsh_migrategetspeed
+            return
+            ;;
+
+        migrate-postcopy) _virsh_migratepostcopy
+            return
+            ;;
+
+        numatune) _virsh_numatune
+            return
+            ;;
+
+        qemu-attach) _virsh_qemuattach
+            return
+            ;;
+
+        qemu-monitor-command) _virsh_qemumonitorcommand
+            return
+            ;;
+
+        qemu-monitor-event) _virsh_qemumonitorevent
+            return
+            ;;
+
+        qemu-agent-command) _virsh_qemuagentcommand
+            return
+            ;;
+
+        guest-agent-timeout) _virsh_guestagenttimeout
+            return
+            ;;
+
+        reboot) _virsh_reboot
+            return
+            ;;
+
+        reset) _virsh_reset
+            return
+            ;;
+
+        restore) _virsh_restore
+            return
+            ;;
+
+        resume) _virsh_resume
+            return
+            ;;
+
+        save) _virsh_save
+            return
+            ;;
+
+        save-image-define) _virsh_saveimagedefine
+            return
+            ;;
+
+        save-image-dumpxml) _virsh_saveimagedumpxml
+            return
+            ;;
+
+        save-image-edit) _virsh_saveimageedit
+            return
+            ;;
+
+        schedinfo) _virsh_schedinfo
+            return
+            ;;
+
+        screenshot) _virsh_screenshot
+            return
+            ;;
+
+        set-lifecycle-action) _virsh_setlifecycleaction
+            return
+            ;;
+
+        set-user-sshkeys) _virsh_setusersshkeys
+            return
+            ;;
+
+        set-user-password) _virsh_setuserpassword
+            return
+            ;;
+
+        setmaxmem) _virsh_setmaxmem
+            return
+            ;;
+
+        setmem) _virsh_setmem
+            return
+            ;;
+
+        setvcpus) _virsh_setvcpus
+            return
+            ;;
+
+        shutdown) _virsh_shutdown
+            return
+            ;;
+
+        start) _virsh_start
+            return
+            ;;
+
+        suspend) _virsh_suspend
+            return
+            ;;
+
+        ttyconsole) _virsh_ttyconsole
+            return
+            ;;
+
+        undefine) _virsh_undefine
+            return
+            ;;
+
+        update-device) _virsh_updatedevice
+            return
+            ;;
+
+        update-memory-device) _virsh_updatememorydevice
+            return
+            ;;
+
+        vcpucount) _virsh_vcpucount
+            return
+            ;;
+
+        vcpuinfo) _virsh_vcpuinfo
+            return
+            ;;
+
+        vcpupin) _virsh_vcpupin
+            return
+            ;;
+
+        emulatorpin) _virsh_emulatorpin
+            return
+            ;;
+
+        vncdisplay) _virsh_vncdisplay
+            return
+            ;;
+
+        guestvcpus) _virsh_guestvcpus
+            return
+            ;;
+
+        setvcpu) _virsh_setvcpu
+            return
+            ;;
+
+        domblkthreshold) _virsh_domblkthreshold
+            return
+            ;;
+
+        guestinfo) _virsh_guestinfo
+            return
+            ;;
+
+        domdirtyrate-calc) _virsh_domdirtyratecalc
+            return
+            ;;
+
+        domblkerror) _virsh_domblkerror
+            return
+            ;;
+
+        domblkinfo) _virsh_domblkinfo
+            return
+            ;;
+
+        domblklist) _virsh_domblklist
+            return
+            ;;
+
+        domblkstat) _virsh_domblkstat
+            return
+            ;;
+
+        domcontrol) _virsh_domcontrol
+            return
+            ;;
+
+        domif-getlink) _virsh_domifgetlink
+            return
+            ;;
+
+        domifaddr) _virsh_domifaddr
+            return
+            ;;
+
+        domiflist) _virsh_domiflist
+            return
+            ;;
+
+        domifstat) _virsh_domifstat
+            return
+            ;;
+
+        dominfo) _virsh_dominfo
+            return
+            ;;
+
+        dommemstat) _virsh_dommemstat
+            return
+            ;;
+
+        domstate) _virsh_domstate
+            return
+            ;;
+
+        domstats) _virsh_domstats
+            return
+            ;;
+
+        domtime) _virsh_domtime
+            return
+            ;;
+
+        list) _virsh_list
+            return
+            ;;
+
+        allocpages) _virsh_allocpages
+            return
+            ;;
+
+        capabilities) _virsh_capabilities
+            return
+            ;;
+
+        cpu-baseline) _virsh_cpubaseline
+            return
+            ;;
+
+        cpu-compare) _virsh_cpucompare
+            return
+            ;;
+
+        cpu-models) _virsh_cpumodels
+            return
+            ;;
+
+        domcapabilities) _virsh_domcapabilities
+            return
+            ;;
+
+        freecell) _virsh_freecell
+            return
+            ;;
+
+        freepages) _virsh_freepages
+            return
+            ;;
+
+        hostname) _virsh_hostname
+            return
+            ;;
+
+        hypervisor-cpu-baseline) _virsh_hypervisorcpubaseline
+            return
+            ;;
+
+        hypervisor-cpu-compare) _virsh_hypervisorcpucompare
+            return
+            ;;
+
+        maxvcpus) _virsh_maxvcpus
+            return
+            ;;
+
+        node-memory-tune) _virsh_nodememorytune
+            return
+            ;;
+
+        nodecpumap) _virsh_nodecpumap
+            return
+            ;;
+
+        nodecpustats) _virsh_nodecpustats
+            return
+            ;;
+
+        nodeinfo) _virsh_nodeinfo
+            return
+            ;;
+
+        nodememstats) _virsh_nodememstats
+            return
+            ;;
+
+        nodesevinfo) _virsh_nodesevinfo
+            return
+            ;;
+
+        nodesuspend) _virsh_nodesuspend
+            return
+            ;;
+
+        sysinfo) _virsh_sysinfo
+            return
+            ;;
+
+        uri) _virsh_uri
+            return
+            ;;
+
+        version) _virsh_version
+            return
+            ;;
+
+        checkpoint-create) _virsh_checkpointcreate
+            return
+            ;;
+
+        checkpoint-create-as) _virsh_checkpointcreateas
+            return
+            ;;
+
+        checkpoint-delete) _virsh_checkpointdelete
+            return
+            ;;
+
+        checkpoint-dumpxml) _virsh_checkpointdumpxml
+            return
+            ;;
+
+        checkpoint-edit) _virsh_checkpointedit
+            return
+            ;;
+
+        checkpoint-info) _virsh_checkpointinfo
+            return
+            ;;
+
+        checkpoint-list) _virsh_checkpointlist
+            return
+            ;;
+
+        checkpoint-parent) _virsh_checkpointparent
+            return
+            ;;
+
+        iface-begin) _virsh_ifacebegin
+            return
+            ;;
+
+        iface-bridge) _virsh_ifacebridge
+            return
+            ;;
+
+        iface-commit) _virsh_ifacecommit
+            return
+            ;;
+
+        iface-define) _virsh_ifacedefine
+            return
+            ;;
+
+        iface-destroy) _virsh_ifacedestroy
+            return
+            ;;
+
+        iface-dumpxml) _virsh_ifacedumpxml
+            return
+            ;;
+
+        iface-edit) _virsh_ifaceedit
+            return
+            ;;
+
+        iface-list) _virsh_ifacelist
+            return
+            ;;
+
+        iface-mac) _virsh_ifacemac
+            return
+            ;;
+
+        iface-name) _virsh_ifacename
+            return
+            ;;
+
+        iface-rollback) _virsh_ifacerollback
+            return
+            ;;
+
+        iface-start) _virsh_ifacestart
+            return
+            ;;
+
+        iface-unbridge) _virsh_ifaceunbridge
+            return
+            ;;
+
+        iface-undefine) _virsh_ifaceundefine
+            return
+            ;;
+
+        nwfilter-define) _virsh_nwfilterdefine
+            return
+            ;;
+
+        nwfilter-dumpxml) _virsh_nwfilterdumpxml
+            return
+            ;;
+
+        nwfilter-edit) _virsh_nwfilteredit
+            return
+            ;;
+
+        nwfilter-list) _virsh_nwfilterlist
+            return
+            ;;
+
+        nwfilter-undefine) _virsh_nwfilterundefine
+            return
+            ;;
+
+        nwfilter-binding-create) _virsh_nwfilterbindingcreate
+            return
+            ;;
+
+        nwfilter-binding-delete) _virsh_nwfilterbindingdelete
+            return
+            ;;
+
+        nwfilter-binding-dumpxml) _virsh_nwfilterbindingdumpxml
+            return
+            ;;
+
+        nwfilter-binding-list) _virsh_nwfilterbindinglist
+            return
+            ;;
+
+        net-autostart) _virsh_netautostart
+            return
+            ;;
+
+        net-create) _virsh_netcreate
+            return
+            ;;
+
+        net-define) _virsh_netdefine
+            return
+            ;;
+
+        net-destroy) _virsh_netdestroy
+            return
+            ;;
+
+        net-dhcp-leases) _virsh_netdhcpleases
+            return
+            ;;
+
+        net-dumpxml) _virsh_netdumpxml
+            return
+            ;;
+
+        net-edit) _virsh_netedit
+            return
+            ;;
+
+        net-event) _virsh_netevent
+            return
+            ;;
+
+        net-info) _virsh_netinfo
+            return
+            ;;
+
+        net-list) _virsh_netlist
+            return
+            ;;
+
+        net-name) _virsh_netname
+            return
+            ;;
+
+        net-start) _virsh_netstart
+            return
+            ;;
+
+        net-undefine) _virsh_netundefine
+            return
+            ;;
+
+        net-update) _virsh_netupdate
+            return
+            ;;
+
+        net-uuid) _virsh_netuuid
+            return
+            ;;
+
+        net-port-list) _virsh_netportlist
+            return
+            ;;
+
+        net-port-create) _virsh_netportcreate
+            return
+            ;;
+
+        net-port-dumpxml) _virsh_netportdumpxml
+            return
+            ;;
+
+        net-port-delete) _virsh_netportdelete
+            return
+            ;;
+
+        nodedev-create) _virsh_nodedevcreate
+            return
+            ;;
+
+        nodedev-destroy) _virsh_nodedevdestroy
+            return
+            ;;
+
+        nodedev-detach) _virsh_nodedevdetach
+            return
+            ;;
+
+        nodedev-dumpxml) _virsh_nodedevdumpxml
+            return
+            ;;
+
+        nodedev-list) _virsh_nodedevlist
+            return
+            ;;
+
+        nodedev-reattach) _virsh_nodedevreattach
+            return
+            ;;
+
+        nodedev-reset) _virsh_nodedevreset
+            return
+            ;;
+
+        nodedev-event) _virsh_nodedevevent
+            return
+            ;;
+
+        nodedev-define) _virsh_nodedevdefine
+            return
+            ;;
+
+        nodedev-undefine) _virsh_nodedevundefine
+            return
+            ;;
+
+        nodedev-start) _virsh_nodedevstart
+            return
+            ;;
+
+        nodedev-autostart) _virsh_nodedevautostart
+            return
+            ;;
+
+        nodedev-info) _virsh_nodedevinfo
+            return
+            ;;
+
+        secret-define) _virsh_secretdefine
+            return
+            ;;
+
+        secret-dumpxml) _virsh_secretdumpxml
+            return
+            ;;
+
+        secret-event) _virsh_secretevent
+            return
+            ;;
+
+        secret-get-value) _virsh_secretgetvalue
+            return
+            ;;
+
+        secret-list) _virsh_secretlist
+            return
+            ;;
+
+        secret-set-value) _virsh_secretsetvalue
+            return
+            ;;
+
+        secret-undefine) _virsh_secretundefine
+            return
+            ;;
+
+        snapshot-create) _virsh_snapshotcreate
+            return
+            ;;
+
+        snapshot-create-as) _virsh_snapshotcreateas
+            return
+            ;;
+
+        snapshot-current) _virsh_snapshotcurrent
+            return
+            ;;
+
+        snapshot-delete) _virsh_snapshotdelete
+            return
+            ;;
+
+        snapshot-dumpxml) _virsh_snapshotdumpxml
+            return
+            ;;
+
+        snapshot-edit) _virsh_snapshotedit
+            return
+            ;;
+
+        snapshot-info) _virsh_snapshotinfo
+            return
+            ;;
+
+        snapshot-list) _virsh_snapshotlist
+            return
+            ;;
+
+        snapshot-parent) _virsh_snapshotparent
+            return
+            ;;
+
+        snapshot-revert) _virsh_snapshotrevert
+            return
+            ;;
+
+        backup-begin) _virsh_backupbegin
+            return
+            ;;
+
+        backup-dumpxml) _virsh_backupdumpxml
+            return
+            ;;
+
+        find-storage-pool-sources-as) _virsh_findstoragepoolsourcesas
+            return
+            ;;
+
+        find-storage-pool-sources) _virsh_findstoragepoolsources
+            return
+            ;;
+
+        pool-autostart) _virsh_poolautostart
+            return
+            ;;
+
+        pool-build) _virsh_poolbuild
+            return
+            ;;
+
+        pool-create-as) _virsh_poolcreateas
+            return
+            ;;
+
+        pool-create) _virsh_poolcreate
+            return
+            ;;
+
+        pool-define-as) _virsh_pooldefineas
+            return
+            ;;
+
+        pool-define) _virsh_pooldefine
+            return
+            ;;
+
+        pool-delete) _virsh_pooldelete
+            return
+            ;;
+
+        pool-destroy) _virsh_pooldestroy
+            return
+            ;;
+
+        pool-dumpxml) _virsh_pooldumpxml
+            return
+            ;;
+
+        pool-edit) _virsh_pooledit
+            return
+            ;;
+
+        pool-info) _virsh_poolinfo
+            return
+            ;;
+
+        pool-list) _virsh_poollist
+            return
+            ;;
+
+        pool-name) _virsh_poolname
+            return
+            ;;
+
+        pool-refresh) _virsh_poolrefresh
+            return
+            ;;
+
+        pool-start) _virsh_poolstart
+            return
+            ;;
+
+        pool-undefine) _virsh_poolundefine
+            return
+            ;;
+
+        pool-uuid) _virsh_pooluuid
+            return
+            ;;
+
+        pool-event) _virsh_poolevent
+            return
+            ;;
+
+        pool-capabilities) _virsh_poolcapabilities
+            return
+            ;;
+
+        vol-clone) _virsh_volclone
+            return
+            ;;
+
+        vol-create-as) _virsh_volcreateas
+            return
+            ;;
+
+        vol-create) _virsh_volcreate
+            return
+            ;;
+
+        vol-create-from) _virsh_volcreatefrom
+            return
+            ;;
+
+        vol-delete) _virsh_voldelete
+            return
+            ;;
+
+        vol-download) _virsh_voldownload
+            return
+            ;;
+
+        vol-dumpxml) _virsh_voldumpxml
+            return
+            ;;
+
+        vol-info) _virsh_volinfo
+            return
+            ;;
+
+        vol-key) _virsh_volkey
+            return
+            ;;
+
+        vol-list) _virsh_vollist
+            return
+            ;;
+
+        vol-name) _virsh_volname
+            return
+            ;;
+
+        vol-path) _virsh_volpath
+            return
+            ;;
+
+        vol-pool) _virsh_volpool
+            return
+            ;;
+
+        vol-resize) _virsh_volresize
+            return
+            ;;
+
+        vol-upload) _virsh_volupload
+            return
+            ;;
+
+        vol-wipe) _virsh_volwipe
+            return
+            ;;
+
+        cd) _virsh_cd
+            return
+            ;;
+
+        echo) _virsh_echo
+            return
+            ;;
+
+        exit) _virsh_exit
+            return
+            ;;
+
+        help) _virsh_help
+            return
+            ;;
+
+        pwd) _virsh_pwd
+            return
+            ;;
+
+        quit) _virsh_quit
+            return
+            ;;
+
+        connect) _virsh_connect
+            return
+            ;;
+
+    esac
+
+    local word_list=" attach-device attach-disk attach-interface autostart blkdeviotune blkiotune blockcommit blockcopy blockjob blockpull blockresize change-media console cpu-stats create define desc destroy detach-device detach-device-alias detach-disk detach-interface domdisplay domfsfreeze domfsthaw domfsinfo domfstrim domhostname domid domif-setlink domiftune domjobabort domjobinfo domlaunchsecinfo domsetlaunchsecstate domname domrename dompmsuspend dompmwakeup domuuid domxml-from-native domxml-to-native dump dumpxml edit event get-user-sshkeys inject-nmi iothreadinfo iothreadpin iothreadadd iothreadset iothreaddel send-key send-process-signal lxc-enter-namespace managedsave managedsave-remove managedsave-edit managedsave-dumpxml managedsave-define memtune perf metadata migrate migrate-setmaxdowntime migrate-getmaxdowntime migrate-compcache migrate-setspeed migrate-getspeed migrate-postcopy numatune qemu-attach qemu-monitor-command qemu-monitor-event qemu-agent-command guest-agent-timeout reboot reset restore resume save save-image-define save-image-dumpxml save-image-edit schedinfo screenshot set-lifecycle-action set-user-sshkeys set-user-password setmaxmem setmem setvcpus shutdown start suspend ttyconsole undefine update-device update-memory-device vcpucount vcpuinfo vcpupin emulatorpin vncdisplay guestvcpus setvcpu domblkthreshold guestinfo domdirtyrate-calc domblkerror domblkinfo domblklist domblkstat domcontrol domif-getlink domifaddr domiflist domifstat dominfo dommemstat domstate domstats domtime list allocpages capabilities cpu-baseline cpu-compare cpu-models domcapabilities freecell freepages hostname hypervisor-cpu-baseline hypervisor-cpu-compare maxvcpus node-memory-tune nodecpumap nodecpustats nodeinfo nodememstats nodesevinfo nodesuspend sysinfo uri version checkpoint-create checkpoint-create-as checkpoint-delete checkpoint-dumpxml checkpoint-edit checkpoint-info checkpoint-list checkpoint-parent iface-begin iface-bridge iface-commit iface-define iface-destroy iface-dumpxml iface-edit iface-list iface-mac iface-name iface-rollback iface-start iface-unbridge iface-undefine nwfilter-define nwfilter-dumpxml nwfilter-edit nwfilter-list nwfilter-undefine nwfilter-binding-create nwfilter-binding-delete nwfilter-binding-dumpxml nwfilter-binding-list net-autostart net-create net-define net-destroy net-dhcp-leases net-dumpxml net-edit net-event net-info net-list net-name net-start net-undefine net-update net-uuid net-port-list net-port-create net-port-dumpxml net-port-delete nodedev-create nodedev-destroy nodedev-detach nodedev-dumpxml nodedev-list nodedev-reattach nodedev-reset nodedev-event nodedev-define nodedev-undefine nodedev-start nodedev-autostart nodedev-info secret-define secret-dumpxml secret-event secret-get-value secret-list secret-set-value secret-undefine snapshot-create snapshot-create-as snapshot-current snapshot-delete snapshot-dumpxml snapshot-edit snapshot-info snapshot-list snapshot-parent snapshot-revert backup-begin backup-dumpxml find-storage-pool-sources-as find-storage-pool-sources pool-autostart pool-build pool-create-as pool-create pool-define-as pool-define pool-delete pool-destroy pool-dumpxml pool-edit pool-info pool-list pool-name pool-refresh pool-start pool-undefine pool-uuid pool-event pool-capabilities vol-clone vol-create-as vol-create vol-create-from vol-delete vol-download vol-dumpxml vol-info vol-key vol-list vol-name vol-path vol-pool vol-resize vol-upload vol-wipe cd echo exit help pwd quit connect -c --connect -d --debug -e --escape -h --help -k --keepalive-interval -K --keepalive-count -l --log -q --quiet -r --readonly -t --timing -v -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_attachdevice()
+{
+    local word_list="  --persistent --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_attachdisk()
+{
+    local word_list="  --targetbus --driver --subdriver --iothread --cache --io --type --mode --sourcetype --serial --wwn --alias --rawio --address --multifunction --print-xml --source-protocol --source-host-name --source-host-transport --source-host-socket --persistent --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_attachinterface()
+{
+    local word_list="  --target --mac --script --model --alias --inbound --outbound --persistent --config --live --current --print-xml --managed --source-mode"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_autostart()
+{
+    local word_list="  --disable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blkdeviotune()
+{
+    local word_list="  --total-bytes-sec --read-bytes-sec --write-bytes-sec --total-iops-sec --read-iops-sec --write-iops-sec --total-bytes-sec-max --read-bytes-sec-max --write-bytes-sec-max --total-iops-sec-max --read-iops-sec-max --write-iops-sec-max --size-iops-sec --group-name --total-bytes-sec-max-length --read-bytes-sec-max-length --write-bytes-sec-max-length --total-iops-sec-max-length --read-iops-sec-max-length --write-iops-sec-max-length --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blkiotune()
+{
+    local word_list="  --weight --device-weights --device-read-iops-sec --device-write-iops-sec --device-read-bytes-sec --device-write-bytes-sec --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blockcommit()
+{
+    local word_list="  --bandwidth --base --shallow --top --active --delete --wait --verbose --timeout --pivot --keep-overlay --async --keep-relative --bytes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blockcopy()
+{
+    local word_list="  --dest --bandwidth --shallow --reuse-external --blockdev --wait --verbose --timeout --pivot --finish --async --xml --format --granularity --buf-size --bytes --transient-job --synchronous-writes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blockjob()
+{
+    local word_list="  --abort --async --pivot --info --bytes --raw --bandwidth"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blockpull()
+{
+    local word_list="  --bandwidth --base --wait --verbose --timeout --async --keep-relative --bytes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_blockresize()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_changemedia()
+{
+    local word_list="  --source --eject --insert --update --current --live --config --force --print-xml --block"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_console()
+{
+    local word_list="  --devname --force --safe"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_cpustats()
+{
+    local word_list="  --total --start --count"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_create()
+{
+    local word_list="  --console --paused --autodestroy --pass-fds --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_define()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_desc()
+{
+    local word_list="  --live --config --current --title --edit"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_destroy()
+{
+    local word_list="  --graceful"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_detachdevice()
+{
+    local word_list="  --persistent --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_detachdevicealias()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_detachdisk()
+{
+    local word_list="  --persistent --config --live --current --print-xml"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_detachinterface()
+{
+    local word_list="  --mac --persistent --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domdisplay()
+{
+    local word_list="  --include-password --type --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domfsfreeze()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domfsthaw()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domfsinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domfstrim()
+{
+    local word_list="  --minimum --mountpoint"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domhostname()
+{
+    local word_list="  --source"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domid()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domifsetlink()
+{
+    local word_list="  --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domiftune()
+{
+    local word_list="  --inbound --outbound --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domjobabort()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domjobinfo()
+{
+    local word_list="  --completed --keep-completed --anystats --rawstats"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domlaunchsecinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domsetlaunchsecstate()
+{
+    local word_list="  --secrethdr --secret --set-address"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domrename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_dompmsuspend()
+{
+    local word_list="  --duration"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_dompmwakeup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domuuid()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domxmlfromnative()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domxmltonative()
+{
+    local word_list="  --domain --xml"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_dump()
+{
+    local word_list="  --live --crash --bypass-cache --reset --verbose --memory-only --format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_dumpxml()
+{
+    local word_list="  --inactive --security-info --update-cpu --migratable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_edit()
+{
+    local word_list="  --skip-validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_event()
+{
+    local word_list="  --domain --event --all --loop --timeout --list --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_getusersshkeys()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_injectnmi()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_iothreadinfo()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_iothreadpin()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_iothreadadd()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_iothreadset()
+{
+    local word_list="  --poll-max-ns --poll-grow --poll-shrink --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_iothreaddel()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_sendkey()
+{
+    local word_list="  --codeset"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_sendprocesssignal()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_lxcenternamespace()
+{
+    local word_list="  --noseclabel"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_managedsave()
+{
+    local word_list="  --bypass-cache --running --paused --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_managedsaveremove()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_managedsaveedit()
+{
+    local word_list="  --running --paused"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_managedsavedumpxml()
+{
+    local word_list="  --security-info"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_managedsavedefine()
+{
+    local word_list="  --running --paused"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_memtune()
+{
+    local word_list="  --hard-limit --soft-limit --swap-hard-limit --min-guarantee --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_perf()
+{
+    local word_list="  --enable --disable --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_metadata()
+{
+    local word_list="  --live --config --current --edit --key --set --remove"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migrate()
+{
+    local word_list="  --live --offline --p2p --direct --tunnelled --persistent --undefinesource --suspend --copy-storage-all --copy-storage-inc --copy-storage-synchronous-writes --change-protection --unsafe --verbose --compressed --auto-converge --rdma-pin-all --abort-on-error --postcopy --postcopy-after-precopy --migrateuri --graphicsuri --listen-address --dname --timeout --timeout-suspend --timeout-postcopy --xml --migrate-disks --disks-port --disks-uri --comp-methods --comp-mt-level --comp-mt-threads --comp-mt-dthreads --comp-xbzrle-cache --auto-converge-initial --auto-converge-increment --persistent-xml --tls --postcopy-bandwidth --parallel --parallel-connections --bandwidth --tls-destination"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migratesetmaxdowntime()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migrategetmaxdowntime()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migratecompcache()
+{
+    local word_list="  --size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migratesetspeed()
+{
+    local word_list="  --postcopy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migrategetspeed()
+{
+    local word_list="  --postcopy"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_migratepostcopy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_numatune()
+{
+    local word_list="  --mode --nodeset --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_qemuattach()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_qemumonitorcommand()
+{
+    local word_list="  --hmp --pretty --return-value"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_qemumonitorevent()
+{
+    local word_list="  --domain --event --pretty --loop --timeout --regex --no-case --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_qemuagentcommand()
+{
+    local word_list="  --timeout --async --block --pretty"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_guestagenttimeout()
+{
+    local word_list="  --timeout"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_reboot()
+{
+    local word_list="  --mode"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_reset()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_restore()
+{
+    local word_list="  --bypass-cache --xml --running --paused"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_resume()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_save()
+{
+    local word_list="  --bypass-cache --xml --running --paused --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_saveimagedefine()
+{
+    local word_list="  --running --paused"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_saveimagedumpxml()
+{
+    local word_list="  --security-info"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_saveimageedit()
+{
+    local word_list="  --running --paused"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_schedinfo()
+{
+    local word_list="  --weight --cap --current --config --live"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_screenshot()
+{
+    local word_list="  --file --screen"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setlifecycleaction()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setusersshkeys()
+{
+    local word_list="  --file --reset --remove"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setuserpassword()
+{
+    local word_list="  --encrypted"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setmaxmem()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setmem()
+{
+    local word_list="  --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setvcpus()
+{
+    local word_list="  --maximum --config --live --current --guest --hotpluggable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_shutdown()
+{
+    local word_list="  --mode"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_start()
+{
+    local word_list="  --console --paused --autodestroy --bypass-cache --force-boot --pass-fds"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_suspend()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ttyconsole()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_undefine()
+{
+    local word_list="  --managed-save --storage --remove-all-storage --delete-storage-volume-snapshots --wipe-storage --snapshots-metadata --checkpoints-metadata --nvram --keep-nvram"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_updatedevice()
+{
+    local word_list="  --persistent --config --live --current --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_updatememorydevice()
+{
+    local word_list="  --config --live --current --print-xml --alias --node --requested-size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_vcpucount()
+{
+    local word_list="  --maximum --active --live --config --current --guest"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_vcpuinfo()
+{
+    local word_list="  --pretty"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_vcpupin()
+{
+    local word_list="  --vcpu --cpulist --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_emulatorpin()
+{
+    local word_list="  --cpulist --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_vncdisplay()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_guestvcpus()
+{
+    local word_list="  --cpulist --enable --disable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_setvcpu()
+{
+    local word_list="  --enable --disable --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domblkthreshold()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_guestinfo()
+{
+    local word_list="  --user --os --timezone --hostname --filesystem --disk --interface"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domdirtyratecalc()
+{
+    local word_list="  --seconds"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domblkerror()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domblkinfo()
+{
+    local word_list="  --device --human --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domblklist()
+{
+    local word_list="  --inactive --details"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domblkstat()
+{
+    local word_list="  --device --human"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domcontrol()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domifgetlink()
+{
+    local word_list="  --config"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domifaddr()
+{
+    local word_list="  --interface --full --source"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domiflist()
+{
+    local word_list="  --inactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domifstat()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_dominfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_dommemstat()
+{
+    local word_list="  --period --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domstate()
+{
+    local word_list="  --reason"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domstats()
+{
+    local word_list="  --state --cpu-total --balloon --vcpu --interface --block --perf --iothread --memory --dirtyrate --list-active --list-inactive --list-persistent --list-transient --list-running --list-paused --list-shutoff --list-other --raw --enforce --backing --nowait"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domtime()
+{
+    local word_list="  --now --pretty --sync --time"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_list()
+{
+    local word_list="  --inactive --all --transient --persistent --with-snapshot --without-snapshot --with-checkpoint --without-checkpoint --state-running --state-paused --state-shutoff --state-other --autostart --no-autostart --with-managed-save --without-managed-save --uuid --name --id --table --managed-save --title"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_allocpages()
+{
+    local word_list="  --cellno --add --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_capabilities()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_cpubaseline()
+{
+    local word_list="  --features --migratable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_cpucompare()
+{
+    local word_list="  --error --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_cpumodels()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_domcapabilities()
+{
+    local word_list="  --virttype --emulatorbin --arch --machine"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_freecell()
+{
+    local word_list="  --cellno --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_freepages()
+{
+    local word_list="  --cellno --pagesize --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_hostname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_hypervisorcpubaseline()
+{
+    local word_list="  --virttype --emulator --arch --machine --features --migratable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_hypervisorcpucompare()
+{
+    local word_list="  --virttype --emulator --arch --machine --error --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_maxvcpus()
+{
+    local word_list="  --type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodememorytune()
+{
+    local word_list="  --shm-pages-to-scan --shm-sleep-millisecs --shm-merge-across-nodes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodecpumap()
+{
+    local word_list="  --pretty"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodecpustats()
+{
+    local word_list="  --cpu --percent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodeinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodememstats()
+{
+    local word_list="  --cell"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodesevinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodesuspend()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_sysinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_uri()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_version()
+{
+    local word_list="  --daemon"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointcreate()
+{
+    local word_list="  --xmlfile --redefine --redefine-validate --quiesce"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointcreateas()
+{
+    local word_list="  --name --description --print-xml --quiesce"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointdelete()
+{
+    local word_list="  --checkpointname --children --children-only --metadata"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointdumpxml()
+{
+    local word_list="  --checkpointname --security-info --no-domain --size"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointedit()
+{
+    local word_list="  --checkpointname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointinfo()
+{
+    local word_list="  --checkpointname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointlist()
+{
+    local word_list="  --parent --roots --leaves --no-leaves --tree --from --descendants --name --topological"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_checkpointparent()
+{
+    local word_list="  --checkpointname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacebegin()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacebridge()
+{
+    local word_list="  --no-stp --delay --no-start"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacecommit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacedefine()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacedestroy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacedumpxml()
+{
+    local word_list="  --inactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifaceedit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacelist()
+{
+    local word_list="  --inactive --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacemac()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacename()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacerollback()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifacestart()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifaceunbridge()
+{
+    local word_list="  --no-start"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_ifaceundefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterdefine()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterdumpxml()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilteredit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterlist()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterundefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterbindingcreate()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterbindingdelete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterbindingdumpxml()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nwfilterbindinglist()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netautostart()
+{
+    local word_list="  --disable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netcreate()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netdefine()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netdestroy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netdhcpleases()
+{
+    local word_list="  --mac"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netdumpxml()
+{
+    local word_list="  --inactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netedit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netevent()
+{
+    local word_list="  --network --event --loop --timeout --list --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netlist()
+{
+    local word_list="  --inactive --all --persistent --transient --autostart --no-autostart --uuid --name --table"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netstart()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netundefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netupdate()
+{
+    local word_list="  --parent-index --config --live --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netuuid()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netportlist()
+{
+    local word_list="  --uuid --table"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netportcreate()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netportdumpxml()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_netportdelete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevcreate()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevdestroy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevdetach()
+{
+    local word_list="  --driver"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevdumpxml()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevlist()
+{
+    local word_list="  --tree --cap --inactive --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevreattach()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevreset()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevevent()
+{
+    local word_list="  --device --event --loop --timeout --list --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevdefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevundefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevstart()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevautostart()
+{
+    local word_list="  --disable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_nodedevinfo()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretdefine()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretdumpxml()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretevent()
+{
+    local word_list="  --secret --event --loop --timeout --list --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretgetvalue()
+{
+    local word_list="  --plain"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretlist()
+{
+    local word_list="  --ephemeral --no-ephemeral --private --no-private"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretsetvalue()
+{
+    local word_list="  --file --plain --interactive --base64"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_secretundefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotcreate()
+{
+    local word_list="  --xmlfile --redefine --current --no-metadata --halt --disk-only --reuse-external --quiesce --atomic --live --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotcreateas()
+{
+    local word_list="  --name --description --print-xml --no-metadata --halt --disk-only --reuse-external --quiesce --atomic --live --validate --memspec"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotcurrent()
+{
+    local word_list="  --name --security-info --snapshotname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotdelete()
+{
+    local word_list="  --snapshotname --current --children --children-only --metadata"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotdumpxml()
+{
+    local word_list="  --security-info"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotedit()
+{
+    local word_list="  --snapshotname --current --rename --clone"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotinfo()
+{
+    local word_list="  --snapshotname --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotlist()
+{
+    local word_list="  --parent --roots --leaves --no-leaves --metadata --no-metadata --inactive --active --disk-only --internal --external --tree --from --current --descendants --name --topological"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotparent()
+{
+    local word_list="  --snapshotname --current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_snapshotrevert()
+{
+    local word_list="  --snapshotname --current --running --paused --force"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_backupbegin()
+{
+    local word_list="  --backupxml --checkpointxml --reuse-external"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_backupdumpxml()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_findstoragepoolsourcesas()
+{
+    local word_list="  --host --port --initiator"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_findstoragepoolsources()
+{
+    local word_list="  --srcSpec"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolautostart()
+{
+    local word_list="  --disable"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolbuild()
+{
+    local word_list="  --no-overwrite --overwrite"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolcreateas()
+{
+    local word_list="  --print-xml --source-host --source-path --source-dev --source-name --target --source-format --auth-type --auth-username --secret-usage --secret-uuid --adapter-name --adapter-wwnn --adapter-wwpn --adapter-parent --adapter-parent-wwnn --adapter-parent-wwpn --adapter-parent-fabric-wwn --source-protocol-ver --source-initiator --build --no-overwrite --overwrite"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolcreate()
+{
+    local word_list="  --build --no-overwrite --overwrite"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooldefineas()
+{
+    local word_list="  --print-xml --source-host --source-path --source-dev --source-name --target --source-format --auth-type --auth-username --secret-usage --secret-uuid --adapter-name --adapter-wwnn --adapter-wwpn --adapter-parent --adapter-parent-wwnn --adapter-parent-wwpn --adapter-parent-fabric-wwn --source-protocol-ver --source-initiator"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooldefine()
+{
+    local word_list="  --validate"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooldelete()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooldestroy()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooldumpxml()
+{
+    local word_list="  --inactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooledit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolinfo()
+{
+    local word_list="  --bytes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poollist()
+{
+    local word_list="  --inactive --all --transient --persistent --autostart --no-autostart --type --details --uuid --name"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolrefresh()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolstart()
+{
+    local word_list="  --build --no-overwrite --overwrite"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolundefine()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pooluuid()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolevent()
+{
+    local word_list="  --pool --event --loop --timeout --list --timestamp"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_poolcapabilities()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volclone()
+{
+    local word_list="  --pool --prealloc-metadata --reflink"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volcreateas()
+{
+    local word_list="  --allocation --format --backing-vol --backing-vol-format --prealloc-metadata --print-xml"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volcreate()
+{
+    local word_list="  --prealloc-metadata"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volcreatefrom()
+{
+    local word_list="  --inputpool --prealloc-metadata --reflink"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_voldelete()
+{
+    local word_list="  --pool --delete-snapshots"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_voldownload()
+{
+    local word_list="  --pool --offset --length --sparse"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_voldumpxml()
+{
+    local word_list="  --pool"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volinfo()
+{
+    local word_list="  --pool --bytes --physical"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volkey()
+{
+    local word_list="  --pool"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_vollist()
+{
+    local word_list="  --details"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volname()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volpath()
+{
+    local word_list="  --pool"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volpool()
+{
+    local word_list="  --uuid"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volresize()
+{
+    local word_list="  --pool --allocate --delta --shrink"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volupload()
+{
+    local word_list="  --pool --offset --length --sparse"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_volwipe()
+{
+    local word_list="  --pool --algorithm"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_cd()
+{
+    local word_list="  --dir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_echo()
+{
+    local word_list="  --shell --xml --split --err"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_exit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_help()
+{
+    local word_list="  --command"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_pwd()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_quit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_virsh_connect()
+{
+    local word_list="  --name --readonly"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _virsh virsh
