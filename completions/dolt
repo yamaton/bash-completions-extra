@@ -1,0 +1,644 @@
+# Auto-generated with h2o
+
+_dolt()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" init status add diff reset clean commit sql sql-server log show branch checkout merge conflicts cherry-pick revert clone fetch pull push config remote backup login creds ls schema table tag blame constraints migrate read-tables gc fsck filter-branch merge-base version dump docs stash profile query-diff reflog rebase"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        init) _dolt_init
+            return
+            ;;
+
+        status) _dolt_status
+            return
+            ;;
+
+        add) _dolt_add
+            return
+            ;;
+
+        diff) _dolt_diff
+            return
+            ;;
+
+        reset) _dolt_reset
+            return
+            ;;
+
+        clean) _dolt_clean
+            return
+            ;;
+
+        commit) _dolt_commit
+            return
+            ;;
+
+        sql) _dolt_sql
+            return
+            ;;
+
+        sql-server) _dolt_sqlserver
+            return
+            ;;
+
+        log) _dolt_log
+            return
+            ;;
+
+        show) _dolt_show
+            return
+            ;;
+
+        branch) _dolt_branch
+            return
+            ;;
+
+        checkout) _dolt_checkout
+            return
+            ;;
+
+        merge) _dolt_merge
+            return
+            ;;
+
+        conflicts) _dolt_conflicts
+            return
+            ;;
+
+        cherry-pick) _dolt_cherrypick
+            return
+            ;;
+
+        revert) _dolt_revert
+            return
+            ;;
+
+        clone) _dolt_clone
+            return
+            ;;
+
+        fetch) _dolt_fetch
+            return
+            ;;
+
+        pull) _dolt_pull
+            return
+            ;;
+
+        push) _dolt_push
+            return
+            ;;
+
+        config) _dolt_config
+            return
+            ;;
+
+        remote) _dolt_remote
+            return
+            ;;
+
+        backup) _dolt_backup
+            return
+            ;;
+
+        login) _dolt_login
+            return
+            ;;
+
+        creds) _dolt_creds
+            return
+            ;;
+
+        ls) _dolt_ls
+            return
+            ;;
+
+        schema) _dolt_schema
+            return
+            ;;
+
+        table) _dolt_table
+            return
+            ;;
+
+        tag) _dolt_tag
+            return
+            ;;
+
+        blame) _dolt_blame
+            return
+            ;;
+
+        constraints) _dolt_constraints
+            return
+            ;;
+
+        migrate) _dolt_migrate
+            return
+            ;;
+
+        read-tables) _dolt_readtables
+            return
+            ;;
+
+        gc) _dolt_gc
+            return
+            ;;
+
+        fsck) _dolt_fsck
+            return
+            ;;
+
+        filter-branch) _dolt_filterbranch
+            return
+            ;;
+
+        merge-base) _dolt_mergebase
+            return
+            ;;
+
+        version) _dolt_version
+            return
+            ;;
+
+        dump) _dolt_dump
+            return
+            ;;
+
+        docs) _dolt_docs
+            return
+            ;;
+
+        stash) _dolt_stash
+            return
+            ;;
+
+        profile) _dolt_profile
+            return
+            ;;
+
+        query-diff) _dolt_querydiff
+            return
+            ;;
+
+        reflog) _dolt_reflog
+            return
+            ;;
+
+        rebase) _dolt_rebase
+            return
+            ;;
+
+    esac
+
+    local word_list=" init status add diff reset clean commit sql sql-server log show branch checkout merge conflicts cherry-pick revert clone fetch pull push config remote backup login creds ls schema table tag blame constraints migrate read-tables gc fsck filter-branch merge-base version dump docs stash profile query-diff reflog rebase --profile -u --user -p --password --host --port --no-tls --data-dir --doltcfg-dir --privilege-file --branch-control-file --use-db --branch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_init()
+{
+    local word_list="  --name --email --date -b --initial-branch --new-format"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_status()
+{
+    local word_list="  --ignored"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_add()
+{
+    local word_list="  -A --all -f --force -p --patch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_diff()
+{
+    local word_list="  -d --data -s --schema --stat --summary -r --result-format --where --limit --staged -c --cached -sk --skinny --merge-base --diff-mode -R --reverse --name-only"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_reset()
+{
+    local word_list="  --hard --soft"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_clean()
+{
+    local word_list="  --dry-run"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_commit()
+{
+    local word_list="  -m --message --allow-empty --skip-empty --date -f --force --author -a --all -A --ALL --amend -S --gpg-sign"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_sql()
+{
+    local word_list="  --host -q --query -r --result-format -s --save -x --execute -l --list-saved -m --message -b --batch -c --continue -f --file"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_sqlserver()
+{
+    local word_list="  --config -H --host -P --port -u --user -p --password -t --timeout -r --readonly -l --loglevel --data-dir --multi-db-dir --doltcfg-dir --no-auto-commit --query-parallelism --max-connections --persistence-behavior --privilege-file --branch-control-file --allow-cleartext-passwords --socket --remotesapi-port --remotesapi-readonly --golden --event-scheduler"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_log()
+{
+    local word_list="  -n --number --min-parents --merges --parents --decorate --not --show-signature --oneline --stat --graph"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_show()
+{
+    local word_list="  --parents --decorate --no-pretty -d --data -s --schema --stat --summary -r --result-format --where --limit -c --cached -sk --skinny --merge-base --diff-mode"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_branch()
+{
+    local word_list="  -f --force -c --copy -m --move -d --delete --D -t --track --list -v --verbose -a --all --datasets -r --remote --show-current"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_checkout()
+{
+    local word_list="  --b --B -f --force -t --track"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_merge()
+{
+    local word_list="  --no-ff --squash -m --message --abort --commit --no-commit --no-edit --author --dont-merge-json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_conflicts()
+{
+    local cmd i subcommands
+    local subcommands=" resolve"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        resolve) _dolt_conflicts_resolve
+            return
+            ;;
+
+    esac
+
+    local word_list=" resolve "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_conflicts_resolve()
+{
+    local word_list="  --ours --theirs"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_cherrypick()
+{
+    local word_list="  --abort --allow-empty --dont-merge-json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_revert()
+{
+    local word_list="  --author"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_clone()
+{
+    local word_list="  --remote -b --branch --depth --aws-creds-file --aws-creds-profile --oss-creds-file --oss-creds-profile -u --user --single-branch"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_fetch()
+{
+    local word_list="  --user -p --prune --silent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_pull()
+{
+    local word_list="  --squash --no-ff -f --force --commit --no-commit --no-edit --user --silent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_push()
+{
+    local word_list="  --user -u --set-upstream -f --force --all --silent"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_config()
+{
+    local word_list="  --global --local --add --set --list --get --unset"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_remote()
+{
+    local word_list="  -v --verbose --aws-region --aws-creds-type --aws-creds-file --aws-creds-profile --oss-creds-file --oss-creds-profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_backup()
+{
+    local word_list="  -v --verbose -f --force --aws-creds-file --aws-creds-profile"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_login()
+{
+    local word_list="  -e --auth-endpoint -url --login-url -i --insecure"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_creds()
+{
+    local cmd i subcommands
+    local subcommands=" check"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _dolt_creds_check
+            return
+            ;;
+
+    esac
+
+    local word_list=" check "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_creds_check()
+{
+    local word_list="  --endpoint --creds"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_ls()
+{
+    local word_list="  -v --verbose -s --system -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_schema()
+{
+    local cmd i subcommands
+    local subcommands=" export import"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        export) _dolt_schema_export
+            return
+            ;;
+
+        import) _dolt_schema_import
+            return
+            ;;
+
+    esac
+
+    local word_list=" export import "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_schema_export()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_schema_import()
+{
+    local word_list="  -c --create -u --update -r --replace --dry-run --keep-types --file-type --pks -m --map --float-threshold --delim"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_table()
+{
+    local cmd i subcommands
+    local subcommands=" import export"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        import) _dolt_table_import
+            return
+            ;;
+
+        export) _dolt_table_export
+            return
+            ;;
+
+    esac
+
+    local word_list=" import export "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_table_import()
+{
+    local word_list="  -c --create-table -u --update-table -a --append-table -r --replace-table -f --force --continue --quiet --disable-fk-checks -s --schema -m --map -pk --pk --file-type --delim --all-text"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_table_export()
+{
+    local word_list="  -f --force --file-type"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_tag()
+{
+    local word_list="  -m --message -v --verbose -d --delete --author"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_blame()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_constraints()
+{
+    local cmd i subcommands
+    local subcommands=" verify"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        verify) _dolt_constraints_verify
+            return
+            ;;
+
+    esac
+
+    local word_list=" verify "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_constraints_verify()
+{
+    local word_list="  -a --all -o --output-only"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_migrate()
+{
+    local word_list="  --drop-conflicts"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_readtables()
+{
+    local word_list="  -d --dir"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_gc()
+{
+    local word_list="  -s --shallow -f --full"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_fsck()
+{
+    local word_list="  --quiet"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_filterbranch()
+{
+    local word_list="  -v --verbose -b --branches --apply-to-uncommitted -a --all -c --continue -q --query"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_mergebase()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_version()
+{
+    local word_list="  -f --feature -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_dump()
+{
+    local word_list="  -r --result-format -fn --file-name -d --directory -f --force --batch --no-batch -na --no-autocommit --schema-only --no-create-db"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_docs()
+{
+    local cmd i subcommands
+    local subcommands=" print"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        print) _dolt_docs_print
+            return
+            ;;
+
+    esac
+
+    local word_list=" print "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_docs_print()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_stash()
+{
+    local word_list="  -u --include-untracked -a --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_profile()
+{
+    local word_list="  -u --user -p --password --host --port --no-tls --data-dir --doltcfg-dir --privilege-file --branch-control-file --use-db --branch -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_querydiff()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_reflog()
+{
+    local word_list="  --all"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_dolt_rebase()
+{
+    local word_list="  --empty --abort --continue -i --interactive"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _dolt dolt
