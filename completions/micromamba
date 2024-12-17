@@ -6,7 +6,7 @@ _micromamba()
     _init_completion -s || return
 
     local cmd i subcommands
-    local subcommands=" shell create install update self-update repoquery remove list package clean config info constructor env activate run ps auth search"
+    local subcommands=" shell create install update self-update repoquery list package clean config info constructor env activate run ps auth search"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -37,10 +37,6 @@ _micromamba()
             ;;
 
         repoquery) _micromamba_repoquery
-            return
-            ;;
-
-        remove) _micromamba_remove
             return
             ;;
 
@@ -94,7 +90,7 @@ _micromamba()
 
     esac
 
-    local word_list=" shell create install update self-update repoquery remove list package clean config info constructor env activate run ps auth search -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list=" shell create install update self-update repoquery list package clean config info constructor env activate run ps auth search -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -151,25 +147,25 @@ _micromamba_shell()
 
 _micromamba_shell_init()
 {
-    local word_list="  -h --help -s --shell -r -p -n --root-prefix --prefix --name --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help -s --shell -r --root-prefix --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_shell_deinit()
 {
-    local word_list="  -h --help -s --shell -r -p -n --root-prefix --prefix --name --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help -s --shell -r --root-prefix --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_shell_reinit()
 {
-    local word_list="  -h --help -s --shell --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_shell_hook()
 {
-    local word_list="  -h --help -s --shell -r -p -n --root-prefix --prefix --name --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help -s --shell -r --root-prefix --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -199,32 +195,32 @@ _micromamba_shell_enablelongpathsupport()
 
 _micromamba_create()
 {
-    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --no-always-copy --extra-safety-checks --no-extra-safety-checks --lock-timeout --shortcuts --no-shortcuts --safety-checks --verify-artifacts --platform --no-deps --only-deps --category --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --copy --no-always-copy --lock-timeout --shortcuts --no-shortcuts --safety-checks --extra-safety-checks --no-extra-safety-checks --verify-artifacts --trusted-channels --exp-repodata-parsing --no-exp-repodata-parsing --platform --no-deps --only-deps --category --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_install()
 {
-    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --no-always-copy --extra-safety-checks --no-extra-safety-checks --lock-timeout --shortcuts --no-shortcuts --safety-checks --verify-artifacts --platform --no-deps --only-deps --category --freeze-installed --force-reinstall --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --copy --no-always-copy --lock-timeout --shortcuts --no-shortcuts --safety-checks --extra-safety-checks --no-extra-safety-checks --verify-artifacts --trusted-channels --exp-repodata-parsing --no-exp-repodata-parsing --platform --no-deps --only-deps --category --freeze-installed --force-reinstall --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_update()
 {
-    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --no-always-copy --extra-safety-checks --no-extra-safety-checks --lock-timeout --shortcuts --no-shortcuts --safety-checks --verify-artifacts --platform --no-deps --only-deps --category --prune --no-prune -a --all --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --copy --no-always-copy --lock-timeout --shortcuts --no-shortcuts --safety-checks --extra-safety-checks --no-extra-safety-checks --verify-artifacts --trusted-channels --exp-repodata-parsing --no-exp-repodata-parsing --platform --no-deps --only-deps --category --prune-deps --no-prune-deps -a --all --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_selfupdate()
 {
-    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --no-always-copy --extra-safety-checks --no-extra-safety-checks --lock-timeout --shortcuts --no-shortcuts --safety-checks --verify-artifacts --platform --no-deps --only-deps --category --version --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --copy --no-always-copy --lock-timeout --shortcuts --no-shortcuts --safety-checks --extra-safety-checks --no-extra-safety-checks --verify-artifacts --trusted-channels --exp-repodata-parsing --no-exp-repodata-parsing --platform --no-deps --only-deps --category --version --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_repoquery()
 {
     local cmd i subcommands
-    local subcommands=" query_type"
+    local subcommands=" search whoneeds depends"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -234,31 +230,45 @@ _micromamba_repoquery()
     done
 
     case "$cmd" in
-        query_type) _micromamba_repoquery_querytype
+        search) _micromamba_repoquery_search
+            return
+            ;;
+
+        whoneeds) _micromamba_repoquery_whoneeds
+            return
+            ;;
+
+        depends) _micromamba_repoquery_depends
             return
             ;;
 
     esac
 
-    local word_list=" query_type -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -t --tree --recursive --pretty --use-local --platform --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list=" search whoneeds depends -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_micromamba_repoquery_querytype()
+_micromamba_repoquery_search()
 {
-    local word_list="  "
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -t --tree --recursive --pretty --platform --local --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_micromamba_remove()
+_micromamba_repoquery_whoneeds()
 {
-    local word_list="  -h --help -a --all -f --force --prune --no-prune --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -t --tree --recursive --pretty --platform --remote --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_micromamba_repoquery_depends()
+{
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -t --tree --recursive --pretty --platform --remote --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_list()
 {
-    local word_list="  -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list="  -h --help -f --full-name --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -444,7 +454,7 @@ _micromamba_constructor()
 _micromamba_env()
 {
     local cmd i subcommands
-    local subcommands=" list create export remove"
+    local subcommands=" list create export remove update"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -470,9 +480,13 @@ _micromamba_env()
             return
             ;;
 
+        update) _micromamba_env_update
+            return
+            ;;
+
     esac
 
-    local word_list=" list create export remove -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list=" list create export remove update -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -484,19 +498,25 @@ _micromamba_env_list()
 
 _micromamba_env_create()
 {
-    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --no-always-copy --extra-safety-checks --no-extra-safety-checks --lock-timeout --shortcuts --no-shortcuts --safety-checks --verify-artifacts --platform --no-deps --only-deps --category --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -f --file --no-pin --pin --no-py-pin --py-pin --pyc --no-pyc --allow-uninstall --no-allow-uninstall --allow-downgrade --no-allow-downgrade --allow-softlinks --no-allow-softlinks --always-softlink --no-always-softlink --always-copy --copy --no-always-copy --lock-timeout --shortcuts --no-shortcuts --safety-checks --extra-safety-checks --no-extra-safety-checks --verify-artifacts --trusted-channels --exp-repodata-parsing --no-exp-repodata-parsing --platform --no-deps --only-deps --category --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_env_export()
 {
-    local word_list="  -h --help -e --explicit --no-md5 --md5 --no-build --build --from-history --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list="  -h --help -e --explicit --no-md5 --md5 --no-build --no-builds --build --channel-subdir --from-history --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_env_remove()
 {
     local word_list="  -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_micromamba_env_update()
+{
+    local word_list="  -h --help -f --file --prune --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -559,7 +579,7 @@ _micromamba_auth_logout()
 
 _micromamba_search()
 {
-    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -t --tree --recursive --pretty --use-local --platform --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
+    local word_list="  -h --help -c --channel --override-channels --channel-priority --channel-alias --strict-channel-priority --no-channel-priority -t --tree --recursive --pretty --platform --local --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name --ssl-verify --ssl-no-revoke --cacert-path --repodata-ttl --retry-clean-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
