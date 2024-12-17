@@ -6,7 +6,7 @@ _git()
     _init_completion -s || return
 
     local cmd i subcommands
-    local subcommands=" add am archive bisect branch bundle checkout cherry-pick citool clean clone commit describe diff fetch format-patch gc grep init log maintenance merge mv notes pull push range-diff rebase reset restore revert rm shortlog show sparse-checkout stash status submodule switch tag worktree config fast-export fast-import filter-branch mergetool pack-refs prune reflog remote repack replace annotate blame bugreport count-objects difftool fsck gitweb help instaweb merge-tree rerere show-branch verify-commit verify-tag whatchanged imap-send p4 quiltimport request-pull svn apply checkout-index commit-graph commit-tree hash-object index-pack merge-file merge-index mktag mktree multi-pack-index pack-objects prune-packed read-tree symbolic-ref unpack-objects update-index update-ref write-tree cat-file cherry diff-files diff-index diff-tree for-each-ref for-each-repo get-tar-commit-id ls-files ls-remote ls-tree merge-base name-rev pack-redundant rev-list rev-parse show-index show-ref unpack-file var verify-pack daemon fetch-pack http-backend send-pack update-server-info check-attr check-ignore check-mailmap check-ref-format column credential credential-cache credential-store fmt-merge-msg hook interpret-trailers mailinfo mailsplit merge-one-file patch-id stripspace"
+    local subcommands=" add am archive bisect branch bundle checkout cherry-pick clean clone commit describe diff fetch format-patch gc grep init log maintenance merge mv notes pull push range-diff rebase reset restore revert rm shortlog show sparse-checkout stash status submodule switch tag worktree config fast-export fast-import filter-branch mergetool pack-refs prune reflog remote repack replace annotate blame bugreport count-objects difftool fsck help instaweb merge-tree rerere show-branch verify-commit verify-tag whatchanged imap-send quiltimport request-pull apply checkout-index commit-graph commit-tree hash-object index-pack merge-file merge-index mktag mktree multi-pack-index pack-objects prune-packed read-tree symbolic-ref unpack-objects update-index update-ref write-tree cat-file cherry diff-files diff-index diff-tree for-each-ref for-each-repo get-tar-commit-id ls-files ls-remote ls-tree merge-base name-rev pack-redundant rev-list rev-parse show-index show-ref unpack-file var verify-pack daemon fetch-pack http-backend send-pack update-server-info check-attr check-ignore check-mailmap check-ref-format column credential credential-cache credential-store fmt-merge-msg hook interpret-trailers mailinfo mailsplit merge-one-file patch-id stripspace lfs"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -45,10 +45,6 @@ _git()
             ;;
 
         cherry-pick) _git_cherrypick
-            return
-            ;;
-
-        citool) _git_citool
             return
             ;;
 
@@ -248,10 +244,6 @@ _git()
             return
             ;;
 
-        gitweb) _git_gitweb
-            return
-            ;;
-
         help) _git_help
             return
             ;;
@@ -288,19 +280,11 @@ _git()
             return
             ;;
 
-        p4) _git_p4
-            return
-            ;;
-
         quiltimport) _git_quiltimport
             return
             ;;
 
         request-pull) _git_requestpull
-            return
-            ;;
-
-        svn) _git_svn
             return
             ;;
 
@@ -548,9 +532,13 @@ _git()
             return
             ;;
 
+        lfs) _git_lfs
+            return
+            ;;
+
     esac
 
-    local word_list=" add am archive bisect branch bundle checkout cherry-pick citool clean clone commit describe diff fetch format-patch gc grep init log maintenance merge mv notes pull push range-diff rebase reset restore revert rm shortlog show sparse-checkout stash status submodule switch tag worktree config fast-export fast-import filter-branch mergetool pack-refs prune reflog remote repack replace annotate blame bugreport count-objects difftool fsck gitweb help instaweb merge-tree rerere show-branch verify-commit verify-tag whatchanged imap-send p4 quiltimport request-pull svn apply checkout-index commit-graph commit-tree hash-object index-pack merge-file merge-index mktag mktree multi-pack-index pack-objects prune-packed read-tree symbolic-ref unpack-objects update-index update-ref write-tree cat-file cherry diff-files diff-index diff-tree for-each-ref for-each-repo get-tar-commit-id ls-files ls-remote ls-tree merge-base name-rev pack-redundant rev-list rev-parse show-index show-ref unpack-file var verify-pack daemon fetch-pack http-backend send-pack update-server-info check-attr check-ignore check-mailmap check-ref-format column credential credential-cache credential-store fmt-merge-msg hook interpret-trailers mailinfo mailsplit merge-one-file patch-id stripspace "
+    local word_list=" add am archive bisect branch bundle checkout cherry-pick clean clone commit describe diff fetch format-patch gc grep init log maintenance merge mv notes pull push range-diff rebase reset restore revert rm shortlog show sparse-checkout stash status submodule switch tag worktree config fast-export fast-import filter-branch mergetool pack-refs prune reflog remote repack replace annotate blame bugreport count-objects difftool fsck help instaweb merge-tree rerere show-branch verify-commit verify-tag whatchanged imap-send quiltimport request-pull apply checkout-index commit-graph commit-tree hash-object index-pack merge-file merge-index mktag mktree multi-pack-index pack-objects prune-packed read-tree symbolic-ref unpack-objects update-index update-ref write-tree cat-file cherry diff-files diff-index diff-tree for-each-ref for-each-repo get-tar-commit-id ls-files ls-remote ls-tree merge-base name-rev pack-redundant rev-list rev-parse show-index show-ref unpack-file var verify-pack daemon fetch-pack http-backend send-pack update-server-info check-attr check-ignore check-mailmap check-ref-format column credential credential-cache credential-store fmt-merge-msg hook interpret-trailers mailinfo mailsplit merge-one-file patch-id stripspace lfs "
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -599,12 +587,6 @@ _git_checkout()
 _git_cherrypick()
 {
     local word_list="  -e --edit --cleanup -x -r -m --mainline -n --no-commit -s --signoff -S --gpg-sign --no-gpg-sign --ff --allow-empty --allow-empty-message --keep-redundant-commits --strategy -X --strategy-option --rerere-autoupdate --no-rerere-autoupdate --continue --skip --quit --abort"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_git_citool()
-{
-    local word_list="  "
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -902,12 +884,6 @@ _git_fsck()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_git_gitweb()
-{
-    local word_list="  "
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
 _git_help()
 {
     local word_list="  -a --all --no-external-commands --no-aliases --verbose -c --config -g --guides -i --info -m --man -w --web"
@@ -962,12 +938,6 @@ _git_imapsend()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_git_p4()
-{
-    local word_list="  "
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
 _git_quiltimport()
 {
     local word_list="  -n --dry-run --author --patches --series --keep-non-patch"
@@ -977,12 +947,6 @@ _git_quiltimport()
 _git_requestpull()
 {
     local word_list="  -p"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_git_svn()
-{
-    local word_list="  "
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1349,6 +1313,325 @@ _git_patchid()
 _git_stripspace()
 {
     local word_list="  -s --strip-comments -c --comment-lines"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs()
+{
+    local cmd i subcommands
+    local subcommands=" env checkout dedup ext fetch fsck install lock locks logs ls-files migrate prune pull push status track uninstall unlock untrack update clean filter-process pointer post-checkout post-commit post-merge pre-push smudge standalone-file"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        env) _git_lfs_env
+            return
+            ;;
+
+        checkout) _git_lfs_checkout
+            return
+            ;;
+
+        dedup) _git_lfs_dedup
+            return
+            ;;
+
+        ext) _git_lfs_ext
+            return
+            ;;
+
+        fetch) _git_lfs_fetch
+            return
+            ;;
+
+        fsck) _git_lfs_fsck
+            return
+            ;;
+
+        install) _git_lfs_install
+            return
+            ;;
+
+        lock) _git_lfs_lock
+            return
+            ;;
+
+        locks) _git_lfs_locks
+            return
+            ;;
+
+        logs) _git_lfs_logs
+            return
+            ;;
+
+        ls-files) _git_lfs_lsfiles
+            return
+            ;;
+
+        migrate) _git_lfs_migrate
+            return
+            ;;
+
+        prune) _git_lfs_prune
+            return
+            ;;
+
+        pull) _git_lfs_pull
+            return
+            ;;
+
+        push) _git_lfs_push
+            return
+            ;;
+
+        status) _git_lfs_status
+            return
+            ;;
+
+        track) _git_lfs_track
+            return
+            ;;
+
+        uninstall) _git_lfs_uninstall
+            return
+            ;;
+
+        unlock) _git_lfs_unlock
+            return
+            ;;
+
+        untrack) _git_lfs_untrack
+            return
+            ;;
+
+        update) _git_lfs_update
+            return
+            ;;
+
+        clean) _git_lfs_clean
+            return
+            ;;
+
+        filter-process) _git_lfs_filterprocess
+            return
+            ;;
+
+        pointer) _git_lfs_pointer
+            return
+            ;;
+
+        post-checkout) _git_lfs_postcheckout
+            return
+            ;;
+
+        post-commit) _git_lfs_postcommit
+            return
+            ;;
+
+        post-merge) _git_lfs_postmerge
+            return
+            ;;
+
+        pre-push) _git_lfs_prepush
+            return
+            ;;
+
+        smudge) _git_lfs_smudge
+            return
+            ;;
+
+        standalone-file) _git_lfs_standalonefile
+            return
+            ;;
+
+    esac
+
+    local word_list=" env checkout dedup ext fetch fsck install lock locks logs ls-files migrate prune pull push status track uninstall unlock untrack update clean filter-process pointer post-checkout post-commit post-merge pre-push smudge standalone-file "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_env()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_checkout()
+{
+    local word_list="  --base --ours --theirs --to"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_dedup()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_ext()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_fetch()
+{
+    local word_list="  -I --include -X --exclude --recent --all --prune -p"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_fsck()
+{
+    local word_list="  --objects --pointers"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_install()
+{
+    local word_list="  --force --local --worktree --manual --system --skip-smudge --skip-repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_lock()
+{
+    local word_list="  -r --remote --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_locks()
+{
+    local word_list="  -r --remote -i --id -p --path --local --cached --verify -l --limit --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_logs()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_lsfiles()
+{
+    local word_list="  -l --long -s --size -d --debug -a --all --deleted -I --include -X --exclude -n --name-only"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_migrate()
+{
+    local word_list="  -I --include -X --exclude --include-ref --exclude-ref --skip-fetch --everything --yes"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_prune()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_pull()
+{
+    local word_list="  -I --include -X --exclude"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_push()
+{
+    local word_list="  --dry-run --all --object-id"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_status()
+{
+    local word_list="  --porcelain --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_track()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_uninstall()
+{
+    local word_list="  --local --worktree --system --skip-repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_unlock()
+{
+    local word_list="  -r --remote -f --force -i --id --json"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_untrack()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_update()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_clean()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_filterprocess()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_pointer()
+{
+    local word_list="  --file --pointer --stdin --check --no-strict"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_postcheckout()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_postcommit()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_postmerge()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_prepush()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_smudge()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_git_lfs_standalonefile()
+{
+    local word_list="  "
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
