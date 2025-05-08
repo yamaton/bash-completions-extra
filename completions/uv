@@ -6,7 +6,7 @@ _uv()
     _init_completion -s || return
 
     local cmd i subcommands
-    local subcommands=" run init add remove sync lock export tree tool python pip venv cache self version help"
+    local subcommands=" run init add remove sync lock export tree tool python pip venv build publish cache self version help"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -64,6 +64,14 @@ _uv()
             return
             ;;
 
+        build) _uv_build
+            return
+            ;;
+
+        publish) _uv_publish
+            return
+            ;;
+
         cache) _uv_cache
             return
             ;;
@@ -82,55 +90,55 @@ _uv()
 
     esac
 
-    local word_list=" run init add remove sync lock export tree tool python pip venv cache self version help -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list=" run init add remove sync lock export tree tool python pip venv build publish cache self version help -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads -q --quiet -v --verbose --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help -V --version"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_run()
 {
-    local word_list="  --extra --all-extras --no-dev --with --with-editable --with-requirements --isolated --locked --frozen --package --no-project -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --extra --all-extras --no-extra --no-dev --group --no-group --no-default-groups --only-group --all-groups -m --module --only-dev --no-editable --exact --env-file --no-env-file --with --with-editable --with-requirements --isolated --active --no-sync --locked --frozen -s --script --gui-script --all-packages --package --no-project --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_init()
 {
-    local word_list="  --name --package --no-package --app --lib --no-readme --no-workspace -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --name --bare --package --no-package --app --lib --script --description --no-description --vcs --build-backend --no-readme --author-from --no-pin-python --no-workspace -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_add()
 {
-    local word_list="  -r --requirements --dev --optional --editable --raw-sources --rev --tag --branch --extra --no-sync --locked --frozen --package --script -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -r --requirements -c --constraints -m --marker --dev --optional --group --editable --raw-sources --rev --tag --branch --extra --no-sync --locked --frozen --active --package --script --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_remove()
 {
-    local word_list="  --dev --optional --no-sync --locked --frozen --package --script -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --dev --optional --group --no-sync --active --locked --frozen --package --script --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_sync()
 {
-    local word_list="  --extra --all-extras --no-dev --inexact --no-install-project --no-install-workspace --no-install-package --locked --frozen --package -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --extra --all-extras --no-extra --no-dev --only-dev --group --no-group --no-default-groups --only-group --all-groups --no-editable --inexact --active --no-install-project --no-install-workspace --no-install-package --locked --frozen --dry-run --all-packages --package --script --check --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_lock()
 {
-    local word_list="  --locked --frozen -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --check --check-exists --dry-run --script --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_export()
 {
-    local word_list="  --format --package --extra --all-extras --no-dev --locked --frozen -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --format --all-packages --package --prune --extra --all-extras --no-extra --no-dev --only-dev --group --no-group --no-default-groups --only-group --all-groups --no-annotate --no-header --no-editable --no-hashes -o --output-file --no-emit-project --no-emit-workspace --no-emit-package --locked --frozen --script --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tree()
 {
-    local word_list="  --universal -d --depth --prune --package --no-dedupe --invert --locked --frozen --python-version --python-platform --no-build --no-build-package --no-binary --no-binary-package -C --config-setting --no-build-isolation --no-build-isolation-package -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --link-mode -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --universal -d --depth --prune --package --no-dedupe --invert --outdated --only-dev --no-dev --group --no-group --no-default-groups --only-group --all-groups --locked --frozen --script --python-version --python-platform --no-build --no-build-package --no-binary --no-binary-package -C --config-setting --no-build-isolation --no-build-isolation-package --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --link-mode -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -177,49 +185,49 @@ _uv_tool()
 
     esac
 
-    local word_list=" run install upgrade list uninstall update-shell dir -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list=" run install upgrade list uninstall update-shell dir -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_run()
 {
-    local word_list="  --from --with --with-requirements --isolated -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --from --with --with-editable --with-requirements -c --constraints -b --build-constraints --overrides --isolated --env-file --no-env-file --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_install()
 {
-    local word_list="  -e --editable --with-requirements --force -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --with --with-requirements -e --editable --with-editable -c --constraints --overrides -b --build-constraints --force --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_upgrade()
 {
-    local word_list="  --all -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --all -p --python --managed-python --no-managed-python --no-python-downloads --resolution --prerelease --fork-strategy --exclude-newer --no-sources --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_list()
 {
-    local word_list="  --show-paths -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --show-paths --show-version-specifiers --show-with -n --no-cache --cache-dir --managed-python --no-managed-python --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_uninstall()
 {
-    local word_list="  --all -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --all -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_updateshell()
 {
-    local word_list="  -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_tool_dir()
 {
-    local word_list="  --bin -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --bin -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -262,43 +270,43 @@ _uv_python()
 
     esac
 
-    local word_list=" list install find pin dir uninstall -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list=" list install find pin dir uninstall -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_python_list()
 {
-    local word_list="  --all-versions --all-platforms --only-installed -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --all-versions --all-platforms --all-arches --only-installed --only-downloads --show-urls --output-format --python-downloads-json-url -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_python_install()
 {
-    local word_list="  -r --reinstall -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -i --install-dir --mirror --pypy-mirror --python-downloads-json-url -r --reinstall -f --force --default -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_python_find()
 {
-    local word_list="  --no-project --system -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --no-project --system --script --show-version -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_python_pin()
 {
-    local word_list="  --resolved --no-project -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --resolved --no-project --global -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_python_dir()
 {
-    local word_list="  -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --bin -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_python_uninstall()
 {
-    local word_list="  --all -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -i --install-dir --all -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -353,67 +361,79 @@ _uv_pip()
 
     esac
 
-    local word_list=" compile sync install uninstall freeze list show tree check -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list=" compile sync install uninstall freeze list show tree check -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_compile()
 {
-    local word_list="  -c --constraint --override -b --build-constraint --extra --all-extras --no-deps -o --output-file --no-strip-extras --no-strip-markers --no-annotate --no-header --annotation-style --custom-compile-command --system --generate-hashes --no-build --no-binary --only-binary --python-platform --universal --no-emit-package --emit-index-url --emit-find-links --emit-build-options --emit-index-annotation -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package --python -p --python-version --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file -h --help -V --version"
+    local word_list="  -c --constraints --overrides -b --build-constraints --extra --all-extras --no-deps --group -o --output-file --format --no-strip-extras --no-strip-markers --no-annotate --no-header --annotation-style --custom-compile-command --system --generate-hashes --no-build --no-binary --only-binary --python-platform --universal --no-emit-package --emit-index-url --emit-find-links --emit-build-options --emit-index-annotation --torch-backend --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-version --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_sync()
 {
-    local word_list="  -c --constraint -b --build-constraint --require-hashes --verify-hashes --system --break-system-packages --no-break-system-packages --target --prefix --no-build --no-binary --only-binary --allow-empty-requirements --no-allow-empty-requirements --python-version --python-platform --strict --dry-run -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --exclude-newer --no-sources -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file -h --help -V --version"
+    local word_list="  -c --constraints -b --build-constraints --require-hashes --no-verify-hashes --system --break-system-packages --no-break-system-packages --target --prefix --no-build --no-binary --only-binary --allow-empty-requirements --no-allow-empty-requirements --python-version --python-platform --strict --dry-run --torch-backend --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --exclude-newer --no-sources -n --no-cache --refresh --cache-dir --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_install()
 {
-    local word_list="  -r --requirement -e --editable -c --constraint --override -b --build-constraint --extra --all-extras --no-deps --require-hashes --verify-hashes --system --break-system-packages --no-break-system-packages --target --prefix --no-build --no-binary --only-binary --python-version --python-platform --strict --dry-run -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --allow-insecure-host -U --upgrade -P --upgrade-package --resolution --prerelease --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -r --requirements -e --editable -c --constraints --overrides -b --build-constraints --extra --all-extras --no-deps --group --require-hashes --no-verify-hashes --system --break-system-packages --no-break-system-packages --target --prefix --no-build --no-binary --only-binary --python-version --python-platform --exact --strict --dry-run --torch-backend --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources --reinstall --reinstall-package --link-mode --compile-bytecode -C --config-setting --no-build-isolation --no-build-isolation-package -n --no-cache --cache-dir --refresh --refresh-package -p --python --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_uninstall()
 {
-    local word_list="  -r --requirement --keyring-provider --allow-insecure-host --system --break-system-packages --no-break-system-packages --target --prefix -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -r --requirements --keyring-provider --system --break-system-packages --no-break-system-packages --target --prefix --dry-run -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_freeze()
 {
-    local word_list="  --exclude-editable --strict --system -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --exclude-editable --strict --path --system -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_list()
 {
-    local word_list="  -e --editable --exclude-editable --exclude --format --strict --system -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -e --editable --exclude-editable --exclude --format --outdated --strict --system --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --exclude-newer -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_show()
 {
-    local word_list="  --strict --system -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --strict -f --files --system -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_tree()
 {
-    local word_list="  --show-version-specifiers -d --depth --prune --package --no-dedupe --invert --strict --system -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --show-version-specifiers -d --depth --prune --package --no-dedupe --invert --outdated --strict --system --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider --exclude-newer -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_pip_check()
 {
-    local word_list="  --system -p --python --python-preference --no-python-downloads -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --system -p --python --managed-python --no-managed-python --no-python-downloads -n --no-cache --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_venv()
 {
-    local word_list="  --seed --allow-existing --prompt --system-site-packages --relocatable --index-strategy --keyring-provider --allow-insecure-host --exclude-newer --link-mode -p --python --python-preference --no-python-downloads -i --index-url --extra-index-url -f --find-links --no-index -n --no-cache --cache-dir -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --no-project --seed --allow-existing --prompt --system-site-packages --relocatable --index-strategy --keyring-provider --exclude-newer --link-mode -p --python --managed-python --no-managed-python --no-python-downloads --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --refresh -n --no-cache --refresh-package --cache-dir --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uv_build()
+{
+    local word_list="  --package --all-packages -o --out-dir --sdist --wheel --no-build-logs --force-pep517 -b --build-constraints --require-hashes --no-verify-hashes -p --python --managed-python --no-managed-python --no-python-downloads --index --default-index -i --index-url --extra-index-url -f --find-links --no-index --index-strategy --keyring-provider -U --upgrade -P --upgrade-package --resolution --prerelease --fork-strategy --exclude-newer --no-sources -C --config-setting --no-build-isolation --no-build-isolation-package --no-build --no-build-package --no-binary --no-binary-package --link-mode -n --no-cache --cache-dir --refresh --refresh-package --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uv_publish()
+{
+    local word_list="  --index -u --username -p --password -t --token --trusted-publishing --keyring-provider --publish-url --check-url -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -444,43 +464,76 @@ _uv_cache()
 
     esac
 
-    local word_list=" clean prune dir -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list=" clean prune dir -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_cache_clean()
 {
-    local word_list="  -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_cache_prune()
 {
-    local word_list="  --ci -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --ci -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_cache_dir()
 {
-    local word_list="  -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_self()
 {
-    local word_list="  -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local cmd i subcommands
+    local subcommands=" update version"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        update) _uv_self_update
+            return
+            ;;
+
+        version) _uv_self_version
+            return
+            ;;
+
+    esac
+
+    local word_list=" update version -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uv_self_update()
+{
+    local word_list="  --token --dry-run -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_uv_self_version()
+{
+    local word_list="  --short --output-format -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_version()
 {
-    local word_list="  --output-format -n --no-cache --cache-dir --python-preference --no-python-downloads -q --quiet --color --native-tls --offline --no-progress --config-file --no-config -h --help -V --version"
+    local word_list="  --bump --dry-run --short --output-format -n --no-cache --cache-dir --managed-python --no-managed-python --no-python-downloads --color --native-tls --offline --allow-insecure-host --no-progress --directory --project --config-file --no-config -h --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _uv_help()
 {
-    local word_list="  --no-pager"
+    local word_list="  "
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
