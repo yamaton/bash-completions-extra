@@ -1,0 +1,159 @@
+# Auto-generated with h2o
+
+_semgrep()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" ci install-semgrep-pro login logout lsp publish scan show test validate mcp"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        ci) _semgrep_ci
+            return
+            ;;
+
+        install-semgrep-pro) _semgrep_installsemgreppro
+            return
+            ;;
+
+        login) _semgrep_login
+            return
+            ;;
+
+        logout) _semgrep_logout
+            return
+            ;;
+
+        lsp) _semgrep_lsp
+            return
+            ;;
+
+        publish) _semgrep_publish
+            return
+            ;;
+
+        scan) _semgrep_scan
+            return
+            ;;
+
+        show) _semgrep_show
+            return
+            ;;
+
+        test) _semgrep_test
+            return
+            ;;
+
+        validate) _semgrep_validate
+            return
+            ;;
+
+        mcp) _semgrep_mcp
+            return
+            ;;
+
+    esac
+
+    local word_list=" ci install-semgrep-pro login logout lsp publish scan show test validate mcp -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_ci()
+{
+    local word_list="  -a --autofix --allow-local-builds --allow-untrusted-validators --baseline-commit --code -d --dump-command-for-core --dataflow-traces --disable-nosem --disable-version-check --dry-run --dryrun --emacs --emacs-output --enable-nosem --enable-version-check --exclude --exclude-minified-files --exclude-rule -f -c --config --fake-backend --files-with-matches --force-color --gitlab-sast --gitlab-sast-output --gitlab-secrets --gitlab-secrets-output --historical-secrets --include --incremental-output --interfile-timeout --internal-ci-scan-results -j --jobs --json --json-output --junit-xml --junit-xml-output --log-backend --matching-explanations --max-chars-per-line --max-lines-per-finding --max-log-list-entries --max-memory --max-target-bytes --metrics --no-autofix --no-dryrun --no-exclude-minified-files --no-force-color --no-git-ignore --no-rewrite-rule-ids --no-secrets-validation --no-suppress-errors -o --output --optimizations --oss-only --pro --pro-intrafile --pro-languages --pro-path-sensitive --rewrite-rule-ids --sarif --sarif-output --scan-unknown-extensions --secrets --semgrepignore-v2 --skip-unknown-extensions --subdir --supply-chain --suppress-errors --text --text-output --timeout --timeout-threshold --use-git-ignore --vim --vim-output --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose --x-disable-transitive-reachability --x-dump-rule-partitions --x-dump-rule-partitions-dir --x-dump-rule-partitions-strategy --x-eio --x-ignore-semgrepignore-files --x-mcp --x-merge-partial-results-dir --x-merge-partial-results-output --x-no-python-schema-validation --x-parmap --x-partial-config --x-partial-output --x-pro-naming --x-semgrepignore-filename --x-simple-profiling --x-tr --x-enable-transitive-reachability --x-upload-partial-results --x-upload-partial-results-scan-id --x-validate-partial-results-actual --x-validate-partial-results-expected"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_installsemgreppro()
+{
+    local word_list="  --x-eio --x-no-python-schema-validation --x-parmap --x-simple-profiling --custom-binary --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_login()
+{
+    local word_list="  --force --override-tty --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_logout()
+{
+    local word_list="  --x-eio --x-no-python-schema-validation --x-parmap --x-simple-profiling --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_lsp()
+{
+    local word_list="  --no-x-eio-ls --x-eio --x-eio-ls --x-no-python-schema-validation --x-parmap --x-simple-profiling --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_publish()
+{
+    local word_list="  --visibility --registry-id --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_scan()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_show()
+{
+    local cmd i subcommands
+    local subcommands=" resources"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        resources) _semgrep_show_resources
+            return
+            ;;
+
+    esac
+
+    local word_list=" resources --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_show_resources()
+{
+    local word_list="  --x-eio --x-no-python-schema-validation --x-parmap --x-simple-profiling --json --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_test()
+{
+    local word_list="  -f -c --config --json --matching-diagnosis --no-test-ignore-todo --strict --test-ignore-todo --pro --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose --x-eio --x-no-python-schema-validation --x-parmap --x-simple-profiling"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_validate()
+{
+    local word_list="  --x-eio --x-no-python-schema-validation --x-parmap --x-simple-profiling --pro --debug --develop --experimental --help --legacy --no-trace --profile -q --quiet --trace --trace-endpoint -v --verbose"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_semgrep_mcp()
+{
+    local word_list="  -v --version -t --transport -p --port -k --hook -a --agent -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _semgrep semgrep
