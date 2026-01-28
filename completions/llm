@@ -1,0 +1,822 @@
+# Auto-generated with h2o
+
+_llm()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" prompt aliases chat collections embed embed-models embed-multi fragments install keys logs models openai plugins schemas similar templates tools uninstall"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        prompt) _llm_prompt
+            return
+            ;;
+
+        aliases) _llm_aliases
+            return
+            ;;
+
+        chat) _llm_chat
+            return
+            ;;
+
+        collections) _llm_collections
+            return
+            ;;
+
+        embed) _llm_embed
+            return
+            ;;
+
+        embed-models) _llm_embedmodels
+            return
+            ;;
+
+        embed-multi) _llm_embedmulti
+            return
+            ;;
+
+        fragments) _llm_fragments
+            return
+            ;;
+
+        install) _llm_install
+            return
+            ;;
+
+        keys) _llm_keys
+            return
+            ;;
+
+        logs) _llm_logs
+            return
+            ;;
+
+        models) _llm_models
+            return
+            ;;
+
+        openai) _llm_openai
+            return
+            ;;
+
+        plugins) _llm_plugins
+            return
+            ;;
+
+        schemas) _llm_schemas
+            return
+            ;;
+
+        similar) _llm_similar
+            return
+            ;;
+
+        templates) _llm_templates
+            return
+            ;;
+
+        tools) _llm_tools
+            return
+            ;;
+
+        uninstall) _llm_uninstall
+            return
+            ;;
+
+    esac
+
+    local word_list=" prompt aliases chat collections embed embed-models embed-multi fragments install keys logs models openai plugins schemas similar templates tools uninstall --version -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_prompt()
+{
+    local word_list="  -s --system -m --model -d --database -q --query -a --attachment --at --attachment-type -T --tool --functions --td --tools-debug --ta --tools-approve --cl --chain-limit -o --option --schema --schema-multi -f --fragment --sf --system-fragment -t --template -p --param --no-stream -n --no-log --log -c --continue --cid --conversation --key --save --async -u --usage -x --extract --xl --extract-last -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_aliases()
+{
+    local cmd i subcommands
+    local subcommands=" list path remove set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_aliases_list
+            return
+            ;;
+
+        path) _llm_aliases_path
+            return
+            ;;
+
+        remove) _llm_aliases_remove
+            return
+            ;;
+
+        set) _llm_aliases_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" list path remove set -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_aliases_list()
+{
+    local word_list="  --json -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_aliases_path()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_aliases_remove()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_aliases_set()
+{
+    local word_list="  -q --query -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_chat()
+{
+    local word_list="  -s --system -m --model -c --continue --cid --conversation -f --fragment --sf --system-fragment -t --template -p --param -o --option -d --database --no-stream --key -T --tool --functions --td --tools-debug --ta --tools-approve --cl --chain-limit -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_collections()
+{
+    local cmd i subcommands
+    local subcommands=" list delete path"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_collections_list
+            return
+            ;;
+
+        delete) _llm_collections_delete
+            return
+            ;;
+
+        path) _llm_collections_path
+            return
+            ;;
+
+    esac
+
+    local word_list=" list delete path -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_collections_list()
+{
+    local word_list="  -d --database --json -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_collections_delete()
+{
+    local word_list="  -d --database -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_collections_path()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_embed()
+{
+    local word_list="  -i --input -m --model --store -d --database -c --content --binary --metadata -f --format -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_embedmodels()
+{
+    local cmd i subcommands
+    local subcommands=" list default"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_embedmodels_list
+            return
+            ;;
+
+        default) _llm_embedmodels_default
+            return
+            ;;
+
+    esac
+
+    local word_list=" list default -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_embedmodels_list()
+{
+    local word_list="  -q --query -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_embedmodels_default()
+{
+    local word_list="  --remove-default -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_embedmulti()
+{
+    local word_list="  --format --files --encoding --binary --sql --attach --batch-size --prefix -m --model --prepend --store -d --database -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_fragments()
+{
+    local cmd i subcommands
+    local subcommands=" list loaders remove set show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_fragments_list
+            return
+            ;;
+
+        loaders) _llm_fragments_loaders
+            return
+            ;;
+
+        remove) _llm_fragments_remove
+            return
+            ;;
+
+        set) _llm_fragments_set
+            return
+            ;;
+
+        show) _llm_fragments_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" list loaders remove set show -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_fragments_list()
+{
+    local word_list="  -q --query --aliases --json -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_fragments_loaders()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_fragments_remove()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_fragments_set()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_fragments_show()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_install()
+{
+    local word_list="  -U --upgrade -e --editable --force-reinstall --no-cache-dir --pre -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_keys()
+{
+    local cmd i subcommands
+    local subcommands=" Manage list get path set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        Manage) _llm_keys_Manage
+            return
+            ;;
+
+        list) _llm_keys_list
+            return
+            ;;
+
+        get) _llm_keys_get
+            return
+            ;;
+
+        path) _llm_keys_path
+            return
+            ;;
+
+        set) _llm_keys_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" Manage list get path set -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_keys_Manage()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_keys_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_keys_get()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_keys_path()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_keys_set()
+{
+    local word_list="  --value -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs()
+{
+    local cmd i subcommands
+    local subcommands=" list backup off on path status"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_logs_list
+            return
+            ;;
+
+        backup) _llm_logs_backup
+            return
+            ;;
+
+        off) _llm_logs_off
+            return
+            ;;
+
+        on) _llm_logs_on
+            return
+            ;;
+
+        path) _llm_logs_path
+            return
+            ;;
+
+        status) _llm_logs_status
+            return
+            ;;
+
+    esac
+
+    local word_list=" list backup off on path status -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs_list()
+{
+    local word_list="  -n --count -d --database -m --model -q --query -f --fragment -T --tool --tools --schema --schema-multi -l --latest --data --data-array --data-key --data-ids -t --truncate -s --short -u --usage -r --response -x --extract --xl --extract-last -c --current --cid --conversation --id-gt --id-gte --json -e --expand -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs_backup()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs_off()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs_on()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs_path()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_logs_status()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models()
+{
+    local cmd i subcommands
+    local subcommands=" list default options"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_models_list
+            return
+            ;;
+
+        default) _llm_models_default
+            return
+            ;;
+
+        options) _llm_models_options
+            return
+            ;;
+
+    esac
+
+    local word_list=" list default options -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_list()
+{
+    local word_list="  --options --async --schemas --tools -q --query -m --model -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_default()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_options()
+{
+    local cmd i subcommands
+    local subcommands=" Manage list clear set show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        Manage) _llm_models_options_Manage
+            return
+            ;;
+
+        list) _llm_models_options_list
+            return
+            ;;
+
+        clear) _llm_models_options_clear
+            return
+            ;;
+
+        set) _llm_models_options_set
+            return
+            ;;
+
+        show) _llm_models_options_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" Manage list clear set show -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_options_Manage()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_options_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_options_clear()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_options_set()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_models_options_show()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_openai()
+{
+    local cmd i subcommands
+    local subcommands=" Commands"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        Commands) _llm_openai_Commands
+            return
+            ;;
+
+    esac
+
+    local word_list=" Commands -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_openai_Commands()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_plugins()
+{
+    local word_list="  --all --hook -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_schemas()
+{
+    local cmd i subcommands
+    local subcommands=" Manage list dsl show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        Manage) _llm_schemas_Manage
+            return
+            ;;
+
+        list) _llm_schemas_list
+            return
+            ;;
+
+        dsl) _llm_schemas_dsl
+            return
+            ;;
+
+        show) _llm_schemas_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" Manage list dsl show -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_schemas_Manage()
+{
+    local word_list="  -d --database -q --query --full --json --nl -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_schemas_list()
+{
+    local word_list="  -d --database -q --query --full --json --nl -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_schemas_dsl()
+{
+    local word_list="  --multi -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_schemas_show()
+{
+    local word_list="  -d --database -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_similar()
+{
+    local word_list="  -i --input -c --content --binary -n --number -p --plain -d --database --prefix -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_templates()
+{
+    local cmd i subcommands
+    local subcommands=" list edit loaders path show"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _llm_templates_list
+            return
+            ;;
+
+        edit) _llm_templates_edit
+            return
+            ;;
+
+        loaders) _llm_templates_loaders
+            return
+            ;;
+
+        path) _llm_templates_path
+            return
+            ;;
+
+        show) _llm_templates_show
+            return
+            ;;
+
+    esac
+
+    local word_list=" list edit loaders path show -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_templates_list()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_templates_edit()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_templates_loaders()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_templates_path()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_templates_show()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_tools()
+{
+    local cmd i subcommands
+    local subcommands=" Manage list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        Manage) _llm_tools_Manage
+            return
+            ;;
+
+        list) _llm_tools_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" Manage list -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_tools_Manage()
+{
+    local word_list="  --json --functions -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_tools_list()
+{
+    local word_list="  --json --functions -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_llm_uninstall()
+{
+    local word_list="  -y --yes -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _llm llm

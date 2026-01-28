@@ -1,0 +1,13 @@
+# Auto-generated with h2o
+
+_just()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local word_list="  --alias-style --ceiling --check --chooser --clear-shell-args --color --command-color --cygpath --dotenv-filename -E --dotenv-path -n --dry-run --dump-format --explain -g --global-justfile --highlight -f --justfile --list-heading --list-prefix --list-submodules --no-aliases --no-deps --no-dotenv --no-highlight --one -q --quiet --allow-missing --set --shell --shell-arg --shell-command --tempdir --timestamp --timestamp-format -u --unsorted --unstable -d --working-directory --yes -h --help -V --version --changelog --choose -c --command --completions --dump -e --edit --evaluate --fmt --groups --init -l --list --man -s --show --summary --usage --variables"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _just just
