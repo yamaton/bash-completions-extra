@@ -1,0 +1,159 @@
+# Auto-generated with h2o
+
+_ruff()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" check rule config linter clean format server analyze version help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _ruff_check
+            return
+            ;;
+
+        rule) _ruff_rule
+            return
+            ;;
+
+        config) _ruff_config
+            return
+            ;;
+
+        linter) _ruff_linter
+            return
+            ;;
+
+        clean) _ruff_clean
+            return
+            ;;
+
+        format) _ruff_format
+            return
+            ;;
+
+        server) _ruff_server
+            return
+            ;;
+
+        analyze) _ruff_analyze
+            return
+            ;;
+
+        version) _ruff_version
+            return
+            ;;
+
+        help) _ruff_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" check rule config linter clean format server analyze version help -h --help -V --version -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_check()
+{
+    local word_list="  --fix --unsafe-fixes --show-fixes --diff -w --watch --fix-only --ignore-noqa --output-format -o --output-file --target-version --preview --extension --statistics --add-noqa --show-files --show-settings -h --help --select --ignore --extend-select --per-file-ignores --extend-per-file-ignores --fixable --unfixable --extend-fixable --exclude --extend-exclude --respect-gitignore --force-exclude -n --no-cache --cache-dir --stdin-filename -e --exit-zero --exit-non-zero-on-fix -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_rule()
+{
+    local word_list="  --all --output-format -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_config()
+{
+    local word_list="  --output-format -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_linter()
+{
+    local word_list="  --output-format -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_clean()
+{
+    local word_list="  -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_format()
+{
+    local word_list="  --check --diff --extension --target-version --preview --output-format -h --help -n --no-cache --cache-dir --stdin-filename --exit-non-zero-on-format --respect-gitignore --exclude --force-exclude --line-length --range -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_server()
+{
+    local word_list="  --preview -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_analyze()
+{
+    local cmd i subcommands
+    local subcommands=" graph help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        graph) _ruff_analyze_graph
+            return
+            ;;
+
+        help) _ruff_analyze_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" graph help -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_analyze_graph()
+{
+    local word_list="  --direction --detect-string-imports --min-dots --preview --target-version --python --type-checking-imports -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_analyze_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_version()
+{
+    local word_list="  --output-format -h --help -v --verbose -q --quiet -s --silent --config --isolated"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ruff_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ruff ruff

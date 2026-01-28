@@ -1,0 +1,66 @@
+# Auto-generated with h2o
+
+_ty()
+{
+    local cur prev words cword
+    _init_completion -s || return
+
+    local cmd i subcommands
+    local subcommands=" check server version help"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        check) _ty_check
+            return
+            ;;
+
+        server) _ty_server
+            return
+            ;;
+
+        version) _ty_version
+            return
+            ;;
+
+        help) _ty_help
+            return
+            ;;
+
+    esac
+
+    local word_list=" check server version help -h --help -V --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ty_check()
+{
+    local word_list="  --add-ignore --project --python --typeshed --extra-search-path --python-version --python-platform --config-file --output-format --error-on-warning --exit-zero -W --watch -h --help --error --warn --ignore --respect-ignore-files --force-exclude --exclude --no-progress --color"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ty_server()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ty_version()
+{
+    local word_list="  -h --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_ty_help()
+{
+    local word_list="  "
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+## -o bashdefault and -o default are fallback
+complete -o bashdefault -o default -F _ty ty
