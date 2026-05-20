@@ -147,13 +147,13 @@ _micromamba_shell()
 
 _micromamba_shell_init()
 {
-    local word_list="  -h --help -s --shell -r --root-prefix --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_shell_deinit()
 {
-    local word_list="  -h --help -s --shell -r --root-prefix --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -165,7 +165,7 @@ _micromamba_shell_reinit()
 
 _micromamba_shell_hook()
 {
-    local word_list="  -h --help -s --shell -r --root-prefix --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
+    local word_list="  -h --help --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -268,7 +268,7 @@ _micromamba_repoquery_depends()
 
 _micromamba_list()
 {
-    local word_list="  -h --help -f --full-name --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list="  -h --help -f --full-name --no-pip --reverse --explicit --md5 -c --canonical -e --export --revisions --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -359,59 +359,13 @@ _micromamba_config_describe()
 
 _micromamba_config_prepend()
 {
-    local cmd i subcommands
-    local subcommands=" specs"
-
-    for (( i=1; i < cword; i++ )); do
-        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
-            cmd=${words[i]}
-            break
-        fi
-    done
-
-    case "$cmd" in
-        specs) _micromamba_config_prepend_specs
-            return
-            ;;
-
-    esac
-
-    local word_list=" specs -h --help --system --env --file"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_micromamba_config_prepend_specs()
-{
-    local word_list="  "
+    local word_list="  -h --help --system --env --file"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _micromamba_config_append()
 {
-    local cmd i subcommands
-    local subcommands=" specs"
-
-    for (( i=1; i < cword; i++ )); do
-        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
-            cmd=${words[i]}
-            break
-        fi
-    done
-
-    case "$cmd" in
-        specs) _micromamba_config_append_specs
-            return
-            ;;
-
-    esac
-
-    local word_list=" specs -h --help --system --env --file"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_micromamba_config_append_specs()
-{
-    local word_list="  "
+    local word_list="  -h --help --system --env --file"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -441,7 +395,7 @@ _micromamba_config_get()
 
 _micromamba_info()
 {
-    local word_list="  -h --help --licenses --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
+    local word_list="  -h --help --licenses --base -e --envs --rc-file --no-rc --no-env -v --verbose --log-level -q --quiet -y --yes --json --offline --dry-run --download-only --experimental -r --root-prefix -p --prefix --relocate-prefix -n --name"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
