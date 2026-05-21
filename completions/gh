@@ -6,7 +6,7 @@ _gh()
     _init_completion -s || return
 
     local cmd i subcommands
-    local subcommands=" auth browse codespace gist issue pr release repo run workflow alias api completion config extension gpg-key label search secret ssh-key status actions environment exit-codes formatting mintty reference"
+    local subcommands=" auth browse codespace gist issue org pr project release repo cache run workflow copilot co alias api attestation completion config extension gpg-key label ruleset search secret ssh-key status variable"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -36,7 +36,15 @@ _gh()
             return
             ;;
 
+        org) _gh_org
+            return
+            ;;
+
         pr) _gh_pr
+            return
+            ;;
+
+        project) _gh_project
             return
             ;;
 
@@ -48,6 +56,10 @@ _gh()
             return
             ;;
 
+        cache) _gh_cache
+            return
+            ;;
+
         run) _gh_run
             return
             ;;
@@ -56,11 +68,23 @@ _gh()
             return
             ;;
 
+        copilot) _gh_copilot
+            return
+            ;;
+
+        co) _gh_co
+            return
+            ;;
+
         alias) _gh_alias
             return
             ;;
 
         api) _gh_api
+            return
+            ;;
+
+        attestation) _gh_attestation
             return
             ;;
 
@@ -84,6 +108,10 @@ _gh()
             return
             ;;
 
+        ruleset) _gh_ruleset
+            return
+            ;;
+
         search) _gh_search
             return
             ;;
@@ -100,40 +128,20 @@ _gh()
             return
             ;;
 
-        actions) _gh_actions
-            return
-            ;;
-
-        environment) _gh_environment
-            return
-            ;;
-
-        exit-codes) _gh_exitcodes
-            return
-            ;;
-
-        formatting) _gh_formatting
-            return
-            ;;
-
-        mintty) _gh_mintty
-            return
-            ;;
-
-        reference) _gh_reference
+        variable) _gh_variable
             return
             ;;
 
     esac
 
-    local word_list=" auth browse codespace gist issue pr release repo run workflow alias api completion config extension gpg-key label search secret ssh-key status actions environment exit-codes formatting mintty reference --help --version"
+    local word_list=" auth browse codespace gist issue org pr project release repo cache run workflow copilot co alias api attestation completion config extension gpg-key label ruleset search secret ssh-key status variable --help --version"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth()
 {
     local cmd i subcommands
-    local subcommands=" login logout refresh setup-git status token"
+    local subcommands=" login logout refresh setup-git status switch token"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -163,62 +171,72 @@ _gh_auth()
             return
             ;;
 
+        switch) _gh_auth_switch
+            return
+            ;;
+
         token) _gh_auth_token
             return
             ;;
 
     esac
 
-    local word_list=" login logout refresh setup-git status token --help"
+    local word_list=" login logout refresh setup-git status switch token --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth_login()
 {
-    local word_list="  -p --git-protocol -h --hostname -s --scopes -w --web --with-token --help"
+    local word_list="  -p --git-protocol -h --hostname --insecure-storage -s --scopes --skip-ssh-key -w --web --with-token --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth_logout()
 {
-    local word_list="  -h --hostname --help"
+    local word_list="  -h --hostname -u --user --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth_refresh()
 {
-    local word_list="  -h --hostname -s --scopes --help"
+    local word_list="  -h --hostname --insecure-storage -r --remove-scopes --reset-scopes -s --scopes --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth_setupgit()
 {
-    local word_list="  -h --hostname --help"
+    local word_list="  -f --force --hostname -h --hostname --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth_status()
 {
-    local word_list="  -h --hostname -t --show-token --help"
+    local word_list="  -a --active -h --hostname -t --show-token --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_auth_switch()
+{
+    local word_list="  -h --hostname -u --user --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_auth_token()
 {
-    local word_list="  -h --hostname --help"
+    local word_list="  -h --hostname -u --user --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_browse()
 {
-    local word_list="  -b --branch -c --commit -n --no-browser -p --projects -R --repo -s --settings -w --wiki --help"
+    local word_list="  -b --branch -c --commit -n --no-browser -p --projects -r --releases -R --repo -s --settings -w --wiki --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace()
 {
     local cmd i subcommands
-    local subcommands=" code cp create delete edit jupyter list logs ports rebuild ssh stop"
+    local subcommands=" code cp create delete edit jupyter list logs ports rebuild ssh stop view"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -276,57 +294,61 @@ _gh_codespace()
             return
             ;;
 
+        view) _gh_codespace_view
+            return
+            ;;
+
     esac
 
-    local word_list=" code cp create delete edit jupyter list logs ports rebuild ssh stop --help"
+    local word_list=" code cp create delete edit jupyter list logs ports rebuild ssh stop view --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_code()
 {
-    local word_list="  -c --codespace --insiders -w --web --help"
+    local word_list="  -c --codespace --insiders -R --repo --repo-owner -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_cp()
 {
-    local word_list="  -c --codespace -e --expand -p --profile -r --recursive --help"
+    local word_list="  -c --codespace -e --expand -p --profile -r --recursive -R --repo --repo-owner --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_create()
 {
-    local word_list="  -b --branch --default-permissions --devcontainer-path --idle-timeout -l --location -m --machine -r --repo --retention-period -s --status --help"
+    local word_list="  -b --branch --default-permissions --devcontainer-path -d --display-name --idle-timeout -l --location -m --machine -R --repo --retention-period -s --status -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_delete()
 {
-    local word_list="  --all -c --codespace --days -f --force -o --org -r --repo -u --user --help"
+    local word_list="  --all -c --codespace --days -f --force -o --org -R --repo --repo-owner -u --user --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_edit()
 {
-    local word_list="  -c --codespace -d --display-name -m --machine --help"
+    local word_list="  -c --codespace -d --display-name -m --machine -R --repo --repo-owner --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_jupyter()
 {
-    local word_list="  -c --codespace --help"
+    local word_list="  -c --codespace -R --repo --repo-owner --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_list()
 {
-    local word_list="  -q --jq --json -L --limit -o --org -r --repo -t --template -u --user --help"
+    local word_list="  -q --jq --json -L --limit -o --org -R --repo -t --template -u --user -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_logs()
 {
-    local word_list="  -c --codespace -f --follow --help"
+    local word_list="  -c --codespace -f --follow -R --repo --repo-owner --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -353,44 +375,50 @@ _gh_codespace_ports()
 
     esac
 
-    local word_list=" forward visibility -c --codespace -q --jq --json -t --template --help"
+    local word_list=" forward visibility -c --codespace -q --jq --json -R --repo --repo-owner -t --template --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_ports_forward()
 {
-    local word_list="  -c --codespace --help"
+    local word_list="  -c --codespace --help -R --repo --repo-owner"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_ports_visibility()
 {
-    local word_list="  -c --codespace --help"
+    local word_list="  -c --codespace --help -R --repo --repo-owner"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_rebuild()
 {
-    local word_list="  -c --codespace --help"
+    local word_list="  -c --codespace --full -R --repo --repo-owner --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_ssh()
 {
-    local word_list="  -c --codespace --config -d --debug --debug-file --profile --server-port --help"
+    local word_list="  -c --codespace --config -d --debug --debug-file --profile -R --repo --repo-owner --server-port --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_codespace_stop()
 {
-    local word_list="  -c --codespace -o --org -u --user --help"
+    local word_list="  -c --codespace -o --org -R --repo --repo-owner -u --user --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_codespace_view()
+{
+    local word_list="  -c --codespace -q --jq --json -R --repo --repo-owner -t --template --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_gist()
 {
     local cmd i subcommands
-    local subcommands=" clone create delete edit list view"
+    local subcommands=" clone create delete edit list rename view"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -420,13 +448,17 @@ _gh_gist()
             return
             ;;
 
+        rename) _gh_gist_rename
+            return
+            ;;
+
         view) _gh_gist_view
             return
             ;;
 
     esac
 
-    local word_list=" clone create delete edit list view --help"
+    local word_list=" clone create delete edit list rename view --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -450,13 +482,19 @@ _gh_gist_delete()
 
 _gh_gist_edit()
 {
-    local word_list="  -a --add -d --desc -f --filename --help"
+    local word_list="  -a --add -d --desc -f --filename -r --remove --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_gist_list()
 {
-    local word_list="  -L --limit --public --secret --help"
+    local word_list="  --filter --include-content -L --limit --public --secret --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_gist_rename()
+{
+    local word_list="  --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -469,7 +507,7 @@ _gh_gist_view()
 _gh_issue()
 {
     local cmd i subcommands
-    local subcommands=" close comment create delete edit list pin reopen status transfer unpin view"
+    local subcommands=" create list status close comment delete develop edit lock pin reopen transfer unlock unpin view"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -479,6 +517,18 @@ _gh_issue()
     done
 
     case "$cmd" in
+        create) _gh_issue_create
+            return
+            ;;
+
+        list) _gh_issue_list
+            return
+            ;;
+
+        status) _gh_issue_status
+            return
+            ;;
+
         close) _gh_issue_close
             return
             ;;
@@ -487,11 +537,11 @@ _gh_issue()
             return
             ;;
 
-        create) _gh_issue_create
+        delete) _gh_issue_delete
             return
             ;;
 
-        delete) _gh_issue_delete
+        develop) _gh_issue_develop
             return
             ;;
 
@@ -499,7 +549,7 @@ _gh_issue()
             return
             ;;
 
-        list) _gh_issue_list
+        lock) _gh_issue_lock
             return
             ;;
 
@@ -511,11 +561,11 @@ _gh_issue()
             return
             ;;
 
-        status) _gh_issue_status
+        transfer) _gh_issue_transfer
             return
             ;;
 
-        transfer) _gh_issue_transfer
+        unlock) _gh_issue_unlock
             return
             ;;
 
@@ -529,7 +579,25 @@ _gh_issue()
 
     esac
 
-    local word_list=" close comment create delete edit list pin reopen status transfer unpin view -R --repo --help"
+    local word_list=" create list status close comment delete develop edit lock pin reopen transfer unlock unpin view -R --repo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_issue_create()
+{
+    local word_list="  -a --assignee -b --body -F --body-file -e --editor -l --label -m --milestone -p --project --recover -T --template -t --title -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_issue_list()
+{
+    local word_list="  --app -a --assignee -A --author -q --jq --json -l --label -L --limit --mention -m --milestone -S --search -s --state -t --template -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_issue_status()
+{
+    local word_list="  -q --jq --json -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -545,27 +613,27 @@ _gh_issue_comment()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_issue_create()
+_gh_issue_delete()
 {
-    local word_list="  -a --assignee -b --body -F --body-file -l --label -m --milestone -p --project --recover -t --title -w --web --help -R --repo"
+    local word_list="  --yes --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_issue_delete()
+_gh_issue_develop()
 {
-    local word_list="  --confirm --help -R --repo"
+    local word_list="  -b --base --branch-repo -c --checkout -l --list -n --name --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_issue_edit()
 {
-    local word_list="  --add-assignee --add-label --add-project -b --body -F --body-file -m --milestone --remove-assignee --remove-label --remove-project -t --title --help -R --repo"
+    local word_list="  --add-assignee --add-label --add-project -b --body -F --body-file -m --milestone --remove-assignee --remove-label --remove-milestone --remove-project -t --title --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_issue_list()
+_gh_issue_lock()
 {
-    local word_list="  --app -a --assignee -A --author -q --jq --json -l --label -L --limit --mention -m --milestone -S --search -s --state -t --template -w --web --help -R --repo"
+    local word_list="  -r --reason --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -581,13 +649,13 @@ _gh_issue_reopen()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_issue_status()
+_gh_issue_transfer()
 {
-    local word_list="  -q --jq --json -t --template --help -R --repo"
+    local word_list="  --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_issue_transfer()
+_gh_issue_unlock()
 {
     local word_list="  --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
@@ -605,10 +673,10 @@ _gh_issue_view()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_pr()
+_gh_org()
 {
     local cmd i subcommands
-    local subcommands=" checkout checks close comment create diff edit list merge ready reopen review status view"
+    local subcommands=" list"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -618,6 +686,47 @@ _gh_pr()
     done
 
     case "$cmd" in
+        list) _gh_org_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" list --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_org_list()
+{
+    local word_list="  -L --limit --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_pr()
+{
+    local cmd i subcommands
+    local subcommands=" create list status checkout checks close comment diff edit lock merge ready reopen review unlock update-branch view"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        create) _gh_pr_create
+            return
+            ;;
+
+        list) _gh_pr_list
+            return
+            ;;
+
+        status) _gh_pr_status
+            return
+            ;;
+
         checkout) _gh_pr_checkout
             return
             ;;
@@ -634,10 +743,6 @@ _gh_pr()
             return
             ;;
 
-        create) _gh_pr_create
-            return
-            ;;
-
         diff) _gh_pr_diff
             return
             ;;
@@ -646,7 +751,7 @@ _gh_pr()
             return
             ;;
 
-        list) _gh_pr_list
+        lock) _gh_pr_lock
             return
             ;;
 
@@ -666,7 +771,11 @@ _gh_pr()
             return
             ;;
 
-        status) _gh_pr_status
+        unlock) _gh_pr_unlock
+            return
+            ;;
+
+        update-branch) _gh_pr_updatebranch
             return
             ;;
 
@@ -676,7 +785,25 @@ _gh_pr()
 
     esac
 
-    local word_list=" checkout checks close comment create diff edit list merge ready reopen review status view -R --repo --help"
+    local word_list=" create list status checkout checks close comment diff edit lock merge ready reopen review unlock update-branch view -R --repo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_pr_create()
+{
+    local word_list="  -a --assignee -B --base -b --body -F --body-file -d --draft --dry-run -e --editor -f --fill --fill-first --fill-verbose -H --head -l --label -m --milestone --no-maintainer-edit -p --project --recover -r --reviewer -T --template -t --title -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_pr_list()
+{
+    local word_list="  --app -a --assignee -A --author -B --base -d --draft -H --head -q --jq --json -l --label -L --limit -S --search -s --state -t --template -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_pr_status()
+{
+    local word_list="  -c --conflict-status -q --jq --json -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -688,7 +815,7 @@ _gh_pr_checkout()
 
 _gh_pr_checks()
 {
-    local word_list="  -i --interval --watch --required --watch -w --web --help -R --repo"
+    local word_list="  --fail-fast -i --interval --watch -q --jq --json --required -t --template --watch -w --web --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -704,12 +831,6 @@ _gh_pr_comment()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_pr_create()
-{
-    local word_list="  -a --assignee -B --base -b --body -F --body-file -d --draft -f --fill -H --head -l --label -m --milestone --no-maintainer-edit -p --project --recover -r --reviewer -t --title -w --web --help -R --repo"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
 _gh_pr_diff()
 {
     local word_list="  --color --name-only --patch -w --web --help -R --repo"
@@ -718,13 +839,13 @@ _gh_pr_diff()
 
 _gh_pr_edit()
 {
-    local word_list="  --add-assignee --add-label --add-project --add-reviewer -B --base -b --body -F --body-file -m --milestone --remove-assignee --remove-label --remove-project --remove-reviewer -t --title --help -R --repo"
+    local word_list="  --add-assignee --add-label --add-project --add-reviewer -B --base -b --body -F --body-file -m --milestone --remove-assignee --remove-label --remove-milestone --remove-project --remove-reviewer -t --title --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_pr_list()
+_gh_pr_lock()
 {
-    local word_list="  --app -a --assignee -A --author -B --base -d --draft -H --head -q --jq --json -l --label -L --limit -S --search -s --state -t --template -w --web --help -R --repo"
+    local word_list="  -r --reason --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -752,9 +873,15 @@ _gh_pr_review()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_pr_status()
+_gh_pr_unlock()
 {
-    local word_list="  -c --conflict-status -q --jq --json -t --template --help -R --repo"
+    local word_list="  --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_pr_updatebranch()
+{
+    local word_list="  --rebase --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -764,10 +891,219 @@ _gh_pr_view()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
+_gh_project()
+{
+    local cmd i subcommands
+    local subcommands=" close copy create delete edit field-create field-delete field-list item-add item-archive item-create item-delete item-edit item-list link list mark-template unlink view"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        close) _gh_project_close
+            return
+            ;;
+
+        copy) _gh_project_copy
+            return
+            ;;
+
+        create) _gh_project_create
+            return
+            ;;
+
+        delete) _gh_project_delete
+            return
+            ;;
+
+        edit) _gh_project_edit
+            return
+            ;;
+
+        field-create) _gh_project_fieldcreate
+            return
+            ;;
+
+        field-delete) _gh_project_fielddelete
+            return
+            ;;
+
+        field-list) _gh_project_fieldlist
+            return
+            ;;
+
+        item-add) _gh_project_itemadd
+            return
+            ;;
+
+        item-archive) _gh_project_itemarchive
+            return
+            ;;
+
+        item-create) _gh_project_itemcreate
+            return
+            ;;
+
+        item-delete) _gh_project_itemdelete
+            return
+            ;;
+
+        item-edit) _gh_project_itemedit
+            return
+            ;;
+
+        item-list) _gh_project_itemlist
+            return
+            ;;
+
+        link) _gh_project_link
+            return
+            ;;
+
+        list) _gh_project_list
+            return
+            ;;
+
+        mark-template) _gh_project_marktemplate
+            return
+            ;;
+
+        unlink) _gh_project_unlink
+            return
+            ;;
+
+        view) _gh_project_view
+            return
+            ;;
+
+    esac
+
+    local word_list=" close copy create delete edit field-create field-delete field-list item-add item-archive item-create item-delete item-edit item-list link list mark-template unlink view --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_close()
+{
+    local word_list="  --format -q --jq --owner -t --template --undo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_copy()
+{
+    local word_list="  --drafts --format -q --jq --source-owner --target-owner -t --template --title --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_create()
+{
+    local word_list="  --format -q --jq --owner -t --template --title --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_delete()
+{
+    local word_list="  --format -q --jq --owner -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_edit()
+{
+    local word_list="  -d --description --format -q --jq --owner --readme -t --template --title --visibility --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_fieldcreate()
+{
+    local word_list="  --data-type --format -q --jq --name --owner --single-select-options -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_fielddelete()
+{
+    local word_list="  --format --id -q --jq -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_fieldlist()
+{
+    local word_list="  --format -q --jq -L --limit --owner -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_itemadd()
+{
+    local word_list="  --format -q --jq --owner -t --template --url --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_itemarchive()
+{
+    local word_list="  --format --id -q --jq --owner -t --template --undo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_itemcreate()
+{
+    local word_list="  --body --format -q --jq --owner -t --template --title --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_itemdelete()
+{
+    local word_list="  --format --id -q --jq --owner -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_itemedit()
+{
+    local word_list="  --body --clear --date --field-id --format --id --iteration-id -q --jq --number --project-id --single-select-option-id -t --template --text --title --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_itemlist()
+{
+    local word_list="  --format -q --jq -L --limit --owner -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_link()
+{
+    local word_list="  --owner -R --repo -T --team --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_list()
+{
+    local word_list="  --closed --format -q --jq -L --limit --owner -t --template -w --web --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_marktemplate()
+{
+    local word_list="  --format -q --jq --owner -t --template --undo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_unlink()
+{
+    local word_list="  --owner -R --repo -T --team --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_project_view()
+{
+    local word_list="  --format -q --jq --owner -t --template -w --web --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
 _gh_release()
 {
     local cmd i subcommands
-    local subcommands=" create delete download edit list upload view"
+    local subcommands=" create list delete delete-asset download edit upload view"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -781,7 +1117,15 @@ _gh_release()
             return
             ;;
 
+        list) _gh_release_list
+            return
+            ;;
+
         delete) _gh_release_delete
+            return
+            ;;
+
+        delete-asset) _gh_release_deleteasset
             return
             ;;
 
@@ -790,10 +1134,6 @@ _gh_release()
             ;;
 
         edit) _gh_release_edit
-            return
-            ;;
-
-        list) _gh_release_list
             return
             ;;
 
@@ -807,13 +1147,19 @@ _gh_release()
 
     esac
 
-    local word_list=" create delete download edit list upload view -R --repo --help"
+    local word_list=" create list delete delete-asset download edit upload view -R --repo --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_release_create()
 {
-    local word_list="  --discussion-category -d --draft --generate-notes -n --notes -F --notes-file --notes-start-tag -p --prerelease --target -t --title --help -R --repo"
+    local word_list="  --discussion-category -d --draft --generate-notes --latest -n --notes -F --notes-file --notes-from-tag --notes-start-tag -p --prerelease --target -t --title --verify-tag --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_release_list()
+{
+    local word_list="  --exclude-drafts --exclude-pre-releases -q --jq --json -L --limit -O --order -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -823,21 +1169,21 @@ _gh_release_delete()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
+_gh_release_deleteasset()
+{
+    local word_list="  -y --yes --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
 _gh_release_download()
 {
-    local word_list="  -A --archive --clobber -D --dir -p --pattern --skip-existing --help -R --repo"
+    local word_list="  -A --archive --clobber -D --dir -O --output -p --pattern --skip-existing --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_release_edit()
 {
-    local word_list="  --discussion-category --draft -n --notes -F --notes-file --prerelease --tag --target -t --title --help -R --repo"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_gh_release_list()
-{
-    local word_list="  --exclude-drafts -L --limit --help -R --repo"
+    local word_list="  --discussion-category --draft --latest -n --notes -F --notes-file --prerelease --tag --target -t --title --verify-tag --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -856,7 +1202,7 @@ _gh_release_view()
 _gh_repo()
 {
     local cmd i subcommands
-    local subcommands=" archive clone create delete deploy-key edit fork list rename sync view"
+    local subcommands=" create list archive clone delete deploy-key edit fork gitignore license rename set-default sync unarchive view"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -866,15 +1212,19 @@ _gh_repo()
     done
 
     case "$cmd" in
+        create) _gh_repo_create
+            return
+            ;;
+
+        list) _gh_repo_list
+            return
+            ;;
+
         archive) _gh_repo_archive
             return
             ;;
 
         clone) _gh_repo_clone
-            return
-            ;;
-
-        create) _gh_repo_create
             return
             ;;
 
@@ -894,7 +1244,11 @@ _gh_repo()
             return
             ;;
 
-        list) _gh_repo_list
+        gitignore) _gh_repo_gitignore
+            return
+            ;;
+
+        license) _gh_repo_license
             return
             ;;
 
@@ -902,7 +1256,15 @@ _gh_repo()
             return
             ;;
 
+        set-default) _gh_repo_setdefault
+            return
+            ;;
+
         sync) _gh_repo_sync
+            return
+            ;;
+
+        unarchive) _gh_repo_unarchive
             return
             ;;
 
@@ -912,19 +1274,7 @@ _gh_repo()
 
     esac
 
-    local word_list=" archive clone create delete deploy-key edit fork list rename sync view --help"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_gh_repo_archive()
-{
-    local word_list="  -y --confirm --help"
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_gh_repo_clone()
-{
-    local word_list="  -u --upstream-remote-name --help"
+    local word_list=" create list archive clone delete deploy-key edit fork gitignore license rename set-default sync unarchive view --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -934,9 +1284,27 @@ _gh_repo_create()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
+_gh_repo_list()
+{
+    local word_list="  --archived --fork -q --jq --json -l --language -L --limit --no-archived --source -t --template --topic --visibility --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_archive()
+{
+    local word_list="  -y --yes --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_clone()
+{
+    local word_list="  -u --upstream-remote-name --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
 _gh_repo_delete()
 {
-    local word_list="  --confirm --help"
+    local word_list="  --yes --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -985,31 +1353,109 @@ _gh_repo_deploykey_delete()
 
 _gh_repo_deploykey_list()
 {
-    local word_list="  --help -R --repo"
+    local word_list="  -q --jq --json -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_repo_edit()
 {
-    local word_list="  --add-topic --allow-forking --default-branch --delete-branch-on-merge -d --description --enable-auto-merge --enable-issues --enable-merge-commit --enable-projects --enable-rebase-merge --enable-squash-merge --enable-wiki -h --homepage --remove-topic --template --visibility --help"
+    local word_list="  --accept-visibility-change-consequences --add-topic --allow-forking --allow-update-branch --default-branch --delete-branch-on-merge -d --description --enable-auto-merge --enable-discussions --enable-issues --enable-merge-commit --enable-projects --enable-rebase-merge --enable-squash-merge --enable-wiki -h --homepage --remove-topic --template --visibility --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_repo_fork()
 {
-    local word_list="  --clone --fork-name --org --remote --remote-name --help"
+    local word_list="  --clone --default-branch-only --fork-name --org --remote --remote-name --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_repo_list()
+_gh_repo_gitignore()
 {
-    local word_list="  --archived --fork -q --jq --json -l --language -L --limit --no-archived --source -t --template --topic --visibility --help"
+    local cmd i subcommands
+    local subcommands=" list view"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _gh_repo_gitignore_list
+            return
+            ;;
+
+        view) _gh_repo_gitignore_view
+            return
+            ;;
+
+    esac
+
+    local word_list=" list view --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_gitignore_list()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_gitignore_view()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_license()
+{
+    local cmd i subcommands
+    local subcommands=" list view"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        list) _gh_repo_license_list
+            return
+            ;;
+
+        view) _gh_repo_license_view
+            return
+            ;;
+
+    esac
+
+    local word_list=" list view --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_license_list()
+{
+    local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_license_view()
+{
+    local word_list="  -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_repo_rename()
 {
-    local word_list="  -y --confirm -R --repo --help"
+    local word_list="  -R --repo -y --yes --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_repo_setdefault()
+{
+    local word_list="  -u --unset -v --view --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1019,16 +1465,61 @@ _gh_repo_sync()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
+_gh_repo_unarchive()
+{
+    local word_list="  -y --yes --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
 _gh_repo_view()
 {
     local word_list="  -b --branch -q --jq --json -t --template -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
+_gh_cache()
+{
+    local cmd i subcommands
+    local subcommands=" delete list"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        delete) _gh_cache_delete
+            return
+            ;;
+
+        list) _gh_cache_list
+            return
+            ;;
+
+    esac
+
+    local word_list=" delete list -R --repo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_cache_delete()
+{
+    local word_list="  -a --all --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_cache_list()
+{
+    local word_list="  -q --jq --json -k --key -L --limit -O --order -r --ref -S --sort -t --template --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
 _gh_run()
 {
     local cmd i subcommands
-    local subcommands=" cancel download list rerun view watch"
+    local subcommands=" cancel delete download list rerun view watch"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -1039,6 +1530,10 @@ _gh_run()
 
     case "$cmd" in
         cancel) _gh_run_cancel
+            return
+            ;;
+
+        delete) _gh_run_delete
             return
             ;;
 
@@ -1064,11 +1559,17 @@ _gh_run()
 
     esac
 
-    local word_list=" cancel download list rerun view watch -R --repo --help"
+    local word_list=" cancel delete download list rerun view watch -R --repo --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_run_cancel()
+{
+    local word_list="  --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_run_delete()
 {
     local word_list="  --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
@@ -1082,7 +1583,7 @@ _gh_run_download()
 
 _gh_run_list()
 {
-    local word_list="  -b --branch -q --jq --json -L --limit -t --template -u --user -w --workflow --help -R --repo"
+    local word_list="  -a --all -b --branch -c --commit --created -e --event -q --jq --json -L --limit -s --status -t --template -u --user -w --workflow --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1094,7 +1595,7 @@ _gh_run_rerun()
 
 _gh_run_view()
 {
-    local word_list="  --exit-status -j --job -q --jq --json --log --log-failed -t --template -v --verbose -w --web --help -R --repo"
+    local word_list="  -a --attempt --exit-status -j --job -q --jq --json --log --log-failed -t --template -v --verbose -w --web --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1157,7 +1658,7 @@ _gh_workflow_enable()
 
 _gh_workflow_list()
 {
-    local word_list="  -a --all -L --limit --help -R --repo"
+    local word_list="  -a --all -q --jq --json -L --limit -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1173,10 +1674,75 @@ _gh_workflow_view()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
+_gh_copilot()
+{
+    local cmd i subcommands
+    local subcommands=" alias config explain suggest"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        alias) _gh_copilot_alias
+            return
+            ;;
+
+        config) _gh_copilot_config
+            return
+            ;;
+
+        explain) _gh_copilot_explain
+            return
+            ;;
+
+        suggest) _gh_copilot_suggest
+            return
+            ;;
+
+    esac
+
+    local word_list=" alias config explain suggest -h --help --hostname -v --version"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_copilot_alias()
+{
+    local word_list="  -h --help --hostname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_copilot_config()
+{
+    local word_list="  -h --help --hostname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_copilot_explain()
+{
+    local word_list="  -h --help --hostname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_copilot_suggest()
+{
+    local word_list="  -h --help -s --shell-out -t --target --hostname"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_co()
+{
+    local word_list="  -b --branch --detach -f --force --recurse-submodules --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
 _gh_alias()
 {
     local cmd i subcommands
-    local subcommands=" delete list set"
+    local subcommands=" delete import list set"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -1190,6 +1756,10 @@ _gh_alias()
             return
             ;;
 
+        import) _gh_alias_import
+            return
+            ;;
+
         list) _gh_alias_list
             return
             ;;
@@ -1200,13 +1770,19 @@ _gh_alias()
 
     esac
 
-    local word_list=" delete list set --help"
+    local word_list=" delete import list set --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_alias_delete()
 {
-    local word_list="  --help"
+    local word_list="  --all --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_alias_import()
+{
+    local word_list="  --clobber --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1218,20 +1794,20 @@ _gh_alias_list()
 
 _gh_alias_set()
 {
-    local word_list="  -s --shell --help"
+    local word_list="  --clobber -s --shell --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_api()
 {
-    local word_list="  --cache -F --field -H --header --hostname -i --include --input -q --jq -X --method --paginate -p --preview -f --raw-field --silent -t --template --help"
+    local word_list="  --cache -F --field -H --header --hostname -i --include --input -q --jq -X --method --paginate -p --preview -f --raw-field --silent --slurp -t --template --verbose --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_completion()
+_gh_attestation()
 {
     local cmd i subcommands
-    local subcommands=" autoload compinit"
+    local subcommands=" download trusted-root verify"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -1241,36 +1817,52 @@ _gh_completion()
     done
 
     case "$cmd" in
-        autoload) _gh_completion_autoload
+        download) _gh_attestation_download
             return
             ;;
 
-        compinit) _gh_completion_compinit
+        trusted-root) _gh_attestation_trustedroot
+            return
+            ;;
+
+        verify) _gh_attestation_verify
             return
             ;;
 
     esac
 
-    local word_list=" autoload compinit -s --shell --help"
+    local word_list=" download trusted-root verify --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_completion_autoload()
+_gh_attestation_download()
 {
-    local word_list="  "
+    local word_list="  -d --digest-alg --hostname -L --limit -o --owner --predicate-type -R --repo --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_completion_compinit()
+_gh_attestation_trustedroot()
 {
-    local word_list="  "
+    local word_list="  --hostname --tuf-root --tuf-url --verify-only --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_attestation_verify()
+{
+    local word_list="  -b --bundle --bundle-from-oci --cert-identity -i --cert-identity-regex --cert-oidc-issuer --custom-trusted-root --deny-self-hosted-runners -d --digest-alg --format --hostname -q --jq -L --limit --no-public-good -o --owner --predicate-type -R --repo --signer-repo --signer-workflow -t --template --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_completion()
+{
+    local word_list="  -s --shell --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_config()
 {
     local cmd i subcommands
-    local subcommands=" get list set"
+    local subcommands=" clear-cache get list set"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -1280,6 +1872,10 @@ _gh_config()
     done
 
     case "$cmd" in
+        clear-cache) _gh_config_clearcache
+            return
+            ;;
+
         get) _gh_config_get
             return
             ;;
@@ -1294,7 +1890,13 @@ _gh_config()
 
     esac
 
-    local word_list=" get list set --help"
+    local word_list=" clear-cache get list set --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_config_clearcache()
+{
+    local word_list="  --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1319,7 +1921,7 @@ _gh_config_set()
 _gh_extension()
 {
     local cmd i subcommands
-    local subcommands=" create exec install list remove upgrade"
+    local subcommands=" browse create install list remove search upgrade"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -1329,11 +1931,11 @@ _gh_extension()
     done
 
     case "$cmd" in
-        create) _gh_extension_create
+        browse) _gh_extension_browse
             return
             ;;
 
-        exec) _gh_extension_exec
+        create) _gh_extension_create
             return
             ;;
 
@@ -1349,13 +1951,23 @@ _gh_extension()
             return
             ;;
 
+        search) _gh_extension_search
+            return
+            ;;
+
         upgrade) _gh_extension_upgrade
             return
             ;;
 
     esac
 
-    local word_list=" create exec install list remove upgrade --help"
+    local word_list=" browse create install list remove search upgrade --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_extension_browse()
+{
+    local word_list="  --debug -s --single-column --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1365,15 +1977,9 @@ _gh_extension_create()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_extension_exec()
-{
-    local word_list="  "
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
 _gh_extension_install()
 {
-    local word_list="  --pin --help"
+    local word_list="  --force --pin --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1386,6 +1992,12 @@ _gh_extension_list()
 _gh_extension_remove()
 {
     local word_list="  --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_extension_search()
+{
+    local word_list="  -q --jq --json --license -L --limit --order --owner --sort -t --template -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1428,13 +2040,13 @@ _gh_gpgkey()
 
 _gh_gpgkey_add()
 {
-    local word_list="  --help"
+    local word_list="  -t --title --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_gpgkey_delete()
 {
-    local word_list="  -y --confirm --help"
+    local word_list="  -y --yes --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1497,7 +2109,7 @@ _gh_label_create()
 
 _gh_label_delete()
 {
-    local word_list="  --confirm --help -R --repo"
+    local word_list="  --yes --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1513,10 +2125,10 @@ _gh_label_list()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_search()
+_gh_ruleset()
 {
     local cmd i subcommands
-    local subcommands=" issues prs repos"
+    local subcommands=" check list view"
 
     for (( i=1; i < cword; i++ )); do
         if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
@@ -1526,6 +2138,63 @@ _gh_search()
     done
 
     case "$cmd" in
+        check) _gh_ruleset_check
+            return
+            ;;
+
+        list) _gh_ruleset_list
+            return
+            ;;
+
+        view) _gh_ruleset_view
+            return
+            ;;
+
+    esac
+
+    local word_list=" check list view -R --repo --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_ruleset_check()
+{
+    local word_list="  --default -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_ruleset_list()
+{
+    local word_list="  -L --limit -o --org -p --parents -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_ruleset_view()
+{
+    local word_list="  -o --org -p --parents -w --web --help -R --repo"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_search()
+{
+    local cmd i subcommands
+    local subcommands=" code commits issues prs repos"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        code) _gh_search_code
+            return
+            ;;
+
+        commits) _gh_search_commits
+            return
+            ;;
+
         issues) _gh_search_issues
             return
             ;;
@@ -1540,19 +2209,31 @@ _gh_search()
 
     esac
 
-    local word_list=" issues prs repos --help"
+    local word_list=" code commits issues prs repos --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_search_code()
+{
+    local word_list="  --extension --filename -q --jq --json --language -L --limit --match --owner -R --repo --size -t --template -w --web --help"
+    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
+}
+
+_gh_search_commits()
+{
+    local word_list="  --author --author-date --author-email --author-name --committer --committer-date --committer-email --committer-name --hash -q --jq --json -L --limit --merge --order --owner --parent -R --repo --sort -t --template --tree --visibility -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_search_issues()
 {
-    local word_list="  --app --archived --assignee --author --closed --commenter --comments --created --include-prs --interactions --involves -q --jq --json --label --language -L --limit --locked --match --mentions --milestone --no-assignee --no-label --no-milestone --no-project --order --owner --project --reactions --repo --sort --state --team-mentions -t --template --updated --visibility -w --web --help"
+    local word_list="  --app --archived --assignee --author --closed --commenter --comments --created --include-prs --interactions --involves -q --jq --json --label --language -L --limit --locked --match --mentions --milestone --no-assignee --no-label --no-milestone --no-project --order --owner --project --reactions -R --repo --sort --state --team-mentions -t --template --updated --visibility -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_search_prs()
 {
-    local word_list="  --app --archived --assignee --author -B --base --checks --closed --commenter --comments --created --draft -H --head --interactions --involves -q --jq --json --label --language -L --limit --locked --match --mentions --merged --merged-at --milestone --no-assignee --no-label --no-milestone --no-project --order --owner --project --reactions --repo --review --review-requested --reviewed-by --sort --state --team-mentions -t --template --updated --visibility -w --web --help"
+    local word_list="  --app --archived --assignee --author -B --base --checks --closed --commenter --comments --created --draft -H --head --interactions --involves -q --jq --json --label --language -L --limit --locked --match --mentions --merged --merged-at --milestone --no-assignee --no-label --no-milestone --no-project --order --owner --project --reactions -R --repo --review --review-requested --reviewed-by --sort --state --team-mentions -t --template --updated --visibility -w --web --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1601,7 +2282,7 @@ _gh_secret_delete()
 
 _gh_secret_list()
 {
-    local word_list="  -a --app -e --env -o --org -u --user --help -R --repo"
+    local word_list="  -a --app -e --env -q --jq --json -o --org -t --template -u --user --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1644,13 +2325,13 @@ _gh_sshkey()
 
 _gh_sshkey_add()
 {
-    local word_list="  -t --title --help"
+    local word_list="  -t --title --type --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _gh_sshkey_delete()
 {
-    local word_list="  -y --confirm --help"
+    local word_list="  -y --yes --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1666,39 +2347,62 @@ _gh_status()
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_actions()
+_gh_variable()
 {
-    local word_list="  --help"
+    local cmd i subcommands
+    local subcommands=" delete get list set"
+
+    for (( i=1; i < cword; i++ )); do
+        if [[ " ${subcommands[*]} " == *" ${words[i]} "* ]]; then
+            cmd=${words[i]}
+            break
+        fi
+    done
+
+    case "$cmd" in
+        delete) _gh_variable_delete
+            return
+            ;;
+
+        get) _gh_variable_get
+            return
+            ;;
+
+        list) _gh_variable_list
+            return
+            ;;
+
+        set) _gh_variable_set
+            return
+            ;;
+
+    esac
+
+    local word_list=" delete get list set -R --repo --help"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_environment()
+_gh_variable_delete()
 {
-    local word_list="  "
+    local word_list="  -e --env -o --org --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_exitcodes()
+_gh_variable_get()
 {
-    local word_list="  "
+    local word_list="  -e --env -q --jq --json -o --org -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_formatting()
+_gh_variable_list()
 {
-    local word_list="  "
+    local word_list="  -e --env -q --jq --json -o --org -t --template --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
-_gh_mintty()
+_gh_variable_set()
 {
-    local word_list="  "
-    COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
-}
-
-_gh_reference()
-{
-    local word_list="  "
+    local word_list="  -b --body -e --env -f --env-file -o --org -r --repos -v --visibility --help -R --repo"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
