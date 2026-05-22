@@ -134,13 +134,13 @@ _pixi()
 
     esac
 
-    local word_list=" add auth build clean completion config exec global info init import install list lock reinstall publish remove run search self-update shell shell-hook task tree update upgrade upload workspace help -V --version -h --help --color --no-progress --list"
+    local word_list=" add auth build clean completion config exec global info init import install list lock reinstall publish remove run search self-update shell shell-hook task tree update upgrade upload workspace help -V --version -h --help -v --verbose -q --quiet --color --no-progress --list"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_add()
 {
-    local word_list="  --pypi -p --platform -f --feature --editable -m --manifest-path -w --workspace -h --help --color --no-progress -g --git --branch --tag --rev -s --subdir --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  --pypi -p --platform -f --feature --editable -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress -g --git --branch --tag --rev -s --subdir --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -171,19 +171,19 @@ _pixi_auth()
 
     esac
 
-    local word_list=" login logout help -h --help --color --no-progress"
+    local word_list=" login logout help -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_auth_login()
 {
-    local word_list="  --token --username --password --conda-token --s3-access-key-id --s3-secret-access-key --s3-session-token --oauth --oauth-issuer-url --oauth-client-id --oauth-client-secret --oauth-flow --oauth-scope -h --help --color --no-progress"
+    local word_list="  --token --username --password --conda-token --s3-access-key-id --s3-secret-access-key --s3-session-token --oauth --oauth-issuer-url --oauth-client-id --oauth-client-secret --oauth-flow --oauth-scope -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_auth_logout()
 {
-    local word_list="  -h --help --color --no-progress"
+    local word_list="  -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -195,7 +195,7 @@ _pixi_auth_help()
 
 _pixi_build()
 {
-    local word_list="  -t --target-platform --build-platform -o --output-dir -b --build-dir -c --clean --path --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --no-install --frozen --locked --as-is -h --help --color --no-progress"
+    local word_list="  -t --target-platform --build-platform -o --output-dir -b --build-dir -c --clean --path --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --no-install --frozen --locked --as-is -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -222,13 +222,13 @@ _pixi_clean()
 
     esac
 
-    local word_list=" cache help -e --environment --activation-cache --build --workspaces-registry -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" cache help -e --environment --activation-cache --build --workspaces-registry -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_clean_cache()
 {
-    local word_list="  --pypi --conda --mapping --exec --repodata --build-backends --build -y --yes -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --pypi --conda --mapping --exec --repodata --build-backends --build -y --yes -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -240,7 +240,7 @@ _pixi_clean_help()
 
 _pixi_completion()
 {
-    local word_list="  - - - -h --help --color --no-progress"
+    local word_list="  - - - -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -287,43 +287,43 @@ _pixi_config()
 
     esac
 
-    local word_list=" edit list prepend append set unset help -h --help --color --no-progress"
+    local word_list=" edit list prepend append set unset help -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_config_edit()
 {
-    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_config_list()
 {
-    local word_list="  --json -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --json -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_config_prepend()
 {
-    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_config_append()
 {
-    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_config_set()
 {
-    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_config_unset()
 {
-    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -l --local -g --global -s --system -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -335,7 +335,7 @@ _pixi_config_help()
 
 _pixi_exec()
 {
-    local word_list="  -s --spec -w --with -c --channel -p --platform --force-reinstall --list --no-modify-ps1 --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  -s --spec -w --with -c --channel -p --platform --force-reinstall --list --no-modify-ps1 --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -402,49 +402,49 @@ _pixi_global()
 
     esac
 
-    local word_list=" add edit install uninstall remove list sync expose shortcut update tree help -h --help --color --no-progress"
+    local word_list=" add edit install uninstall remove list sync expose shortcut update tree help -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_add()
 {
-    local word_list="  --path -e --environment --expose --git --branch --tag --rev --subdir --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --path -e --environment --expose --git --branch --tag --rev --subdir --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_edit()
 {
-    local word_list="  -h --help --color --no-progress"
+    local word_list="  -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_install()
 {
-    local word_list="  --path -c --channel -p --platform -e --environment --expose --with --force-reinstall --no-shortcuts --git --branch --tag --rev --subdir --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --path -c --channel -p --platform -e --environment --expose --with --force-reinstall --no-shortcuts --git --branch --tag --rev --subdir --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_uninstall()
 {
-    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_remove()
 {
-    local word_list="  -e --environment --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  -e --environment --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_list()
 {
-    local word_list="  -e --environment --sort-by --json --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  -e --environment --sort-by --json --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_sync()
 {
-    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -475,19 +475,19 @@ _pixi_global_expose()
 
     esac
 
-    local word_list=" add remove help -h --help --color --no-progress"
+    local word_list=" add remove help -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_expose_add()
 {
-    local word_list="  -e --environment --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  -e --environment --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_expose_remove()
 {
-    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -524,19 +524,19 @@ _pixi_global_shortcut()
 
     esac
 
-    local word_list=" add remove help -h --help --color --no-progress"
+    local word_list=" add remove help -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_shortcut_add()
 {
-    local word_list="  -e --environment --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  -e --environment --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_shortcut_remove()
 {
-    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -548,13 +548,13 @@ _pixi_global_shortcut_help()
 
 _pixi_global_update()
 {
-    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_global_tree()
 {
-    local word_list="  -e --environment -i --invert -h --help --color --no-progress"
+    local word_list="  -e --environment -i --invert -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -566,85 +566,85 @@ _pixi_global_help()
 
 _pixi_info()
 {
-    local word_list="  --extended --json -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --extended --json -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_init()
 {
-    local word_list="  -c --channel -p --platform -i --import --format -s --scm --conda-pypi-map -h --help --color --no-progress"
+    local word_list="  -c --channel -p --platform -i --import --format -s --scm --conda-pypi-map -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_import()
 {
-    local word_list="  --format -p --platform -e --environment -f --feature -m --manifest-path -w --workspace -h --help --color --no-progress --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  --format -p --platform -e --environment -f --feature -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_install()
 {
-    local word_list="  -e --environment -a --all --skip --skip-with-deps --only -m --manifest-path -w --workspace -h --help --color --no-progress --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  -e --environment -a --all --skip --skip-with-deps --only -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_list()
 {
-    local word_list="  --platform --json --sort-by --fields -e --environment -x --explicit -m --manifest-path -w --workspace -h --help --color --no-progress --frozen --locked --no-install"
+    local word_list="  --platform --json --sort-by --fields -e --environment -x --explicit -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --frozen --locked --no-install"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_lock()
 {
-    local word_list="  --json --check --dry-run -m --manifest-path -w --workspace -h --help --color --no-progress --no-install"
+    local word_list="  --json --check --dry-run -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --no-install"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_reinstall()
 {
-    local word_list="  -e --environment -a --all -m --manifest-path -w --workspace -h --help --color --no-progress --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  -e --environment -a --all -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_publish()
 {
-    local word_list="  -t --target-platform --build-platform --build-string-prefix --build-number -b --build-dir -c --clean --path --target-channel --target-dir --force --skip-existing --generate-attestation --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help --color --no-progress"
+    local word_list="  -t --target-platform --build-platform --build-string-prefix --build-number -b --build-dir -c --clean --path --target-channel --target-dir --force --skip-existing --generate-attestation --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_remove()
 {
-    local word_list="  --pypi -p --platform -f --feature -m --manifest-path -w --workspace -h --help --color --no-progress -g --git --branch --tag --rev -s --subdir --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  --pypi -p --platform -f --feature -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress -g --git --branch --tag --rev -s --subdir --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_run()
 {
-    local word_list="  -x --executable -e --environment --clean-env --skip-deps --templated -n --dry-run -m --manifest-path -w --workspace --color --no-progress --no-install --frozen --locked --as-is --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --force-activate --no-completions"
+    local word_list="  -x --executable -e --environment --clean-env --skip-deps --templated -n --dry-run -m --manifest-path -w --workspace -v --verbose -q --quiet --color --no-progress --no-install --frozen --locked --as-is --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --force-activate --no-completions"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_search()
 {
-    local word_list="  -c --channel -p --platform -l --limit -n --limit-packages --json -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -c --channel -p --platform -l --limit -n --limit-packages --json -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_selfupdate()
 {
-    local word_list="  --version --dry-run --force --no-release-note -h --help --color --no-progress"
+    local word_list="  --version --dry-run --force --no-release-note -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_shell()
 {
-    local word_list="  -e --environment -m --manifest-path -w --workspace -h --help --color --no-progress --no-install --frozen --locked --as-is --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --change-ps1 --force-activate --no-completions"
+    local word_list="  -e --environment -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --no-install --frozen --locked --as-is --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --change-ps1 --force-activate --no-completions"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_shellhook()
 {
-    local word_list="  -s --shell -e --environment --json -m --manifest-path -w --workspace -h --help --color --no-progress --no-install --frozen --locked --as-is --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --force-activate --no-completions --change-ps1"
+    local word_list="  -s --shell -e --environment --json -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --no-install --frozen --locked --as-is --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache --force-activate --no-completions --change-ps1"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -683,31 +683,31 @@ _pixi_task()
 
     esac
 
-    local word_list=" add remove alias list help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" add remove alias list help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_task_add()
 {
-    local word_list="  --depends-on -p --platform -f --feature --cwd --env --default-environment --description --clean-env --arg -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --depends-on -p --platform -f --feature --cwd --env --default-environment --description --clean-env --arg -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_task_remove()
 {
-    local word_list="  -p --platform -f --feature -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -p --platform -f --feature -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_task_alias()
 {
-    local word_list="  -p --platform --description -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -p --platform --description -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_task_list()
 {
-    local word_list="  -s --summary -e --environment --json -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -s --summary -e --environment --json -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -719,19 +719,19 @@ _pixi_task_help()
 
 _pixi_tree()
 {
-    local word_list="  -p --platform -e --environment -i --invert -m --manifest-path -w --workspace -h --help --color --no-progress --frozen --locked --no-install"
+    local word_list="  -p --platform -e --environment -i --invert -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --frozen --locked --no-install"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_update()
 {
-    local word_list="  --no-install -n --dry-run -e --environment -p --platform --json --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --no-install -n --dry-run -e --environment -p --platform --json --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upgrade()
 {
-    local word_list="  -f --feature --exclude --json -n --dry-run -m --manifest-path -w --workspace -h --help --color --no-progress --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  -f --feature --exclude --json -n --dry-run -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -778,43 +778,43 @@ _pixi_upload()
 
     esac
 
-    local word_list=" quetz artifactory prefix anaconda cloudsmith s3 help --allow-insecure-host -h --help --color --no-progress"
+    local word_list=" quetz artifactory prefix anaconda cloudsmith s3 help --allow-insecure-host -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upload_quetz()
 {
-    local word_list="  -u --url -c --channel -a --api-key -h --help --color --no-progress"
+    local word_list="  -u --url -c --channel -a --api-key -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upload_artifactory()
 {
-    local word_list="  -u --url -c --channel -t --token -h --help --color --no-progress"
+    local word_list="  -u --url -c --channel -t --token -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upload_prefix()
 {
-    local word_list="  -u --url -c --channel -a --api-key --attestation --generate-attestation --store-github-attestation -s --skip-existing --force -h --help --color --no-progress"
+    local word_list="  -u --url -c --channel -a --api-key --attestation --generate-attestation --store-github-attestation -s --skip-existing --force -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upload_anaconda()
 {
-    local word_list="  -o --owner -c --channel -a --api-key -u --url -f --force -h --help --color --no-progress"
+    local word_list="  -o --owner -c --channel -a --api-key -u --url -f --force -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upload_cloudsmith()
 {
-    local word_list="  -o --owner -r --repo -a --api-key -u --url -h --help --color --no-progress"
+    local word_list="  -o --owner -r --repo -a --api-key -u --url -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_upload_s3()
 {
-    local word_list="  -c --channel --force --endpoint-url --region --access-key-id --secret-access-key --session-token --addressing-style -h --help --color --no-progress"
+    local word_list="  -c --channel --force --endpoint-url --region --access-key-id --secret-access-key --session-token --addressing-style -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -887,7 +887,7 @@ _pixi_workspace()
 
     esac
 
-    local word_list=" channel description platform version environment feature export name system-requirements register requires-pixi help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" channel description platform version environment feature export name system-requirements register requires-pixi help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -922,25 +922,25 @@ _pixi_workspace_channel()
 
     esac
 
-    local word_list=" add list remove help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" add list remove help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_channel_add()
 {
-    local word_list="  --priority --prepend -f --feature --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --priority --prepend -f --feature --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_channel_list()
 {
-    local word_list="  --urls -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --urls -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_channel_remove()
 {
-    local word_list="  --priority --prepend -f --feature --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --priority --prepend -f --feature --no-install --frozen --locked --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -977,19 +977,19 @@ _pixi_workspace_description()
 
     esac
 
-    local word_list=" get set help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" get set help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_description_get()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_description_set()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1030,25 +1030,25 @@ _pixi_workspace_platform()
 
     esac
 
-    local word_list=" add list remove help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" add list remove help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_platform_add()
 {
-    local word_list="  --no-install -f --feature -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --no-install -f --feature -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_platform_list()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_platform_remove()
 {
-    local word_list="  --no-install -f --feature -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --no-install -f --feature -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1097,37 +1097,37 @@ _pixi_workspace_version()
 
     esac
 
-    local word_list=" get set major minor patch help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" get set major minor patch help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_version_get()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_version_set()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_version_major()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_version_minor()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_version_patch()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1168,25 +1168,25 @@ _pixi_workspace_environment()
 
     esac
 
-    local word_list=" add list remove help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" add list remove help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_environment_add()
 {
-    local word_list="  -f --feature --solve-group --no-default-feature --force -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -f --feature --solve-group --no-default-feature --force -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_environment_list()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_environment_remove()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1223,19 +1223,19 @@ _pixi_workspace_feature()
 
     esac
 
-    local word_list=" list remove help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" list remove help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_feature_list()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_feature_remove()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1272,19 +1272,19 @@ _pixi_workspace_export()
 
     esac
 
-    local word_list=" conda-explicit-spec conda-environment help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" conda-explicit-spec conda-environment help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_export_condaexplicitspec()
 {
-    local word_list="  -e --environment -p --platform --ignore-pypi-errors --ignore-source-errors -m --manifest-path -w --workspace -h --help --color --no-progress --frozen --locked --no-install --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
+    local word_list="  -e --environment -p --platform --ignore-pypi-errors --ignore-source-errors -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress --frozen --locked --no-install --auth-file --concurrent-downloads --concurrent-solves --pinning-strategy --pypi-keyring-provider --run-post-link-scripts --no-symbolic-links --no-hard-links --no-ref-links --tls-no-verify --tls-root-certs --use-environment-activation-cache"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_export_condaenvironment()
 {
-    local word_list="  -p --platform -e --environment -n --name --from-lockfile -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -p --platform -e --environment -n --name --from-lockfile -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1321,19 +1321,19 @@ _pixi_workspace_name()
 
     esac
 
-    local word_list=" get set help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" get set help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_name_get()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_name_set()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1370,19 +1370,19 @@ _pixi_workspace_systemrequirements()
 
     esac
 
-    local word_list=" add list help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" add list help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_systemrequirements_add()
 {
-    local word_list="  - - - - - --family -f --feature -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  - - - - - --family -f --feature -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_systemrequirements_list()
 {
-    local word_list="  --json -e --environment -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --json -e --environment -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1423,25 +1423,25 @@ _pixi_workspace_register()
 
     esac
 
-    local word_list=" list remove prune help -n --name -p --path -f --force -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" list remove prune help -n --name -p --path -f --force -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_register_list()
 {
-    local word_list="  --json -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  --json -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_register_remove()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_register_prune()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
@@ -1486,31 +1486,31 @@ _pixi_workspace_requirespixi()
 
     esac
 
-    local word_list=" get set unset verify help -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list=" get set unset verify help -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_requirespixi_get()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_requirespixi_set()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_requirespixi_unset()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
 _pixi_workspace_requirespixi_verify()
 {
-    local word_list="  -m --manifest-path -w --workspace -h --help --color --no-progress"
+    local word_list="  -m --manifest-path -w --workspace -h --help -v --verbose -q --quiet --color --no-progress"
     COMPREPLY=( $(compgen -W "${word_list}" -- "$cur") )
 }
 
